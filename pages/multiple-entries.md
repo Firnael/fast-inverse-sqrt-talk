@@ -7,21 +7,15 @@ You can split your slides.md into multiple files and organize them as you want u
 ```markdown
 # Page 1
 
-Page 2 from main entry.
+Page 1 from main entry.
 
 ---
-src: ./subpage.md
+src: ./page-2.md
+```
+
 ---
-```
-
-<br>
-
-#### `subpage.md`
-
-```markdown
-# Page 2
-
-Page 2 from another file.
-```
+src: ./page-2.md
+hide: false
+---
 
 [Learn more](https://sli.dev/guide/syntax.html#multiple-entries)

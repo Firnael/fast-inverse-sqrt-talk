@@ -1,11 +1,15 @@
-# Welcome to [Slidev](https://github.com/slidevjs/slidev)!
+# Fast Inverse Square Root Algorithm : The Talk
 
-To start the slide show:
+![logo](logo.png)
+
+## Démarrer la prez en local
 
 - `npm install`
 - `npm run dev`
-- visit http://localhost:3030
+- visiter http://localhost:3030
 
-Edit the [slides.md](./slides.md) to see the changes.
+Éditer le fichier [slides.md](./slides.md) pour voir les changements.
+
+## Documentation
 
 Learn more about Slidev on [documentations](https://sli.dev/).
