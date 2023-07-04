@@ -1,14 +1,15 @@
 {
   "name": "fast-inverse-sqrt-inglorious-talk",
   "private": true,
+  "version": "0.0.1",
   "scripts": {
-    "build": "slidev build",
-    "dev": "slidev --open",
-    "export": "slidev export"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "dependencies": {
-    "@slidev/cli": "^0.40.14",
-    "@slidev/theme-default": "*",
-    "slidev-theme-dracula": "^0.1.0"
+  "devDependencies": {
+    "prettier": "^2.6.2",
+    "reveal.js": "^4.3.1",
+    "vite": "^2.9.5"
   }
 }

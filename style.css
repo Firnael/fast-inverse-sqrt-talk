@@ -1,0 +1,22 @@
+/* Layout */
+
+.ch {
+    display: flex;
+    flex-direction: row;
+}
+
+.cv {
+    display: flex;
+    flex-direction: column;
+}
+
+.item {
+    flex: 1;
+}
+
+/* Shadows & highlights */
+
+.highlight {
+    filter: drop-shadow(.1rem .1rem .5rem #fff);
+    box-shadow: none;
+}

@@ -1,6 +1,6 @@
 # Fast Inverse Square Root Algorithm : The Talk
 
-![logo](logo.png)
+![logo](/public/logo.png)
 
 ## Démarrer la prez en local
 
