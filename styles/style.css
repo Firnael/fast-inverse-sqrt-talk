@@ -1,0 +1,71 @@
+/* Font Faces */
+
+@font-face {
+    font-family: Monoid;
+    src: url(./fonts/Monoid/Monoid-Regular.ttf);
+}
+
+@font-face {
+    font-family: FiraCode;
+    src: url(./fonts/Fira_Code_v6.2/ttf/FiraCode-Regular.ttf);
+}
+
+/* Layout */
+
+.ch {
+    display: flex;
+    flex-direction: row;
+}
+
+.cv {
+    display: flex;
+    flex-direction: column;
+}
+
+.item {
+    flex: 1;
+}
+
+/* Shadows & highlights */
+
+.highlight {
+    filter: drop-shadow(.1rem .1rem .5rem #fff);
+    box-shadow: none;
+}
+
+/* Typology */
+
+h1.main-title {
+    margin-bottom: 15vh;
+}
+
+h3.main-subtitle {
+    margin-top: 15vh;
+    color: #ff4444;
+}
+
+/* Code */
+
+code {
+    font-family: FiraCode;
+}
+
+code.bright {
+    color: #dbc191;
+}
+
+code.normal {
+    color: #A8ACB8;
+}
+
+pre.wide {
+    width: 100%;
+    margin: 0px;
+    font-size: 18px !important;
+}
+
+/* Custom fragments */
+
+.fragment.instant {
+    transition: all 0s ease;
+}

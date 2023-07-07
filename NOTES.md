@@ -1,5 +1,10 @@
 # NOTES
 
+## Le code source de Quake 3
+
+> C
+Quake3 was the last id software engine to be written in C (the development team moved to C++ with Doom3). Almost no usage of libraries: huffman. c md4.
+
 ## Pourquoi "Q_rsqrt" ?
 
 The "Q" in "Q_rsqrt" stands for "Quake," the name of the game.  

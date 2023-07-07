@@ -14,27 +14,96 @@
     <div class="slides">
 
       <!-- Splash -->
-      <section>
-        <br/>
-        <h1 class="r-fit-text">Fast Inverse Square Root</h1>
-        <br/>
-        <h3>The Inglorious Talk</h3>
-        <img class="highlight" src="/logo.png">
+      <section data-background-image="/quake3-wallpaper.jpeg" data-transition="fade">
+        <h1 class="r-fit-text main-title">Fast Inverse Square Root</h1>
+        <h3 class="main-subtitle">The Inglorious Talk</h3>
         <aside class="notes">
           C'est reparti pour un tour
         </aside>
       </section>
-      <section>
-        <div class="ch">
-          <div class="item">
-            Coucou
-          </div>
-          <div class="item">
-            C'est reparti
-          </div>
-        </div>
-      </section>
 
+      <section data-transition="fade">
+        <section>
+          <div class="ch">
+            <div class="item">
+              Coucou
+            </div>
+            <div class="item">
+              C'est reparti
+            </div>
+          </div>
+        </section>
+
+        <section data-transition="fade">
+          <div class="cv">
+            <div class="item fragment">
+              <pre class=" c wide">
+                <code data-trim  data-line-numbers bite>
+                  float Q_rsqrt( float number ) {
+                    long i;
+                    float x2, y;
+                    const float threehalfs = 1.5F;
+  
+                    x2 = number * 0.5F;
+                    y  = number;
+                    i  = * ( long * ) &y;                      // evil floating point bit level hacking
+                    i  = 0x5f3759df - ( i >> 1 );              // what the fuck?
+                    y  = * ( float * ) &i;
+                    y  = y * ( threehalfs - ( x2 * y * y ) );  // 1st iteration
+                    // y  = y * ( threehalfs - ( x2 * y * y ) ); // 2nd iteration, this can be removed
+  
+                    return y;
+                  }
+                </code>
+              </pre>
+            </div>
+            <div class="item fragment">
+              <strong>Hmm...</strong>
+            </div>
+          </div>
+        </section>
+
+        <!-- integer -->
+        <section>
+          <h3>integer</h3>
+          <h4><code class="normal">int32</code></h4>
+          <br/>
+          <div class="r-stack">
+            <code class="fragment fade-out instant bright" data-fragment-index="2">00000000 00000000 00000000 00000000</code>
+            <code class="fragment current-visible instant bright" data-fragment-index="2">00000000 00000000 00000000 00000001</code>
+            <code class="fragment current-visible instant bright" data-fragment-index="3">00000000 00000000 00000000 00000010</code>
+            <code class="fragment current-visible instant bright" data-fragment-index="4">00000000 00000000 00000000 00000011</code>
+            <code class="fragment current-visible instant bright" data-fragment-index="5">00000000 00000000 00000000 00000100</code>
+            <code class="fragment instant bright" data-fragment-index="6">01111111 11111111 11111111 11111111</code>
+          </div>
+          <br/>
+          <div class="r-stack">
+            <code class="fragment current-visible instant normal" data-fragment-index="1">0</code>
+            <code class="fragment current-visible instant normal" data-fragment-index="2">1</code>
+            <code class="fragment current-visible instant normal" data-fragment-index="3">2</code>
+            <code class="fragment current-visible instant normal" data-fragment-index="4">3</code>
+            <code class="fragment current-visible instant normal" data-fragment-index="5">4</code>
+            <code class="fragment instant normal" data-fragment-index="6">2147483647</code>
+          </div>
+        </section>
+
+        <!-- float -->
+        <section>
+          <h3>float</h3>
+          <h4><code class="normal">float32</code></h4>
+          <br/>
+          <div class="r-stack">
+            <code class="fragment fade-out instant bright" data-fragment-index="2">00000000 00000000 00000000 00000000</code>
+            <code class="fragment current-visible instant bright" data-fragment-index="2">00000000 00000000.00000000 00000000</code>
+          </div>
+          <br/>
+          <div class="r-stack">
+            <code class="fragment fade-out instant normal" data-fragment-index="2">0</code>
+            <code class="fragment current-visible instant normal" data-fragment-index="2">0</code>
+          </div>
+        </section>
+      </section>
+      
     </div>
   </div>
   <script type="module" src="/main.js"></script>

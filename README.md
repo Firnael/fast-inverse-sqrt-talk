@@ -6,10 +6,19 @@
 
 - `npm install`
 - `npm run dev`
-- visiter http://localhost:3030
-
-Éditer le fichier [slides.md](./slides.md) pour voir les changements.
+- visiter http://localhost:3000
 
 ## Documentation
 
-Learn more about Slidev on [documentations](https://sli.dev/).
+...
+
+## Ressources
+
+### Images
+
+- Quake 3 Wallpaper : https://www.pixelstalk.net/quake-logo-wallpaper-hd/
+
+### Fonts
+
+- FiraCode : https://github.com/tonsky/FiraCode
+- Monoid : https://larsenwork.com/monoid/

@@ -1,8 +1,8 @@
 import 'reveal.js/dist/reveal.css';
 // https://revealjs.com/themes/
 import 'reveal.js/dist/theme/blood.css'; 
-import 'reveal.js/plugin/highlight/monokai.css';
-import './style.css';
+import './styles/hljs/atom-one-dark.min.css';
+import './styles/style.css';
 
 import Reveal from 'reveal.js';
 import RevealNotes from 'reveal.js/plugin/notes/notes';
