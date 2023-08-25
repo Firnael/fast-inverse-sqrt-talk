@@ -59,13 +59,29 @@ code.normal {
 }
 
 pre.wide {
-    width: 100%;
+    width: 105%;
     margin: 0px;
-    font-size: 18px !important;
+    font-size: 19px !important;
+}
+
+pre.clean {
+    box-shadow: none;
+}
+
+pre.clean code {
+    background-color: transparent;
 }
 
 /* Custom fragments */
 
 .fragment.instant {
     transition: all 0s ease;
+}
+
+/* Phaser */
+.game {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #222222;
 }

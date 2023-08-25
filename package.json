@@ -7,6 +7,9 @@
     "build": "vite build",
     "preview": "vite preview"
   },
+  "dependencies": {
+    "phaser": "^3.60.0"
+  },
   "devDependencies": {
     "prettier": "^2.6.2",
     "reveal.js": "^4.3.1",

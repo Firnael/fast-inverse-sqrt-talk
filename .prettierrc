@@ -3,6 +3,21 @@
     "trailingComma": "none",
     "singleQuote": true,
     "printWidth": 120,
-    "useTabs": true,
-    "tabWidth": 2
-}
+    "useTabs": false,
+    "tabWidth": 2,
+    "overrides": [
+      {
+        "files": "*.html",
+        "options": {
+          "tabWidth": 2
+        }
+      },
+      {
+        "files": "*.js",
+        "options": {
+          "tabWidth": 4
+        }
+      }
+    ]
+  }
+  
