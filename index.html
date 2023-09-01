@@ -22,17 +22,85 @@
         </aside>
       </section>
 
-      <section data-transition="fade">
+      <!-- 1. Introdution -->
+      <section>
 
         <section>
-          <div class="game" id="game-container"></div>
+          <h2>Introduction</h2>
+          <aside class="notes">
+            Aujourd'hui je vais vous raconter l'histoire d'une fonction.
+            Une fonction trouvée dans le code source d'un jeu sorti il y a 24 ans.
+          </aside>
+        </section>
+
+        <section>
+          <h3>On va parler</h3>
+          <aside class="notes">
+            On va parler de Quake 3, de normalisation de vecteurs, de logarithme de base 2, de ce bon vieux Newton,
+            et de sorcellerie, mais ne rushons pas les étapes ;)
+          </aside>
+        </section>
+
+      </section>
+
+      <!-- 2. Storytime -->
+      <section>
+        <section>
+          <h2>Storytime</h2>
+        </section>
+
+        <section>
+          - de la création d'idSoftware,<br />
+          - à la création de Quake 3 Arena,<br />
+          - à la libération du code en open source en 2005.<br />
+          - à la découverte de la fonction Q_rsqrt<br />
+          <aside class="notes">
+            Notre histoire commence en 1990.
+            https://fr.wikipedia.org/wiki/Id_Software
+          </aside>
+        </section>
+
+        <section>
+          ...
+        </section>
+
+      </section>
+
+      <!-- 3. Cette fonction, qu'est-ce qu'elle fait ? -->
+      <section>
+        <section>
+          <h2>3. La fonction</h2>
+        </section>
+
+        <section>
+          <div class="big">
+            \[f(x) = \frac{1}{\sqrt{x}}\]
+          </div>
+          <aside class="notes">
+            Cette fonction, elle ne fait qu'une seule chose : elle calcule l'inverse de la racine carrée d'un nombre.
+          </aside>
+        </section>
+
+        <section>
+          <div class="ch">
+            <div class="item big">
+              <pre class="c clean center">
+                <code data-trim>
+                  float y = 1 / sqrt(x);
+                </code>
+              </pre>
+            </div>
+          </div>
+          <aside class="notes">
+            En C on l'écrirait comme ceci.
+          </aside>
         </section>
 
         <section data-transition="fade">
           <br />
           <div class="cv">
             <div class="item fragment">
-              <pre class="c wide clean">
+              <pre class="c wide smaller clean">
                 <code data-trim>
                   float Q_rsqrt( float number ) {
                     long i;
@@ -53,15 +121,124 @@
               </pre>
             </div>
             <div class="item fragment">
-              <strong>Hmm...</strong>
+              <img class="above-right" src="the-what.jpeg" />
             </div>
           </div>
         </section>
 
+      </section>
+
+      <!-- 4. Normaliser des vecteurs -->
+      <section>
+        <section>
+          <h2>4. Normal mon gars</h2>
+          <img src="/4/pretend-to-be-normal.png" />
+        </section>
+
+        <section>
+          <div class="game" id="game-container"></div>
+        </section>
+
+        <section>
+          <div class="cube" id="three-animation"></div>
+        </section>
+
+        <section data-transition="zoom">
+          <code data-id="Q" class="title">Q</code>
+          <code data-id="_" class="title">_</code>
+          <code data-id="r" class="title">r</code>
+          <code data-id="sqrt" class="title">sqrt</code>
+          <br />
+          <code class="bright">
+            <span class="fragment">Quake</span>
+            <span class="fragment">Reverse</span>
+            <span class="fragment">Square Root</span>
+          </code>
+        </section>
+      </section>
+
+      <!-- 5. Le début de la fonction, et l'IEEE 754 -->
+      <section>
+
+        <section>
+          <h2>C'est parti pour se PETER le crâne</h2>
+        </section>
+
+        <section>
+          On va décrire le code de la fonction ligne par ligne.
+        </section>
+
+        <section data-auto-animate>
+          <div class="cv">
+            <div class="item">
+              <pre data-id="1" class="c wide smaller clean">
+                <code data-trim data-line-numbers="1-4">
+                  float Q_rsqrt( float number ) {
+                    long i;
+                    float x2, y;
+                    const float threehalfs = 1.5F;
+  
+                    x2 = number * 0.5F;
+                    y  = number;
+                    i  = * ( long * ) &y;                        // evil floating point bit level hacking
+                    i  = 0x5f3759df - ( i >> 1 );                // what the fuck?
+                    y  = * ( float * ) &i;
+                    y  = y * ( threehalfs - ( x2 * y * y ) );    // 1st iteration
+                    // y  = y * ( threehalfs - ( x2 * y * y ) ); // 2nd iteration, this can be removed
+  
+                    return y;
+                  }
+                </code>
+              </pre>
+            </div>
+          </div>
+        </section>
+
+        <section data-auto-animate>
+          <pre data-id="1" class="c smaller clean">
+            <code data-trim data-line-numbers>
+              float Q_rsqrt( float number ) {
+                long i;
+                float x2, y;
+                const float threehalfs = 1.5F;
+            </code>
+          </pre>
+          <div class="cv">
+            <div class="item">
+              <div class="fragment fade-in-then-semi-out">
+                <code class="normal bold">number</code>, un <code class="type bold">float</code> dont on veut
+                <br />la racine carrée inversée
+              </div>
+              <div class="fragment fade-in-then-semi-out">
+                <code class="normal bold">i</code>, un <code class="type bold">long</code> sur <strong>32 bits</strong>
+              </div>
+              <div class="fragment fade-in-then-semi-out	">
+                <code class="normal bold">x2</code> et <code class="normal bold">y</code>,
+                deux <code class="type bold">float</code>, aussi sur <strong>32 bits</strong>
+              </div>
+              <div class="fragment">
+                <code class="normal bold">threehalfs</code>, un <code class="type bold">const float</code>
+                sur <strong>32 bits</strong>,
+                <br />initialisé à <strong>1,5</strong>
+              </div>
+            </div>
+          </div>
+          <aside class="notes">
+            Commençons par lire ces quelques lignes qui, j'en suis sûr, ne présentent pas particulièrement de
+            difficulté...
+            Enfin ça c'est pas si simple :p
+
+            Déjà quelques questions émergent :
+            - Pourquoi on déclare une constante pour 1,5 ?
+            - Pourquoi threehalfs et pas threehalves, qui est l'orthographe correcte ?
+            - Aucune idée 🤡
+          </aside>
+        </section>
+
         <!-- integer -->
         <section>
-          <h3>integer</h3>
-          <h4><code class="normal">int32</code></h4>
+          <h3>long</h3>
+          <h4><code class="normal">long32</code></h4>
           <br />
           <div class="r-stack">
             <code class="fragment fade-out instant bright"
@@ -85,10 +262,21 @@
             <code class="fragment current-visible instant normal" data-fragment-index="5">4</code>
             <code class="fragment instant normal" data-fragment-index="6">2147483647</code>
           </div>
+          <aside class="notes">
+            Un long représente un entier (positif ou négatif) sur 32 bits.
+            Il peut donc prendre 2^32 valeurs différentes, de -2^31 à 2^31-1.
+            le premier bit est le signe, et les 31 autres bits représentent la valeur.
+
+            D'ailleurs, si vous voulez un moyen mnémotechnique simple pour vous souvenir de cette valeur,
+            il vous suffit de mémoriser le nombre PI jusqu'à sa 1,867,996,689ème décimale :)
+
+            The numeric string 2147483647 appears at the 1,867,996,680 decimal digit of Pi.
+            3.14......86181221809936452346 2147483647 10527835665425671614...
+          </aside>
         </section>
 
         <!-- float -->
-        <section>
+        <section data-auto-animate>
           <h3>float</h3>
           <h4><code class="normal">float32</code></h4>
           <br />
@@ -97,18 +285,163 @@
               data-fragment-index="2">00000000 00000000 00000000 00000000</code>
             <code class="fragment current-visible instant bright"
               data-fragment-index="2">00000000 00000000.00000000 00000000</code>
+            <code class="fragment current-visible instant bright"
+              data-fragment-index="3">00000000 00000001.00000000 00000000</code>
+            <code class="fragment current-visible instant bright"
+              data-fragment-index="4">00000000 00000010.00000000 00000000</code>
+            <code class="fragment current-visible instant bright"
+              data-fragment-index="5">00000000 00000011.00000000 00000000</code>
+            <code class="fragment current-visible instant bright"
+              data-fragment-index="6">00000000 00000100.00000000 00000000</code>
+            <code class="fragment current-visible instant bright"
+              data-fragment-index="7">00000000 00000100.10000000 00000000</code>
+            <code class="fragment current-visible instant bright"
+              data-fragment-index="8">00000000 00000100.01000000 00000000</code>
+            <code class="fragment current-visible instant bright"
+              data-fragment-index="9">00000000 00000100.00100000 00000000</code>
+            <code class="fragment current-visible instant bright"
+              data-fragment-index="10">00000000 00000100.00010000 00000000</code>
+            <code class="fragment instant bright" data-fragment-index="11">11111111 11111111.00010000 00000000</code>
           </div>
           <br />
           <div class="r-stack">
-            <code class="fragment fade-out instant normal" data-fragment-index="2">0</code>
             <code class="fragment current-visible instant normal" data-fragment-index="2">0</code>
+            <code class="fragment current-visible instant normal" data-fragment-index="3">1</code>
+            <code class="fragment current-visible instant normal" data-fragment-index="4">2</code>
+            <code class="fragment current-visible instant normal" data-fragment-index="5">3</code>
+            <code class="fragment current-visible instant normal" data-fragment-index="6">4</code>
+            <code class="fragment current-visible instant normal" data-fragment-index="7">4.5</code>
+            <code class="fragment current-visible instant normal" data-fragment-index="8">4.25</code>
+            <code class="fragment current-visible instant normal" data-fragment-index="9">4.125</code>
+            <code class="fragment current-visible instant normal" data-fragment-index="10">4.0625</code>
+            <code class="fragment instant normal" data-fragment-index="11">65536.0625</code>
           </div>
+          <img class="fragment current-visible top-right" src="/5/this-is-the-worst.gif" data-fragment-index="12" />
+          <aside class="notes">
+            Un float représente un nombre décimal, ou "nombre à virgule flottante" sur 32 bits.
+            On va revenir sur ce terme.
+
+            Question à l'assemblée : comment vous représenteriez un tel nombre, si vous aviez ces 32 bits ?
+            -> Oui, on peut mettre un point au milieu, et séparer les bits en deux parties.
+            La partie gauche pour la partie entière, et la partie droite pour la partie décimale.
+
+            On aurait donc la partie gauche qui sont des puissance de 2, et la partie droite qui sont des puissance de 2
+            négatives : des demi, quart, huitième, 16ème, etc.
+
+            Mais on a un problème : en faisant cela, on réduit drastiquement le maximum représentable !
+            On ne peut peut plus stoquer que des nombres compris entre
+            -2^16 et 2^16-1, soit 65536 valeurs différentes.
+
+            Ce qui est très cringe !
+          </aside>
+        </section>
+
+        <section>
+          <br />
+          <h3>Du coup, comment on fait ?</h3>
+          <br />
+          <div class="ch">
+            <div class="item fragment">
+              On double la taille d'un <code class="type bold">float</code> ?
+              <br />
+              <code class="normal bold">float32 -> float64</code>
+            </div>
+            <div class="item fragment">
+              Mais en fait <code class="normal bold">float64</code> ça existe déjà,
+              <br />
+              c'est un <code class="normal bold">double</code> 😅
+            </div>
+          </div>
+          <br />
+          <div class="ch">
+            <div class="item fragment">
+              Donc on créer un nouveau <code class="normal bold">float128</code> ?
+            </div>
+            <div class="item fragment">
+              Ça commence à prendre beaucoup de place en mémoire...
+            </div>
+          </div>
+          <aside class="notes">
+            On est d'accord que ce n'est pas acceptable.
+            On pourrait augmenter la taille de notre float, mais ça créer d'autres problèmes :
+            - ça prend plus de place en mémoire, le moindre float genre "3.2" prend 64 bits au lieu de 32, le double de
+            place,
+            - il aurait fallut créer un float128 pour stocker des nombres à plus grande précision (ce que sont les
+            double),
+            ce qui aurait posé des problèmes d'architectures des processeurs, qui sont conçu pour manipuler des nombres
+            sur 32 ou 64 bits.
+          </aside>
+        </section>
+
+        <section>
+          <video data-autoplay src="/5/homer-cest-nul.webm"></video>
+        </section>
+
+        <section>
+          <h4>Heureusement il y a la ...</h4>
+          <h1>IEEE 754</h1>
+          <aside class="notes">
+            C'est ce que se sont dit des gens pour ça que des gens plutôt malins, des gens de l'IEEE
+          </aside>
+        </section>
+
+      </section>
+
+      <!-- 6. Log2(1+x) -->
+      <section>
+        <section>
+          <h2>Log2(1+x)</h2>
         </section>
       </section>
 
-    </div>
-  </div>
+      <!-- 7. Filouteries logarithmiques -->
+      <section>
+        <section>
+          <h2>Filouteries logarithmiques</h2>
+        </section>
+      </section>
+
+      <!-- 8. Le langage C en sueur -->
+      <section>
+        <section>
+          <h2>Le langage C en sueur</h2>
+        </section>
+      </section>
+
+      <!-- 9. What the fuck -->
+      <section>
+        <section>
+          <h2>What the fuck</h2>
+        </section>
+      </section>
+
+      <!-- 10. Ce bon vieux Newton -->
+      <section>
+        <section>
+          <h2>Ce bon vieux Newton</h2>
+        </section>
+      </section>
+
+      <!-- 11. Conclusion -->
+      <section>
+        <section>
+          <h2>Conclusion</h2>
+        </section>
+      </section>
+
+      <!-- 12. Fin -->
+      <section>
+        <section>
+          <h1>Merci !</h1>
+          C'est fini
+        </section>
+      </section>
+    </div> <!-- /slides -->
+  </div> <!-- /reveal -->
+
+  <!-- Scripts -->
   <script type="module" src="/phaser.js"></script>
+  <script type="module" src="/three.js"></script>
   <script type="module" src="/main.js"></script>
 </body>
 

@@ -26,6 +26,12 @@
     flex: 1;
 }
 
+.above-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
 /* Shadows & highlights */
 
 .highlight {
@@ -44,10 +50,28 @@ h3.main-subtitle {
     color: #ff4444;
 }
 
+.big {
+    font-size: 2em;
+}
+
+.small {
+    font-size: 0.8em;
+}
+
+.bold {
+    font-weight: bold;
+}
+
 /* Code */
 
 code {
     font-family: FiraCode;
+}
+
+code.title {
+    color: #61AEEE;
+    font-size: 4.5em;
+    font-weight: bolder;
 }
 
 code.bright {
@@ -58,10 +82,21 @@ code.normal {
     color: #A8ACB8;
 }
 
+code.type {
+    color: #D19A66;
+}
+
 pre.wide {
     width: 105%;
     margin: 0px;
+}
+
+pre.smaller {
     font-size: 19px !important;
+}
+
+pre.center {
+    text-align: center;
 }
 
 pre.clean {
@@ -78,8 +113,16 @@ pre.clean code {
     transition: all 0s ease;
 }
 
-/* Phaser */
+/* PhaserJS */
 .game {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #222222;
+}
+
+/* ThreeJS */
+.cube {
     display: flex;
     justify-content: center;
     align-items: center;

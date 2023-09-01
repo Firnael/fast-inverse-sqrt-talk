@@ -4,6 +4,16 @@
 
 Ce talk est très fortement inspiré de [cette vidéo](https://www.youtube.com/watch?v=p8u_k2LIZyo&ab_channel=Nemean). 
 
+## Plan de la présentation
+
+1. Introduction
+2. Story time
+3. La fonction
+  - 1/sqrt(x)
+4. Normaliser des vecteurs
+  - Pourquoi c'est lent ?
+6. Petons nous le crâne
+
 ## Démarrer la prez en local
 
 - `npm install`
