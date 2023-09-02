@@ -26,7 +26,7 @@
       <section>
 
         <section>
-          <h2>Introduction</h2>
+          <h2>1.<br/>Introduction</h2>
           <aside class="notes">
             Aujourd'hui je vais vous raconter l'histoire d'une fonction.
             Une fonction trouvée dans le code source d'un jeu sorti il y a 24 ans.
@@ -34,10 +34,11 @@
         </section>
 
         <section>
-          <h3>On va parler</h3>
+          <h3>On va parler de Quake</h3>
+          Mais pas celui aux olives
           <aside class="notes">
             On va parler de Quake 3, de normalisation de vecteurs, de logarithme de base 2, de ce bon vieux Newton,
-            et de sorcellerie, mais ne rushons pas les étapes ;)
+            et de sorcellerie
           </aside>
         </section>
 
@@ -46,7 +47,7 @@
       <!-- 2. Storytime -->
       <section>
         <section>
-          <h2>Storytime</h2>
+          <h2>2.<br/>Storytime</h2>
         </section>
 
         <section>
@@ -69,10 +70,10 @@
       <!-- 3. Cette fonction, qu'est-ce qu'elle fait ? -->
       <section>
         <section>
-          <h2>3. La fonction</h2>
+          <h2>3.<br/>La fonction</h2>
         </section>
 
-        <section>
+        <section data-transition="fade">
           <div class="big">
             \[f(x) = \frac{1}{\sqrt{x}}\]
           </div>
@@ -82,17 +83,23 @@
         </section>
 
         <section>
-          <div class="ch">
-            <div class="item big">
-              <pre class="c clean center">
-                <code data-trim>
-                  float y = 1 / sqrt(x);
-                </code>
-              </pre>
-            </div>
+          <div style="margin-left: 15%;" class="big">
+            <pre class="c clean">
+              <code class="fragment" data-trim>
+                <script type="text/template">
+                  #include <math.h>
+                </script>
+              </code>
+              <code data-trim>
+                float y = 1 / sqrt(x);
+              </code>
+            </pre>
           </div>
           <aside class="notes">
             En C on l'écrirait comme ceci.
+
+            On aurait pas besoin de coder une fonction de calcul de racine carrée,
+            on la chopperait dans une lib standard, comme math.h.
           </aside>
         </section>
 
@@ -124,23 +131,10 @@
               <img class="above-right" src="the-what.jpeg" />
             </div>
           </div>
-        </section>
-
-      </section>
-
-      <!-- 4. Normaliser des vecteurs -->
-      <section>
-        <section>
-          <h2>4. Normal mon gars</h2>
-          <img src="/4/pretend-to-be-normal.png" />
-        </section>
-
-        <section>
-          <div class="game" id="game-container"></div>
-        </section>
-
-        <section>
-          <div class="cube" id="three-animation"></div>
+          <aside class="notes">
+            Mais dans le code source Quake, on ne retrouve pas cette fonction.
+            Voici ce qu'on y trouve à la place.
+          </aside>
         </section>
 
         <section data-transition="zoom">
@@ -154,14 +148,75 @@
             <span class="fragment">Reverse</span>
             <span class="fragment">Square Root</span>
           </code>
+          <br/>
+          <div class="fragment">
+            <br/>
+            <i>The Fast Inverse Square Root Algorithm</i>
+          </div>
+          <aside class="notes">
+            Ou "Fast Inverse Square Root Algorithm"
+          </aside>
         </section>
+
+      </section>
+
+      <!-- 4. Normaliser des vecteurs -->
+      <section>
+        <section>
+          <h2>4.<br/>Normal mon gars</h2>
+          <img src="/4/pretend-to-be-normal.png" />
+          <aside class="notes">
+            Tout ça c'est bien, mais pourquoi diable aurait-on besoin de calculer l'inverse de la racine carrée
+            d'un nombre ?
+            Et bien tout simplement pour normaliser des vecteurs.
+          </aside>
+        </section>
+
+        <section>
+          <h3>Illustration par l'exemple</h3>
+          <h4>une belle brochette de vainqueurs</h4>
+          <div class="ch">
+            <div class="item"><img src="/4/tetes/alexo.png"/></div>
+            <div class="item"><img src="/4/tetes/erwann.png"/></div>
+            <div class="item"><img src="/4/tetes/fdu.png"/></div>
+            <div class="item"><img src="/4/tetes/greg.png"/></div>
+            <div class="item"><img src="/4/tetes/jeremie.png"/></div>
+            <div class="item"><img src="/4/tetes/lasouche.png"/></div>
+          </div>
+        </section>
+
+        <section>
+          <div class="cube" id="three-animation"></div>
+        </section>
+
+        <section>
+          <img src="/4/jerem-applati.png"/>
+          <aside class="notes">
+            !!! BESOIN DU STYLET !!! 
+            comment ça marche ? Pour calculer l'angle de la lumière, on a besoin d'une ligne perpendiculaire à Jérémie.
+            Jérémie est un plan (un bon plan), on cherche ce qu'on appelle le vecteur "normal" au plan.
+          </aside>
+        </section>
+
+        <section>
+          Trouver un vecteur normal à un plan, c'est pas compliqué.
+          <br />
+          Normaliser ce vecteur, c'est pas compliqué non plus, mais ça coûte plus cher.
+          <br/>
+          En effet, on a une division, et une racine carrée là dedans.
+        </section>
+
+        <section>
+          <div class="game" id="game-container"></div>
+        </section>
+
       </section>
 
       <!-- 5. Le début de la fonction, et l'IEEE 754 -->
       <section>
 
         <section>
-          <h2>C'est parti pour se PETER le crâne</h2>
+          <h2>5.<br />C'est parti pour se PETER le crâne</h2>
         </section>
 
         <section>
@@ -374,7 +429,7 @@
         </section>
 
         <section>
-          <video data-autoplay src="/5/homer-cest-nul.webm"></video>
+          <video class="r-stretch" data-autoplay src="/5/homer-cest-nul.webm"></video>
         </section>
 
         <section>
@@ -390,42 +445,48 @@
       <!-- 6. Log2(1+x) -->
       <section>
         <section>
-          <h2>Log2(1+x)</h2>
+          <h2>6.<br />\[\log_2(1+x)\]</h2>
+        </section>
+        <section>
+          À ce stade du talk, laissez moi attirer votre attention sur un point important.
         </section>
       </section>
 
       <!-- 7. Filouteries logarithmiques -->
       <section>
         <section>
-          <h2>Filouteries logarithmiques</h2>
+          <h2>7.<br />Filouteries logarithmiques</h2>
         </section>
       </section>
 
       <!-- 8. Le langage C en sueur -->
       <section>
         <section>
-          <h2>Le langage C en sueur</h2>
+          <h2>8.<br />Le langage C en sueur</h2>
         </section>
       </section>
 
       <!-- 9. What the fuck -->
       <section>
         <section>
-          <h2>What the fuck</h2>
+          <h2>9.<br />What the fuck</h2>
         </section>
       </section>
 
       <!-- 10. Ce bon vieux Newton -->
       <section>
         <section>
-          <h2>Ce bon vieux Newton</h2>
+          <h2>10.<br />Ce bon vieux Newton</h2>
         </section>
       </section>
 
       <!-- 11. Conclusion -->
       <section>
         <section>
-          <h2>Conclusion</h2>
+          <h2>11.<br />Conclusion</h2>
+        </section>
+        <section>
+          Qu'est ce qu'on a appris
         </section>
       </section>
 
@@ -433,7 +494,7 @@
       <section>
         <section>
           <h1>Merci !</h1>
-          C'est fini
+          Distribution de paracétamol à la pause
         </section>
       </section>
     </div> <!-- /slides -->

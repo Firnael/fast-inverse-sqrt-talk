@@ -1,4 +1,4 @@
-import * as THREE from "three";
+import * as THREE from 'three';
 
 const container = document.getElementById('three-animation');
 // Set the container's dimensions explicitly
@@ -12,16 +12,17 @@ camera.position.z = 4.5;
 
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(container.clientWidth, container.clientHeight);
-renderer.setClearColor(0x333333);
+renderer.setClearColor(0x222222);
 container.appendChild(renderer.domElement);
 
 // Create a the "spotlight" sprite
-const spriteTexture = new THREE.TextureLoader().load("/cube-light/spotlight.png");
+const spriteTexture = new THREE.TextureLoader().load('/cube-light/spotlight.png');
 const spriteMaterial = new THREE.SpriteMaterial({ map: spriteTexture });
 const sprite = new THREE.Sprite(spriteMaterial);
 sprite.scale.set(1, 1, 1);
 sprite.position.set(2, 2, 1);
 scene.add(sprite);
+sprite.visible = false;
 
 // Create a cube geometry
 const geometry = new THREE.BoxGeometry(2, 2, 2);
@@ -29,18 +30,18 @@ const geometry = new THREE.BoxGeometry(2, 2, 2);
 // Load the textures
 const textureLoader = new THREE.TextureLoader();
 const textureUrls = [
-  "atresso_white.png",
-  "erwann_white.png",
-  "fdu_white.png",
-  "greg_white.png",
-  "jeremie_white.png",
-  "lasouche_white.png",
+    'alexo_white.png',
+    'erwann_white.png',
+    'fdu_white.png',
+    'greg_white.png',
+    'jeremie_white.png',
+    'lasouche_white.png'
 ];
 const textures = textureUrls.map((url) => textureLoader.load(`/cube-light/${url}`));
 
 // Create an array of materials using the textures
 const materials = textures.map((texture) => {
-  return new THREE.MeshStandardMaterial({ map: texture });
+    return new THREE.MeshStandardMaterial({ map: texture });
 });
 
 // Create a mesh using the geometry and material(s)
@@ -50,23 +51,32 @@ scene.add(cube);
 // scene.add(helper);
 
 // Create a directional light
-const staticLight = new THREE.DirectionalLight(0xffffff, 1.0);
+const staticLight = new THREE.DirectionalLight(0xffffff, 5.0);
 staticLight.position.set(1, 1, 1);
 scene.add(staticLight);
-const staticLightHelper = new THREE.DirectionalLightHelper(staticLight);
-scene.add(staticLightHelper);
+// const staticLightHelper = new THREE.DirectionalLightHelper(staticLight);
+// scene.add(staticLightHelper);
 
-// Define the animation loop
 function animate() {
-  requestAnimationFrame(animate);
-
-  // Rotate the cube
-  cube.rotation.x += 0.005;
-  cube.rotation.y += 0.005;
-
-  // Render the scene with the camera
-  renderer.render(scene, camera);
+    requestAnimationFrame(animate);
+    renderer.render(scene, camera);
 }
 
-// Start the animation loop
+function rotate() {
+    sprite.visible = true;
+    requestAnimationFrame(rotate);
+    cube.rotation.x += 0.005;
+    cube.rotation.y += 0.005;
+    renderer.render(scene, camera);
+}
+
+document.addEventListener('keydown', (event) => {
+    console.log(event.key);
+    if (event.key === 'r') {
+        const id = requestAnimationFrame(animate);
+        cancelAnimationFrame(id);
+        rotate();
+    }
+});
+
 animate();

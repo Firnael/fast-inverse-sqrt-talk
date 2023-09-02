@@ -32,6 +32,7 @@ Ce talk est très fortement inspiré de [cette vidéo](https://www.youtube.com/w
 - Le petit jeu de voitures :
   - la voiture : https://opengameart.org/content/free-top-down-car-sprites-by-unlucky-studio
   - la route : https://opengameart.org/content/2d-top-down-highway-background
+- Tableau de Pythagore : J. Augustus Knapp, circa 1926
 
 ### Fonts
 
