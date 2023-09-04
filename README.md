@@ -34,6 +34,8 @@ Ce talk est très fortement inspiré de [cette vidéo](https://www.youtube.com/w
   - la route : https://opengameart.org/content/2d-top-down-highway-background
 - Tableau de Pythagore : J. Augustus Knapp, circa 1926
 - Photo des locaux de Softdisk : Par Dtobias — Travail personnel606 Common Street, Shreveport, Louisiana, 2007, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=4066443
+- "Middays Rest" - Unknown
+- "Boy eating Bread" - Albert Anker
 
 ### Fonts
 

@@ -14,7 +14,6 @@
     <div class="slides">
 
       <!-- 1. Introdution -->
-      <!-- Splash -->
       <section data-background-image="/1/splash.jpg" data-transition="fade">
         <h1 class="main-title r-fit-text">The (In)glorious Function</h1>
         <aside class="notes">
@@ -47,11 +46,11 @@
       </section>
 
       <!-- 2. Storytime -->
-      <section data-background-image="/2/pere-castor.jpeg">
+      <section data-background-image="/2/pere-castor.jpeg" data-transition="fade">
         <h2>2.<br />Storytime</h2>
         <h4>again !</h4>
       </section>
-      <section class="blurred" data-background-image="/2/pere-castor.jpeg">
+      <section data-background-image="/2/pere-castor.jpeg" class="blurred">
         <section>
           <img class="r-stretch" src="/2/softdisk-offices.jpeg" />
           <aside class="notes">
@@ -127,13 +126,18 @@
         <section>
           <img class="r-stretch" src="/2/id-software-team.webp">
           <aside class="notes">
-            Ce groupe se désignant lui même sous le nom de "Ideas From The Deep" est composé de 5 personnes : 
+            Ce groupe se désignant lui même sous le nom de "Ideas From The Deep" est composé de 5 personnes :
             - John Carmack (programmeur)
             - John Romero (programmeur)
             - Tom Hall (concepteur)
             - Adrian Carmack (artiste, pas du tout de la famille de John)
             - Jay Wilbur, le manager
           </aside>
+        </section>
+
+        <section>
+          https://www.vg247.com/how-a-super-mario-bros-3-pc-port-created-id-software
+          https://en.wikipedia.org/wiki/Adaptive_tile_refresh
         </section>
 
         <section>
@@ -163,11 +167,10 @@
       </section>
 
       <!-- 3. Cette fonction, qu'est-ce qu'elle fait ? -->
-      <section>
-        <section>
-          <h2>3.<br />La fonction</h2>
-        </section>
-
+      <section data-background-image="/3/TODO" data-transition="fade">
+        <h2>3.<br />La fonction</h2>
+      </section>
+      <section data-background-image="/3/TODO" class="blurred">
         <section data-transition="fade">
           <div class="big">
             \[f(x) = \frac{1}{\sqrt{x}}\]
@@ -223,7 +226,7 @@
               </pre>
             </div>
             <div class="item fragment">
-              <img class="above-right" src="/3/the-what.jpeg" />
+              <img class="abs top right" src="/3/the-what.jpeg" />
             </div>
           </div>
           <aside class="notes">
@@ -256,9 +259,12 @@
       </section>
 
       <!-- 4. Normaliser des vecteurs -->
-      <section>
+      <section data-background-image="/4/TODO" data-transition="fade">
+        <h2>4.<br />Normal mon gars</h2>
+      </section>
+      <section data-background-image="/4/TODO" class="blurred">
+
         <section>
-          <h2>4.<br />Normal mon gars</h2>
           <img src="/4/pretend-to-be-normal.png" />
           <aside class="notes">
             Tout ça c'est bien, mais pourquoi diable aurait-on besoin de calculer l'inverse de la racine carrée
@@ -305,15 +311,17 @@
           <div class="game" id="game-container"></div>
         </section>
 
+        <section>
+          https://fabiensanglard.net/quake3/renderer.php
+        </section>
+
       </section>
 
       <!-- 5. Le début de la fonction, et l'IEEE 754 -->
-      <section>
-
-        <section>
-          <h2>5.<br />C'est parti pour se PETER le crâne</h2>
-        </section>
-
+      <section data-background-image="/5/TODO" data-transition="fade">
+        <h2>5.<br />C'est parti pour se PETER le crâne</h2>
+      </section>
+      <section data-background-image="/5/TODO" class="blurred">
         <section>
           On va décrire le code de la fonction ligne par ligne.
         </section>
@@ -537,60 +545,139 @@
 
       </section>
 
-      <!-- 6. Log2(1+x) -->
-      <section>
-        <section>
-          <h2>6.<br />\[\log_2(1+x)\]</h2>
-        </section>
+      <!-- 6. Log2(1+x) et autre filouteries -->
+      <section data-background-image="/6/logarithms-book.jpeg" data-transition="fade" class="grey">
+        <h2>6.<br /><strong>\[\log_2(1+x)\]</strong></h2>
+      </section>
+      <section data-background-image="/6/logarithms-book.jpeg" class="blurred">
         <section>
           À ce stade du talk, laissez moi attirer votre attention sur un point important.
         </section>
       </section>
 
-      <!-- 7. Filouteries logarithmiques -->
-      <section>
+      <!-- 7. Le langage C en sueur -->
+      <section data-background-image="/7/en-sueur.png" data-transition="fade">
+        <h2>7.<br />Le langage C en sueur</h2>
+      </section>
+      <section data-background-image="/7/en-sueur.png" class="blurred">
         <section>
-          <h2>7.<br />Filouteries logarithmiques</h2>
+          TODO
         </section>
       </section>
 
-      <!-- 8. Le langage C en sueur -->
-      <section>
+      <!-- 8. What the fuck -->
+      <section data-background-image="/9/TODO" data-transition="fade">
+        <h2>9.<br />What the fuck</h2>
+      </section>
+      <section data-background-image="/9/TODO" class="blurred">
         <section>
-          <h2>8.<br />Le langage C en sueur</h2>
+          TODO
         </section>
       </section>
 
-      <!-- 9. What the fuck -->
-      <section>
+      <!-- 9. Ce bon vieux Newton -->
+      <section data-background-image="/10/newton-wallpaper.jpeg" data-transition="fade">
+        <br />
+        <h2>10.<br />Ce bon vieux Newton</h2>
+        <aside class="notes">
+          Et pour finir cet algorithme, on va parler d'une petite technique de coquin
+          qui nous vient de ce bon vieux Newton.
+        </aside>
+      </section>
+      <section data-background-image="/10/newton-wallpaper.jpeg" class="blurred">
         <section>
-          <h2>9.<br />What the fuck</h2>
+          <div class="ch">
+            <div class="item">
+              <img src="/10/isaac-newton-vertical.jpeg">
+            </div>
+            <div class="item fragment">
+              <img src="/10/manoir-woolsthorpe.jpeg">
+              <p>1642</p>
+            </div>
+          </div>
+          <aside class="notes">
+            Isaac Newton est né le 25 décembre 1642 au Manoir Woolsthorpe, dans le Lincolnshire, en Royaume d'Angleterre
+          </aside>
+        </section>
+
+        <section>
+          <img src="/10/paysans-bretons.jpeg" />
+          <aside class="notes">
+            Ses parents sont fermiers tous les deux, et son père meurt 3 mois avant sa naissance
+            suite à un manque de chance.
+          </aside>
+        </section>
+
+        <section>
+          <div class="ch">
+            <div class="item">
+              <img src="/10/boy-with-toast.jpeg">
+            </div>
+            <div class="item fragment">
+              <img src="/10/tartine.jpeg">
+              <img class="fragment" src="/10/pere-castor-nrv.jpeg" height="250px">
+            </div>
+          </div>
+          <aside class="notes">
+            Un jour qu'il a 5 ans, sa mère lui fait son petit déj et lui dit :
+            "Tu veux pas une tartine ? Pour étaler ta vie batard ?"
+          </aside>
+        </section>
+
+        <section>
+          <img class="r-stretch abs behind" src="/10/isaac-newton.jpeg" />
+          <div class="ch">
+            <div data-fragment-index="1" class="item small fragment">
+              <br />
+              <q class="bold">Invents gravity,<br />cannot attract anyone</q><br />- un internaute
+            </div>
+            <div class="item"></div>
+            <div data-fragment-index="2" class="item small fragment" style="padding-right: 40px;">
+              <br />
+              <br />
+              <br />
+              <br />
+              <q class="bold">C'est trop</q><br />- Isaac Newton
+            </div>
+            <img data-fragment-index="2" class="newtons-tear fragment" src="/10/tear.png" />
+          </div>
+          <aside class="notes">
+            Nan je rigole mais on a plus trop le temps, ça sera pour un autre talk
+          </aside>
+        </section>
+
+        <section>
+          <h3>La méthode dite de Newton</h3>
+          <h5>ou méthode de Newton-Raphson</h5>
+          <aside class="notes">
+            Ce qui nous intéresse, c'est
+          </aside>
+        </section>
+
+      </section>
+
+      <!-- 10. Conclusion -->
+      <section data-background-image="/11/quake-3-sarge.webp" data-transition="fade">
+        <h2>11.<br />Conclusion</h2>
+        <aside class="notes">
+          Pour conclure :
+          - qu'est ce qu'on a appris
+          - finalement, qui est à l'origine de ce bout de code ? (l'investigation)
+          - gain de temps ? (3 à 4 fois plus rapide)
+          - les jeux qui utilisent le même engine (Star Wars Jedi Outcast, etc)
+            - https://www.reddit.com/r/gaming/comments/vznc9v/do_you_remember_id_tech_3_engine_games_aka_quake/
+        </aside>
+      </section>
+      <section data-background-image="/11/quake-3-sarge.webp" class="blurred">
+        <section>
+          Concluons
         </section>
       </section>
 
-      <!-- 10. Ce bon vieux Newton -->
-      <section>
-        <section>
-          <h2>10.<br />Ce bon vieux Newton</h2>
-        </section>
-      </section>
-
-      <!-- 11. Conclusion -->
-      <section>
-        <section>
-          <h2>11.<br />Conclusion</h2>
-        </section>
-        <section>
-          Qu'est ce qu'on a appris
-        </section>
-      </section>
-
-      <!-- 12. Fin -->
-      <section>
-        <section>
-          <h1>Merci !</h1>
-          Distribution de paracétamol à la pause
-        </section>
+      <!-- 11. Fin -->
+      <section data-background-image="/1/cake-aux-olives.jpeg" data-transition="fade">
+        <h1>Merci !</h1>
+        <strong class="shadow">Distribution de paracétamol<br/>à la pause</strong>
       </section>
     </div> <!-- /slides -->
   </div> <!-- /reveal -->
