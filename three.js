@@ -51,7 +51,7 @@ scene.add(cube);
 // scene.add(helper);
 
 // Create a directional light
-const staticLight = new THREE.DirectionalLight(0xffffff, 5.0);
+const staticLight = new THREE.DirectionalLight(0xffffff, 3.0);
 staticLight.position.set(1, 1, 1);
 scene.add(staticLight);
 // const staticLightHelper = new THREE.DirectionalLightHelper(staticLight);

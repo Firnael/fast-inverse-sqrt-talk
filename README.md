@@ -36,6 +36,7 @@ Ce talk est très fortement inspiré de [cette vidéo](https://www.youtube.com/w
 - Photo des locaux de Softdisk : Par Dtobias — Travail personnel606 Common Street, Shreveport, Louisiana, 2007, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=4066443
 - "Middays Rest" - Unknown
 - "Boy eating Bread" - Albert Anker
+- Images de la pomme en 3D : https://zhuanlan.zhihu.com/p/516581450
 
 ### Fonts
 
