@@ -25,6 +25,9 @@
 .item {
     flex: 1;
 }
+.item-wide {
+    flex: 2;
+}
 
 .abs {
     position: absolute;
@@ -76,18 +79,27 @@
 
 /* Shadows & highlights */
 
+.shadow {
+    text-shadow: 1px 1px 2px black;
+}
+
 .highlight {
     filter: drop-shadow(.1rem .1rem .5rem #fff);
     box-shadow: none;
 }
 
-/* Typology */
+.highlight-gold {
+    filter: drop-shadow(.1rem .1rem .5rem #f6d569);
+    box-shadow: none;
+}
 
 h1.main-title {
     margin-top: 0px;
     color: #f5f5f5;
     text-shadow: 0px -2px 4px #fff, 0px -2px 10px #FF3, 0px -10px 20px #F90, 0px -20px 40px #C33;
 }
+
+/* Typology */
 
 .big {
     font-size: 2em;
@@ -105,8 +117,18 @@ h1.main-title {
     font-weight: bold;
 }
 
-.shadow {
-    text-shadow: 1px 1px 2px black;
+span.ieee-sign {
+    color: #e18127;
+}
+span.ieee-exponent {
+    padding-right: 536px;
+    color: #6eb25d;
+}
+span.ieee-mantissa {
+    color: #5791FF;
+}
+.bright {
+    color: #dbc191;
 }
 
 /* Custom position */
@@ -137,6 +159,11 @@ img.c-logo {
     left: 200px;
 }
 
+/* Images */
+img.max-head {
+    margin: 0px;
+}
+
 /* Code */
 
 code {
@@ -159,6 +186,16 @@ code.normal {
 
 code.type {
     color: #D19A66;
+}
+
+code.ieee-sign {
+    background-color: #e18127;
+}
+code.ieee-exponent {
+    background-color: #6eb25d;
+}
+code.ieee-mantissa {
+    background-color: #5791FF;
 }
 
 pre.wide {
@@ -188,6 +225,10 @@ pre.clean code {
     transition: all 0s ease;
 }
 
+.fragment.long {
+    transition: all 5s ease;
+}
+
 /* PhaserJS */
 .game {
     display: flex;
@@ -201,5 +242,4 @@ pre.clean code {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #222222;
 }

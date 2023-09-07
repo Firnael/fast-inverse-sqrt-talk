@@ -10,13 +10,12 @@ const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container
 // Set up the camera position
 camera.position.z = 4.5;
 
-const renderer = new THREE.WebGLRenderer();
+const renderer = new THREE.WebGLRenderer({ alpha: true });
 renderer.setSize(container.clientWidth, container.clientHeight);
-renderer.setClearColor(0x222222);
 container.appendChild(renderer.domElement);
 
 // Create a the "spotlight" sprite
-const spriteTexture = new THREE.TextureLoader().load('/cube-light/spotlight.png');
+const spriteTexture = new THREE.TextureLoader().load('/4/cube-light/spotlight.png');
 const spriteMaterial = new THREE.SpriteMaterial({ map: spriteTexture });
 const sprite = new THREE.Sprite(spriteMaterial);
 sprite.scale.set(1, 1, 1);
@@ -37,7 +36,7 @@ const textureUrls = [
     'jeremie_white.png',
     'lasouche_white.png'
 ];
-const textures = textureUrls.map((url) => textureLoader.load(`/cube-light/${url}`));
+const textures = textureUrls.map((url) => textureLoader.load(`/4/cube-light/${url}`));
 
 // Create an array of materials using the textures
 const materials = textures.map((texture) => {

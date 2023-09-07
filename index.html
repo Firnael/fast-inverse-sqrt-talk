@@ -14,8 +14,8 @@
     <div class="slides">
 
       <!-- 1. Introdution -->
-      <section data-background-image="/1/splash.jpg" data-transition="fade">
-        <h1 class="main-title r-fit-text">The (In)glorious Function</h1>
+      <section data-background-image="/1/splash.jpg" data-transition="fade" class="scrim grey">
+        <h1 class="main-title r-fit-text">The (In)glorious<br />Function</h1>
         <aside class="notes">
           Bonjour à tous, bienvenue à tous au MaxCamp 2023, pour ceux qui ne me connaissent pas
           je m'appelle Audren Burlot, et je suis honoré de démarrer la journée avec ce talk
@@ -165,7 +165,7 @@
 
       </section>
 
-      <!-- 3. Cette fonction, qu'est-ce qu'elle fait ? -->
+      <!-- 3. La fonction -->
       <section data-background-image="/3/the-function.jpeg" data-transition="fade" class="scrim darkblue">
         <h2>3.<br />La fonction</h2>
       </section>
@@ -179,7 +179,7 @@
           </aside>
         </section>
 
-        <section>
+        <section data-transition="fade">
           <div style="margin-left: 15%;" class="big">
             <pre class="c clean">
               <code class="fragment" data-trim>
@@ -259,42 +259,105 @@
 
       <!-- 4. Normaliser des vecteurs -->
       <section data-background-image="/4/blender.jpeg" data-transition="fade" class="scrim lightgrey">
-        <h2>4.<br />Tu as peur ?<br/>c'est normal</h2>
+        <h2>4.<br />Tu as peur ?<br />c'est normal</h2>
       </section>
       <section data-background-image="/4/blender.jpeg" class="blurred">
 
         <section>
-          <img src="/4/pretend-to-be-normal.png" />
+          <img class="r-stretch" src="/4/but-why.gif" />
           <aside class="notes">
             Tout ça c'est bien, mais pourquoi diable aurait-on besoin de calculer l'inverse de la racine carrée
             d'un nombre ?
-            Et bien tout simplement pour normaliser des vecteurs.
           </aside>
         </section>
 
-        <section>
-          <h3>Illustration par l'exemple</h3>
-          <h4>une belle brochette de vainqueurs</h4>
+        <section data-auto-animate>
+          <img class="fragment" src="/4/apple-1.png" />
+          <aside class="notes">
+            Pour comprendre, il faut comprendre comment fonctionne un moteur de jeu,
+            et en particulier la gestion de la lumière.
+
+            Lorsque vous importez un modèle 3D dans un moteur de jeu, il faut que le moteur sache comment
+            afficher ce modèle à l'écran.
+          </aside>
+        </section>
+
+        <section data-auto-animate>
+          <img src="/4/apple-1.png" height="300px" />
+          <img src="/4/apple-2.png" />
+        </section>
+
+        <section data-auto-animate>
           <div class="ch">
-            <div class="item"><img src="/4/tetes/alexo.png" /></div>
-            <div class="item"><img src="/4/tetes/erwann.png" /></div>
-            <div class="item"><img src="/4/tetes/fdu.png" /></div>
-            <div class="item"><img src="/4/tetes/greg.png" /></div>
-            <div class="item"><img src="/4/tetes/jeremie.png" /></div>
-            <div class="item"><img src="/4/tetes/lasouche.png" /></div>
+            <div class="item"><img data-id="1" src="/4/tetes/alexo.png" /></div>
+            <div class="item"><img data-id="2" src="/4/tetes/fdu.png" /></div>
+            <div class="item"><img data-id="3" src="/4/tetes/jeremie.png" /></div>
+            <div class="item"><img data-id="4" src="/4/tetes/greg.png" /></div>
+            <div class="item"><img data-id="5" src="/4/tetes/erwann.png" /></div>
+            <div class="item"><img data-id="6" src="/4/tetes/lasouche.png" /></div>
+          </div>
+        </section>
+        <section data-transition="fade" data-auto-animate>
+          <div class="ch">
+            <div class="cv"><!-- 1st row -->
+              <div class="item"></div>
+              <div class="item"><img class="max-head" data-id="1" src="/4/cube-light/alexo_white.png" /></div>
+              <div class="item"></div>
+            </div>
+            <div class="cv"><!-- 2nd row -->
+              <div class="item"><img class="max-head" data-id="2" src="/4/cube-light/fdu_white.png" /></div>
+              <div class="item"><img class="max-head" data-id="3" src="/4/cube-light/jeremie_white.png" /></div>
+              <div class="item"><img class="max-head" data-id="4" src="/4/cube-light/greg_white.png" /></div>
+            </div>
+            <div class="cv"><!-- 3rd row -->
+              <div class="item"></div>
+              <div class="item"><img class="max-head" data-id="5" src="/4/cube-light/erwann_white.png" /></div>
+              <div class="item"></div>
+            </div>
+            <div class="cv"><!-- 4th row -->
+              <div class="item"></div>
+              <div class="item"><img class="max-head" data-id="6" src="/4/cube-light/lasouche_white.png" /></div>
+              <div class="item"></div>
+            </div>
           </div>
         </section>
 
-        <section>
+        <section data-transition="fade">
           <div class="cube" id="three-animation"></div>
+        </section>
+
+        <section data-transition="fade">
+          <h4>Un vecteur "normal à un plan"</h4>
+          <div class="ch">
+            <div class="item-wide">
+              <blockquote class="fragment">
+                <q>
+                  Un vecteur <strong>non nul</strong>
+                  <br />de l'espace est <strong>normal</strong>
+                  <br />à un plan P
+                  <br />s'il est <strong>orthogonal</strong>
+                  <br />à deux vecteurs <strong>non colinéaires</strong> de P
+                </q>
+              </blockquote>
+            </div>
+            <div class="item">
+              <img src="/4/pretend-to-be-normal.png" />
+            </div>
+          </div>
+          <aside class="notes">
+            Le calcul de l'angle d'incidence de la lumière sur un objet nécessite de calculer la normale à la surface
+            Mais qu'est-ce que la normale ?
+            (définition)
+          </aside>
         </section>
 
         <section>
           <img src="/4/jerem-applati.png" />
           <aside class="notes">
             !!! BESOIN DU STYLET !!!
-            comment ça marche ? Pour calculer l'angle de la lumière, on a besoin d'une ligne perpendiculaire à Jérémie.
-            Jérémie est un plan (un bon plan), on cherche ce qu'on appelle le vecteur "normal" au plan.
+            Reprennons par exemple la face du cube qui est également la face de Jérémie.
+            Ici, Jérémie qui est un plan, un bon plan même si j'ose le dire
+            Un vecteur "normal" à Jérémie, est un vecteur perpendiculaire au plan.
           </aside>
         </section>
 
@@ -307,7 +370,23 @@
         </section>
 
         <section>
+          <img class="r-stretch" src="/4/vector-mag-dir.svg" />
+          <aside class="notes">
+            Normaliser des vecteurs est une opération très courante dans les moteurs de jeu.
+            Cela permet de séparer :
+            - la **direction** (vers où pointe-t-il)
+            - de la **magnitude** (la taille)
+            Voici un autre exemple pour illustrer ça :
+          </aside>
+        </section>
+
+        <section>
           <div class="game" id="game-container"></div>
+          <aside class="notes">
+            Admettons que je développe un petit jeu de course,
+            pour faire simple on va dire qu'on ne peut bouger que dans 8 directions.
+            Lorsque je bouge en haut,
+          </aside>
         </section>
 
         <section>
@@ -317,22 +396,19 @@
       </section>
 
       <!-- 5. Le début de la fonction, et l'IEEE 754 -->
-      <section data-background-image="/5/splash.jpg" data-transition="fade">
+      <section data-background-image="/5/splash.jpg" data-transition="fade" class="scrim darkblue">
         <h2>5.</h2>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <h3>They see me floatin<br/>They hatin</h3>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <h3>They see me floatin<br />They hatin</h3>
       </section>
       <section data-background-image="/5/splash.jpg" class="blurred">
-        <section>
-          On va décrire le code de la fonction ligne par ligne.
-        </section>
 
         <section data-auto-animate>
           <div class="cv">
@@ -417,7 +493,9 @@
               data-fragment-index="4">00000000 00000000 00000000 00000011</code>
             <code class="fragment current-visible instant bright"
               data-fragment-index="5">00000000 00000000 00000000 00000100</code>
-            <code class="fragment instant bright" data-fragment-index="6">01111111 11111111 11111111 11111111</code>
+            <code class="fragment current-visible instant bright"
+              data-fragment-index="6">01111111 11111111 11111111 11111111</code>
+            <code class="fragment instant bright" data-fragment-index="7">11111111 11111111 11111111 11111111</code>
           </div>
           <br />
           <div class="r-stack">
@@ -426,7 +504,8 @@
             <code class="fragment current-visible instant normal" data-fragment-index="3">2</code>
             <code class="fragment current-visible instant normal" data-fragment-index="4">3</code>
             <code class="fragment current-visible instant normal" data-fragment-index="5">4</code>
-            <code class="fragment instant normal" data-fragment-index="6">2147483647</code>
+            <code class="fragment current-visible instant normal" data-fragment-index="6">2147483647</code>
+            <code class="fragment instant normal" data-fragment-index="7">-2147483647</code>
           </div>
           <aside class="notes">
             Un long représente un entier (positif ou négatif) sur 32 bits.
@@ -544,11 +623,124 @@
         </section>
 
         <section>
-          <h4>Heureusement il y a la ...</h4>
-          <h1>IEEE 754</h1>
+          <h4>Heureusement il y a ...</h4>
+          <div class="r-stack">
+            <img class="fragment current-visible instant" src="/5/findus.png" />
+            <div class="fragment instant">
+              <h3>La norme</h3>
+              <h1 class="highlight-gold">IEEE 754</h1>
+            </div>
+          </div>
           <aside class="notes">
+            Heureusement il y'a Fiiiiiinnnnnduuuuu ... la norme IEEE 754
             C'est ce que se sont dit des gens pour ça que des gens plutôt malins, des gens de l'IEEE
           </aside>
+        </section>
+
+        <section>
+          <img src="/5/IEEE-logo.png" />
+          <p class="fragment"><strong class="small">Institute of Electrical and Electronics Engineers</strong></p>
+          <aside class="notes">
+            De son nom complet, **l'Institute of Electrical and Electronics Engineers**,
+            c'est une organisation internationale qui élabore des normes dans divers domaines, dont l'informatique.
+          </aside>
+        </section>
+
+        <section>
+          <div class="ch">
+            <div class="item-wide fragment">
+              <img src="/5/aeei-logo.png" width="100%" />
+              <p class="small">
+                <strong>AIEE</strong>
+                <br />American Institute of Electrical Engineers
+                <br /><strong>1884</strong>
+              </p>
+            </div>
+            <div class="item fragment">
+              <br /><br />
+              <h1>+</h1>
+            </div>
+            <div class="item-wide fragment">
+              <img src="/5/ire-logo.png" />
+              <p class="small">
+                <strong>IRE</strong>
+                <br />Institute of Radio Engineers
+                <br /><strong>1912</strong>
+              </p>
+            </div>
+          </div>
+          <aside class="notes">
+            Elle fut fondée en 1963 suite à la fusion de deux instituts américains :
+            - l'AIEE : L'American Institute of Electrical Engineers
+            - l'IRE : L'Institute of Radio Engineers
+          </aside>
+        </section>
+
+        <section>
+          <h5>IEEE 754</h5>
+          <h4><q>The IEEE Standard for<br/><span class="bright">Floating-Point Arithmetic</span></q></h4>
+          <p class="fragment">
+            Fondée sur deux notions :
+            <br/>
+            - la notation scientifique
+            <br/>
+            - le système binaire (ou base 2)
+          </p>
+        </section>
+
+        <section>
+          <h4>Rappels sur la notation dite "scientifique" des nombres en base 10</h4>
+          <p>
+            Comprend deux parties :
+            <br/>
+
+              un nombre décimal n, positif ou négatif, dont la valeur absolue est comprise entre 1 inclus et 10 exclus ; 1 ≤ n &lt; 10 ;
+            <br/>
+              une puissance entière de 10, a ; sous la forme « n × 10a ».
+            <br/>
+            Par exemple :
+
+              1 en écriture scientifique se note « 1 × 100 » ;
+              -85 en écriture scientifique se note « -8,5 × 101 » ;
+              0,012 3 en écriture scientifique se note « 1,23 × 10−2 ».
+          </p>
+        </section>
+
+        <section>
+          <div class="cv">
+            <div class="item">
+              <span data-fragment-index="3" class="fragment bold ieee-exponent">exponent</span>
+            </div>
+            <div class="item">
+              <div class="r-stack">
+                <div data-fragment-index="1" class="fragment current-visible instant">
+                  <code>0</code> <code>00000000</code> <code>00000000000000000000000</code>
+                </div>
+                <div data-fragment-index="2" class="fragment current-visible instant">
+                  <code class="ieee-sign">0</code> <code>00000000</code> <code>00000000000000000000000</code>
+                </div>
+                <div data-fragment-index="3" class="fragment current-visible instant">
+                  <code class="ieee-sign">0</code> <code class="ieee-exponent">00000000</code>
+                  <code>00000000000000000000000</code>
+                </div>
+                <div data-fragment-index="4" class="fragment instant">
+                  <code class="ieee-sign">0</code> <code class="ieee-exponent">00000000</code> <code
+                    class="ieee-mantissa">00000000000000000000000</code>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="ch">
+                <div data-fragment-index="2" class="item fragment">
+                  <span class="bold ieee-sign">sign bit</span>
+                </div>
+                <div class="item"><!----></div>
+                <div data-fragment-index="4" class="item fragment">
+                  <span class="bold ieee-mantissa">mantissa</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
 
       </section>
