@@ -7,7 +7,7 @@
 
 @font-face {
     font-family: FiraCode;
-    src: url(./fonts/Fira_Code_v6.2/ttf/FiraCode-Regular.ttf);
+    src: url(./fonts/Fira_Code_v6.2/ttf/FiraCode-SemiBold.ttf);
 }
 
 /* Layout */
@@ -99,7 +99,7 @@ h1.main-title {
     text-shadow: 0px -2px 4px #fff, 0px -2px 10px #FF3, 0px -10px 20px #F90, 0px -20px 40px #C33;
 }
 
-/* Typology */
+/* Typography */
 
 .big {
     font-size: 2em;
@@ -117,16 +117,54 @@ h1.main-title {
     font-weight: bold;
 }
 
+.text-left {
+    text-align: left;
+}
+
+span.base-2-7 {
+    color: rgb(253, 54, 54);
+}
+span.base-2-5 {
+    color: rgb(233, 95, 49);
+}
+span.base-2-3 {
+    color: rgb(233, 159, 49);
+}
+span.base-2-1 {
+    color: rgb(230, 233, 49);
+}
+
 span.ieee-sign {
-    color: #e18127;
+    color: #e4964d;
 }
 span.ieee-exponent {
-    padding-right: 536px;
     color: #6eb25d;
 }
 span.ieee-mantissa {
     color: #5791FF;
 }
+span.ieee-padded {
+    padding-right: 536px;
+}
+span.ieee-exponent-range {
+    position: absolute;
+    font-size: smaller;
+    top: 70px;
+    left: 105px;
+}
+span.ieee-mantissa-range {
+    position: absolute;
+    font-size: smaller;
+    top: 70px;
+    left: 320px;
+}
+span.ieee-mantissa-range-2 {
+    position: absolute;
+    font-size: smaller;
+    top: 90px;
+    left: 320px;
+}
+
 .bright {
     color: #dbc191;
 }
@@ -167,7 +205,7 @@ img.max-head {
 /* Code */
 
 code {
-    font-family: FiraCode;
+    font-family: FiraCode !important;
 }
 
 code.title {
@@ -189,7 +227,7 @@ code.type {
 }
 
 code.ieee-sign {
-    background-color: #e18127;
+    background-color: #e4964d;
 }
 code.ieee-exponent {
     background-color: #6eb25d;

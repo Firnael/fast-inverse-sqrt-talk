@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/ico" href="favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="https://kit.fontawesome.com/d2d077b940.js" crossorigin="anonymous"></script>
+  <!-- <script src="https://kit.fontawesome.com/d2d077b940.js" crossorigin="anonymous"></script> -->
   <title>Fast Inverse Square Root - The Talk</title>
 </head>
 
@@ -678,38 +678,120 @@
 
         <section>
           <h5>IEEE 754</h5>
-          <h4><q>The IEEE Standard for<br/><span class="bright">Floating-Point Arithmetic</span></q></h4>
+          <h4><q>The IEEE Standard for<br /><span class="bright">Floating-Point Arithmetic</span></q></h4>
+          <br />
           <p class="fragment">
             Fondée sur deux notions :
-            <br/>
-            - la notation scientifique
-            <br/>
-            - le système binaire (ou base 2)
+          <ol>
+            <li class="fragment"><strong data-id="1">la notation scientifique 🧑‍🔬</strong></li>
+            <li class="fragment"><strong>le système binaire 0️⃣1️⃣</strong></li>
+          </ol>
           </p>
         </section>
 
         <section>
-          <h4>Rappels sur la notation dite "scientifique" des nombres en base 10</h4>
-          <p>
-            Comprend deux parties :
-            <br/>
-
-              un nombre décimal n, positif ou négatif, dont la valeur absolue est comprise entre 1 inclus et 10 exclus ; 1 ≤ n &lt; 10 ;
-            <br/>
-              une puissance entière de 10, a ; sous la forme « n × 10a ».
-            <br/>
-            Par exemple :
-
-              1 en écriture scientifique se note « 1 × 100 » ;
-              -85 en écriture scientifique se note « -8,5 × 101 » ;
-              0,012 3 en écriture scientifique se note « 1,23 × 10−2 ».
-          </p>
+          <h4>Rappel sur la notation dite "scientifique" des nombres <span class="bright">en base 10</span> :</h4>
+          <div class="fragment big"><span class="ieee-mantissa">$4,36$</span><span class="ieee-exponent">$\times
+              10^{2}$</span></div>
+          <br />
+          <div class="ch">
+            <div class="item fragment">
+              Un nombre décimal <span class="ieee-mantissa">$n$</span> <br />tel que :
+              <br />
+              $1 \leq$ <span class="ieee-mantissa">$n$</span> $&lt; 10$
+            </div>
+            <div class="item fragment">
+              une <span class="ieee-exponent">puissance</span> entière<br />de <span class="ieee-exponent">$10$</span>
+            </div>
+          </div>
+          <aside class="notes">
+            Comprend 2 parties :
+            - un nombre décimal, positif ou négatif, dont la valeur absolue est comprise entre 1 inclus et 10 exclus
+          </aside>
         </section>
 
         <section>
+          <h4>En binaire, on passe d'une « colonne » à une autre en multipliant ou en divisant par
+            <span class="bright">une puissance de 2</span> :
+          </h4>
+          <p data-fragment-index="1" class="fragment">Exemple avec $170$</p>
+          <div class="r-stack">
+            <div data-fragment-index="3" class="ch fragment">
+              <div class="item"><code>1</code><br /><span data-fragment-index="4"
+                  class="fragment base-2-7">$2^{7}$</span></div>
+              <div class="item"><code>0</code><br /><span data-fragment-index="5" class="fragment">$2^{6}$</span></div>
+              <div class="item"><code>1</code><br /><span data-fragment-index="6"
+                  class="fragment base-2-5">$2^{5}$</span></div>
+              <div class="item"><code>0</code><br /><span data-fragment-index="7" class="fragment">$2^{4}$</span></div>
+              <div class="item"><code>1</code><br /><span data-fragment-index="8"
+                  class="fragment base-2-3">$2^{3}$</span></div>
+              <div class="item"><code>0</code><br /><span data-fragment-index="9" class="fragment">$2^{2}$</span></div>
+              <div class="item"><code>1</code><br /><span data-fragment-index="10"
+                  class="fragment base-2-1">$2^{1}$</span></div>
+              <div class="item"><code>0</code><br /><span data-fragment-index="11" class="fragment">$2^{0}$</span></div>
+            </div>
+          </div>
+          <br />
+          <div class="ch">
+            <div data-fragment-index="4" class="fragment item"><span class="base-2-7">$128$</span></div>
+            <div data-fragment-index="5" class="fragment item"><span>$+$ $0$</span></div>
+            <div data-fragment-index="6" class="fragment item"><span class="base-2-5">$+$ $32$</span></div>
+            <div data-fragment-index="7" class="fragment item"><span>$+$ $0$</span></div>
+            <div data-fragment-index="8" class="fragment item"><span class="base-2-3">$+$ $8$</span></div>
+            <div data-fragment-index="9" class="fragment item"><span>$+$ $0$</span></div>
+            <div data-fragment-index="10" class="fragment item"><span class="base-2-1">$+$ $2$</span></div>
+            <div data-fragment-index="11" class="fragment item"><span>$+$ $0$</span></div>
+          </div>
+          <div class="fragment">
+            $= 170$
+          </div>
+          <aside class="notes">
+            En binaire, on passe d'une « colonne » à une autre en multipliant ou en divisant par une puissance de 2.
+            Exemple avec 170.
+          </aside>
+        </section>
+
+        <section>
+          <h4>Application de la notation scientifique <br /><span class="bright">en base 2</span> :</h4>
+          <div class="ch">
+            <div class="item fragment">
+              $3$ en binaire <code class="bright">11</code>&nbsp;:
+              <br />
+              <span class="ieee-mantissa">$1,1$</span><span class="ieee-exponent">$\times 2^1$</span>
+            </div>
+            <div class="item fragment">
+              $0,75$ en binaire <code class="bright">0,11</code>&nbsp;:
+              <br />
+              <span class="ieee-mantissa">$1.1$</span><span class="ieee-exponent">$\times 2^{-1}$</span>
+            </div>
+          </div>
+          <br />
+          <div class="ch">
+            <div class="item fragment">
+              Un nombre décimal <span class="ieee-mantissa">$n$</span> <br />tel que :
+              <br />
+              $1 \leq$ <span class="ieee-mantissa">$n$</span> $&lt; 2$
+            </div>
+            <div class="item fragment">
+              une <span class="ieee-exponent">puissance</span> entière<br />de <span class="ieee-exponent">$2$</span>
+            </div>
+          </div>
+          <aside class="notes">
+            On peut donc représenter des nombres binaire avec cette notation scientifique de la même manière qu'en base
+            10.
+            La base a changée (on est passé de 10 à 2), mais le reste fonctionne de la même manière.
+            Important : la mantisse est comprise entre 1 inclus et 10 (donc 2) exclus; 1 ≤ _n_ &lt; 2, sa
+            -> sa partie entière est donc toujours 1
+          </aside>
+        </section>
+
+        <!-- Sign-bit, exponent & mantissa -->
+        <section>
+          <div>✨ Un float selon la norme IEEE 754 ✨</div>
+          <br />
           <div class="cv">
             <div class="item">
-              <span data-fragment-index="3" class="fragment bold ieee-exponent">exponent</span>
+              <span data-fragment-index="3" class="fragment bold ieee-exponent ieee-padded">exponent</span>
             </div>
             <div class="item">
               <div class="r-stack">
@@ -720,11 +802,11 @@
                   <code class="ieee-sign">0</code> <code>00000000</code> <code>00000000000000000000000</code>
                 </div>
                 <div data-fragment-index="3" class="fragment current-visible instant">
-                  <code class="ieee-sign">0</code> <code class="ieee-exponent">00000000</code>
+                  <code class="ieee-sign">0</code> <code class="ieee-exponent ieee-padded">00000000</code>
                   <code>00000000000000000000000</code>
                 </div>
                 <div data-fragment-index="4" class="fragment instant">
-                  <code class="ieee-sign">0</code> <code class="ieee-exponent">00000000</code> <code
+                  <code class="ieee-sign">0</code> <code class="ieee-exponent ieee-padded">00000000</code> <code
                     class="ieee-mantissa">00000000000000000000000</code>
                 </div>
               </div>
@@ -741,6 +823,310 @@
               </div>
             </div>
           </div>
+          <div data-fragment-index="1" class="fragment fade-in-then-semi-out"><strong>32bits</strong></div>
+        </section>
+
+        <!-- Explications détaillées de la normalisation -->
+        <section>
+          <div class="r-stack">
+            <div data-fragment-index="1" class="fragment current-visible instant">
+              <code class="ieee-sign">Sign-bit</code>
+            </div>
+            <div data-fragment-index="4" class="fragment current-visible instant">
+              <code class="ieee-exponent">Exponent</code>
+            </div>
+            <div data-fragment-index="13" class="fragment current-visible instant">
+              <code class="ieee-mantissa">Mantissa</code>
+            </div>
+          </div>
+          <br/>
+          <div class="r-stack">
+            <div data-fragment-index="1" class="fragment current-visible instant">
+              <code><span class="ieee-sign">0</span></code> <code>________</code> <code>_______________________</code>
+            </div>
+            <div data-fragment-index="2" class="fragment current-visible instant">
+              <code><span class="ieee-sign">1</span></code> <code>________</code> <code>_______________________</code>
+            </div>
+            <div data-fragment-index="3" class="fragment current-visible instant">
+              <code><span class="ieee-sign">0</span></code> <code>________</code> <code>_______________________</code>
+            </div>
+            <div data-fragment-index="4" class="fragment current-visible instant">
+              <code><span class="ieee-sign">0</span></code> <code><span class="ieee-exponent">00000001</span></code>
+              <code>_______________________</code>
+            </div>
+            <div data-fragment-index="5" class="fragment current-visible instant">
+              <code><span class="ieee-sign">0</span></code> <code><span class="ieee-exponent">00000010</span></code>
+              <code>_______________________</code>
+            </div>
+            <div data-fragment-index="6" class="fragment current-visible instant">
+              <code><span class="ieee-sign">0</span></code> <code><span class="ieee-exponent">00000011</span></code>
+              <code>_______________________</code>
+            </div>
+            <div data-fragment-index="7" class="fragment current-visible instant">
+              <code><span class="ieee-sign">0</span></code> <code><span class="ieee-exponent">00000100</span></code>
+              <code>_______________________</code>
+            </div>
+            <div data-fragment-index="8" class="fragment current-visible instant">
+              <span class="ieee-exponent ieee-exponent-range bold"><code>[0 255]</code></span>
+              <code><span class="ieee-sign">0</span></code> <code><span class="ieee-exponent">00000100</span></code>
+              <code>_______________________</code>
+            </div>
+            <div data-fragment-index="9" class="fragment current-visible instant">
+              <span class="ieee-exponent ieee-exponent-range bold"><code>[-127 128]</code></span>
+              <code><span class="ieee-sign">0</span></code> <code><span class="ieee-exponent">00000100</span></code>
+              <code>_______________________</code>
+            </div>
+            <div data-fragment-index="10" class="fragment current-visible instant">
+              <code><span class="ieee-sign">0</span></code> <code><span class="ieee-exponent">00000100</span></code>
+              <code>_______________________</code>
+            </div>
+            <div data-fragment-index="11" class="fragment current-visible instant">
+              <code><span class="ieee-sign">0</span></code> <code><span class="ieee-exponent">10000100</span></code>
+              <code>_______________________</code>
+            </div>
+            <div data-fragment-index="12" class="fragment current-visible instant">
+              <code><span class="ieee-sign">0</span></code> <code><span class="ieee-exponent">10000100</span></code>
+              <code>_______________________</code>
+            </div>
+            <div data-fragment-index="13" class="fragment current-visible instant">
+              <code><span class="ieee-sign">0</span></code> <code><span class="ieee-exponent">10000100</span></code>
+              <code><span class="ieee-mantissa">00000000000000000000000</span></code>
+            </div>
+            <div data-fragment-index="14" class="fragment current-visible instant">
+              <span
+                class="ieee-mantissa ieee-mantissa-range bold"><code>[0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2²³-1]</code></span>
+              <code><span class="ieee-sign">0</span></code> <code><span class="ieee-exponent">10000100</span></code>
+              <code><span class="ieee-mantissa">00000000000000000000000</span></code>
+            </div>
+            <div data-fragment-index="15" class="fragment current-visible instant">
+              <span
+                class="ieee-mantissa ieee-mantissa-range bold"><code>[1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2]</code></span>
+              <code><span class="ieee-sign">0</span></code> <code><span class="ieee-exponent">10000100</span></code>
+              <code><span class="ieee-mantissa">0.0000000000000000000000</span></code>
+            </div>
+            <div data-fragment-index="16" class="fragment current-visible instant">
+              <code><span class="ieee-sign">0</span></code> <code><span class="ieee-exponent">10000100</span></code>
+              <code><span class="ieee-mantissa">0.0000000000000000000000</span></code>
+            </div>
+            <div data-fragment-index="17" class="fragment current-visible instant">
+              <code><span class="ieee-sign">0</span></code> <code><span class="ieee-exponent">10000100</span></code>
+              <code><span class="ieee-mantissa">1.0000000000000000000000</span></code>
+            </div>
+            <div data-fragment-index="18" class="fragment current-visible instant">
+              <code><span class="ieee-sign">0</span></code> <code><span class="ieee-exponent">10000100</span></code>
+              <code><span class="ieee-mantissa">1.11111111111111111111111</span></code>
+            </div>
+          </div>
+          <br />
+          <div class="r-stack">
+            <div data-fragment-index="1" class="fragment current-visible instant">
+              <span class="ieee-sign">$+$</span> $x$
+            </div>
+            <div data-fragment-index="2" class="fragment current-visible instant">
+              <span class="ieee-sign">$-$</span> $x$
+            </div>
+            <div data-fragment-index="3" class="fragment current-visible instant">
+              <span class="ieee-sign">$+$</span> $x$
+            </div>
+            <div data-fragment-index="4" class="fragment current-visible instant">
+              <span class="ieee-sign">$+$</span> $x$<span class="ieee-exponent">$\times 2^{1}$</span>
+            </div>
+            <div data-fragment-index="5" class="fragment current-visible instant">
+              <span class="ieee-sign">$+$</span> $x$<span class="ieee-exponent">$\times 2^{2}$</span>
+            </div>
+            <div data-fragment-index="6" class="fragment current-visible instant">
+              <span class="ieee-sign">$+$</span> $x$<span class="ieee-exponent">$\times 2^{3}$</span>
+            </div>
+            <div data-fragment-index="7" class="fragment current-visible instant">
+              <span class="ieee-sign">$+$</span> $x$<span class="ieee-exponent">$\times 2^{4}$</span>
+            </div>
+            <div data-fragment-index="8" class="fragment current-visible instant">
+              <span class="ieee-sign">$+$</span> $x$<span class="ieee-exponent">$\times 2^{4}$</span>
+            </div>
+            <div data-fragment-index="9" class="fragment current-visible instant">
+              <span class="ieee-sign">$+$</span> $x$<span class="ieee-exponent">$\times 2^{4}$</span>
+            </div>
+            <div data-fragment-index="10" class="fragment current-visible instant">
+              <span class="ieee-sign">$+$</span> $x$<span class="ieee-exponent">$\times 2^{4-127}$</span>
+            </div>
+            <div data-fragment-index="11" class="fragment current-visible instant">
+              <span class="ieee-sign">$+$</span> $x$<span class="ieee-exponent">$\times 2^{131-127}$</span>
+            </div>
+            <div data-fragment-index="12" class="fragment current-visible instant">
+              <span class="ieee-sign">$+$</span> $x$<span class="ieee-exponent">$\times 2^{4}$</span>
+            </div>
+            <div data-fragment-index="13" class="fragment current-visible instant">
+              <span class="ieee-sign">$+$</span> <span class="ieee-mantissa">$0,00$</span> <span
+                class="ieee-exponent">$\times 2^{4}$</span>
+            </div>
+            <div data-fragment-index="14" class="fragment current-visible instant">
+              <span class="ieee-sign">$+$</span> <span class="ieee-mantissa">$0,00$</span> <span
+                class="ieee-exponent">$\times 2^{4}$</span>
+            </div>
+            <div data-fragment-index="15" class="fragment current-visible instant">
+              <span class="ieee-sign">$+$</span> <span class="ieee-mantissa">$0,00$</span> <span
+                class="ieee-exponent">$\times 2^{4}$</span>
+            </div>
+            <div data-fragment-index="16" class="fragment current-visible instant">
+              <span class="ieee-sign">$+$</span> <span class="ieee-mantissa">$0,00$</span> <span
+                class="ieee-exponent">$\times 2^{4}$</span>
+            </div>
+            <div data-fragment-index="17" class="fragment current-visible instant">
+              <span class="ieee-sign">$+$</span> <span class="ieee-mantissa">$1,00$</span> <span
+                class="ieee-exponent">$\times 2^{4}$</span>
+            </div>
+            <div data-fragment-index="18" class="fragment current-visible instant">
+              <span class="ieee-sign">$+$</span> <span class="ieee-mantissa">$1,99$</span> <span
+                class="ieee-exponent">$\times 2^{4}$</span>
+            </div>
+          </div>
+          <aside class="notes">
+            Les derniers 23 bits sont ce qu'on appelle la mantisse, du latin "mantissa" :
+            signifiant "surplus" (en nombre, en poids, en monnaie…), augmentation, supplément, reste, ou familièrement
+            "rabiot"
+            Cela nous donne un nombre compris entre 0 et 2^23 -1. Ce n'est pas ce qu'on veut.
+
+            Nous, on veut un nombre entre 1 et 1,9999 (2 exclus)
+            On pourrait mettre une virgule après le premier chiffre, mais ça serait du gâchis.
+            Pourquoi ça ?
+          </aside>
+        </section>
+
+        <!-- En binaire, le premier digit est toujours '1' en notation scientifique -->
+        <section>
+          <div class="ch">
+            <div class="item small bold">
+              Décimal
+            </div>
+            <div class="item small bold">
+              Binaire
+            </div>
+            <div class="item small bold">
+              Scientifique base 2
+            </div>
+          </div>
+          <br />
+          <div class="ch fragment">
+            <div class="item">
+              <span>$3$</span>
+            </div>
+            <div class="item">
+              <code>11</code>
+            </div>
+            <div class="item">
+              <span class="ieee-mantissa">$1,1$</span><span class="ieee-exponent">$\times 2^1$</span>
+            </div>
+          </div>
+          <br />
+          <div class="ch fragment">
+            <div class="item">
+              $0,75$
+            </div>
+            <div class="item">
+              <code>0,11</code>
+            </div>
+            <div class="item">
+              <span class="ieee-mantissa">$1.1$</span><span class="ieee-exponent">$\times 2^{-1}$</span>
+            </div>
+          </div>
+          <br />
+          <div class="ch fragment">
+            <div class="item">
+              $4,625$
+            </div>
+            <div class="item">
+              <code>101,101</code>
+            </div>
+            <div class="item">
+              <span class="ieee-mantissa">$1.00101$</span><span class="ieee-exponent">$\times 2^{2}$</span>
+            </div>
+          </div>
+          <aside class="notes">
+            En notation scientifique, le premier digit d'un nombre est par définition différent de 0.
+            Hors en base 2, il n'existe qu'un chiffre différent de 0 : 1 !
+            Si on sait que le 1er chiffre sera toujours 1, cela ne sert à rien de le stocker.
+          </aside>
+        </section>
+
+        <!-- Suite et fin explications -->
+        <section>
+          <div data-fragment-index="6" class="fragment instant">
+            <h3>IEEE 754</h3>
+          </div>
+          <br/>
+          <div class="r-stack">
+            <div data-fragment-index="1" class="fragment current-visible instant">
+              <code><span class="ieee-sign">0</span></code> <code><span class="ieee-exponent">10000100</span></code>
+              <code><span class="ieee-mantissa">0.0000000000000000000000</span></code>
+            </div>
+            <div data-fragment-index="2" class="fragment current-visible instant">
+              <code><span class="ieee-sign">0</span></code> <code><span class="ieee-exponent">10000100</span></code>
+              <code><span class="ieee-mantissa">.00000000000000000000000</span></code>
+            </div>
+            <div data-fragment-index="3" class="fragment current-visible instant">
+              <span
+                class="ieee-mantissa ieee-mantissa-range-2 bold"><code>[0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1]</code></span>
+              <code><span class="ieee-sign">0</span></code> <code><span class="ieee-exponent">10000100</span></code>
+              <code><span class="ieee-mantissa">.00000000000000000000000</span></code>
+            </div>
+            <div data-fragment-index="4" class="fragment current-visible instant">
+              <span
+                class="ieee-mantissa ieee-mantissa-range-2 bold"><code>[1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2]</code></span>
+              <code><span class="ieee-sign">0</span></code> <code><span class="ieee-exponent">10000100</span></code>
+              <code><span class="ieee-mantissa">.00000000000000000000000</span></code>
+            </div>
+            <div data-fragment-index="5" class="fragment current-visible instant">
+              <span
+                class="ieee-mantissa ieee-mantissa-range-2 bold"><code>[1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2]</code></span>
+              <code><span class="ieee-sign">0</span></code> <code><span class="ieee-exponent">10000100</span></code>
+              <code><span class="ieee-mantissa">.11111111111111111111111</span></code>
+            </div>
+            <div data-fragment-index="6" class="fragment instant">
+              <code><span class="ieee-sign">0</span></code> <code><span class="ieee-exponent">10000100</span></code>
+              <code><span class="ieee-mantissa">.11111111111111111111111</span></code>
+            </div>
+          </div>
+          <br/>
+          <div class="r-stack">
+            <div data-fragment-index="1" class="fragment current-visible instant">
+              <span class="ieee-sign">$+$</span> <span class="ieee-mantissa">$0,00$</span> <span
+                class="ieee-exponent">$\times 2^{4}$</span>
+            </div>
+            <div data-fragment-index="2" class="fragment current-visible instant">
+              <span class="ieee-sign">$+$</span> <span class="ieee-mantissa">$0,00$</span> <span
+                class="ieee-exponent">$\times 2^{4}$</span>
+            </div>
+            <div data-fragment-index="3" class="fragment current-visible instant">
+              <span class="ieee-sign">$+$</span> <span class="ieee-mantissa">$0,00$</span> <span
+                class="ieee-exponent">$\times 2^{4}$</span>
+            </div>
+            <div data-fragment-index="4" class="fragment current-visible instant">
+              <span class="ieee-sign">$+$</span> $1$<span class="ieee-mantissa">$,00$</span> <span
+                class="ieee-exponent">$\times 2^{4}$</span>
+            </div>
+            <div data-fragment-index="5" class="fragment current-visible instant">
+              <span class="ieee-sign">$+$</span> $1$<span class="ieee-mantissa">$,99$</span> <span
+                class="ieee-exponent">$\times 2^{4}$</span>
+            </div>
+            <div data-fragment-index="6" class="fragment instant">
+              <span class="ieee-sign">$+$</span> $1 +$<span class="ieee-mantissa">$M$</span> <span
+                class="ieee-exponent">$\times 2^{E-127}$</span>
+            </div>
+          </div>
+          <div data-fragment-index="7" class="fragment instant">
+            <img src="/5/nice.gif"/>
+          </div>
+          <aside class="notes">
+            En ajoutant une virgule devant le 1er chiffre,
+            on passe d'un nombre compris entre 0 et 2^23 -1 à un nombre compris entre 0 et 1
+
+            En ajoutant un '1' arbitraire à notre nombre,
+            on passe d'un nombre compris entre 0 et 1 à un nombre compris entre 1 et 2.
+          </aside>
+        </section>
+
+        <section>
+
         </section>
 
       </section>
