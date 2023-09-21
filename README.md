@@ -7,12 +7,15 @@ Ce talk est très fortement inspiré de [cette vidéo](https://www.youtube.com/w
 ## Plan de la présentation
 
 1. Introduction
-2. Story time
-3. La fonction
-  - 1/sqrt(x)
+2. It's story time !
+3. La fonction 1/sqrt(x)
 4. Normaliser des vecteurs
-  - Pourquoi c'est lent ?
-6. Petons nous le crâne
+5. La reprsentation binaire des nombres flottants
+6. Log2(1+x)
+7. Le langage C en sueur
+8. What the f*ck
+9. Ce bon vieux Newton
+10. Conclusion
 
 ## Démarrer la prez en local
 

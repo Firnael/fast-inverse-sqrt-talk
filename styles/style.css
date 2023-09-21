@@ -25,6 +25,7 @@
 .item {
     flex: 1;
 }
+
 .item-wide {
     flex: 2;
 }
@@ -79,6 +80,10 @@
 
 /* Shadows & highlights */
 
+img {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
 .shadow {
     text-shadow: 1px 1px 2px black;
 }
@@ -101,16 +106,24 @@ h1.main-title {
 
 /* Typography */
 
-.big {
-    font-size: 2em;
+.smaller {
+    font-size: 0.6em;
 }
 
 .small {
     font-size: 0.8em;
 }
 
-.smaller {
-    font-size: 0.6em;
+.regular {
+    font-size: 1.2em;
+}
+
+.medium {
+    font-size: 1.4em;
+}
+
+.big {
+    font-size: 2em;
 }
 
 .bold {
@@ -121,15 +134,26 @@ h1.main-title {
     text-align: left;
 }
 
+.opaque {
+    opacity: 1;
+}
+
+.semi-trans {
+    opacity: 0.3;
+}
+
 span.base-2-7 {
     color: rgb(253, 54, 54);
 }
+
 span.base-2-5 {
     color: rgb(233, 95, 49);
 }
+
 span.base-2-3 {
     color: rgb(233, 159, 49);
 }
+
 span.base-2-1 {
     color: rgb(230, 233, 49);
 }
@@ -137,36 +161,50 @@ span.base-2-1 {
 span.ieee-sign {
     color: #e4964d;
 }
+
 span.ieee-exponent {
     color: #6eb25d;
 }
+
 span.ieee-mantissa {
     color: #5791FF;
 }
+
 span.ieee-padded {
     padding-right: 536px;
 }
+
 span.ieee-exponent-range {
     position: absolute;
     font-size: smaller;
     top: 70px;
     left: 105px;
 }
+
 span.ieee-mantissa-range {
     position: absolute;
     font-size: smaller;
     top: 70px;
     left: 320px;
 }
+
 span.ieee-mantissa-range-2 {
     position: absolute;
     font-size: smaller;
     top: 90px;
-    left: 320px;
+    left: 305px;
 }
 
 .bright {
     color: #dbc191;
+}
+
+.emphas {
+    color: #33becd;
+}
+
+.address {
+    color: rgb(72, 193, 129);
 }
 
 /* Custom position */
@@ -197,9 +235,30 @@ img.c-logo {
     left: 200px;
 }
 
+img.magic-shia {
+    position: absolute;
+    top: 30px;
+    right: 300px;
+}
+
+div.symbol-table-arrow {
+    position: absolute;
+    bottom: 75px;
+    right: 100px;
+    font-weight: bolder;
+    font-size: larger;
+    font-family: FiraCode;
+    color: #ffec3e;
+}
+
 /* Images */
 img.max-head {
     margin: 0px;
+}
+
+/* Videos */
+video.motion-canvas {
+    box-shadow: 0 0 10px #242424;
 }
 
 /* Code */
@@ -215,7 +274,7 @@ code.title {
 }
 
 code.bright {
-    color: #dbc191;
+    color: #ffec3e;
 }
 
 code.normal {
@@ -226,12 +285,18 @@ code.type {
     color: #D19A66;
 }
 
+code.value {
+    color: #90B278;
+}
+
 code.ieee-sign {
     background-color: #e4964d;
 }
+
 code.ieee-exponent {
     background-color: #6eb25d;
 }
+
 code.ieee-mantissa {
     background-color: #5791FF;
 }
