@@ -310,6 +310,13 @@ img.wtf-cat {
     left: 20px;
 }
 
+img.god-rays {
+    opacity: 0.3;
+    animation: rotate 30s linear infinite;
+    box-shadow: none;
+    z-index: 0;
+}
+
 div.symbol-table-arrow {
     position: absolute;
     bottom: 75px;
@@ -324,7 +331,6 @@ div.symbol-table-arrow {
 img.max-head {
     margin: 0px;
     min-width: 100%;
-    min-height: 100%;
     box-shadow: none;
     border: 2px dashed #606060;
 }
@@ -345,6 +351,14 @@ video.motion-canvas {
 
 .math-pad-log-stack {
     margin-left: 120px;
+}
+
+img.m-t-0 {
+    margin-top: 0px;
+}
+
+img.m-b-0 {
+    margin-bottom: 0px;
 }
 
 /* Code */
@@ -433,4 +447,16 @@ pre.clean code {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+/* Animations */
+
+@keyframes rotate {
+    0% {
+        transform: scale(4) translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: scale(4) translate(-50%, -50%) rotate(360deg);
+    }
 }

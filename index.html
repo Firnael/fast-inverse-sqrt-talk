@@ -5,7 +5,6 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/ico" href="favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- <script src="https://kit.fontawesome.com/d2d077b940.js" crossorigin="anonymous"></script> -->
   <title>Fast Inverse Square Root - The Talk</title>
 </head>
 
@@ -114,16 +113,52 @@
         </section>
 
         <section>
-          <img class="r-stretch" src="/2/gamers-edge.png">
-          <p>1990</p>
+          <img class="r-stretch" src="/2/john-romero.png" />
+          <p><b>John Romero - 1989</b></p>
           <aside class="notes">
-            En 1990, un petit groupe d'employés de Softdisk prend l'initiative de créer un diskmag dédié aux jeux video,
-            sous le nom de Gamer's Edge.
+            En 89 y'a un jeune gars de 22 ans, qui s'appelle John Romero, qui rejoint Softdisk.
+            Il développe des jeux pour Apple II depuis le début des années 1980, c'est pas son premier rodéo.
+          </aside>
+        </section>
+
+        <section>
+          <div class="ch">
+            <div class="item">
+              <img src="/2/pyramids-of-egypt.gif" height="300px" />
+              <p><b>1987 - Pyramids of Egypt</b></p>
+            </div>
+            <div class="item fragment">
+              <img src="/2/dangerous-dave.png" height="300px" />
+              <p><b>1988 - Dangerous Dave</b></p>
+            </div>
+          </div>
+          <aside class="notes">
+            Il développe des jeux pour Apple II depuis le début des années 1980, c'est pas son premier rodéo.
+          </aside>
+        </section>
+
+        <section>
+          <img class="r-stretch" src="/2/gamers-edge-logo.png">
+          <p><b>Gamer's Edge - 1990</b></p>
+          <aside class="notes">
+            En 1990, il prend l'initiative avec quelques employés de Softdisk de créer un diskmag
+            dédié aux jeux video, sous le nom de Gamer's Edge.
+          </aside>
+        </section>
+
+        <section>
+          <img class="r-stretch" src="/2/john-carmack.webp">
+          <p><b>John Carmack - 1990</b></p>
+          <aside class="notes">
+            Parmis ces employés, il y a un certain John Carmack que peut-être vous connaissez.
+            Il faudrait que je déborde de plusieurs heures pour vous présenter ce monsieur mais
+            on a beaucoup de choses à dire, alors ça sera peut-être pour une prochaine fois.
           </aside>
         </section>
 
         <section>
           <img class="r-stretch" src="/2/id-software-team.webp">
+          <b>"Ideas From The Deep"</b>
           <aside class="notes">
             Ce groupe se désignant lui même sous le nom de "Ideas From The Deep" est composé de 5 personnes :
             - John Carmack (programmeur)
@@ -132,6 +167,28 @@
             - Adrian Carmack (artiste, pas du tout de la famille de John)
             - Jay Wilbur, le manager
           </aside>
+        </section>
+
+        <section>
+          <video data-autoplay src="https://www.youtube.com/watch?v=1YWD6Y9FUuw&ab_channel=usgamernet"></video>
+          <p><b>Dangerous Dave in Copyright Infringement</b></p>
+        </section>
+
+        <section>
+          <div class="ch">
+            <div class="item">
+              <img src="/2/commander-keen.jpeg">
+            </div>
+            <div class="item">
+              <img class="fragment m-b-0" src="/2/commander-keen-2.png" height="300px">
+              <img class="fragment m-t-0" src="/2/commander-keen-3.png" height="300px">
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <img class="highlight-shadow" src="/2/id-software-logo.png" />
+          <p><b>iD Software - 1er février 1991</b></p>
         </section>
 
         <section>
@@ -281,6 +338,19 @@
         </section>
 
         <section data-auto-animate>
+          <img class="noshadow" src="/4/apple-2.png" />
+          <aside class="notes">
+            Pour simplifier, les objects dans un monde en 3D ne sont qu'un ensemble de surface, qui doivent reflèter
+            la lumière chacune à leur manière.
+          </aside>
+        </section>
+
+        <section data-auto-animate>
+          <img class="noshadow" src="/4/apple-2.png" height="300px" />
+          <img class="noshadow" src="/4/apple-1.png" />
+        </section>
+
+        <section data-auto-animate>
           <div class="fragment ch">
             <div class="item"><img data-id="1" class="noshadow" src="/4/tetes/alexo.png" /></div>
             <div class="item"><img data-id="2" class="noshadow" src="/4/tetes/fdu.png" /></div>
@@ -294,8 +364,8 @@
             Prennons cette belle brochette de vainqueurs.
           </aside>
         </section>
-        <section data-transition="fade" data-auto-animate>
-          <div class="ch" style="height: 80%;">
+        <section style="transform: scale(0.8);" data-transition="fade" data-auto-animate>
+          <div class="ch">
             <div class="cv"><!-- 1st row -->
               <div class="item"></div>
               <div class="item"><img class="max-head" data-id="1" src="/4/cube-light/alexo_white.png" /></div>
@@ -324,22 +394,35 @@
 
         <section data-transition="fade">
           <div class="cube" id="three-animation"></div>
-        </section>
-
-        <section data-auto-animate>
-          <img class="noshadow" src="/4/apple-2.png" />
           <aside class="notes">
-
+            Et que je le place dans un monde en 3D.
           </aside>
         </section>
 
-        <section data-auto-animate>
-          <img class="noshadow" src="/4/apple-2.png" height="300px" />
-          <img class="noshadow" src="/4/apple-1.png" />
+        <section>
+          <img class="highlight" src="/4/normal-vector.svg" />
+          <h3>Deux étapes</h3>
+          <br />
+          <h4 class="fragment">1. Calcul d'un <span class="bright">vecteur normal</span> au plan</h4>
+          <h4 class="fragment">2. <span class="bright">Normalisation</span> de ce vecteur</h4>
+          <aside class="notes">
+            Pour réaliser ce rendu, il y a entre-autre 2 étapes :
+            - le calcul d'un vecteur normal au plan
+            - la normalisation de ce vecteur
+          </aside>
+        </section>
+
+        <section>
+          <img src="/4/maths-stonks.jpeg" />
+          <aside class="notes">
+            Pour calculer la lumière qui va frapper le cube, il faut calculer la normale du plan.
+            Mais qu'est-ce que la normale ?
+            La on va faire un petit détour par les maths :)
+          </aside>
         </section>
 
         <section data-transition="fade">
-          <h4>Un vecteur "normal à un plan"</h4>
+          <h4>1. Un <span class="bright">vecteur normal</span> à un plan</h4>
           <div class="ch">
             <div class="item-wide">
               <blockquote class="fragment">
@@ -364,14 +447,6 @@
         </section>
 
         <section>
-          Trouver un vecteur normal à un plan, c'est pas compliqué.
-          <br />
-          Normaliser ce vecteur, c'est pas compliqué non plus, mais ça coûte plus cher.
-          <br />
-          En effet, on a une division, et une racine carrée là dedans.
-        </section>
-
-        <section>
           <img class="highlight-shadow" src="/4/jerem-applati.png" />
           <aside class="notes">
             !!! BESOIN DU STYLET !!!
@@ -382,15 +457,20 @@
         </section>
 
         <section>
+          *
+          animation ici avec 3 points qui définissent un plan,
+          2 vecteurs non-colinéaires au plan,
+          et calcul du vecteur normal au plan
+          *
+          <br />
           Trouver un vecteur normal à un plan, c'est pas compliqué.
           <br />
-          Normaliser ce vecteur, c'est pas compliqué non plus, mais ça coûte plus cher.
-          <br />
-          En effet, on a une division, et une racine carrée là dedans.
+          https://web.ma.utexas.edu/users/m408m/Display12-5-4.shtml#:~:text=The%20normal%20to%20the%20plane,%C3%97(s%E2%88%92b).
         </section>
 
         <section>
-          <img class="noshadow r-stretch" src="/4/vector-mag-dir.svg" />
+          <h4>2. <span class="bright">Normalisation</span> du vecteur</h4>
+          <img class="fragment highlight-shadow" src="/4/vector-mag-dir.svg" height="400px" />
           <aside class="notes">
             Normaliser des vecteurs est une opération très courante dans les moteurs de jeu.
             Cela permet de séparer :
@@ -401,11 +481,131 @@
         </section>
 
         <section>
+          <div class="ch">
+            <div class="item">
+              <img class="highlight-shadow" src="/4/jerem-applati.png" />
+            </div>
+            <div class="item">
+              <img class="highlight-shadow" src="/4/jerem-applati.png" />
+            </div>
+          </div>
+          <aside class="notes">
+            !!! BESOIN DU STYLET !!!
+            Si je prend un vecteur d'une magnitude random, genre 4.9, mes calculs sont réalisés avec cette magnitude.
+            Ce n'est pas ce qu'on veut
+            On veut normaliser ce vecteur, c'est à dire le ramener à une magnitude de 1.
+          </aside>
+        </section>
+
+        <section>
           <div class="game" id="game-container"></div>
           <aside class="notes">
-            Admettons que je développe un petit jeu de course,
-            pour faire simple on va dire qu'on ne peut bouger que dans 8 directions.
-            Lorsque je bouge en haut,
+            Admettons que je développe un petit jeu de course. Pour faire simple on va dire que :
+            - on ne peut bouger que dans 8 directions
+            - ma vitesse max est de 200 pixels par secondes
+            - il n'y a pas d'accélération (ça veut dire que ma voiture va soit à 0, soit à VITESSE_MAX).
+
+            Si j'appuie sur "haut", je vais en haut, à la vitesse de 200 pixels par secondes.
+            Si j'appuie sur "droite", je vais à droite à 200 pixels par secondes.
+            Mais si j'appuie simultanément sur haut et droite ? Je vais aller en haut à droite, à 400 pixels par secondes ! 
+            Ca craint, ça veut dire que je vais plus vite en diagonale, ce qui est débile.
+
+            Pour corriger ça, je vais avoir besoin de décorrélé la direction de la magnitude.
+            Pour ça, je vais normaliser mon vecteur de direction, et le multiplier par ma vitesse max.
+            Si v(x,y) = (1,1) et que ma vitesse max est de 200, alors je vais à 200 pixels par secondes en haut à droite,
+            100pixels en haut, et 100 pixels à droite par seconde.
+            Ainsi ma vitesse max ne dépend pas de la direction.
+          </aside>
+        </section>
+
+        <section>
+          <div>
+            <video data-autoplay src="/4/pythagore-1.mp4"></video>
+          </div>
+          <aside class="notes">
+            Soit mon vecteur V en rose, il a une magnitude de M.
+            On peut le décomposer en 2 vecteurs, Vx et Vy, qui sont les composantes de V selon les axes X et Y.
+            Comment je peux trouver V, si je connais Vx et Vy à votre avis ?
+          </aside>
+        </section>
+
+        <section>
+          <div class="ch">
+            <div class="item">
+              <img src="/4/pythagoras.webp" height="600px" />
+            </div>
+            <div class="item cv">
+              <div class="item fragment">
+                <img src="/4/vector-2D.png" height="300px" />
+              </div>
+              <div class="item">
+                <div class="fragment">
+                  $V^{2} = x^{2} + y^{2}$
+                </div>
+                <br/>
+                <div class="fragment">
+                  $V = \sqrt{x^{2} + y^{2}}$
+                </div>
+              </div>
+            </div>
+          </div>
+          <aside class="notes">
+            Mais oui, grâce à Pythagore biensûr !
+          </aside>
+        </section>
+
+        <section>
+          <video data-autoplay src="/4/pythagore-2.mp4"></video>
+          <aside class="notes">
+            Sauf que nous, on est en 3, donc comment ça se passe ?
+            Eh bah c'est exactement la même chose, avec une composante supplémentaire
+          </aside>
+        </section>
+
+        <section>
+          <div class="ch">
+            <div class="item">
+              <div class="item fragment">
+                <img src="/4/vector-3D.png" height="300px"/>
+              </div>
+              <div class="item">
+                <div class="fragment">
+                  $V^{2} = x^{2} + y^{2} + z^{2}$
+                </div>
+                <br/>
+                <div class="fragment">
+                  $V = \sqrt{x^{2} + y^{2} + z^{2}}$
+                </div>
+              </div>
+            </div>
+            <div class="item cv fragment">
+              <img src="/4/pythagoras-glasses.png" height="500px"/>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h4>Ce qu'on cherche à calculer alors :</h4>
+          Soit $V(x,y,z)$ un vecteur de magnitude $M$
+          <br/>
+          Pour normaliser le vecteur $V_n$ de magnitude $M = 1$, on cherche à trouver $x_n$, $y_n$ et $z_n$, tel que :
+          <br/>
+          <br/>
+          <div class="ch small">
+            <div class="item">
+              \[x_n = \frac{x}{\sqrt{x^{2} + y^{2} + z^{2}}}\]
+            </div>
+            <div class="item">
+              \[y_n = \frac{y}{\sqrt{x^{2} + y^{2} + z^{2}}}\]
+            </div>
+            <div class="item">
+              \[z_n = \frac{z}{\sqrt{x^{2} + y^{2} + z^{2}}}\]
+            </div>
+          </div>
+          <aside class="notes">
+            Ce qu'on cherche à calculer alors :
+            Soit V(x,y,z) un vecteur de magnitude M
+            Pour normaliser le vecteur (M = 1), on cherche à calculer :
           </aside>
         </section>
 
@@ -1153,8 +1353,8 @@
                 class="ieee-exponent">$\times 2^{4}$</span>
             </div>
             <div data-fragment-index="3" class="fragment current-visible instant">
-              <span class="ieee-sign">$+$</span> <span class="bright">$1$</span><span class="ieee-mantissa">$,00$</span> <span
-                class="ieee-exponent">$\times 2^{4}$</span>
+              <span class="ieee-sign">$+$</span> <span class="bright">$1$</span><span class="ieee-mantissa">$,00$</span>
+              <span class="ieee-exponent">$\times 2^{4}$</span>
             </div>
             <div data-fragment-index="4" class="fragment current-visible instant">
               <span class="ieee-sign">$+$</span> $1$<span class="ieee-mantissa">$,11$</span> <span
@@ -1219,7 +1419,7 @@
           </div>
         </section>
 
-        
+
       </section>
 
       <!-- 6. Log2, Log2(1+x) et autre filouteries -->
@@ -1709,18 +1909,59 @@
           <div data-fragment-index="2" class="newton-quote-2 small fragment">
             <q class="bold">C'est trop</q><br />- Isaac Newton
           </div>
-          <img data-fragment-index="2" class="newtons-tear fragment" src="/9/tear.png" />
+          <img data-fragment-index="2" class="highlight-shadow newtons-tear fragment" src="/9/tear.png" />
           <aside class="notes">
             Nan je rigole mais on a plus trop le temps, ça sera pour un autre talk
           </aside>
         </section>
 
         <section>
-          <h3>La méthode dite de Newton</h3>
-          <h5>ou méthode de Newton-Raphson</h5>
+          <img class="abs-center god-rays" src="/9/god-rays.png" />
+          <div>
+            <h2 class="highlight-gold">La méthode de Newton</h2>
+            <h5>(ou méthode de Newton-Raphson)</h5>
+            <h2 class="fragment grow">1669</h2>
+          </div>
           <aside class="notes">
-            Ce qui nous intéresse, c'est
+            Ce qui nous intéresse, c'est la méthode "dite" de Newton, publiée en 1669, ou Newton-Raphson
+            (un autre mathématicien anglais du 16ème siècle) qui en publia une version simplifiée en 1690
           </aside>
+        </section>
+
+        <section>
+          <h3>Cette méthode c'est quoi ?</h3>
+          <div class="r-stack">
+            <blockquote class="fragment current-visible fade-in-then-out">
+              <q>Une méthode <b>itérative</b> de recherche de zéro d'une fonction, qui consiste à construire une suite
+                de nombres
+                réels par une <b>méthode géométrique</b>, et à montrer que cette suite <b>converge vers le zéro</b> de
+                la fonction</q>
+            </blockquote>
+            <div class="fragment current-visible big">
+              \[f(x)\]
+            </div>
+            <div class="fragment big">
+              \[f(x) = 0\]
+            </div>
+          </div>
+          <aside class="notes">
+            Pour faire simple : voilà.
+            Comme on comprend rien, voici une animation pour illustrer ça.
+          </aside>
+        </section>
+
+        <section>
+          *l'animation en question*
+          <aside class="notes">
+            On part d'un point x0, on calcule la valeur de la fonction en ce point, et on trace la tangente à la courbe
+            en ce point.
+            On regarde ensuite où cette tangente coupe l'axe des abscisses, et on recommence.
+            On obtient une suite de points qui converge vers le zéro de la fonction.
+          </aside>
+        </section>
+
+        <section>
+          <h3>Ok mais qui s'en fout ?</h3>
         </section>
 
       </section>
