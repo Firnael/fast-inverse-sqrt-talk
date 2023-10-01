@@ -170,7 +170,7 @@
         </section>
 
         <section>
-          <video data-autoplay src="https://www.youtube.com/watch?v=1YWD6Y9FUuw&ab_channel=usgamernet"></video>
+          <!-- <video data-autoplay src="https://www.youtube.com/watch?v=1YWD6Y9FUuw&ab_channel=usgamernet"></video> -->
           <p><b>Dangerous Dave in Copyright Infringement</b></p>
         </section>
 
@@ -507,12 +507,14 @@
 
             Si j'appuie sur "haut", je vais en haut, à la vitesse de 200 pixels par secondes.
             Si j'appuie sur "droite", je vais à droite à 200 pixels par secondes.
-            Mais si j'appuie simultanément sur haut et droite ? Je vais aller en haut à droite, à 400 pixels par secondes ! 
+            Mais si j'appuie simultanément sur haut et droite ? Je vais aller en haut à droite, à 400 pixels par
+            secondes !
             Ca craint, ça veut dire que je vais plus vite en diagonale, ce qui est débile.
 
             Pour corriger ça, je vais avoir besoin de décorrélé la direction de la magnitude.
             Pour ça, je vais normaliser mon vecteur de direction, et le multiplier par ma vitesse max.
-            Si v(x,y) = (1,1) et que ma vitesse max est de 200, alors je vais à 200 pixels par secondes en haut à droite,
+            Si v(x,y) = (1,1) et que ma vitesse max est de 200, alors je vais à 200 pixels par secondes en haut à
+            droite,
             100pixels en haut, et 100 pixels à droite par seconde.
             Ainsi ma vitesse max ne dépend pas de la direction.
           </aside>
@@ -520,6 +522,7 @@
 
         <section>
           <div>
+            <h3>En 2D :</h3>
             <video data-autoplay src="/4/pythagore-1.mp4"></video>
           </div>
           <aside class="notes">
@@ -532,19 +535,20 @@
         <section>
           <div class="ch">
             <div class="item">
-              <img src="/4/pythagoras.webp" height="600px" />
+              <img data-fragment-index="2" class="fragment" src="/4/pythagoras.webp" height="600px" />
             </div>
             <div class="item cv">
-              <div class="item fragment">
+              <div class="item">
                 <img src="/4/vector-2D.png" height="300px" />
               </div>
               <div class="item">
                 <div class="fragment">
-                  $V^{2} = x^{2} + y^{2}$
+                  <span class="vector">$V^{2}$</span> $ = $ <span class="x">$x^{2}$</span> $ + $ <span
+                    class="y">$y^{2}$</span>
                 </div>
-                <br/>
+                <br />
                 <div class="fragment">
-                  $V = \sqrt{x^{2} + y^{2}}$
+                  <span class="vector">$V$</span> $ = \sqrt{\textcolor{#66ABE1}{x^{2}} + \textcolor{#9CC281}{y^{2}}}$
                 </div>
               </div>
             </div>
@@ -555,6 +559,7 @@
         </section>
 
         <section>
+          <h3>En 3D :</h3>
           <video data-autoplay src="/4/pythagore-2.mp4"></video>
           <aside class="notes">
             Sauf que nous, on est en 3, donc comment ça se passe ?
@@ -565,48 +570,72 @@
         <section>
           <div class="ch">
             <div class="item">
-              <div class="item fragment">
-                <img src="/4/vector-3D.png" height="300px"/>
+              <div class="item">
+                <img src="/4/vector-3D.png" height="300px" />
               </div>
               <div class="item">
                 <div class="fragment">
-                  $V^{2} = x^{2} + y^{2} + z^{2}$
+                  <span class="vector">$V^{2}$</span> $ = $ <span class="x">$x^{2}$</span> $ + $ <span
+                    class="y">$y^{2}$</span> $ + $ <span class="z">$z^{2}$</span>
                 </div>
-                <br/>
+                <br />
                 <div class="fragment">
-                  $V = \sqrt{x^{2} + y^{2} + z^{2}}$
+                  <span class="vector">$V$</span> $ = \sqrt{\textcolor{#66ABE1}{x^{2}} + \textcolor{#9CC281}{y^{2}} +
+                  \textcolor{#DCBD87}{z^{2}}}$
                 </div>
               </div>
             </div>
             <div class="item cv fragment">
-              <img src="/4/pythagoras-glasses.png" height="500px"/>
+              <img src="/4/pythagoras-glasses.png" height="500px" />
             </div>
           </div>
         </section>
 
         <section>
-          <h4>Ce qu'on cherche à calculer alors :</h4>
-          Soit $V(x,y,z)$ un vecteur de magnitude $M$
-          <br/>
-          Pour normaliser le vecteur $V_n$ de magnitude $M = 1$, on cherche à trouver $x_n$, $y_n$ et $z_n$, tel que :
-          <br/>
-          <br/>
-          <div class="ch small">
-            <div class="item">
-              \[x_n = \frac{x}{\sqrt{x^{2} + y^{2} + z^{2}}}\]
-            </div>
-            <div class="item">
-              \[y_n = \frac{y}{\sqrt{x^{2} + y^{2} + z^{2}}}\]
-            </div>
-            <div class="item">
-              \[z_n = \frac{z}{\sqrt{x^{2} + y^{2} + z^{2}}}\]
-            </div>
-          </div>
+          <h3>Ce qu'on cherche à calculer alors :</h3>
+          <p class="fragment">
+            Soit <span class="vector">$V$</span>$($<span class="x">$x$</span>$,$<span class="y">$y$</span>$,$<span
+              class="z">$z$</span>$)$ un vecteur de magnitude <span class="vector">$M$</span>
+          </p>
+          <p>
+            <span class="fragment">
+              <b>Normaliser</b> <span class="vector">$V$</span>, c'est trouver les composantes
+              <br /><span class="x">$x_n$</span>, <span class="y">$y_n$</span> et <span class="z">$z_n$</span> d'un
+              vecteur <span class="vector">$V_n$</span> de magnitude
+              <span class="vector">$M_n = 1$</span></span>
+          </p>
           <aside class="notes">
             Ce qu'on cherche à calculer alors :
             Soit V(x,y,z) un vecteur de magnitude M
             Pour normaliser le vecteur (M = 1), on cherche à calculer :
           </aside>
+        </section>
+
+        <section>
+          <div class="cv">
+            <div class="ch item">
+              <div class="item">
+                \[x_n = \frac{x}{M}\]
+              </div>
+              <div class="item">
+                \[y_n = \frac{y}{M}\]
+              </div>
+              <div class="item">
+                \[z_n = \frac{z}{M}\]
+              </div>
+            </div>
+            <div class="ch item">
+              <div class="item">
+                \[x_n = \frac{x}{\sqrt{x^{2} + y^{2} + z^{2}}}\]
+              </div>
+              <div class="item">
+                \[y_n = \frac{y}{\sqrt{x^{2} + y^{2} + z^{2}}}\]
+              </div>
+              <div class="item">
+                \[z_n = \frac{z}{\sqrt{x^{2} + y^{2} + z^{2}}}\]
+              </div>
+            </div>
+          </div>
         </section>
 
         <section>
@@ -1751,8 +1780,34 @@
           </aside>
         </section>
 
+        <section data-auto-animate>
+          <div class="ch">
+            <div data-fragment-index="1" class="item fragment">
+            <br/>
+              <img class="highlight-shadow" src="/7/cordons-bleus.png" />
+            </div>
+            <div data-fragment-index="3" class="item fragment">
+              <img class="highlight-shadow" src="/7/ps5-box.webp" />
+            </div>
+          </div>
+          <img data-fragment-index="2" class="fragment highlight-shadow price-tag" src="/7/price-tag.png" />
+        </section>
+        <section data-auto-animate>
+          <div class="ch">
+            <div class="item">
+            <br/>
+              <img class="highlight-shadow" src="/7/cordons-bleus.png" />
+            </div>
+            <div class="item">
+              <img class="highlight-shadow" src="/7/ps5-box.webp" />
+            </div>
+          </div>
+          <img class="highlight-shadow price-tag-2" src="/7/price-tag.png" />
+        </section>
+
         <section>
-          L'histoire du code barre de la PS5 et du kilo de patates
+          <img src="/7/cashier.jpeg" height="600px" />
+          <img class="fragment highlight-shadow c-logo-cashier" src="/7/c-logo.png" />
         </section>
 
         <section>

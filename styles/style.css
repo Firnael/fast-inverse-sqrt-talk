@@ -5,6 +5,10 @@
     --ieee-sign-color: #f4ad70;
     --ieee-exponent-color: #C579DF;
     --ieee-mantissa-color: #5ecbf7;
+    --vector-color: #C878E1;
+    --x-color: #66ABE1;
+    --y-color: #9CC281;
+    --z-color: #DCBD87;
 }
 
 /* Font Faces */
@@ -255,6 +259,22 @@ span.still-log {
     color: #D0B17D;
 }
 
+.x {
+    color: var(--x-color);
+}
+
+.y {
+    color: var(--y-color);
+}
+
+.z {
+    color: var(--z-color);
+}
+
+.vector {
+    color: var(--vector-color);
+}
+
 /* Custom position */
 
 div.newton-quote-1 {
@@ -303,11 +323,29 @@ img.c-logo {
     top: 180px;
     left: 200px;
 }
+img.c-logo-cashier {
+    position: absolute;
+    height: 20%;
+    top: 115px;
+    right: 325px;
+}
 
 img.wtf-cat {
     position: absolute;
     top: 150px;
     left: 20px;
+}
+
+img.price-tag {
+    position: absolute;
+    top: 100px;
+    left: 50px;
+}
+
+img.price-tag-2 {
+    position: absolute;
+    top: 50px;
+    right: 50px;
 }
 
 img.god-rays {
