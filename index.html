@@ -34,7 +34,8 @@
         <section>
           <img class="highlight-shadow" src="/1/doomer-wojak.png" />
           <aside class="notes">
-            Tout commence il y a à peu près 2 ans, peut-être un mardi soir, je traine sur le PC, il est environ 2h du mat, et au lieu d'aller me coucher comme ferait n'importe qui de censé, j'ouvre Youtube.
+            Tout commence il y a à peu près 2 ans, peut-être un mardi soir, je traine sur le PC, il est environ 2h du
+            mat, et au lieu d'aller me coucher comme ferait n'importe qui de censé, j'ouvre Youtube.
           </aside>
         </section>
 
@@ -64,31 +65,34 @@
           <img class="fragment grow" src="/1/fsqrt-youtube.png" />
           <aside class="notes">
             Puis je tombe sur ça : "Fast Inverse Square Root - A Quake III Algorithm"
-            - Je me dis, est-ce bien l'heure de regarder 20min de vidéo d'un gars qui parle d'un algorithme en C écrit il y a plus de 20 ans ? Et je clique.
+            - Je me dis, est-ce bien l'heure de regarder 20min de vidéo d'un gars qui parle d'un algorithme en C écrit
+            il y a plus de 20 ans ? Et je clique.
           </aside>
         </section>
 
         <section data-auto-animate>
-          <img src="/1/fsqrt-youtube.png"/>
-          <br/>
+          <img src="/1/fsqrt-youtube.png" />
+          <br />
           <div class="ch">
-            <img class="item fragment" src="/1/monkey-brain.gif" height="400px"/>
+            <img class="item fragment" src="/1/monkey-brain.gif" height="400px" />
             <img class="highlight-shadow fragment" src="/1/wojak-brain-mask.png" height="400px" />
           </div>
           <aside class="notes">
-            Bon, il était un peu tard, j'ai pas tout compris, mais je suis allé me couché avec une impression d'avoir appris quelque chose.
+            Bon, il était un peu tard, j'ai pas tout compris, mais je suis allé me couché avec une impression d'avoir
+            appris quelque chose.
           </aside>
         </section>
 
         <section>
-          <img src="/1/wojak-sleeping.jpg"/>
+          <img src="/1/wojak-sleeping.jpg" />
           <aside class="notes">
-            Du coup je suis allé me coucher, et je me suis demandé, est-ce que je serais capable d'expliquer ce que j'ai vu à quelqu'un d'autre ?
+            Du coup je suis allé me coucher, et je me suis demandé, est-ce que je serais capable d'expliquer ce que j'ai
+            vu à quelqu'un d'autre ?
           </aside>
         </section>
 
         <section>
-          <img src="/1/cat-newspaper.webp"/>
+          <img src="/1/cat-newspaper.webp" />
           <aside class="notes">
             Le lendemain matin je suis en train de lire le journal comme ça en buvant mon café et je me suis dit
             "ça ferait un bon sujet de talk, mais il va falloir que je comprenne bien ce que j'ai vu"
@@ -114,15 +118,16 @@
                 <img class="highlight-shadow" src="/1/fractal.png" />
               </div>
               <div class="item fragment fade-up">
-                <img class="highlight-shadow" src="/1/newton-head.png"/>
+                <img class="highlight-shadow" src="/1/newton-head.png" />
               </div>
               <div class="item fragment fade-up" style="padding-bottom: 20px;">
-                <img class="highlight-shadow" src="/1/black-magic.png"   />
+                <img class="highlight-shadow" src="/1/black-magic.png" />
               </div>
             </div>
           </div>
           <aside class="notes">
-            On va parler de Quake 3, de racine carré, de normalisation de vecteurs, de logarithme de base 2, de ce bon vieux Newton,
+            On va parler de Quake 3, de racine carré, de normalisation de vecteurs, de logarithme de base 2, de ce bon
+            vieux Newton,
             et de sorcellerie
           </aside>
         </section>
@@ -770,7 +775,7 @@
           <div>
             \[\frac{1}{\sqrt{\textcolor{#66ABE1}{x^{2}} + \textcolor{#9CC281}{y^{2}} + \textcolor{#DCBD87}{z^{2}}}}\]
           </div>
-          <br/>
+          <br />
           <div class="r-stack">
             <div class="fragment current-visible">
               <code data-trim class="normal">
@@ -779,7 +784,8 @@
             </div>
             <div class="fragment fade-up">
               <code data-trim class="normal">
-                <code class="names">Q_rsqrt</code>(<span class="x">x</span>*<span class="x">x</span> + <span class="y">y</span>*<span class="y">y</span> + <span class="z">z</span>*<span class="z">z</span>);
+                <code class="names">Q_rsqrt</code>(<span class="x">x</span>*<span class="x">x</span> + <span
+                class="y">y</span>*<span class="y">y</span> + <span class="z">z</span>*<span class="z">z</span>);
               </code>
             </div>
           </div>
@@ -2191,12 +2197,220 @@
         </aside>
       </section>
       <section data-background-image="/10/quake-3-sarge.webp" class="blurred">
+
         <section>
-          Concluons
+          <img src="/10/john-carmack-2006.jpeg" />
+          <aside class="notes">
+            On a longtemps attribué ce code à John Carmack, étant donné sa notoriété et son implication en tant que
+            développeur sur les moteurs de jeux et dans les projets d'iD Software de l'époque.
+          </aside>
         </section>
+
+        <section>
+          <img src="/10/rys-sommefeldt.jpeg" />
+          <br />
+          https://www.beyond3d.com/
+          <aside class="notes">
+            Cependant, grâce à une enquête de Rys Sommefeldt, éditeur sur le blog / forum Beyond3D à l'époque
+            on a pu retracer via 2 articles l'origine de ce code.
+            Les premières pistes indiquaient naturellement John, mais aussi Michael Abrash, un employé d'id Software
+            lors de la conception de Quake 1.
+          </aside>
+        </section>
+
+        <section>
+          <img src="/10/michael-abrash.webp" />
+          <br />
+          Michael Abrash
+          <aside class="notes">
+            - Michael Abrash, recruté par iD Software en 1990 pour le développement du premier Quake
+            est un expert de l'optimisation du code assembleur.
+            - Il est notamment à l'origine d'une citation que j'aime beaucoup :
+            "After you finish the first 90% of a project, you have to finish the other 90%"
+            C'est bien une phrase de mec qui optimise tout ça.
+            - Depuis 2014 et encore aujourd'hui il est Chief Scientist chez Oculus VR.
+          </aside>
+        </section>
+
+        <section>
+          <img src="/10/john-carmack-conf.webp" />
+          <br />
+          Carmack interrogé en 2006
+          <aside class="notes">
+            En 2006, date de l'article, lorsqu'il est interrogé sur le sujet Carmack répond
+            "Not me, and I don't think it is Michael. Terje Matheson perhaps?"
+          </aside>
+        </section>
+
+        <section>
+          <img src="/10/terje-mathisen.png" />
+          <br />
+          Terje Matheson
+          <aside class="notes">
+            Il a dit avoir écrit un algo très similaire 5 ans plus tôt pour une boite de biotechnoligue suédoise.
+            "it looks a lot like something you'll find in the old HAKMEM documents from MIT"
+          </aside>
+        </section>
+
+        <section>
+          <img src="/10/gary-tarolli.jpeg" />
+          <br />
+          TODO : Gary Tarolli, 3DFX & NVIDIA
+          <aside class="notes">
+            Une autre piste mène à Gary Tarolli, un ancien employé de 3DFX, racheté en ??? par NVIDIA qui
+            "So it did pass by my keyboard many many years ago, I may have tweaked
+            the hex constant a bit or so, but other than that I can't take credit
+            for it."
+            Silicon Graphics on the Indigo
+            he's definitely one of the guys responsible for it
+            Gary Tarolli was consulting for Kubota, the company funding Ardent at the time, and likely brought the
+            algorithm
+            to 3dfx Interactive circa 1994.[6][7]
+          </aside>
+        </section>
+
+        <section>
+          <img src="/10/greg-walsh.gif" />
+          <br />
+          Greg Walsh
+          (photo introuvable)
+          <br />
+          Il se trouve que c'est un nom très courant et que c'est hyper dur de trouver une photo de ce gars, donc voici
+          un chat
+          <aside class="notes">
+            Le gars s'est réveillé quand l'article a gagné en popularité
+            Greg Walsh was working at Ardent, he devised the now-famous constant and fast inverse square root algorithm.
+          </aside>
+        </section>
+
+        <section>
+          <img src="/10/cleve-moler.webp" />
+          <br />
+          Cleve Moler
+          <aside class="notes">
+            Auteur de MalWorks et MatLab
+            In the late 1980s, Cleve Moler at Ardent Computer learned about this technique[5] and passed it along to his
+            coworker Greg Walsh.
+          </aside>
+        </section>
+
+        <section>
+          <img src="/10/william-kahan.jpeg" />
+          <br />
+          William Kahan
+          <aside class="notes">
+            mathématicien et informaticien canadien né en 1933 (il a 90 ans aujd),
+            lauréat du prix Turing en 1989 pour ses travaux en analyse numérique.
+            Spécialiste des calculs en virgule flottante, il est le principal architecte de la norme IEEE 754.
+            Il a été surnommé « The Father of Floating Point »
+            William Kahan and K.C. Ng at Berkeley wrote an unpublished paper in May 1986 describing
+            how to calculate the square root using bit-fiddling techniques followed by Newton iterations
+          </aside>
+        </section>
+
+        <section>
+          <img src="/10/it-is-done.gif" />
+          <br />
+          Et voilà !
+          <aside class="notes">
+            La boucle est bouclée !
+          </aside>
+        </section>
+
+        <section>
+          <img src="/10/id-tech-3.webp" />
+          <br />
+          L'iD Tech 3
+          <aside class="notes">
+            L'iD Tech 3 et son legacy sont légions, parmis ceux-ci quelques jeux que vous connaissez peut-être :
+          </aside>
+        </section>
+
+        <section>
+          <div class="ch">
+            <div class="item"><img src="/10/007-auf-box.webp" /></div>
+            <div class="item">
+              <img src="/10/007-auf.jpeg" />
+              <br/>
+              <b>007 - Espion pour cible<br/> - 2001</b>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div class="ch">
+            <div class="item"><img src="/10/moh-box.jpeg" /></div>
+            <div class="item">
+              <img src="/10/moh.jpeg" />
+              <br/>
+              <b>Medal of Honor<br/>Débarquement Allié<br/> - 2002</b>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div class="ch">
+            <div class="item"><img src="/10/sw-jo-box.jpeg" /></div>
+            <div class="item">
+              <img src="/10/sw-jo.jpeg" />
+              <br/>
+              <b>Star Wars Jedi Knight II: Jedi Outcast - 2002</b>
+              <p class="small muted">(et jedi Academy l'année suivante)</p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div class="ch">
+            <div class="item"><img src="/10/cod-box.webp" /></div>
+            <div class="item">
+              <img src="/10/cod.png" />
+              <br/>
+              <b>Call of Duty - 2003</b>
+            </div>
+          </div>
+          <aside class="notes">
+            COD en 2003 ! Et d'autres encore, jusqu'en 2010, moins connus...
+          </aside>
+        </section>
+
+        <section>
+          <img src="/10/valve-logo.jpg" />
+          <br />
+          <aside class="notes">
+            On retrouve également un lien avec les jeux Valve, dont le moteur du mythique Half-Life
+            et plus tard le moteur source.
+            That’s because Half-Life was built off a heavily modified version of the original Quake engine.
+          </aside>
+        </section>
+
+        <section>
+          <video src="/10/flickering.mp4" autoplay loop muted></video>
+          <p class="small muted">Valve / id / barracuda415 @ Reddit / Kotaku</p>
+          <aside class="notes">
+            top: Quake / Half-Life, Bottom: Half-Life 2 / Portal
+          </aside>
+        </section>
+
+        <section>
+          <video src="/10/flickering-2.mp4" autoplay loop muted height="600px"></video>
+          <p class="small muted">Valve / CrazyGiaky @ Reddit</p>
+          <aside class="notes">
+            Et ça va même jusque dans Alyx qui est sorti y'a même pas 3 ans !
+            Mais je m'égare, c'est pour un autre talk.
+          </aside>
+        </section>
+
+        <section>
+          <img src="/10/thats-all-folks.jpeg" />
+          <aside class="notes">
+            Ce talk lui est finito pipo !
+          </aside>
+        </section>
+
       </section>
 
-      <!-- 11. Fin -->
+      <!-- 11. Merci -->
       <section data-background-image="/1/cake-aux-olives.jpeg" data-transition="fade">
         <h1>Merci !</h1>
         <strong class="shadow">Distribution de paracétamol<br />à la pause</strong>
