@@ -25,7 +25,8 @@ Ce talk est très fortement inspiré de [cette vidéo](https://www.youtube.com/w
 
 ## Documentation
 
-...
+- https://fr.wikipedia.org/wiki/Id_Software
+- https://fabiensanglard.net/quake3/renderer.php
 
 ## Ressources
 

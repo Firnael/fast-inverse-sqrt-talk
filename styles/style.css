@@ -152,6 +152,10 @@ h1.main-title {
     font-size: 2em;
 }
 
+.bigger {
+    font-size: 2.4em;
+}
+
 .bold {
     font-weight: bold;
 }
@@ -413,6 +417,10 @@ code.title {
 
 code.bright {
     color: var(--bright-color);
+}
+
+code.names {
+    color: #61AEEE;
 }
 
 code.normal {

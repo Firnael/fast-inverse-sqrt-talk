@@ -27,19 +27,111 @@
           <aside class="notes">
             Aujourd'hui je vais vous raconter l'histoire d'une fonction.
             Une fonction trouvée il y a 20 dans le code source d'un jeu sorti il y a 24 ans.
+            Une fonction qui m'a cassé le cerveau.
           </aside>
         </section>
+
         <section>
-          <img src="/1/cake-aux-olives.jpeg" />
+          <img class="highlight-shadow" src="/1/doomer-wojak.png" />
           <aside class="notes">
-            On va parler de Quake 3, de normalisation de vecteurs, de logarithme de base 2, de ce bon vieux Newton,
+            Tout commence il y a à peu près 2 ans, peut-être un mardi soir, je traine sur le PC, il est environ 2h du mat, et au lieu d'aller me coucher comme ferait n'importe qui de censé, j'ouvre Youtube.
+          </aside>
+        </section>
+
+        <section>
+          <div class="ch">
+            <div class="fragment item"><img src="/1/chef-michel.png" /></div>
+            <div class="fragment item"><img src="/1/mew-glitch-youtube.png" /></div>
+          </div>
+          <div class="ch">
+            <div class="fragment item"><img src="/1/drunk-frodo-youtube.png" /></div>
+            <div class="fragment item"><img src="/1/ps1-boot-youtube.png" /></div>
+          </div>
+          <aside class="notes">
+            Je scroll mes recommendations alors forcément, je regarde comme faire un butterchicken avec le Chef Michel,
+            je ... TODO
+          </aside>
+        </section>
+
+        <section>
+          <video data-autoplay src="/1/ps1-boot.mkv"></video>
+          <aside class="notes">
+            C'est cadeau
+          </aside>
+        </section>
+
+        <section data-auto-animate>
+          <img class="fragment grow" src="/1/fsqrt-youtube.png" />
+          <aside class="notes">
+            Puis je tombe sur ça : "Fast Inverse Square Root - A Quake III Algorithm"
+            - Je me dis, est-ce bien l'heure de regarder 20min de vidéo d'un gars qui parle d'un algorithme en C écrit il y a plus de 20 ans ? Et je clique.
+          </aside>
+        </section>
+
+        <section data-auto-animate>
+          <img src="/1/fsqrt-youtube.png"/>
+          <br/>
+          <div class="ch">
+            <img class="item fragment" src="/1/monkey-brain.gif" height="400px"/>
+            <img class="highlight-shadow fragment" src="/1/wojak-brain-mask.png" height="400px" />
+          </div>
+          <aside class="notes">
+            Bon, il était un peu tard, j'ai pas tout compris, mais je suis allé me couché avec une impression d'avoir appris quelque chose.
+          </aside>
+        </section>
+
+        <section>
+          <img src="/1/wojak-sleeping.jpg"/>
+          <aside class="notes">
+            Du coup je suis allé me coucher, et je me suis demandé, est-ce que je serais capable d'expliquer ce que j'ai vu à quelqu'un d'autre ?
+          </aside>
+        </section>
+
+        <section>
+          <img src="/1/cat-newspaper.webp"/>
+          <aside class="notes">
+            Le lendemain matin je suis en train de lire le journal comme ça en buvant mon café et je me suis dit
+            "ça ferait un bon sujet de talk, mais il va falloir que je comprenne bien ce que j'ai vu"
+          </aside>
+        </section>
+
+        <section>
+          <div class="cv">
+            <div class="item ch">
+              <div class="item r-stack">
+                <img class="fragment current-visible fade-up" src="/1/cake-aux-olives.jpeg" />
+                <img class="fragment fade-down highlight-shadow" src="/1/quake-3-logo.png" />
+              </div>
+              <div class="item highlight-gold fade-down fragment bigger" style="margin-top: 20px;">
+                \[\sqrt{x}\]
+              </div>
+              <div class="item fragment fade-down">
+                <img class="highlight-shadow" src="/1/vector-art.png" />
+              </div>
+            </div>
+            <div class="item ch">
+              <div class="item fragment fade-up">
+                <img class="highlight-shadow" src="/1/fractal.png" />
+              </div>
+              <div class="item fragment fade-up">
+                <img class="highlight-shadow" src="/1/newton-head.png"/>
+              </div>
+              <div class="item fragment fade-up" style="padding-bottom: 20px;">
+                <img class="highlight-shadow" src="/1/black-magic.png"   />
+              </div>
+            </div>
+          </div>
+          <aside class="notes">
+            On va parler de Quake 3, de racine carré, de normalisation de vecteurs, de logarithme de base 2, de ce bon vieux Newton,
             et de sorcellerie
           </aside>
         </section>
+
         <section>
           <img class="r-stretch" src="/1/ah-shit.gif" />
           <aside class="notes">
-            Mais avant de vous parler de code, il faut qu'on revienne un peu en arrière
+            Mais avant de vous parler de code, il faut qu'on revienne un peu en arrière.
+            Et qui dit revenir en arrière, dit : it's storytime
           </aside>
         </section>
       </section>
@@ -206,18 +298,35 @@
         </section>
 
         <section>
-          - de la création d'idSoftware,<br />
-          - à la création de Quake 3 Arena,<br />
-          - à la libération du code en open source en 2005.<br />
-          - à la découverte de la fonction Q_rsqrt<br />
+          TODO : créations importantes d'Id Software
+        </section>
+
+        <section>
+          <img src="/2/doom-talk.png" />
           <aside class="notes">
-            Notre histoire commence en 1990.
-            https://fr.wikipedia.org/wiki/Id_Software
+            Dont Doom, qui est un monument du jeu vidéo et mérite un talk à part entière,
+            d'ailleurs ça a été fait, cf. le talk de Xavier-Frédéric Moulet du Breizhcamp 2022.
           </aside>
         </section>
 
         <section>
-          ...
+          TODO : Quake, Quake 2, Quake 3 Arena
+        </section>
+
+        <section>
+          TODO : Quake, Quake 2
+        </section>
+
+        <section>
+          TODO : Ce qui nous intéresse : Quake 3 Arena - 1999
+        </section>
+
+        <section>
+          TODO : libération de son code source en open-source en 2005
+        </section>
+
+        <section>
+          TODO : la découverte de la fonction
         </section>
 
       </section>
@@ -316,12 +425,12 @@
 
       <!-- 4. Normaliser des vecteurs -->
       <section data-background-image="/4/blender.jpeg" data-transition="fade" class="scrim lightgrey">
-        <h2>4.<br />Tu as peur ?<br />c'est normal</h2>
+        <h2>4.<br />Tout est<br />normal</h2>
       </section>
       <section data-background-image="/4/blender.jpeg" class="blurred">
 
         <section>
-          <img class="fragment r-stretch" src="/4/but-why.gif" />
+          <img class="r-stretch" src="/4/but-why.gif" />
           <aside class="notes">
             Tout ça c'est bien, mais pourquoi diable aurait-on besoin de calculer l'inverse de la racine carrée
             d'un nombre ?
@@ -592,7 +701,7 @@
         </section>
 
         <section>
-          <h3>Ce qu'on cherche à calculer alors :</h3>
+          <h3>Ce qu'on cherche à faire :</h3>
           <p class="fragment">
             Soit <span class="vector">$V$</span>$($<span class="x">$x$</span>$,$<span class="y">$y$</span>$,$<span
               class="z">$z$</span>$)$ un vecteur de magnitude <span class="vector">$M$</span>
@@ -600,7 +709,7 @@
           <p>
             <span class="fragment">
               <b>Normaliser</b> <span class="vector">$V$</span>, c'est trouver les composantes
-              <br /><span class="x">$x_n$</span>, <span class="y">$y_n$</span> et <span class="z">$z_n$</span> d'un
+              <br /><span class="x">$x_n$</span>, <span class="y">$y_n$</span> et <span class="z">$z_n$</span> du
               vecteur <span class="vector">$V_n$</span> de magnitude
               <span class="vector">$M_n = 1$</span></span>
           </p>
@@ -612,37 +721,85 @@
         </section>
 
         <section>
-          <div class="cv">
-            <div class="ch item">
+          <div class="ch">
+            <div class="item cv">
               <div class="item">
-                \[x_n = \frac{x}{M}\]
+                \[\textcolor{#66ABE1}{x_n} = \frac{\textcolor{#66ABE1}{x}}{\textcolor{#C878E1}{M}}\]
               </div>
               <div class="item">
-                \[y_n = \frac{y}{M}\]
+                \[\textcolor{#9CC281}{y_n} = \frac{\textcolor{#9CC281}{y}}{\textcolor{#C878E1}{M}}\]
               </div>
               <div class="item">
-                \[z_n = \frac{z}{M}\]
+                \[\textcolor{#DCBD87}{z_n} = \frac{\textcolor{#DCBD87}{z}}{\textcolor{#C878E1}{M}}\]
               </div>
             </div>
-            <div class="ch item">
-              <div class="item">
-                \[x_n = \frac{x}{\sqrt{x^{2} + y^{2} + z^{2}}}\]
+            <div class="r-stack item-wide ">
+              <div class="cv fragment current-visible">
+                <div class="item">
+                  \[= \frac{\textcolor{#66ABE1}{x}}{\sqrt{\textcolor{#66ABE1}{x^{2}} + \textcolor{#9CC281}{y^{2}} +
+                  \textcolor{#DCBD87}{z^{2}}}}\]
+                </div>
+                <div class="item">
+                  \[= \frac{\textcolor{#9CC281}{y}}{\sqrt{\textcolor{#66ABE1}{x^{2}} + \textcolor{#9CC281}{y^{2}} +
+                  \textcolor{#DCBD87}{z^{2}}}}\]
+                </div>
+                <div class="item">
+                  \[= \frac{\textcolor{#DCBD87}{z}}{\sqrt{\textcolor{#66ABE1}{x^{2}} + \textcolor{#9CC281}{y^{2}} +
+                  \textcolor{#DCBD87}{z^{2}}}}\]
+                </div>
               </div>
-              <div class="item">
-                \[y_n = \frac{y}{\sqrt{x^{2} + y^{2} + z^{2}}}\]
-              </div>
-              <div class="item">
-                \[z_n = \frac{z}{\sqrt{x^{2} + y^{2} + z^{2}}}\]
+              <div class="cv fragment">
+                <div class="item">
+                  \[= \textcolor{#66ABE1}{x} \times \frac{1}{\sqrt{\textcolor{#66ABE1}{x^{2}} +
+                  \textcolor{#9CC281}{y^{2}} + \textcolor{#DCBD87}{z^{2}}}}\]
+                </div>
+                <div class="item">
+                  \[= \textcolor{#9CC281}{y} \times \frac{1}{\sqrt{\textcolor{#66ABE1}{x^{2}} +
+                  \textcolor{#9CC281}{y^{2}} + \textcolor{#DCBD87}{z^{2}}}}\]
+                </div>
+                <div class="item">
+                  \[= \textcolor{#DCBD87}{z} \times \frac{1}{\sqrt{\textcolor{#66ABE1}{x^{2}} +
+                  \textcolor{#9CC281}{y^{2}} + \textcolor{#DCBD87}{z^{2}}}}\]
+                </div>
               </div>
             </div>
           </div>
         </section>
 
         <section>
-          https://fabiensanglard.net/quake3/renderer.php
+          <div>
+            \[\frac{1}{\sqrt{\textcolor{#66ABE1}{x^{2}} + \textcolor{#9CC281}{y^{2}} + \textcolor{#DCBD87}{z^{2}}}}\]
+          </div>
+          <br/>
+          <div class="r-stack">
+            <div class="fragment current-visible">
+              <code data-trim class="normal">
+                1/sqrt(<span class="x">x</span>*<span class="x">x</span> + <span class="y">y</span>*<span class="y">y</span> + <span class="z">z</span>*<span class="z">z</span>);
+              </code>
+            </div>
+            <div class="fragment fade-up">
+              <code data-trim class="normal">
+                <code class="names">Q_rsqrt</code>(<span class="x">x</span>*<span class="x">x</span> + <span class="y">y</span>*<span class="y">y</span> + <span class="z">z</span>*<span class="z">z</span>);
+              </code>
+            </div>
+          </div>
+          <aside class="notes">
+            J'imagine que vous voulez maintenant où je veux en venir, puisqu'on retrouve bien
+            1/sqrt(x) dans ces calculs.
+            Etant donné le nombre de fois où on va avoir besoin de normaliser des vecteurs, (1 vecteur par plans, 60
+            fois par secondes), c'est un calcul qui va être fait très souvent, il est crucial qu'il soit rapide.
+          </aside>
         </section>
 
         <section>
+          <div class="cv">
+            <div class="item">
+              <img class="m-b-0" src="/4/prerequis-1.png" />
+            </div>
+            <div class="item fragment">
+              <img class="m-t-0" src="/4/prerequis-2.png" />
+            </div>
+          </div>
           <aside class="notes">
             Maintenant qu'on a vu à quoi sert cette fonction, on va pouvoir s'intéresser à son implémentation.
             Pour ça, on va d'abord s'armer de 2 prérequis :
@@ -1783,7 +1940,7 @@
         <section data-auto-animate>
           <div class="ch">
             <div data-fragment-index="1" class="item fragment">
-            <br/>
+              <br />
               <img class="highlight-shadow" src="/7/cordons-bleus.png" />
             </div>
             <div data-fragment-index="3" class="item fragment">
@@ -1795,7 +1952,7 @@
         <section data-auto-animate>
           <div class="ch">
             <div class="item">
-            <br/>
+              <br />
               <img class="highlight-shadow" src="/7/cordons-bleus.png" />
             </div>
             <div class="item">
