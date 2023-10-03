@@ -27,7 +27,7 @@ let car;
 // Texts
 let vxText, vyText, velocityText;
 // Controls
-let controls;
+let inputState;
 
 function preload() {
     this.load.image('background', '/car-game/background.png');
@@ -54,11 +54,35 @@ function create() {
     vyText = this.add.text(20, 45, 'vy: 0', textConfig);
     velocityText = this.add.text(20, 75, 'velocity: 0', textConfig);
 
-    controls = this.input.keyboard.addKeys({
-        up: Phaser.Input.Keyboard.KeyCodes.Z,
-        left: Phaser.Input.Keyboard.KeyCodes.Q,
-        down: Phaser.Input.Keyboard.KeyCodes.X,
-        right: Phaser.Input.Keyboard.KeyCodes.D
+    inputState = {
+        up: false,
+        down: false,
+        left: false,
+        right: false
+    };
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'i') {
+            inputState.up = true;
+        } else if (event.key === 'j') {
+            inputState.left = true;
+        } else if (event.key === 'k') {
+            inputState.down = true;
+        } else if (event.key === 'l') {
+            inputState.right = true;
+        }
+    });
+
+    document.addEventListener('keyup', (event) => {
+        if (event.key === 'i') {
+            inputState.up = false;
+        } else if (event.key === 'j') {
+            inputState.left = false;
+        } else if (event.key === 'k') {
+            inputState.down = false;
+        } else if (event.key === 'l') {
+            inputState.right = false;
+        }
     });
 
     this.scene.pause();
@@ -80,11 +104,11 @@ function update() {
     let directions = [];
 
     // compute velocity and base angle
-    if (controls.up.isDown) {
+    if (inputState.up) {
         directions.push('UP');
         car.setVelocityY(-200);
         car.setAngle(0);
-    } else if (controls.down.isDown) {
+    } else if (inputState.down) {
         directions.push('DOWN');
         car.setVelocityY(200);
         car.setAngle(180);
@@ -92,11 +116,11 @@ function update() {
         car.setVelocityY(0);
     }
 
-    if (controls.left.isDown) {
+    if (inputState.left) {
         directions.push('LEFT');
         car.setVelocityX(-200);
         car.setAngle(270);
-    } else if (controls.right.isDown) {
+    } else if (inputState.right) {
         directions.push('RIGHT');
         car.setVelocityX(200);
         car.setAngle(90);
