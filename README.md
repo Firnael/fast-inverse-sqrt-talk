@@ -26,7 +26,10 @@ Ce talk est très fortement inspiré de [cette vidéo](https://www.youtube.com/w
 ## Documentation
 
 - https://fr.wikipedia.org/wiki/Id_Software
+- https://en.wikipedia.org/wiki/Adaptive_tile_refresh
 - https://fabiensanglard.net/quake3/renderer.php
+- https://www.vg247.com/how-a-super-mario-bros-3-pc-port-created-id-software
+- https://www.reddit.com/r/gaming/comments/vznc9v/do_you_remember_id_tech_3_engine_games_aka_quake/
 
 ## Ressources
 

@@ -34,6 +34,7 @@ deck.initialize({
     }
 });
 
+// Disable Reveal keyboard shortcuts for the car game
 deck.configure({
     keyboard: {
         73: null, // i
