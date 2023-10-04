@@ -25,6 +25,7 @@ Ce talk est très fortement inspiré de [cette vidéo](https://www.youtube.com/w
 
 ## Documentation
 
+- https://en.wikipedia.org/wiki/Fast_inverse_square_root
 - https://fr.wikipedia.org/wiki/Id_Software
 - https://en.wikipedia.org/wiki/Adaptive_tile_refresh
 - https://fabiensanglard.net/quake3/renderer.php

@@ -19,24 +19,20 @@
           Bonjour à tous, bienvenue à tous au MaxCamp 2023, pour ceux qui ne me connaissent pas
           je m'appelle Audren Burlot, et je suis honoré de démarrer la journée avec ce talk
           qui s'intitule "The Inglorious Function".
+
+          Aujourd'hui je vais vous raconter l'histoire d'une fonction.
+          Une fonction trouvée il y a 20 dans le code source d'un jeu sorti il y a 24 ans.
+          Une fonction qui m'a cassé le cerveau.
         </aside>
       </section>
       <section data-background-image="/1/splash.jpg" class="blurred">
 
         <section>
-          <img class="r-stretch" src="/1/cat-at-table.jpeg" />
-          <aside class="notes">
-            Aujourd'hui je vais vous raconter l'histoire d'une fonction.
-            Une fonction trouvée il y a 20 dans le code source d'un jeu sorti il y a 24 ans.
-            Une fonction qui m'a cassé le cerveau.
-          </aside>
-        </section>
-
-        <section>
           <img src="/1/quentin-tarantino.webp" />
           <aside class="notes">
             Voici une photo de Quentin tarantino qui se demande s'il y aura une référence au thème de cette année.
-            Je ne suis pas Quentin Tarantino, mais je peux vous dire que, pas de ouf.
+            Spoiler : non.
+            Maintenant que c'est clair, commençons.
           </aside>
         </section>
 
@@ -83,7 +79,7 @@
           <img src="/1/fsqrt-youtube.png" />
           <br />
           <div class="ch">
-            <video data-autoplay loop muted class="item fragment" src="/1/monkey-brain.webm" height="400px" />
+            <video data-autoplay loop muted class="item fragment" data-src="/1/monkey-brain.webm" height="400px" />
             <img class="highlight-shadow fragment" src="/1/wojak-brain-mask.png" height="400px" />
           </div>
           <aside class="notes">
@@ -332,7 +328,7 @@
         </section>
 
         <section>
-          <img src="/2/dangerous-dave-in-copyright.webp" height="600px"/>
+          <img src="/2/dangerous-dave-in-copyright.webp" height="600px" />
           <aside class="notes">
             Sauf qu'un jour y'a Carmack qui se pointe et qui montre à Romero un prototype de Dangerous Dave,
             qu'il nomme pour rigoler "Dangerous Dave in Copyright Infringement".
@@ -2095,36 +2091,8 @@
                 <td><code class="type">float</code></td>
               </tr>
             </table>
-            <table data-fragment-index="3" class="fragment instant">
-              <tr>
-                <th>Symbol</th>
-                <th>Address</th>
-                <th>Type</th>
-              </tr>
-              <tr>
-                <td><code class="normal">i</code></td>
-                <td><code class="address">0xBF6CC739</code></td>
-                <td><code class="type">int</code></td>
-              </tr>
-              <tr>
-                <td><code class="normal">x2</code></td>
-                <td><code class="address">0xEA3FC4F7</code></td>
-                <td><code class="type">float</code></td>
-              </tr>
-              <tr>
-                <td><code class="bold normal">y</code></td>
-                <td><code class="bold address">0x0B00B135</code></td>
-                <td><code class="bold bright">int</code></td>
-              </tr>
-              <tr>
-                <td><code class="normal">threehalfs</code></td>
-                <td><code class="address">0x5EE7F9A1</code></td>
-                <td><code class="type">float</code></td>
-              </tr>
-            </table>
           </div>
           <div data-fragment-index="1" class="fragment fade-left symbol-table-arrow">&lt;</div>
-          <img class="fragment abs-center" src="/7/magic-shia.gif" />
         </section>
 
         <section>
@@ -2278,14 +2246,125 @@
         </section>
 
         <section>
-          On a dit que dans i, on avait stocké log2(y)
+          <h3>Qu'est-ce qu'on essaye de faire déjà ?</h3>
+          <br />
+          <div class="text-left">
+            <div class="ch fragment">
+              <div class="item">
+                <b>On cherche ça :</b><br />
+              </div>
+              <div class="item">
+                <code class="value">1/sqrt(x)</code>
+              </div>
+            </div>
+            <div class="ch fragment">
+              <div class="item">
+                <b>Si on arrive à faire :</b><br />
+              </div>
+              <div class="item">
+                <code class="normal">
+                  i ≈ <code class="value">log2(1/sqrt(x))</code>
+                </code>
+              </div>
+            </div>
+            <div class="ch fragment">
+              <div class="item">
+                <b>Alors avec :</b><br />
+              </div>
+              <div class="item">
+                <code class="normal">
+                  y = * (float*) &i;
+                </code>
+              </div>
+            </div>
+            <div class="ch fragment">
+              <div class="item">
+                <b>On pourra obtenir :</b><br />
+              </div>
+              <div class="item">
+                <code class="normal">
+                  y ≈ <code class="value">1/sqrt(x)</code>
+                </code>
+              </div>
+            </div>
+          </div>
+          <aside class="notes">
+            Rappelez vous : on a prouvé que la représentation binaire d'un float est son propre log, but scaled and
+            shifted.
+            L'opération inverse est vraie aussi : si on part d'un log, on peut retrouver la représentation binaire du
+            float,
+            et donc la valeur du float en appliquant le scale de 2^-23 et le shift de 127.
+          </aside>
+        </section>
 
-          log(1/sqrt(y)) = log(y^{-1/2}) = -1/2 * log(y)
+        <section>
+          <div class="big">
+            <span>$\frac{1}{\sqrt{y}} = $</span> <span class="fragment">$y^{-1/2}$</span>
+          </div>
+          <hr class="fragment" />
+          <div class="text-left" style="margin-left: 15%;">
+            <span class="fragment medium math">$log_2(\frac{1}{\sqrt{y}}) = $</span>
+            <span class="fragment medium math">$log_2(y^{-1/2})$</span>
+            <div class="fragment medium math" style="margin-left: 270px;">$= -\frac{1}{2} \cdot \log_{2}(y)$</div>
+            <div class="fragment medium math" style="margin-left: 270px;">$= -\frac{\log_{2}(y)}{2}$</div>
+          </div>
+          <aside class="notes">
+            log(1/sqrt(y)) = log(y^{-1/2}) = -1/2 * log(y)
+            donc log(1/sqrt(y)) = - (i >> 1)
+            on a maintenant dans i : une approximation de log(1/sqrt(y))
+            repasser les bits de i dans y nous donne une approximation de 1/sqrt(y)
+          </aside>
+        </section>
 
-          donc log(1/sqrt(y)) = - (i >> 1)
+        <section>
+          <div class="text-left" style="margin-left: 15%;">
+            <div>
+              <code class="normal">
+              i = <code class="value">01000000100101000...</code>
+              </code>
+            </div>
+            <div class="fragment">
+              <code class="normal">
+              i ≈ <code class="value">log2(y)</code>
+              </code>
+            </div>
+          </div>
+          <hr class="fragment" />
+          <div class="r-stack medium">
+            <div class="fragment current-visible instant">$log_2(\frac{1}{\sqrt{y}}) = -\frac{\log_{2}(y)}{2}$</div>
+            <div class="fragment instant">$log_2(\frac{1}{\sqrt{y}}) \approx -\frac{i}{2} $</div>
+          </div>
+          <hr class="fragment" />
+          <div class="fragment medium">
+            <code class="normal">
+              log2(1/√y) ≈ - (i >> <code class="value">1</code>)
+            </code>
+          </div>
+          <aside class="notes">
+            On a dit que dans i, on avait stocké log2(y), sans le shift et le scale.
+          </aside>
+        </section>
 
-          on a maintenant dans i : une approximation de log(1/sqrt(y))
-          repasser les bits de i dans y nous donne une approximation de 1/sqrt(y)
+        <section>
+          <div class="r-stack">
+            <code data-trim class="fragment current-visible instant normal regular">
+              <span class="semi-trans">i = <code class="value">0x5f3759df</code></span> - (
+            i >> <code class="value">1</code> )<span class="semi-trans">;</span>
+            </code>
+            <code data-trim class="fragment instant normal regular">
+                <span class="semi-trans">i = </span><code class="value">0x5f3759df</code><span class="semi-trans"> - (
+              i >> <code class="value">1</code> );</span>
+            </code>
+          </div>
+          <img class="fragment" src="/8/wtf-cat.gif" />
+          <aside class="notes">
+            Ça explique déjà cette histoire de "-(i>>1)".
+            Mais il reste encore un mystère : pourquoi ce nombre hexa ?
+          </aside>
+        </section>
+
+        <section>
+          C'est un <b>magic number</b> !
         </section>
 
       </section>
@@ -2400,6 +2479,10 @@
 
         <section>
           <h3>Ok mais qui s'en fout ?</h3>
+        </section>
+
+        <section>
+          <video class="r-stretch" data-autoplay loop data-src="/9/winona-confused-math.webm"></video>
         </section>
 
       </section>
@@ -2546,7 +2629,7 @@
         </section>
 
         <section>
-          <video autoplay loop muted src="/10/flickering.mp4" ></video>
+          <video autoplay loop muted src="/10/flickering.mp4"></video>
           <p class="small muted">Valve / id / barracuda415 @ Reddit / Kotaku</p>
           <aside class="notes">
             top: Quake / Half-Life, Bottom: Half-Life 2 / Portal
@@ -2562,19 +2645,15 @@
           </aside>
         </section>
 
-        <section>
-          <img src="/10/thats-all-folks.jpeg" />
-          <aside class="notes">
-            Ce talk lui est finito pipo !
-          </aside>
-        </section>
-
       </section>
 
       <!-- 11. Merci -->
       <section data-background-image="/1/cake-aux-olives.jpeg" data-transition="fade">
         <h1>Merci !</h1>
         <strong class="shadow">Distribution de paracétamol<br />à la pause</strong>
+        <aside class="notes">
+          Ce talk lui est finito pipo !
+        </aside>
       </section>
     </div> <!-- /slides -->
   </div> <!-- /reveal -->
