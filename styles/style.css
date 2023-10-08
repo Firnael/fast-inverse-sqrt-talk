@@ -334,6 +334,13 @@ img.c-logo-cashier {
     right: 325px;
 }
 
+img.max-head {
+    margin: 0px;
+    min-width: 100%;
+    box-shadow: none;
+    border: 2px dashed #606060;
+}
+
 img.wtf-cat {
     position: absolute;
     top: 150px;
@@ -370,19 +377,27 @@ div.symbol-table-arrow {
 }
 
 /* Images */
-img.max-head {
-    margin: 0px;
-    min-width: 100%;
-    box-shadow: none;
-    border: 2px dashed #606060;
+
+img.round {
+    border-radius: 50%;
+}
+
+img.m-t-0 {
+    margin-top: 0px;
+}
+
+img.m-b-0 {
+    margin-bottom: 0px;
 }
 
 /* Videos */
+
 video.motion-canvas {
     box-shadow: 0 0 10px #242424;
 }
 
 /* LaTeX */
+
 .math {
     margin-bottom: 10px;
 }
@@ -395,12 +410,10 @@ video.motion-canvas {
     margin-left: 120px;
 }
 
-img.m-t-0 {
-    margin-top: 0px;
-}
+/* Blockquotes */
 
-img.m-b-0 {
-    margin-bottom: 0px;
+blockquote.large {
+    width: 90%;
 }
 
 /* Code */

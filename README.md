@@ -17,6 +17,12 @@ Ce talk est très fortement inspiré de [cette vidéo](https://www.youtube.com/w
 9. Ce bon vieux Newton
 10. Conclusion
 
+### RAF
+
+- pourquoi on veut pas faire de division / racine carré -> opération sur les floating point numbers, CPU vs FPU
+- à quel point l'algo était plus rapide
+- enquête sur qui a écrit le code
+
 ## Démarrer la prez en local
 
 - `npm install`
@@ -40,8 +46,11 @@ Ce talk est très fortement inspiré de [cette vidéo](https://www.youtube.com/w
 - The "Who wrote the code" investigation at Beyond3D.com :
   - [Part 1](https://www.beyond3d.com/content/articles/8)
   - [Part 2](https://www.beyond3d.com/content/articles/15)
+  - [Brian Hook interview](https://www.quakewiki.net/profile-retro-interview-brian-hook/)
 - Misc.
   - https://dfarq.homeip.net/computers-in-1985/
+  - https://www.techspot.com/article/2166-mmx-sse-avx-explained/
+  - https://toggl.com/blog/build-horse-programming
   - https://www.vg247.com/how-a-super-mario-bros-3-pc-port-created-id-software
   - https://kotaku.com/ancient-90s-code-from-quake-still-controls-lights-in-h-1847105972
   - https://www.reddit.com/r/gaming/comments/vznc9v/do_you_remember_id_tech_3_engine_games_aka_quake/
