@@ -2,6 +2,7 @@
 
 :root {
     --bright-color: #ffec3e;
+    --danger-color: #ff3d33;
     --ieee-sign-color: #f4ad70;
     --ieee-exponent-color: #C579DF;
     --ieee-mantissa-color: #5ecbf7;
@@ -251,6 +252,10 @@ span.still-log {
     color: var(--bright-color);
 }
 
+.danger {
+    color: var(--danger-color);
+}
+
 .emphas {
     color: #33becd;
 }
@@ -327,11 +332,18 @@ img.c-logo {
     top: 180px;
     left: 200px;
 }
+
 img.c-logo-cashier {
     position: absolute;
     height: 20%;
     top: 115px;
     right: 325px;
+}
+
+img.harold {
+    position: absolute;
+    top: 50%;
+    left: 50%;
 }
 
 img.max-head {
@@ -471,6 +483,10 @@ pre.smaller {
     font-size: 19px !important;
 }
 
+pre.big {
+    font-size: 2.0rem !important;
+}
+
 pre.center {
     text-align: center;
 }
@@ -485,11 +501,11 @@ pre.clean code {
 
 /* Custom fragments */
 
-.fragment.instant {
+.reveal .slides section .fragment.instant {
     transition: all 0s ease;
 }
 
-.fragment.long {
+.reveal .slides section .fragment.long {
     transition: all 5s ease;
 }
 

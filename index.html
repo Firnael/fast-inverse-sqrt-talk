@@ -1031,7 +1031,7 @@
             </div>
           </div>
           <aside class="notes">
-            J'imagine que vous voulez maintenant où je veux en venir, puisqu'on retrouve bien
+            J'imagine que vous voyez maintenant où je veux en venir, puisqu'on retrouve bien
             1/sqrt(x) dans ces calculs.
             Etant donné le nombre de fois où on va avoir besoin de normaliser des vecteurs, (1 vecteur par plans, 60
             fois par secondes), c'est un calcul qui va être fait très souvent, il est crucial qu'il soit rapide.
@@ -1810,24 +1810,35 @@
         <section data-auto-animate>
           <div class="medium">
             <h4>Cas nominal</h4>
-            <div data-id="1">
-              <span class="ieee-sign">$+ ou -$</span> <span class="ieee-mantissa">$(1 +\frac{M}{2^{23}})$</span>
-              <span class="ieee-exponent">$\times 2^{E-127}$</span>
+            <div class="r-stack">
+              <div data-id="1" data-fragment-index="0" class="fragment current-visible preload instant">
+                <span class="ieee-sign">$+ ou -$</span> <span class="ieee-mantissa">$(1 +\frac{M}{2^{23}})$</span>
+                <span class="ieee-exponent">$\times 2^{E-127}$</span>
+              </div>
+              <div class="fragment instant">
+                <span class="ieee-sign still-log">$+ ou -$</span> <span class="ieee-mantissa">$(1
+                  +\frac{M}{2^{23}})$</span>
+                <span class="ieee-exponent">$\times 2^{E-127}$</span>
+              </div>
+            </div>
+            <div class="ch">
+              <div class="item">
+                <div class="r-stack">
+                  <div class="fragment current-visible regular">
+                    \[f(x) = \frac{1}{\sqrt{-x}}\]
+                  </div>
+                  <div class="fragment regular">
+                    \[f(x) = \frac{1}{\textcolor{#FF3D33}{\sqrt{-x}}}\]
+                  </div>
+                </div>
+              </div>
+              <div class="item fragment">
+                <img src="/5/big-nono.jpeg" />
+              </div>
             </div>
           </div>
           <aside class="notes">
             Dans notre cas, on sait que le signe sera toujours positif, donc on peut l'ignorer.
-          </aside>
-        </section>
-
-        <section>
-          <div class="medium">
-            \[f(x) = \frac{1}{\sqrt{-x}}\]
-          </div>
-          <div>
-            <img class="fragment" src="/5/big-nono.jpeg" />
-          </div>
-          <aside class="notes">
             En effet, si on en vient à calculer la racine carrée d'un nombre négatif, il s'est passé un truc pas net !
           </aside>
         </section>
@@ -1851,7 +1862,6 @@
           </div>
         </section>
 
-
       </section>
 
       <!-- 6. Log2, Log2(1+x) et autre filouteries -->
@@ -1861,6 +1871,7 @@
         <img class="noshadow abs-center-bottom" src="/6/wojak-mask.png" height="300px" />
       </section>
       <section data-background-image="/6/logarithms-book.jpeg" class="blurred">
+
         <section>
           <img class="fragment" src="/5/log2-undertaker.jpg" />
           <aside class="notes">
@@ -1869,27 +1880,27 @@
         </section>
 
         <section>
-          <div class="math fragment fade-in-then-semi-out">
+          <div class="math">
             $y =$ <span class="ieee-mantissa">$(1 + \frac{M}{2^{23}})$</span> <span class="ieee-exponent">$\times
               2^{E-127}$</span>
           </div>
           <hr class="fragment" />
           <div class="text-left">
             <div class="math fragment fade-in-then-semi-out" style="margin-left: 140px;">
-              $log_2(y) = log_2($<span class="ieee-mantissa">$(1 + \frac{M}{2^{23}})$</span>
+              $\log_2(y) = \log_2($<span class="ieee-mantissa">$(1 + \frac{M}{2^{23}})$</span>
               <span class="ieee-exponent">$\times 2^{E-127}$</span>$)$
             </div>
             <div class="math fragment fade-in-then-semi-out" style="margin-left: 300px;">
-              $= log_2($<span class="ieee-mantissa">$1 + \frac{M}{2^{23}}$</span>$)$
-              $+ log_2($<span class="ieee-exponent">$2^{E-127}$</span>$)$
+              $= \log_2($<span class="ieee-mantissa">$1 + \frac{M}{2^{23}}$</span>$)$
+              $+ \log_2($<span class="ieee-exponent">$2^{E-127}$</span>$)$
             </div>
             <div class="r-stack">
               <div class="math fragment current-visible" style="margin-left: 300px;">
-                $= log_2($<span class="ieee-mantissa">$1 + \frac{M}{2^{23}}$</span>$)$
+                $= \log_2($<span class="ieee-mantissa">$1 + \frac{M}{2^{23}}$</span>$)$
                 $+$ <span class="ieee-exponent">$E-127$</span>
               </div>
               <div class="math fragment" style="margin-left: 300px;">
-                $=$ <span class="still-log">$log_2($<span class="ieee-mantissa">$1 + \frac{M}{2^{23}}$</span>$)$</span>
+                $=$ <span class="still-log">$\log_2($<span class="ieee-mantissa">$1 + \frac{M}{2^{23}}$</span>$)$</span>
                 $+$ <span class="ieee-exponent">$E-127$</span>
               </div>
             </div>
@@ -1927,8 +1938,8 @@
 
         <section>
           <div class="text-left" style="margin-left: 15%;">
-            <div class="math fragment fade-in-then-semi-out">
-              $log_2(y) = log_2($<span class="ieee-mantissa">$1 + \frac{M}{2^{23}}$</span>$)$
+            <div class="math fragment preload fade-in-then-semi-out">
+              $\log_2(y) = \log_2($<span class="ieee-mantissa">$1 + \frac{M}{2^{23}}$</span>$)$
               $+$ <span class="ieee-exponent">$E-127$</span>
             </div>
             <div class="math math-pad-log fragment fade-in-then-semi-out">
@@ -1964,7 +1975,7 @@
           <br />
           <div class="fragment">
             <div class="medium">
-              $log_2(y) \approx$ <span class="ieee-exponent">$E \times 2^{23}$</span>$ + $<span
+              $\log_2(y) \approx$ <span class="ieee-exponent">$E \times 2^{23}$</span>$ + $<span
                 class="ieee-mantissa">$M$</span>
             </div>
             <b class="fragment bright medium">sa propre représentation binaire !</b>
@@ -2181,12 +2192,40 @@
         </section>
 
         <section>
-          <img src="/7/cashier.jpeg" height="600px" />
-          <img class="fragment highlight-shadow c-logo-cashier" src="/7/c-logo.png" />
+          <div class="r-stack">
+            <div>
+              <img src="/7/cashier.jpeg" height="600px" />
+              <img class="fragment highlight-shadow c-logo-cashier" src="/7/c-logo.png" />
+            </div>
+            <div class="fragment">
+              <img class="noshadow" src="/7/pranked.png" height="600px" />
+            </div>
+          </div>
         </section>
 
         <section>
-          <img class="noshadow" src="/7/pranked.png" height="600px" />
+          <div class="r-stack">
+            <pre class="c clean big fragment preload current-visible">
+              <code data-trim data-ln-start-from="8" data-line-numbers="1,3">
+                  i  = * ( long * ) &y;
+                  i  = 0x5f3759df - ( i >> 1 );
+                  y  = * ( float * ) &i;
+              </code>
+            </pre>
+            <pre class="c clean big fragment">
+              <code data-trim data-ln-start-from="8" data-line-numbers="2">
+                  i  = * ( long * ) &y;
+                  i  = 0x5f3759df - ( i >> 1 );  // wtf?
+                  y  = * ( float * ) &i;
+              </code>
+            </pre>
+          </div>
+          <aside class="notes">
+            On voit que la ligne 8 qu'on vient d'analyser et la ligne 10 juste après, c'est la même opération,
+            mais dans l'autre sens.
+            ça veut dire qu'entre les deux, il se passe quelque chose qui doit transformer i, la représentation binaire
+            de notre float y, en la représentation binaire de 1/sqrt(y).
+          </aside>
         </section>
 
       </section>
@@ -2278,7 +2317,17 @@
                 <b>On cherche ça :</b><br />
               </div>
               <div class="item">
-                <code class="value">1/sqrt(x)</code>
+                <code class="value">1/sqrt(y)</code>
+              </div>
+            </div>
+            <div class="ch fragment">
+              <div class="item">
+                <b>On a :</b><br />
+              </div>
+              <div class="item">
+                <code class="normal">
+                  i ≈ <code class="value">log2(y)</code>
+                </code>
               </div>
             </div>
             <div class="ch fragment">
@@ -2287,7 +2336,7 @@
               </div>
               <div class="item">
                 <code class="normal">
-                  i ≈ <code class="value">log2(1/sqrt(x))</code>
+                  i ≈ <code class="value">log2(1/sqrt(y))</code>
                 </code>
               </div>
             </div>
@@ -2307,7 +2356,7 @@
               </div>
               <div class="item">
                 <code class="normal">
-                  y ≈ <code class="value">1/sqrt(x)</code>
+                  y ≈ <code class="value">1/sqrt(y)</code>
                 </code>
               </div>
             </div>
@@ -2316,8 +2365,7 @@
             Rappelez vous : on a prouvé que la représentation binaire d'un float est son propre log, but scaled and
             shifted.
             L'opération inverse est vraie aussi : si on part d'un log, on peut retrouver la représentation binaire du
-            float,
-            et donc la valeur du float en appliquant le scale de 2^-23 et le shift de 127.
+            float, et donc la valeur du float en appliquant le scale de 2^-23 et le shift de 127.
           </aside>
         </section>
 
@@ -2327,8 +2375,8 @@
           </div>
           <hr class="fragment" />
           <div class="text-left" style="margin-left: 15%;">
-            <span class="fragment medium math">$log_2(\frac{1}{\sqrt{y}}) = $</span>
-            <span class="fragment medium math">$log_2(y^{-1/2})$</span>
+            <span class="fragment medium math">$\log_2(\frac{1}{\sqrt{y}}) = $</span>
+            <span class="fragment medium math">$\log_2(y^{-1/2})$</span>
             <div class="fragment medium math" style="margin-left: 270px;">$= -\frac{1}{2} \cdot \log_{2}(y)$</div>
             <div class="fragment medium math" style="margin-left: 270px;">$= -\frac{\log_{2}(y)}{2}$</div>
           </div>
@@ -2347,19 +2395,21 @@
               i = <code class="value">01000000100101000...</code>
               </code>
             </div>
-            <div class="fragment">
+            <div data-fragment-index="1" class="fragment">
               <code class="normal">
               i ≈ <code class="value">log2(y)</code>
               </code>
             </div>
           </div>
-          <hr class="fragment" />
+          <hr data-fragment-index="2" class="fragment" />
           <div class="r-stack medium">
-            <div class="fragment current-visible instant">$log_2(\frac{1}{\sqrt{y}}) = -\frac{\log_{2}(y)}{2}$</div>
-            <div class="fragment instant">$log_2(\frac{1}{\sqrt{y}}) \approx -\frac{i}{2} $</div>
+            <div data-fragment-index="2" class="fragment current-visible instant">$\log_2(\frac{1}{\sqrt{y}}) =
+              -\frac{\log_{2}(y)}{2}$</div>
+            <div data-fragment-index="3" class="fragment instant">$\log_2(\frac{1}{\sqrt{y}}) \approx -\frac{i}{2} $
+            </div>
           </div>
-          <hr class="fragment" />
-          <div class="fragment medium">
+          <hr data-fragment-index="4" class="fragment" />
+          <div data-fragment-index="4" class="fragment medium">
             <code class="normal">
               log2(1/√y) ≈ - (i >> <code class="value">1</code>)
             </code>
@@ -2369,27 +2419,181 @@
           </aside>
         </section>
 
-        <section>
+        <section data-auto-animate>
           <div class="r-stack">
-            <code data-trim class="fragment current-visible instant normal regular">
-              <span class="semi-trans">i = <code class="value">0x5f3759df</code></span> - (
+            <code data-fragment-index="1" data-trim class="fragment preload current-visible instant normal regular">
+              <span class="semi-trans">i = <code data-id="1" class="value">0x5f3759df</code></span> - (
             i >> <code class="value">1</code> )<span class="semi-trans">;</span>
             </code>
-            <code data-trim class="fragment instant normal regular">
+            <code data-fragment-index="2" data-trim class="fragment instant normal regular">
                 <span class="semi-trans">i = </span><code class="value">0x5f3759df</code><span class="semi-trans"> - (
               i >> <code class="value">1</code> );</span>
             </code>
           </div>
-          <img class="fragment" src="/8/wtf-cat.gif" />
+          <img data-fragment-index="2" class="fragment" src="/8/wtf-cat.gif" />
           <aside class="notes">
             Ça explique déjà cette histoire de "-(i>>1)".
             Mais il reste encore un mystère : pourquoi ce nombre hexa ?
           </aside>
         </section>
 
+        <section data-auto-animate>
+          <code data-id="1" class="medium value">0x5f3759df</code>
+          <br />
+          <img src="/8/magic-shia.gif" height="300px" />
+          <br />
+          <h2>The magic number 🪄</h2>
+        </section>
+
         <section>
-          C'est un <b>magic number</b> !
-          <img src="/8/magic-shia.gif" />
+          <h4>Souvenez vous, on a dit que :</h4>
+          <div>
+            <code class="normal medium">
+            i ≈ <code class="value">log2(y)</code>
+            </code>
+          </div>
+          <br />
+          <div class="fragment">
+            <h4>mais on a un peu oublié le scaling et le shifting</h4>
+            <code class="normal medium">
+            / 2^23 - 127 + mu
+          </code>
+          </div>
+        </section>
+
+        <section>
+          TODO : représentation binaire du magic number, - (i>>1), etc
+        </section>
+
+        <section data-auto-animate>
+          <h3>Comment il a été trouvé ?</h3>
+          <div class="ch">
+            <div class="item fragment">
+              <img class="highlight-shadow" src="/8/trial-and-error.png" height="400px" />
+              <p><b>À taton ?</b></p>
+            </div>
+            <div class="item fragment">
+              <img src="/8/wtf-girl.webp" />
+              <br />
+              <br />
+              <div data-id="1"><b>Par les maths ?</b></div>
+            </div>
+          </div>
+        </section>
+
+        <section data-auto-animate>
+          <div data-id="1">
+            <b class="big">Par les maths ?</b>
+            <p class="muted">speedrun any%</p>
+          </div>
+          <div class="r-stack">
+            <div data-fragment-index="1" class="fragment current-visible instant medium">\[Γ = \frac{1}{\sqrt{y}}\]
+            </div>
+            <div data-fragment-index="2" class="fragment current-visible instant medium">\[\log_2(Γ) =
+              \log_2(\frac{1}{\sqrt{y}})\]</div>
+            <div data-fragment-index="3" class="fragment current-visible instant medium">\[\log_2(Γ) =
+              -\frac{1}{2}\log_2(y)\]
+            </div>
+            <div data-fragment-index="4" class="fragment current-visible instant medium">\[\log_2(Γ) =
+              -\frac{1}{2}\log_2(y)\]</div>
+            <div data-fragment-index="5" class="fragment current-visible instant smaller">
+              $\frac{1}{2^{23}}($<span class="ieee-exponent">$E_Γ \times 2^{23}+ $<span
+                  class="ieee-mantissa">$M_Γ$</span></span>$) - 127$ <span class="mu">$+ \mu$</span>
+              $ = -\frac{1}{2}(\frac{1}{2^{23}}($<span class="ieee-exponent">$E_y \times 2^{23}+ $<span
+                  class="ieee-mantissa">$M_y$</span></span>$) - 127$ <span class="mu">$+ \mu$</span>$)$
+            </div>
+            <div data-fragment-index="6" class="fragment current-visible instant smaller">
+              $\frac{1}{2^{23}}($<span class="still-log"><span class="ieee-exponent">$E_Γ \times 2^{23}+ $<span
+                    class="ieee-mantissa">$M_Γ$</span></span></span>$) - 127$ <span class="mu">$+ \mu$</span>
+              $ = -\frac{1}{2}(\frac{1}{2^{23}}($<span class="ieee-exponent">$E_y \times 2^{23}+ $<span
+                  class="ieee-mantissa">$M_y$</span></span>$) - 127$ <span class="mu">$+ \mu$</span>$)$
+            </div>
+            <div data-fragment-index="7" class="fragment current-visible instant smaller">
+              $\frac{1}{2^{23}}($<span class="still-log"><span class="ieee-exponent">$E_Γ \times 2^{23}+ $<span
+                    class="ieee-mantissa">$M_Γ$</span></span></span>$) - 127$ <span class="mu">$+ \mu$</span>
+              $ = -\frac{1}{2}(\frac{1}{2^{23}}($<span class="ieee-exponent">$E_y \times 2^{23}+ $<span
+                  class="ieee-mantissa">$M_y$</span></span>$) - 127$ <span class="mu">$+ \mu$</span>$)$
+              <img class="abs-center" src="/8/cringe-kid.jpg" />
+            </div>
+            <div data-fragment-index="8" class="fragment current-visible instant small">
+              <span class="still-log"><span class="ieee-exponent">$E_Γ \times 2^{23}+ $<span
+                    class="ieee-mantissa">$M_Γ$</span></span></span>
+              $ = \frac{3}{2}2^{23}(127 - \mu) - \frac{1}{2}($<span class="ieee-exponent">$E_y \times 2^{23}+ $<span
+                  class="ieee-mantissa">$M_y$</span></span>$)$
+            </div>
+            <div data-fragment-index="9" class="fragment current-visible instant small">
+              <br />
+              <span class="ieee-exponent">$E_Γ \times 2^{23}+ $<span class="ieee-mantissa">$M_Γ$</span></span>
+              <span>$ = \frac{3}{2}2^{23}(127 - \mu) - \frac{1}{2}($<span class="ieee-exponent">$E_y \times 2^{23}+
+                  $<span class="ieee-mantissa">$M_y$</span></span>$)$
+              </span>
+              <br />
+              <br />
+              <code class="normal" style="margin-left: 150px;">
+                = <code class="value">1597463007</code> - log2(y)/2
+              </code>
+            </div>
+            <div data-fragment-index="10" class="fragment instant small">
+              <br />
+              <span class="ieee-exponent">$E_Γ \times 2^{23}+ $<span class="ieee-mantissa">$M_Γ$</span></span>
+              <span>$ = \frac{3}{2}2^{23}(127 - \mu) - \frac{1}{2}($<span class="ieee-exponent">$E_y \times 2^{23}+
+                  $<span class="ieee-mantissa">$M_y$</span></span>$)$
+              </span>
+              <br />
+              <br />
+              <code class="normal" style="margin-left: 150px;">
+                = <code class="value">0x5f3759df</code> - ( i >> <code class="value">1</code> )
+              </code>
+            </div>
+          </div>
+          <div data-fragment-index="4" class="fragment current-visible">
+            <span class="still-log">
+              $\frac{1}{2^{23}}($<span class="ieee-exponent">$E \times 2^{23}+ $<span
+                  class="ieee-mantissa">$M$</span></span>$) - 127$ <span class="mu">$+ \mu$</span>
+            </span>
+          </div>
+        </section>
+
+        <section>
+          <div class="r-stack">
+            <pre class="c clean big fragment preload current-visible">
+              <code data-trim data-ln-start-from="8" data-line-numbers="3-4">
+                i = * ( long * ) &y;
+
+                // bits de la solution
+                i = 0x5f3759df - ( i >> 1 ); 
+
+                y = * ( float * ) &i;
+            </code>
+            </pre>
+            <pre class="c clean big current-visible fragment">
+              <code data-trim data-ln-start-from="8" data-line-numbers="5-6">
+                i = * ( long * ) &y;
+
+                i = 0x5f3759df - ( i >> 1 );
+
+                // la solution, un float
+                y = * ( float * ) &i;
+            </code>
+            </pre>
+            <pre class="c clean big fragment">
+              <code data-trim data-ln-start-from="8" data-line-numbers="5-6">
+                i = * ( long * ) &y;
+
+                i = 0x5f3759df - ( i >> 1 );
+
+                // enfin, une approximation...
+                y = * ( float * ) &i;
+            </code>
+            </pre>
+          </div>
+          <img class="fragment harold highlight-shadow" src="/8/harold.png" />
+          <aside class="notes">
+            On voit que la ligne 8 qu'on vient d'analyser et la ligne 10 juste après, c'est la même opération,
+            mais dans l'autre sens.
+            ça veut dire qu'entre les deux, il se passe quelque chose qui doit transformer i, la représentation binaire
+            de notre float y, en la représentation binaire de 1/sqrt(y).
+          </aside>
         </section>
 
       </section>
@@ -2525,10 +2729,20 @@
       </section>
       <section data-background-image="/10/quake-3-sarge.webp" class="blurred">
 
+        <section>
+          <h3>À quel point c'est précis ?</h3>
+          <h2 class="fragment">Erreur relative maximum :<br />
+            <span class="bright">0,177%</span>
+          </h2>
+        </section>
+
         <!-- le gain de temps -->
         <section>
-          <img src="/10/mr-wolf.jpeg" height="500px" />
-          <p><b>3-4 fois plus rapide</b></p>
+          <h3>À quel point c'est rapide ?</h3>
+          <div class="fragment">
+            <img src="/10/mr-wolf.jpeg" height="400px" />
+            <h3><span class="bright">3-4 fois</span> plus rapide que <code class="normal">1/sqrt(x)</code></h3>
+          </div>
           <aside class="notes">
             On estime qu'à l'époque cet algorithme était 3 à 4 fois plus rapide que la méthode classique.
           </aside>
@@ -2548,27 +2762,25 @@
         </section>
 
         <section>
-          <img src="/10/intel-pentium-3.webp" height="500px" />
-          <p><b>Intel Pentium-3 CPU/FPU - février 1999</b></p>
+          <div class="r-stack">
+            <img src="/10/intel-pentium-3.webp" height="500px" />
+            <img class="fragment" src="/10/fast-sonic.jpeg" height="500px" />
+          </div>
+          <p><b>Intel Pentium-3 CPU/FPU<br />Février 1999</b></p>
           <aside class="notes">
-            Peu de temps après cependant, et dès février 1999, donc avant la sortie de Quake 3
+            - Peu de temps après cependant, et dès février 1999, donc avant la sortie de Quake 3
             (sorti en décembre de la même année) le set d'instructions SSE est introduit par Intel
             dans son nouveau Pentium-3, comprenant une instruction "RSQRTSS"
-          </aside>
-        </section>
-
-        <section>
-          <img src="/10/fast-sonic.jpeg" />
-          <aside class="notes">
-            Rapidement, l'algo est devenu obsolète, et a été remplacé par ces instructions.
+            - Rapidement, l'algo est devenu obsolète, et a été remplacé par ces instructions.
           </aside>
         </section>
 
         <!-- l'enquête Beyond3D -->
         <section>
+          <h3>Qui a écrit ce code ?</h3>
           <div class="r-stack">
             <img src="/10/thinking-cat.jpeg" />
-            <img class="fragment" src="/10/john-carmack-2006.jpeg" />
+            <img class="fragment" src="/10/john-carmack-2006.jpeg" height="500px" />
           </div>
           <aside class="notes">
             - Une question qui reste en suspens est : qui a écrit cet algo au final ?
@@ -2760,7 +2972,13 @@
         </section>
 
         <section>
-          <img src="/10/investigation.jpeg" height="600px"/>
+          <img src="/10/e-sqrt-c.png" height="550px" />
+          <br />
+          <a href="https://www.netlib.org/fdlibm/e_sqrt.c"><b>e_sqrt.c</b></a>
+        </section>
+
+        <section>
+          <img src="/10/investigation.jpeg" height="600px" />
         </section>
 
         <section>

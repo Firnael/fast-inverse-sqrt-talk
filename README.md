@@ -20,8 +20,9 @@ Ce talk est très fortement inspiré de [cette vidéo](https://www.youtube.com/w
 ### RAF
 
 - pourquoi on veut pas faire de division / racine carré -> opération sur les floating point numbers, CPU vs FPU
-- à quel point l'algo était plus rapide
-- enquête sur qui a écrit le code
+- terminer le magic number
+  - math fait, reste l'explication avec les bits
+- terminer l'itération de Newton
 
 ## Démarrer la prez en local
 
