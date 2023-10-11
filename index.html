@@ -148,7 +148,7 @@
 
       <!-- 2. Storytime -->
       <section data-background-image="/2/pere-castor.jpeg" data-transition="fade" class="scrim sepia">
-        <h2>2.<br />Storytime !</h2>
+        <h1 class="highlight-gold">Storytime !</h1>
       </section>
       <section data-background-image="/2/pere-castor.jpeg" class="blurred">
         <section>
@@ -188,34 +188,6 @@
             est un magazine souvent amateur distribué sous format électronique afin d'être lu sur un ordinateur.
             Ils connurent leur pic de popularité dans les années 1980 et 1990 sous la forme de périodiques distribués
             sur média amovible (disquette), d'où leur nom.
-          </aside>
-        </section>
-
-        <section>
-          <div class="ch">
-            <div class="item">
-              <img src="/2/loadstar-1.jpeg">
-            </div>
-            <div class="item">
-              <img src="/2/loadstar-2.jpeg" height="500px">
-            </div>
-          </div>
-          <p><b>1984</b></p>
-          <aside class="notes">
-            - La caractéristique essentielle d'un diskmag, par distinction d'un magazine ASCII typique,
-            est la présence d'un fichier exécutable destiné à tourner sur une plate-forme spécifique.
-            - Ici le diskmag LOADSTAR pour Commodore 64 d'Amiga
-          </aside>
-        </section>
-
-        <section>
-          <img class="r-stretch" src="/2/big-blue-disk.jpeg">
-          <p><b>1986</b></p>
-          <aside class="notes">
-            Cet exécutable lance un programme qui permet d'accéder aux différents articles.
-            Un diskmag tend à mettre l'accent sur l'esthétique et propose une interface graphique dédiée,
-            de la musique de fond et d'autres fonctionnalités utilisant la plate-forme pour laquelle il est codé.
-            Ici un exemple avec la série des "Big Blue Disk" pour les PCs IBM.
           </aside>
         </section>
 
@@ -282,6 +254,15 @@
         </section>
 
         <section>
+          <img class="r-stretch" src="/2/internet-scholastic.jpg">
+          <aside class="notes">
+            Softdisk, et le concept de diskmags, c'est en train de tourner court
+            avec l'arrivée d'internet dans les foyers au début des années 90.
+            John Romero se dit qu'il est temps de passer à autre chose, et cherche une porte de sortie.
+          </aside>
+        </section>
+
+        <section>
           <div class="ch">
             <div class="item">
               <img class="highlight-shadow" src="/2/macintosh.png" height="400px" />
@@ -291,10 +272,9 @@
           </div>
           <aside class="notes">
             Ce qu'il faut savoir, c'est qu'à l'époque le hardware des PC (Apple II, IBM PC), s'il est adapté pour
-            executer des
-            tâches dites de bureautique, et offre une plus grande variété de logiciel, n'est vraiment pas adapté pour
-            jouer
-            à des jeux vidéos, contrairement à des machines comme l'Amiga ou le Commodore 64, ou l'Atari ST.
+            executer des tâches dites de bureautique, et offre une plus grande variété de logiciel,
+            n'est vraiment pas adapté pour jouer à des jeux vidéos,
+            contrairement à des machines comme l'Amiga ou le Commodore 64, ou l'Atari ST.
           </aside>
         </section>
 
@@ -302,7 +282,6 @@
           <video data-autoplay loop muted src="/2/dangerous-dave.mov"></video>
           <aside class="notes">
             Une des choses qui étaient carrément impossible à faire sur PC, c'était de faire des side-scroller.
-            Dites vous qu'on est en 1990, et que Super Mario Bros est sorti en 1985 sur NES.
           </aside>
         </section>
 
@@ -319,17 +298,7 @@
             </div>
           </div>
           <aside class="notes">
-            Une des choses qui étaient carrément impossible à faire sur PC, c'était de faire des side-scroller.
             Dites vous qu'on est en 1990, et que Super Mario Bros est sorti en 1985 sur NES.
-          </aside>
-        </section>
-
-        <section>
-          <img class="r-stretch" src="/2/internet-scholastic.jpg">
-          <aside class="notes">
-            Softdisk, et le concept de diskmags, c'est en train de tourner court
-            avec l'arrivée d'internet dans les foyers au début des années 90.
-            John Romero se dit qu'il est temps de passer à autre chose, et cherche une porte de sortie.
           </aside>
         </section>
 
@@ -546,78 +515,7 @@
         <section>
           <video data-autoplay src="/2/ca-baigne.mp4" height="700px"></video>
           <aside class="notes">
-            Et c'est dans ce code source que ce trouve la fonction dont je vais vous parler aujourd'hui
-          </aside>
-        </section>
-
-      </section>
-
-      <!-- 3. La fonction -->
-      <section data-background-image="/3/the-function.jpeg" data-transition="fade" class="scrim darkblue">
-        <h2>3.<br />La fonction</h2>
-      </section>
-      <section data-background-image="/3/the-function.jpeg" class="blurred scrim darkblue">
-        <section data-transition="fade">
-          <div class="big">
-            \[f(x) = \frac{1}{\sqrt{x}}\]
-          </div>
-          <aside class="notes">
-            Cette fonction, elle ne fait qu'une seule chose : elle calcule l'inverse de la racine carrée d'un nombre.
-          </aside>
-        </section>
-
-        <section data-transition="fade">
-          <div style="margin-left: 15%;" class="big">
-            <pre class="c clean">
-              <code class="fragment" data-trim>
-                <script type="text/template">
-                  #include <math.h>
-                </script>
-              </code>
-              <code data-trim>
-                float y = 1 / sqrt(x);
-              </code>
-            </pre>
-          </div>
-          <aside class="notes">
-            En C on l'écrirait comme ceci.
-
-            On aurait pas besoin de coder une fonction de calcul de racine carrée,
-            on la chopperait dans une lib standard, comme math.h.
-          </aside>
-        </section>
-
-        <section data-transition="fade">
-          <br />
-          <div class="cv">
-            <div class="item fragment">
-              <pre class="c wide smaller clean">
-                <code data-trim>
-                  float Q_rsqrt( float number ) {
-                    long i;
-                    float x2, y;
-                    const float threehalfs = 1.5F;
-  
-                    x2 = number * 0.5F;
-                    y  = number;
-                    i  = * ( long * ) &y;                        // evil floating point bit level hacking
-                    i  = 0x5f3759df - ( i >> 1 );                // what the fuck?
-                    y  = * ( float * ) &i;
-                    y  = y * ( threehalfs - ( x2 * y * y ) );    // 1st iteration
-                    // y  = y * ( threehalfs - ( x2 * y * y ) ); // 2nd iteration, this can be removed
-  
-                    return y;
-                  }
-                </code>
-              </pre>
-            </div>
-            <div class="item fragment">
-              <img class="abs right" src="/3/the-what.jpeg" />
-            </div>
-          </div>
-          <aside class="notes">
-            Mais dans le code source Quake, on ne retrouve pas cette fonction.
-            Voici ce qu'on y trouve à la place.
+            Et c'est dans ce code source que ce trouve le bout de code dont je vais vous parler aujourd'hui
           </aside>
         </section>
 
@@ -646,17 +544,9 @@
 
       <!-- 4. Normaliser des vecteurs -->
       <section data-background-image="/4/blender.jpeg" data-transition="fade" class="scrim lightgrey">
-        <h2>4.<br />Mais c'est pour <br />quoi faire ?</h2>
+        <h2 class="highlight-gold">Ok, mais c'est <br />pour quoi faire ?</h2>
       </section>
       <section data-background-image="/4/blender.jpeg" class="blurred">
-
-        <section>
-          <video autoplay loop muted class="r-stretch" src="/4/but-why.webm"></video>
-          <aside class="notes">
-            Tout ça c'est bien, mais pourquoi diable aurait-on besoin de calculer l'inverse de la racine carrée
-            d'un nombre ?
-          </aside>
-        </section>
 
         <section>
           <img class="r-stretch" src="/4/minecraft-torch.jpeg" />
@@ -1028,6 +918,77 @@
           </aside>
         </section>
 
+      </section>
+
+      <!-- 3. La fonction -->
+      <section data-background-image="/3/the-function.jpeg" data-transition="fade" class="scrim darkblue">
+        <h2>La fonction</h2>
+      </section>
+      <section data-background-image="/3/the-function.jpeg" class="blurred scrim darkblue">
+        <section data-transition="fade">
+          <div class="big">
+            \[f(x) = \frac{1}{\sqrt{x}}\]
+          </div>
+          <aside class="notes">
+            Cette fonction, elle ne fait qu'une seule chose : elle calcule l'inverse de la racine carrée d'un nombre.
+          </aside>
+        </section>
+
+        <section data-transition="fade">
+          <div style="margin-left: 15%;" class="big">
+            <pre class="c clean">
+              <code class="fragment" data-trim>
+                <script type="text/template">
+                  #include <math.h>
+                </script>
+              </code>
+              <code data-trim>
+                float y = 1 / sqrt(x);
+              </code>
+            </pre>
+          </div>
+          <aside class="notes">
+            En C on l'écrirait comme ceci.
+
+            On aurait pas besoin de coder une fonction de calcul de racine carrée,
+            on la chopperait dans une lib standard, comme math.h.
+          </aside>
+        </section>
+
+        <section data-transition="fade">
+          <br />
+          <div class="cv">
+            <div class="item fragment">
+              <pre class="c wide smaller clean">
+                <code data-trim>
+                  float Q_rsqrt( float number ) {
+                    long i;
+                    float x2, y;
+                    const float threehalfs = 1.5F;
+  
+                    x2 = number * 0.5F;
+                    y  = number;
+                    i  = * ( long * ) &y;                        // evil floating point bit level hacking
+                    i  = 0x5f3759df - ( i >> 1 );                // what the fuck?
+                    y  = * ( float * ) &i;
+                    y  = y * ( threehalfs - ( x2 * y * y ) );    // 1st iteration
+                    // y  = y * ( threehalfs - ( x2 * y * y ) ); // 2nd iteration, this can be removed
+  
+                    return y;
+                  }
+                </code>
+              </pre>
+            </div>
+            <div class="item fragment">
+              <img class="abs right" src="/3/the-what.jpeg" />
+            </div>
+          </div>
+          <aside class="notes">
+            Mais dans le code source Quake, on ne retrouve pas cette fonction.
+            Voici ce qu'on y trouve à la place.
+          </aside>
+        </section>
+
         <section>
           <div class="cv">
             <div class="item">
@@ -1039,7 +1000,8 @@
           </div>
           <aside class="notes">
             Maintenant qu'on a vu à quoi sert cette fonction, on va pouvoir s'intéresser à son implémentation.
-            Pour ça, on va d'abord s'armer de 2 prérequis :
+            Pour ça, on va d'abord s'armer de 3 prérequis :
+            - à quoi sert cette fonction, et pourquoi elle a été écrite
             - la représentation binaire des nombres décimaux, dits "à virgule flottante"
             - et des petits rappels de maths concernant les logarithmes de base 2
             Ne vous inquiétez pas, ça va bien se passer :)
@@ -1050,7 +1012,7 @@
 
       <!-- 5. La représentation binaire des nombres à virgules flottantes -->
       <section data-background-image="/5/splash.jpg" data-transition="fade" class="scrim darkblue">
-        <h2>5.</h2>
+        <h3>Pré-requis n°1</h3>
         <br />
         <br />
         <br />
@@ -1058,8 +1020,7 @@
         <br />
         <br />
         <br />
-        <br />
-        <h3>They see me floatin<br />They hatin</h3>
+        <h2 class="highlight-gold">They see me floatin<br />They hatin</h2>
       </section>
       <section data-background-image="/5/splash.jpg" class="blurred">
 
@@ -1305,36 +1266,6 @@
           <aside class="notes">
             De son nom complet, **l'Institute of Electrical and Electronics Engineers**,
             c'est une organisation internationale qui élabore des normes dans divers domaines, dont l'informatique.
-          </aside>
-        </section>
-
-        <section>
-          <div class="ch">
-            <div class="item-wide fragment">
-              <img class="noshadow" src="/5/aeei-logo.png" width="100%" />
-              <p class="small">
-                <strong>AIEE</strong>
-                <br />American Institute of Electrical Engineers
-                <br /><strong>1884</strong>
-              </p>
-            </div>
-            <div class="item fragment">
-              <br /><br />
-              <h1>+</h1>
-            </div>
-            <div class="item-wide fragment">
-              <img class="noshadow" src="/5/ire-logo.png" />
-              <p class="small">
-                <strong>IRE</strong>
-                <br />Institute of Radio Engineers
-                <br /><strong>1912</strong>
-              </p>
-            </div>
-          </div>
-          <aside class="notes">
-            Elle fut fondée en 1963 suite à la fusion de deux instituts américains :
-            - l'AIEE : L'American Institute of Electrical Engineers
-            - l'IRE : L'Institute of Radio Engineers
           </aside>
         </section>
 
@@ -1856,9 +1787,11 @@
 
       <!-- 6. Log2, Log2(1+x) et autre filouteries -->
       <section data-background-image="/6/logarithms-book.jpeg" data-transition="fade" class="scrim grey">
-        <h2>6.</h2>
-        <h2>Filouteries logarithmiques</h2>
-        <img class="noshadow abs-center-bottom" src="/6/wojak-mask.png" height="300px" />
+        <h3>Pré-requis n°2</h3>
+        <br />
+        <br />
+        <h2 class="highlight-gold">Filouteries logarithmiques</h2>
+        <!-- <img class="noshadow abs-center-bottom" src="/6/wojak-mask.png" height="300px" /> -->
       </section>
       <section data-background-image="/6/logarithms-book.jpeg" class="blurred">
 
@@ -1985,8 +1918,9 @@
 
       <!-- 7. Le langage C en sueur -->
       <section data-background-image="/7/splash.png" data-transition="fade" class="scrim">
-        <h2 style="padding-bottom: 400px;">7.<br />Le langage<br />C en sueur</h2>
-        <img class="noshadow c-logo" src="/7/c-logo.png" />
+        <h3>Étape n°1</h3>
+        <h2 class="highlight-gold">The Evil Bit Hack</h2>
+        <div style="padding-bottom: 400px;"></div>
       </section>
       <section data-background-image="/7/splash.png" class="blurred scrim darkgrey">
         <section data-transition="fade">
@@ -2222,7 +2156,8 @@
 
       <!-- 8. What the fuck -->
       <section data-background-image="/8/wtf-jackie.jpeg" data-transition="fade" class="scrim lightgrey">
-        <h2>8.<br />What the f*ck</h2>
+        <h3>Étape n°2</h3>
+        <h2 class="highlight-gold">What the f*ck</h2>
       </section>
       <section data-background-image="/8/wtf-jackie.jpeg" class="blurred scrim grey">
         <section data-transition="fade">
@@ -2566,7 +2501,7 @@
                 y = * ( float * ) &i;
             </code>
             </pre>
-            <pre class="c clean big fragment">
+            <pre class="c clean big current-visible fragment">
               <code data-trim data-ln-start-from="8" data-line-numbers="5-6">
                 i = * ( long * ) &y;
 
@@ -2576,50 +2511,62 @@
                 y = * ( float * ) &i;
             </code>
             </pre>
+            <pre class="c clean big fragment">
+              <br/>
+              <code data-trim data-ln-start-from="8" data-line-numbers="7-8">
+                i = * ( long * ) &y;
+
+                i = 0x5f3759df - ( i >> 1 );
+
+                y = * ( float * ) &i;
+
+                // c'est pour ça qu'on une 3ème étape...
+                y = y * ( threehalfs - ( x2 * y * y ) );
+            </code>
+            </pre>
           </div>
           <img class="fragment harold highlight-shadow" src="/8/harold.png" />
           <aside class="notes">
-            C'est pas la vraie solution, c'est juste une approximation.
+            - C'est pas la vraie solution, c'est juste une approximation.
+            - C'est pour ça qu'on a besoin de la 3ème et dernière étape
           </aside>
         </section>
-
-        <section>
-          <pre class="c wide smaller clean">
-            <code data-trim data-line-numbers="11">
-              float Q_rsqrt( float number ) {
-                long i;
-                float x2, y;
-                const float threehalfs = 1.5F;
-
-                x2 = number * 0.5F;
-                y  = number;
-                i  = * ( long * ) &y;                        // evil floating point bit level hacking
-                i  = 0x5f3759df - ( i >> 1 );                // what the fuck?
-                y  = * ( float * ) &i;
-                y  = y * ( threehalfs - ( x2 * y * y ) );    // 1st iteration
-                // y  = y * ( threehalfs - ( x2 * y * y ) ); // 2nd iteration, this can be removed
-
-                return y;
-              }
-            </code>
-          </pre>
-          <aside class="notes">
-            C'est pour ça qu'on a besoin de la 3ème et dernière étape
-          </aside>
-        </section>  
 
       </section>
 
       <!-- 9. L'itération de Newton -->
       <section data-background-image="/9/newton-wallpaper.jpeg" data-transition="fade">
         <br />
-        <h3>Étape 3</h3><h2 class="highlight-gold">L'itération de Newton</h2>
+        <h3>Étape n°3</h3>
+        <h2 class="highlight-gold">L'itération de Newton</h2>
         <aside class="notes">
           Et pour finir cet algorithme, on va parler d'une petite technique de coquin
           qui nous vient de ce bon vieux Newton.
         </aside>
       </section>
       <section data-background-image="/9/newton-wallpaper.jpeg" class="blurred">
+
+        <section>
+          <pre class="c wide smaller clean">
+          <code data-trim data-line-numbers="11-12">
+            float Q_rsqrt( float number ) {
+              long i;
+              float x2, y;
+              const float threehalfs = 1.5F;
+
+              x2 = number * 0.5F;
+              y  = number;
+              i  = * ( long * ) &y;                        // evil floating point bit level hacking
+              i  = 0x5f3759df - ( i >> 1 );                // what the fuck?
+              y  = * ( float * ) &i;
+              y  = y * ( threehalfs - ( x2 * y * y ) );    // 1st iteration
+              // y  = y * ( threehalfs - ( x2 * y * y ) ); // 2nd iteration, can be removed
+
+              return y;
+            }
+          </code>
+        </pre>
+        </section>
 
         <section>
           <img class="r-stretch" src="/9/isaac-newton.jpeg" />
@@ -2719,7 +2666,7 @@
         <section>
           <div class="cv">
             <div class="item ch">
-              <div class="item fragment"><img src="/9/bully-1.png" /></div>
+              <div class="item"><img src="/9/bully-1.png" /></div>
               <div class="item fragment"><img src="/9/bully-2.jpeg" /></div>
             </div>
             <div class="item ch">
@@ -2841,7 +2788,7 @@
               \[y_n = y * \left(\frac{3}{2} - \frac{xy^{2}}{2}\right)\]
             </div>
             <div class="fragment instant">
-              \[y_n = y * \left(\frac{3}{2} - \frac{x}{2} * y * y\right)\]
+              \[y_n = y * \left(1,5 - (x/2 * y * y)\right)\]
             </div>
           </div>
           <div class="fragment">
@@ -2883,6 +2830,35 @@
           </aside>
         </section>
 
+        <section>
+          <div class="r-stack">
+            <div>
+              <pre class="c wide smaller clean">
+                <code data-trim data-line-numbers="14">
+                  float Q_rsqrt( float number ) {
+                    long i;
+                    float x2, y;
+                    const float threehalfs = 1.5F;
+      
+                    x2 = number * 0.5F;
+                    y  = number;
+                    i  = * ( long * ) &y;                        // evil floating point bit level hacking
+                    i  = 0x5f3759df - ( i >> 1 );                // what the fuck?
+                    y  = * ( float * ) &i;
+                    y  = y * ( threehalfs - ( x2 * y * y ) );    // 1st iteration
+                    // y  = y * ( threehalfs - ( x2 * y * y ) ); // 2nd iteration, can be removed
+      
+                    return y;
+                  }
+                </code>
+              </pre>
+            </div>
+            <div class="fragment">
+              <img src="/9/isaac-face.jpeg" />
+            </div>
+          </div>
+        </section>
+
       </section>
 
       <!-- 10. Conclusion -->
@@ -2898,18 +2874,38 @@
         <section>
           <h3>On récapitule ⏰</h3>
           <br />
-          <ol class="small">
-            <li class="fragment">On donne un <code class="normal">nombre</code> pour lequel on veut <b>la racine carrée
-                inversée</b></li>
-            <li class="fragment">On récupère les <code class="value">bits</code> de ce nombre dans un <code
-                class="type">long</code></li>
-            <li class="fragment">On bitshift ce <code class="type">long</code> pour <b>diviser par 2 l'exposant</b></li>
-            <li class="fragment">On le soustrait au <code class="emphas">magic number</code></li>
-            <li class="fragment">On récupère nos <code class="value">bits</code> dans notre <code
-                class="type">float</code></li>
-            <li class="fragment">On lui applique une itération de <b>la méthode Newton</b></li>
+          <ul class="small">
+            <li class="fragment">Pour un <code class="type">float</code>, on veut sa <b>racine carrée inversée</b></li>
+            <li class="fragment">
+              <b>Étape n°1 :</b>
+              <ul>
+                <li>On récupère les <code class="value">bits</code> de ce <code class="type">float</code> dans un <code
+                    class="type">long</code></li>
+              </ul>
+            </li>
+            <li class="fragment">
+              <b>Étape n°2 :</b>
+              <ul>
+                <li class="fragment">On bitshift ce <code class="type">long</code> pour <b>diviser l'exposant par 2</b>
+                </li>
+                <li class="fragment">On le soustrait au <code class="emphas">magic number</code></li>
+              </ul>
+            </li>
+            <li class="fragment">
+              <b>Étape n°1 (bis) :</b>
+              <ul>
+                <li class="fragment">On récupère nos <code class="value">bits</code> dans notre <code
+                    class="type">float</code></li>
+              </ul>
+            </li>
+            <li class="fragment">
+              <b>Étape n°3 :</b>
+              <ul>
+                <li class="fragment">On lui applique une itération de <b>la méthode Newton</b></li>
+              </ul>
+            </li>
             <li class="fragment">Et le tour est joué 🎉 !!</li>
-          </ol>
+          </ul>
         </section>
 
         <section>
@@ -3004,10 +3000,11 @@
               <p><b>Michael Abrash</b></p>
             </div>
             <div class="item">
-              <br/>
-              <br/>
+              <br />
+              <br />
               <blockquote class="fragment large">
-                "After you finish <br/><b>the first 90%</b><br/> of a project,<br/> you have to finish <br/><b>the other 90%</b>"
+                "After you finish <br /><b>the first 90%</b><br /> of a project,<br /> you have to finish <br /><b>the
+                  other 90%</b>"
               </blockquote>
             </div>
           </div>
@@ -3027,8 +3024,8 @@
               <p><b>Terje Matheson</b></p>
             </div>
             <div class="item fragment">
-              <br/>
-              <br/>
+              <br />
+              <br />
               <blockquote class="large">
                 "I wrote a very fast [...] invsqrt() 5+ years ago"
                 <br />
@@ -3115,13 +3112,13 @@
             <div class="item r-stack">
               <img class="highlight-shadow" src="/10/silhouette-question-mark.png" height="500px" />
               <div class="fragment">
-                <br/>
+                <br />
                 <img src="/10/greg-walsh.gif" height="500px" />
                 <p><b>Greg Walsh</b></p>
               </div>
             </div>
             <div class="item fragment">
-              <br/>
+              <br />
               <img src="/10/cleve-moler.webp" />
               <p><b>Cleve Moler</b></p>
             </div>
@@ -3172,7 +3169,7 @@
           <aside class="notes">
             - Pour finir, je vous laisse sur cette citation de Marsellus Wallace
             "pride only hurts, it never helps"
-            - Sachons rester humble, à l'image de tous ces gens dans cette enquête, qui malgré être des 
+            - Sachons rester humble, à l'image de tous ces gens dans cette enquête, qui malgré être des
             monstres dans leur domaine ne prennent jamais le crédit, même lorsqu'il leur est du.
             - Cet algo, bien qu'obsolète quasiment dès sa sortie, aura permis à une génération de joueurs
             de profiter de Quake 3 sur leurs bécanes pourries.
