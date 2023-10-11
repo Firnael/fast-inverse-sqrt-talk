@@ -49,6 +49,7 @@ Ce talk est très fortement inspiré de [cette vidéo](https://www.youtube.com/w
   - [Part 2](https://www.beyond3d.com/content/articles/15)
   - [Brian Hook interview](https://www.quakewiki.net/profile-retro-interview-brian-hook/)
 - Misc.
+  - [Newton's Method (video)](https://www.youtube.com/watch?v=FpOEx6zFf1o&ab_channel=DubiousInsights)
   - https://dfarq.homeip.net/computers-in-1985/
   - https://www.techspot.com/article/2166-mmx-sse-avx-explained/
   - https://toggl.com/blog/build-horse-programming

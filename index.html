@@ -309,6 +309,7 @@
         <section data-auto-animate>
           <div class="ch">
             <div class="item">
+              <br />
               <video data-autoplay loop muted src="/2/dangerous-dave.mov"></video>
               <p><b>Dangerous Dave<br />PC - 1988</b></p>
             </div>
@@ -690,7 +691,7 @@
           </div>
           <aside class="notes">
             Je vous propose d'illustrer ça avec un exemple.
-            Prennons cette belle brochette de vainqueurs.
+            Prenons cette belle brochette de vainqueurs.
           </aside>
         </section>
         <section style="transform: scale(0.8);" data-transition="fade" data-auto-animate>
@@ -776,25 +777,21 @@
         </section>
 
         <section>
-          <img class="highlight-shadow" src="/4/jerem-applati.png" />
+          <img class="highlight-shadow" src="/4/jerem-applati.png" height="400px" style="margin-top: 200px;" />
           <aside class="notes">
             !!! BESOIN DU STYLET !!!
-            Reprennons par exemple la face du cube qui est également la face de Jérémie.
+            Reprenons par exemple la face du cube qui est également la face de Jérémie.
             Ici, Jérémie qui est un plan, un bon plan même si j'ose le dire
             Un vecteur "normal" à Jérémie, est un vecteur perpendiculaire au plan.
           </aside>
         </section>
 
         <section>
-          *
-          animation ici avec 3 points qui définissent un plan,
-          2 vecteurs non-colinéaires au plan,
-          et calcul du vecteur normal au plan
-          *
-          <br />
-          Trouver un vecteur normal à un plan, c'est pas compliqué.
-          <br />
-          https://web.ma.utexas.edu/users/m408m/Display12-5-4.shtml#:~:text=The%20normal%20to%20the%20plane,%C3%97(s%E2%88%92b).
+          <img class="highlight" src="/4/produit-vectoriel.png" />
+          <aside class="notes">
+            Trouver un vecteur normal à un plan, c'est pas compliqué.
+            C'est un produit vectoriel entre 2 vecteurs non-colinéaires au plan.
+          </aside>
         </section>
 
         <section>
@@ -838,11 +835,10 @@
             </div>
             <div data-fragment-index="3" class="item fragment">
               <br />
-              <b>Simple</b>
-              <br />
               <ul class="small">
-                <li>Vitesse max : 200px / seconde</li>
-                <li>Pas d'accélération</li>
+                <li>Vitesse max :<br />200px / seconde</li>
+                <br />
+                <li>Pas d'accél :<br />0 à 200 instant</li>
               </ul>
             </div>
           </div>
@@ -855,18 +851,12 @@
         <section>
           <div class="game" id="game-container"></div>
           <aside class="notes">
-            Admettons que je développe un petit jeu de course. Pour faire simple on va dire que :
-            - on ne peut bouger que dans 8 directions
-            - ma vitesse max est de 200 pixels par secondes
-            - il n'y a pas d'accélération (ça veut dire que ma voiture va soit à 0, soit à VITESSE_MAX).
-
-            Si j'appuie sur "haut", je vais en haut, à la vitesse de 200 pixels par secondes.
+            - Si j'appuie sur "haut", je vais en haut, à la vitesse de 200 pixels par secondes.
             Si j'appuie sur "droite", je vais à droite à 200 pixels par secondes.
             Mais si j'appuie simultanément sur haut et droite ? Je vais aller en haut à droite, à 400 pixels par
             secondes !
             Ca craint, ça veut dire que je vais plus vite en diagonale, ce qui est débile.
-
-            Pour corriger ça, je vais avoir besoin de décorrélé la direction de la magnitude.
+            - Pour corriger ça, je vais avoir besoin de décorrélé la direction de la magnitude.
             Pour ça, je vais normaliser mon vecteur de direction, et le multiplier par ma vitesse max.
             Si v(x,y) = (1,1) et que ma vitesse max est de 200, alors je vais à 200 pixels par secondes en haut à
             droite,
@@ -887,7 +877,7 @@
           </aside>
         </section>
 
-        <section>
+        <section data-transition="fade">
           <div class="ch">
             <div class="item">
               <img data-fragment-index="2" class="fragment" src="/4/pythagoras.webp" height="600px" />
@@ -913,7 +903,7 @@
           </aside>
         </section>
 
-        <section>
+        <section data-transition="fade">
           <h3>En 3D :</h3>
           <video data-autoplay src="/4/pythagore-2.mp4"></video>
           <aside class="notes">
@@ -922,7 +912,7 @@
           </aside>
         </section>
 
-        <section>
+        <section data-transition="fade">
           <div class="ch">
             <div class="item">
               <div class="item">
@@ -1463,7 +1453,7 @@
 
         <!-- Sign-bit, exponent & mantissa -->
         <section>
-          <div>✨ Un <code>float</code> selon la norme <strong>IEEE 754</strong> ✨</div>
+          <h3>Un <code class="type">float</code> selon la norme <br /><strong>✨ IEEE 754 ✨</strong></h3>
           <br />
           <div class="cv">
             <div class="item">
@@ -2668,7 +2658,10 @@
           <div>
             <h2 class="highlight-gold">La méthode de Newton</h2>
             <h5>(ou méthode de Newton-Raphson)</h5>
-            <h2 class="fragment grow">1669</h2>
+            <h2 data-fragment-index="1" class="fragment grow">1669</h2>
+            <h4 data-fragment-index="1" class="fragment">publiée en 1711</h4>
+            <h2 data-fragment-index="2" class="fragment fade-in grow">1690</h2>
+            <h4 data-fragment-index="2" class="fragment">version simplifiée par Joseph Raphson</h4>
           </div>
           <aside class="notes">
             Ce qui nous intéresse, c'est la méthode "dite" de Newton, publiée en 1669, ou Newton-Raphson
@@ -2699,7 +2692,7 @@
         <section>
           <video class="r-stretch" data-autoplay loop data-src="/9/winona-confused-math.webm"></video>
           <aside class="notes">
-            Comme on comprend rien, voici une animation pour illustrer ça.
+            Ok c'est pas giga clair, mais on va voir un exemple.
           </aside>
         </section>
 
@@ -2714,7 +2707,196 @@
         </section>
 
         <section>
-          <h3>Pourquoi je vous raconte ça ?</h3>
+          <video class="r-stretch" data-autoplay data-src="/9/newtons-method-2.mp4"></video>
+          <aside class="notes">
+            On note f(x) la valeur de x sur la courbe, et f'(x) la valeur de la dérivée de f en x.
+          </aside>
+        </section>
+
+        <section>
+          <video class="r-stretch" data-autoplay data-src="/9/newtons-method-3.mp4"></video>
+          <aside class="notes">
+            Pour trouver la nouvelle estimation de x, plus proche de 0, on doit calculer le rapport entre f(x) et
+            f'(x), soit f(x)/f'(x).
+          </aside>
+        </section>
+
+        <section>
+          <h3>Autrement dit :</h3>
+          <div class="big fragment">
+            \[x_{new} = x_n - \frac{f(x_n)}{f'(x_n)}\]
+          </div>
+          <aside class="notes">
+            Autrement dit : la nouvelle valeur de x (ici x_new) est égale à l'ancienne valeur de x (ici x_n)
+            moins le rapport entre f(x_n) et sa dérivée, f'(x_n)
+          </aside>
+        </section>
+
+        <section>
+          <div class="cv">
+            <div class="item ch">
+              <div class="item fragment"><img src="/9/bully-1.png" /></div>
+              <div class="item fragment"><img src="/9/bully-2.jpeg" /></div>
+            </div>
+            <div class="item ch">
+              <div class="item fragment"><img src="/9/bully-3.jpeg" /></div>
+              <div class="item fragment"><img src="/9/bully-4.jpeg" /></div>
+            </div>
+          </div>
+          <aside class="notes">
+            Là vous vous dites "c'est un vraiment un traquenard ce talk, qui l'a mis en keynote",
+            ce à quoi je répondrais : c'est bien fait pour vous, en plus j'ai la crève depuis dimanche.
+          </aside>
+        </section>
+
+        <section data-auto-animate>
+          <h3>Exemple avec la fonction</h3>
+          <div data-id="1"><b class="big">\[\sqrt{x}\]</b></div>
+          <div data-id="2" class="fragment">Admettons qu'on cherche <b>$\sqrt{3}$</b></div>
+        </section>
+
+        <section data-auto-animate>
+          <div data-id="2">Admettons qu'on cherche <b>$\sqrt{3}$</b></div>
+          <div data-id="3" class="fragment">Prenons une 1ère estimation : <b class="bright">$y = 2$</b></div>
+          <div class="r-stack medium">
+            <div class="fragment current-visible instant">
+              \[y_n = y - \frac{f(y)}{f'(y)}\]
+            </div>
+            <div class="fragment current-visible instant">
+              \[y_n = y - \frac{y^{2} - x}{2y}\]
+            </div>
+            <div class="fragment current-visible instant">
+              \[y_n = 2 - \frac{2^{2} - 3}{2 * 2}\]
+            </div>
+            <div class="fragment current-visible instant">
+              \[y_n = 2 - \frac{4 - 3}{4}\]
+            </div>
+            <div class="fragment current-visible instant">
+              \[y_n = 2 - \frac{1}{4}\]
+            </div>
+            <div class="fragment current-visible instant">
+              \[y_n = 2 - 0,25\]
+            </div>
+            <div class="fragment current-visible instant">
+              \[y_n = 1,75\]
+            </div>
+          </div>
+        </section>
+
+        <section data-auto-animate>
+          <div data-id="2">Admettons qu'on cherche <b>$\sqrt{3}$</b></div>
+          <div data-id="3">Nouvelle estimation : <b class="bright">$y = 1,75$</b></div>
+          <div class="r-stack medium">
+            <div class="fragment current-visible instant">
+              \[x_n = 1,75 - \frac{1,75^{2} - 3}{2 * 1,75}\]
+            </div>
+            <div class="fragment current-visible instant">
+              \[x_n = 1,75 - \frac{3,0625 - 3}{3,5}\]
+            </div>
+            <div class="fragment current-visible instant">
+              \[x_n = 1,75 - \frac{0,0625}{3,5}\]
+            </div>
+            <div class="fragment current-visible instant">
+              \[x_n = 1,75 - 0,017857\]
+            </div>
+            <div class="fragment current-visible instant">
+              \[x_n = 1,732143\]
+            </div>
+          </div>
+        </section>
+
+        <section data-auto-animate>
+          <div data-id="2">Admettons qu'on cherche <b>$\sqrt{3}$</b></div>
+          <div data-id="3">Nouvelle estimation : <b class="bright">$y = 1,73214$</b></div>
+          <div class="r-stack">
+            <img class="fragment highlight-shadow" src="/9/sqrt-calculator.png" height="400px" />
+            <img class="fragment" src="/9/good-enough.png" height="400px" />
+          </div>
+        </section>
+
+        <section>
+          <h3>Pourquoi je vous raconte tout ça ?</h3>
+          <div class="ch fragment">
+            <div class="item">
+              Parce que nous,<br />on a déjà une <b class="bright">bonne approximation</b> de
+              <br />
+              <div class="medium">\[\frac{1}{\sqrt{y}}\]</div>
+            </div>
+            <div class="item">
+              <img src="/9/not-bad.jpeg" />
+            </div>
+          </div>
+          <aside class="notes">
+            Cependant, on a récupérer des petites erreurs par-ci par là, et on aimerait bien les corriger.
+            On va utiliser cette méthode pour affiner notre résultat
+          </aside>
+        </section>
+
+        <section data-auto-animate>
+          <div><b class="regular">On applique la méthode, mais avec $\frac{1}{\sqrt{x}}$</b></div>
+          <div class="r-stack medium">
+            <div class="fragment preload current-visible instant">
+              \[y_n = y - \frac{f(y)}{f'(y)}\]
+            </div>
+            <div class="fragment current-visible instant">
+              \[y_n = y - \frac{\frac{1}{y^{2}} - x}{\frac{-2}{y^3}}\]
+            </div>
+            <div class="fragment current-visible instant">
+              \[y_n = y - \frac{\frac{y^3}{y^{2}} - xy^{3}}{-2}\]
+            </div>
+            <div class="fragment current-visible instant">
+              \[y_n = y - \frac{y - xy^{3}}{-2}\]
+            </div>
+            <div class="fragment current-visible instant">
+              \[y_n = y - \frac{y}{-2} + \frac{-xy^{3}}{-2}\]
+            </div>
+            <div class="fragment current-visible instant">
+              \[y_n = y + \frac{y}{2} - \frac{xy^{3}}{2}\]
+            </div>
+            <div class="fragment current-visible instant">
+              \[y_n = y * \left(\frac{3}{2} - \frac{xy^{2}}{2}\right)\]
+            </div>
+            <div class="fragment instant">
+              \[y_n = y * \left(\frac{3}{2} - \frac{x}{2} * y * y\right)\]
+            </div>
+          </div>
+          <div class="fragment">
+            <pre data-id="1" class="c small">
+              <code data-trim>
+                const float threehalfs = 1.5F;
+                x2 = number * 0.5F;
+                ...
+                y  = y * ( threehalfs - ( x2 * y * y ) );    // 1st iteration
+              </code>
+            </pre>
+          </div>
+          <aside class="notes">
+            - Y'a plus qu'à résoudre ça.
+            - On va commencer par multiplier le numérateur et le dénominateur par y^3
+            - y^3/y^2 ça fait y, easy
+            - On sépare la division en 2
+            - On simplifie les signes
+            - on met y en facteur
+            - est-ce que ça vous rappelle un truc ?
+          </aside>
+        </section>
+
+        <section data-auto-animate>
+          <pre data-id="1" class="c wide smaller">
+            <code data-trim data-line-numbers data-ln-start-from="12">
+                y  = y * ( threehalfs - ( x2 * y * y ) );    // 1st iteration
+                // y  = y * ( threehalfs - ( x2 * y * y ) ); // 2nd iteration, this can be removed
+            </code>
+          </pre>
+          <br />
+          <div class="fragment">
+            <a href="https://www.desmos.com/calculator/yoz6n1wlvu?lang=fr" target="_blank">
+              <img src="/9/graph.png" height="400px" />
+            </a>
+          </div>
+          <aside class="notes">
+            CONTROL + SHIFT + TAB
+          </aside>
         </section>
 
       </section>
@@ -2730,9 +2912,26 @@
       <section data-background-image="/10/quake-3-sarge.webp" class="blurred">
 
         <section>
+          <h3>On récapitule ⏰</h3>
+          <br />
+          <ol class="small">
+            <li class="fragment">On donne un <code class="normal">nombre</code> pour lequel on veut <b>la racine carrée
+                inversée</b></li>
+            <li class="fragment">On récupère les <code class="value">bits</code> de ce nombre dans un <code
+                class="type">long</code></li>
+            <li class="fragment">On bitshift ce <code class="type">long</code> pour <b>diviser par 2 l'exposant</b></li>
+            <li class="fragment">On le soustrait au <code class="emphas">magic number</code></li>
+            <li class="fragment">On récupère nos <code class="value">bits</code> dans notre <code
+                class="type">float</code></li>
+            <li class="fragment">On lui applique une itération de <b>la méthode Newton</b></li>
+            <li class="fragment">Et le tour est joué 🎉 !!</li>
+          </ol>
+        </section>
+
+        <section>
           <h3>À quel point c'est précis ?</h3>
-          <h2 class="fragment">Erreur relative maximum :<br />
-            <span class="bright">0,177%</span>
+          <h2 class="fragment"><code class="normal">Erreur relative maximum :</code>
+            <code class="bright">0,177%</code>
           </h2>
         </section>
 
@@ -2742,22 +2941,10 @@
           <div class="fragment">
             <img src="/10/mr-wolf.jpeg" height="400px" />
             <h3><span class="bright">3-4 fois</span> plus rapide que <code class="normal">1/sqrt(x)</code></h3>
+            <p class="small muted">à l'époque</p>
           </div>
           <aside class="notes">
             On estime qu'à l'époque cet algorithme était 3 à 4 fois plus rapide que la méthode classique.
-          </aside>
-        </section>
-
-        <section>
-          <div class="r-stack">
-            <img src="/10/how-to-build-a-horse.jpeg" />
-            <img class="fragment" src="/10/how-to-build-a-horse-cpp.jpeg" />
-            <img class="fragment" src="/10/how-to-build-a-horse-js.jpeg" />
-            <img class="fragment" src="/10/how-to-build-a-horse-php.jpeg" />
-            <img class="fragment" src="/10/how-to-build-a-horse-asm.jpeg" />
-          </div>
-          <aside class="notes">
-            Y'a un petit comic que j'aime beaucoup qui illustre bien la diff entre le soft et l'instruction hardware
           </aside>
         </section>
 
@@ -2903,15 +3090,16 @@
 
         <section>
           <blockquote>
-            "So it did pass by my keyboard many many years ago, I may have tweaked
-            the hex constant a bit or so, but other than that <b>I can't take credit
-              for it.</b>
+            <p class="fragment">
+              "So it did pass by my keyboard many many years ago, I may have tweaked
+              the hex constant a bit or so, but other than that <b>I can't take credit
+                for it.</b>
+            </p>
             <br />
-            <br />
-            I may have done this for the IRIS indigo work I did,
-            or some consulting at <b>Kubota</b>, I'm not 100% sure."
-            <br />
-            <br />
+            <p class="fragment">
+              I may have done this for the IRIS indigo work I did,
+              or some consulting at <b>Kubota</b>, I'm not 100% sure."
+            </p>
             - Gary Tarolli
           </blockquote>
         </section>
@@ -2937,11 +3125,13 @@
             <div class="item r-stack">
               <img class="highlight-shadow" src="/10/silhouette-question-mark.png" height="500px" />
               <div class="fragment">
+                <br/>
                 <img src="/10/greg-walsh.gif" height="500px" />
                 <p><b>Greg Walsh</b></p>
               </div>
             </div>
             <div class="item fragment">
+              <br/>
               <img src="/10/cleve-moler.webp" />
               <p><b>Cleve Moler</b></p>
             </div>
@@ -3005,6 +3195,15 @@
           <aside class="notes">
             Et ça va même jusque dans Alyx qui est sorti y'a même pas 3 ans !
             Mais je m'égare, c'est pour un autre talk.
+          </aside>
+        </section>
+
+        <section>
+          <img class="r-stretch" src="/10/morale.avif" />
+          <aside class="notes">
+            La compréhension des fondamentaux nous rend non seulement de meilleurs développeurs,
+            mais aussi des innovateurs capables de repousser les limites de notre domaine.
+            Restons connectés à nos racines tout en embrassant le futur de la programmation.
           </aside>
         </section>
 
