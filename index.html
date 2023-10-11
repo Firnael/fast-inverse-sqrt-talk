@@ -2579,64 +2579,47 @@
           </div>
           <img class="fragment harold highlight-shadow" src="/8/harold.png" />
           <aside class="notes">
-            On voit que la ligne 8 qu'on vient d'analyser et la ligne 10 juste après, c'est la même opération,
-            mais dans l'autre sens.
-            ça veut dire qu'entre les deux, il se passe quelque chose qui doit transformer i, la représentation binaire
-            de notre float y, en la représentation binaire de 1/sqrt(y).
+            C'est pas la vraie solution, c'est juste une approximation.
           </aside>
         </section>
 
+        <section>
+          <pre class="c wide smaller clean">
+            <code data-trim data-line-numbers="11">
+              float Q_rsqrt( float number ) {
+                long i;
+                float x2, y;
+                const float threehalfs = 1.5F;
+
+                x2 = number * 0.5F;
+                y  = number;
+                i  = * ( long * ) &y;                        // evil floating point bit level hacking
+                i  = 0x5f3759df - ( i >> 1 );                // what the fuck?
+                y  = * ( float * ) &i;
+                y  = y * ( threehalfs - ( x2 * y * y ) );    // 1st iteration
+                // y  = y * ( threehalfs - ( x2 * y * y ) ); // 2nd iteration, this can be removed
+
+                return y;
+              }
+            </code>
+          </pre>
+          <aside class="notes">
+            C'est pour ça qu'on a besoin de la 3ème et dernière étape
+          </aside>
+        </section>  
+
       </section>
 
-      <!-- 9. Ce bon vieux Newton -->
+      <!-- 9. L'itération de Newton -->
       <section data-background-image="/9/newton-wallpaper.jpeg" data-transition="fade">
         <br />
-        <h2>9.<br />Ce bon vieux Newton</h2>
+        <h3>Étape 3</h3><h2 class="highlight-gold">L'itération de Newton</h2>
         <aside class="notes">
           Et pour finir cet algorithme, on va parler d'une petite technique de coquin
           qui nous vient de ce bon vieux Newton.
         </aside>
       </section>
       <section data-background-image="/9/newton-wallpaper.jpeg" class="blurred">
-        <section>
-          <div class="ch">
-            <div class="item">
-              <img src="/9/isaac-newton-vertical.jpeg">
-            </div>
-            <div class="item fragment">
-              <img src="/9/manoir-woolsthorpe.jpeg">
-              <p><b>1642</b></p>
-            </div>
-          </div>
-          <aside class="notes">
-            Isaac Newton est né le 25 décembre 1642 au Manoir Woolsthorpe,
-            dans le Lincolnshire, en Royaume d'Angleterre
-          </aside>
-        </section>
-
-        <section>
-          <img src="/9/paysans-bretons.jpeg" height="600px" />
-          <aside class="notes">
-            Ses parents sont fermiers tous les deux, et son père meurt 3 mois avant sa naissance
-            suite à un manque de chance.
-          </aside>
-        </section>
-
-        <section>
-          <div class="ch">
-            <div class="item">
-              <img src="/9/boy-with-toast.jpeg">
-            </div>
-            <div class="item fragment">
-              <img src="/9/tartine.jpeg">
-              <img class="fragment m-t-0" src="/9/pere-castor-nrv.jpeg" height="250px">
-            </div>
-          </div>
-          <aside class="notes">
-            Un jour qu'il a 5 ans, sa mère lui fait son petit déj et lui dit :
-            "Tu veux pas une tartine ? Pour étaler ta vie batard ?"
-          </aside>
-        </section>
 
         <section>
           <img class="r-stretch" src="/9/isaac-newton.jpeg" />
@@ -2648,7 +2631,7 @@
           </div>
           <img data-fragment-index="2" class="highlight-shadow newtons-tear fragment" src="/9/tear.png" />
           <aside class="notes">
-            Plus tard, il invite la gravité,
+            Isaac Newton, le fameux mathématicien anglais qui invite la gravité,
             mais malheureusement n'attire personne et mourra sans avoir connu l'amour.
           </aside>
         </section>
@@ -2660,8 +2643,9 @@
             <h5>(ou méthode de Newton-Raphson)</h5>
             <h2 data-fragment-index="1" class="fragment grow">1669</h2>
             <h4 data-fragment-index="1" class="fragment">publiée en 1711</h4>
-            <h2 data-fragment-index="2" class="fragment fade-in grow">1690</h2>
-            <h4 data-fragment-index="2" class="fragment">version simplifiée par Joseph Raphson</h4>
+            <div data-fragment-index="2" class="fragment">
+              <b class="muted">(version simplifiée par Joseph Raphson en 1690)</b>
+            </div>
           </div>
           <aside class="notes">
             Ce qui nous intéresse, c'est la méthode "dite" de Newton, publiée en 1669, ou Newton-Raphson
@@ -2689,8 +2673,8 @@
           </aside>
         </section>
 
-        <section>
-          <video class="r-stretch" data-autoplay loop data-src="/9/winona-confused-math.webm"></video>
+        <section data-transition="fade">
+          <video data-autoplay loop data-src="/9/winona-confused-math.webm" height="500px"></video>
           <aside class="notes">
             Ok c'est pas giga clair, mais on va voir un exemple.
           </aside>
@@ -2999,34 +2983,6 @@
         <section>
           <div class="ch">
             <div class="item">
-              <img src="/10/michael-abrash.webp" />
-              <p><b>Michael Abrash</b></p>
-            </div>
-            <div class="item fragment">
-              <p class="small">
-                <br />
-                - Chez id Software en 1990 pour aider au dev du 1er Quake
-                <br />
-                <br />
-                - Expert en optimisation<br />du code ASM
-              </p>
-              <blockquote class="fragment large">
-                "After you finish the first 90% of a project, you have to finish the other 90%"
-              </blockquote>
-            </div>
-          </div>
-          <aside class="notes">
-            - Michael Abrash, recruté par iD Software en 1990 pour le développement du premier Quake
-            est un expert de l'optimisation du code assembleur.
-            - Il est notamment à l'origine d'une citation que j'aime beaucoup
-            (c'est bien une phrase de mec qui optimise tout ça)
-            - Depuis 2014 et encore aujourd'hui il est Chief Scientist chez Oculus VR.
-          </aside>
-        </section>
-
-        <section>
-          <div class="ch">
-            <div class="item">
               <img src="/10/john-carmack-conf.jpeg" />
             </div>
             <div class="item fragment">
@@ -3044,17 +3000,36 @@
         <section>
           <div class="ch">
             <div class="item">
+              <img src="/10/michael-abrash.webp" />
+              <p><b>Michael Abrash</b></p>
+            </div>
+            <div class="item">
+              <br/>
+              <br/>
+              <blockquote class="fragment large">
+                "After you finish <br/><b>the first 90%</b><br/> of a project,<br/> you have to finish <br/><b>the other 90%</b>"
+              </blockquote>
+            </div>
+          </div>
+          <aside class="notes">
+            - Michael Abrash, recruté par iD Software en 1990 pour le développement du premier Quake
+            est un expert de l'optimisation du code assembleur.
+            - Il est notamment à l'origine d'une citation que j'aime beaucoup
+            (c'est bien une phrase de mec qui optimise tout ça)
+            - Depuis 2014 et encore aujourd'hui il est Chief Scientist chez Oculus VR.
+          </aside>
+        </section>
+
+        <section>
+          <div class="ch">
+            <div class="item">
               <img src="/10/terje-mathisen.png" height="500px" />
               <p><b>Terje Matheson</b></p>
             </div>
             <div class="item fragment">
-              <p class="small">
-                - A aussi donné un coup de main sur l'optim de Quake
-                <br />
-                <br />
-                - Est aussi un maitre de l'optim ASM pour x86
-              </p>
-              <blockquote class="large fragment">
+              <br/>
+              <br/>
+              <blockquote class="large">
                 "I wrote a very fast [...] invsqrt() 5+ years ago"
                 <br />
                 <br />
@@ -3064,20 +3039,44 @@
             </div>
           </div>
           <aside class="notes">
+            - A aussi donné un coup de main sur l'optim de Quake
+            - Est aussi un maitre de l'optim ASM pour x86
             Il a dit avoir écrit un algo très similaire 5 ans plus tôt pour une boite de biotechnoligue suédoise.
-            "it looks a lot like something you'll find in the old HAKMEM documents from MIT"
+          </aside>
+        </section>
+
+        <section>
+          <img src="/10/google-that.png" />
+          <aside class="notes">
+            Après des recherches de qualité sur Google, Rys retrouve une piste chez 3DFX
           </aside>
         </section>
 
         <section>
           <div class="ch">
             <div class="item">
-              <img src="/10/gary-tarolli.jpeg" />
-              <p><b>Gary Tarolli</b></p>
+              <img src="/10/brian-hook-1.gif" width="100%" />
+              <p><b>Brian Hook</b></p>
+            </div>
+            <div class="item">
+              <img src="/10/brian-hook-2.jpeg" width="100%" />
+            </div>
+          </div>
+          <aside class="notes">
+            Brian bossait chez 3DFX avec Gary à l'époque, avant d'être recruté chez id Software pour pallier
+            au départ de Michael Abrash, et c'est certainement comme ça que l'algo est arrivé dans le code source.
+          </aside>
+        </section>
+
+        <section>
+          <div class="ch">
+            <div class="item">
+              <img class="highlight" src="/10/3dfx-logo.png" />
+              <img class="highlight fragment" src="/10/nvidia-logo.png" />
             </div>
             <div class="item fragment">
-              <img class="highlight" src="/10/nvidia-logo.png" />
-              <img class="highlight" src="/10/3dfx-logo.png" />
+              <img src="/10/gary-tarolli.jpeg" />
+              <p><b>Gary Tarolli</b></p>
             </div>
           </div>
           <aside class="notes">
@@ -3105,18 +3104,9 @@
         </section>
 
         <section>
-          <div class="ch">
-            <div class="item">
-              <img src="/10/brian-hook-1.gif" width="100%" />
-              <p><b>Brian Hook</b></p>
-            </div>
-            <div class="item">
-              <img src="/10/brian-hook-2.jpeg" width="100%" />
-            </div>
-          </div>
+          <img src="/10/investigation.jpeg" height="600px" />
           <aside class="notes">
-            Brian bossait chez 3DFX avec Gary à l'époque, avant d'être recruté chez id Software pour pallier
-            au départ de Michael Abrash, et c'est certainement comme ça que l'algo est arrivé dans le code source.
+            La piste s'arrête là, est-ce qu'on saura un jour ?
           </aside>
         </section>
 
@@ -3153,11 +3143,9 @@
             <b class="fragment highlight-gold">« The Father of Floating Point »</b>
           </p>
           <aside class="notes">
-            mathématicien et informaticien canadien né en 1933 (il a 90 ans aujd),
-            lauréat du prix Turing en 1989 pour ses travaux en analyse numérique.
-            Spécialiste des calculs en virgule flottante, il est le principal architecte de la norme IEEE 754.
-            William Kahan and K.C. Ng at Berkeley wrote an unpublished paper in May 1986 describing
-            how to calculate the square root using bit-fiddling techniques followed by Newton iterations
+            - mathématicien et informaticien canadien né en 1933 (il a 90 ans aujd),
+            - lauréat du prix Turing en 1989 pour ses travaux en analyse numérique.
+            - Spécialiste des calculs en virgule flottante, il est le principal architecte de la norme IEEE 754.
           </aside>
         </section>
 
@@ -3165,45 +3153,31 @@
           <img src="/10/e-sqrt-c.png" height="550px" />
           <br />
           <a href="https://www.netlib.org/fdlibm/e_sqrt.c"><b>e_sqrt.c</b></a>
-        </section>
-
-        <section>
-          <img src="/10/investigation.jpeg" height="600px" />
-        </section>
-
-        <section>
-          <img src="/10/valve-logo.jpg" />
-          <br />
           <aside class="notes">
-            On retrouve également un lien avec les jeux Valve, dont le moteur du mythique Half-Life
-            et plus tard le moteur source.
-            That’s because Half-Life was built off a heavily modified version of the original Quake engine.
+            William Kahan and K.C. Ng at Berkeley wrote an unpublished paper in May 1986 describing
+            how to calculate the square root using bit-fiddling techniques followed by Newton iterations
           </aside>
         </section>
 
         <section>
-          <video autoplay loop muted src="/10/flickering.mp4"></video>
-          <p class="small muted">Valve / id / barracuda415 @ Reddit / Kotaku</p>
+          <img class="r-stretch" src="/10/morale.jpeg" />
           <aside class="notes">
-            top: Quake / Half-Life, Bottom: Half-Life 2 / Portal
+            - Maintenant vous savez comment votre ordi stocke des float,
+            - Vous savez à peu près comment fonctionne l'algorithme
           </aside>
         </section>
 
         <section>
-          <video autoplay loop muted src="/10/flickering-2.mp4" height="600px"></video>
-          <p class="small muted">Valve / CrazyGiaky @ Reddit</p>
+          <img class="r-stretch" src="/10/pride-only-hurts.png" />
           <aside class="notes">
-            Et ça va même jusque dans Alyx qui est sorti y'a même pas 3 ans !
-            Mais je m'égare, c'est pour un autre talk.
-          </aside>
-        </section>
-
-        <section>
-          <img class="r-stretch" src="/10/morale.avif" />
-          <aside class="notes">
-            La compréhension des fondamentaux nous rend non seulement de meilleurs développeurs,
-            mais aussi des innovateurs capables de repousser les limites de notre domaine.
-            Restons connectés à nos racines tout en embrassant le futur de la programmation.
+            - Pour finir, je vous laisse sur cette citation de Marsellus Wallace
+            "pride only hurts, it never helps"
+            - Sachons rester humble, à l'image de tous ces gens dans cette enquête, qui malgré être des 
+            monstres dans leur domaine ne prennent jamais le crédit, même lorsqu'il leur est du.
+            - Cet algo, bien qu'obsolète quasiment dès sa sortie, aura permis à une génération de joueurs
+            de profiter de Quake 3 sur leurs bécanes pourries.
+            - Prenons en de la graine, restons connectés à nos racines (pas carrées)
+            et chargés de ces enseignements, embrassons le futur de la programmation.
           </aside>
         </section>
 
@@ -3214,7 +3188,7 @@
         <h1>Merci !</h1>
         <strong class="shadow">Distribution de paracétamol<br />à la pause</strong>
         <aside class="notes">
-          Ce talk lui est finito pipo !
+          j'espère que ça vous a plu, merci de m'avoir écouté.
         </aside>
       </section>
     </div> <!-- /slides -->
