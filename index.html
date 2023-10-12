@@ -548,7 +548,7 @@
           <img class="r-stretch" src="/4/minecraft-torch.jpeg" />
           <p class="smaller muted">Minecraft - Mojang Studios</p>
           <aside class="notes">
-            Pour comprendre ça, il faut comprendre comment fonctionne un moteur de jeu,
+            Pour comprendre ce bout de code, il faut comprendre comment fonctionne un moteur de jeu,
             et en particulier la gestion de la lumière.
           </aside>
         </section>
@@ -684,10 +684,14 @@
         <section>
           <h4>2. <span class="bright">Normalisation</span> du vecteur</h4>
           <blockquote>
-            "Prenez un vecteur, <br />calculez sa longueur et <br /><b>divisez chaque composante du vecteur par cette
-              longueur</b>.
-            <br />Ce nouveau vecteur obtenu aura <br /><b>une longueur de 1</b>. <br />Cette technique est appelée
-            <b>normalisation</b>."
+            <p class="fragment">
+              "Prenez un vecteur, <br />calculez sa longueur et <br /><b>divisez chaque composante du vecteur par cette
+                longueur.</b>
+            </p>
+            <p class="fragment">
+              Ce nouveau vecteur obtenu aura <br /><b>une longueur de 1</b>. <br />Cette technique est appelée
+              <b>normalisation</b>."
+            </p>
           </blockquote>
         </section>
 
@@ -711,7 +715,10 @@
         </section>
 
         <section>
-          <div class="ch">
+          <h4>Pourquoi c'est important ?</h4>
+          <br />
+          <br />
+          <div class="ch fragment">
             <div class="item">
               <img class="highlight-shadow" src="/4/jerem-applati.png" />
             </div>
@@ -769,26 +776,68 @@
         </section>
 
         <section>
-          <h4>Comment je corrige ça ?</h4>
-          <h3 class="highlight-gold fragment">Je normalise mon vecteur direction</h3>
+          <h4>Ce qui ne va pas :</h4>
           <div class="fragment">
-            <pre class="js clean">
-              <code>
+            <pre class="js">
+              <code data-trim data-line-numbers="3|4-7|8-11|13-14">
               /** la_voiture_vroum_vroum.js*/
 
-              const direction = {
-                x: 1, // à droite
-                y: 1, // en haut
+              const VITESSE_MAX = 200;
+              var direction = {
+                x: 1, // j'appuie sur ➡️
+                y: 1, // j'appuie sur ⬆️
               }
-
-              direction.normalize();
-              console.log(direction); // { x: 0.5, y: 0.5 }
+              var vitesse = {
+                x: direction.x * VITESSE_MAX;
+                y: direction.y * VITESSE_MAX;
+              }
+              
+              console.log(vitesse); // { x: 200, y: 200 }
+              console.log(vitesse.x + vitesse.y); // 400
               </code>
             </pre>
           </div>
           <aside class="notes">
             Ici, pour corriger mon jeu de voiture, j'ai besoin de normaliser mon vecteur de direction.
           </aside>
+        </section>
+
+        <section>
+          <h4>Comment je corrige ça ?</h4>
+          <h4 class="highlight-gold fragment">Je normalise mon vecteur direction</h4>
+          <div class="fragment">
+            <pre class="js">
+              <code data-trim data-line-numbers="1-4|6-7|9-12|14-15">
+              const direction = {
+                x: 1, // j'appuie sur ➡️
+                y: 1, // j'appuie sur ⬆️
+              }
+
+              direction.normalize();  // 👀
+              console.log(direction); // { x: 0.5, y: 0.5 }
+
+              var vitesse = {
+                x: direction.x * VITESSE_MAX;
+                y: direction.y * VITESSE_MAX;
+              }
+              
+              console.log(vitesse); // { x: 100, y: 100 }
+              console.log(vitesse.x + vitesse.y); // 200
+              </code>
+            </pre>
+          </div>
+          <aside class="notes">
+            Ici, pour corriger mon jeu de voiture, j'ai besoin de normaliser mon vecteur de direction.
+          </aside>
+        </section>
+
+        <section>
+          <pre style="margin-left: 10%; font-size: 1.5em;" class="js clean">
+            <code data-trim>
+              direction.normalize();
+            </code>
+            </pre>
+          <h1>?</h1>
         </section>
 
         <section>
@@ -929,6 +978,8 @@
         </section>
 
         <section>
+          <h3 class="fragment">3 fois par vecteur 💦</h3>
+          <h3 class="fragment">60 fois par secondes 🔥</h3>
           <div>
             \[\frac{1}{\sqrt{\textcolor{#66ABE1}{x^{2}} + \textcolor{#9CC281}{y^{2}} + \textcolor{#DCBD87}{z^{2}}}}\]
           </div>
@@ -947,8 +998,8 @@
             </div>
           </div>
           <aside class="notes">
-            Etant donné le nombre de fois où on va avoir besoin de normaliser des vecteurs, (1 vecteur par plans, 60
-            fois par secondes), c'est un calcul qui va être fait très souvent, il est crucial qu'il soit rapide.
+            Etant donné le nombre de fois où on va avoir besoin de normaliser des vecteurs,
+            c'est un calcul qui va être fait très souvent, il est crucial qu'il soit rapide.
           </aside>
         </section>
 
@@ -1037,7 +1088,7 @@
           <code data-id="r" class="title">r</code>
           <code data-id="sqrt" class="title">sqrt</code>
           <br />
-          <code class="bright">
+          <code class="bright highlight-gold">
             <span class="fragment">Quake</span>
             <span class="fragment">Reverse</span>
             <span class="fragment">Square Root</span>
@@ -1963,10 +2014,10 @@
         </section>
 
         <section data-auto-animate>
-          <video class="motion-canvas" data-id="1" data-autoplay data-src="/6/test.mp4"></video>
+          <video class="motion-canvas" data-id="1" data-autoplay data-src="/6/log-one-plus-x.mp4"></video>
         </section>
         <section data-auto-animate>
-          <video class="motion-canvas" data-id="1" data-autoplay data-src="/6/test-2.mp4"></video>
+          <video class="motion-canvas" data-id="1" data-autoplay data-src="/6/plus-mu.mp4"></video>
         </section>
 
         <section>
@@ -2011,7 +2062,7 @@
               $\log_2(y) \approx$ <span class="ieee-exponent">$E \times 2^{23}$</span>$ + $<span
                 class="ieee-mantissa">$M$</span>
             </div>
-            <b class="fragment medium">sa propre représentation binaire !</b>
+            <b class="fragment medium highlight-gold">sa propre représentation binaire !</b>
             <br />
             <br />
             <div class="fragment muted">(scale de $1/2^{23}$ et shifté de $-127 + \mu$<br />mais tranquille)</div>
@@ -2026,6 +2077,18 @@
 
       </section>
 
+      <section data-background-image="/6/dark-matrix.jpeg" data-transition="fade" class="scrim">
+        <section>
+          <h2>Maintenant, vous êtes prêts</h2>
+          <img src="/6/we-ready.gif" />
+        </section>
+        <section>
+          <video data-autoplay data-src="/6/going-dark.mov"></video>
+          <h3>Bravo Six, Going Dark</h3>
+        </section>
+        
+      </section>
+
       <!-- 7. Le langage C en sueur -->
       <section data-background-image="/7/splash.png" data-transition="fade" class="scrim">
         <h3>Étape n°1</h3>
@@ -2034,25 +2097,47 @@
       </section>
       <section data-background-image="/7/splash.png" class="blurred scrim darkgrey">
         <section data-transition="fade">
-          <pre data-id="1" class="c wide smaller clean">
-            <code data-trim data-line-numbers="8,10">
-              float Q_rsqrt( float number ) {
-                long i;
-                float x2, y;
-                const float threehalfs = 1.5F;
-
-                x2 = number * 0.5F;
-                y  = number;
-                i  = * ( long * ) &y;                        // evil floating point bit hacking
-                i  = 0x5f3759df - ( i >> 1 );                // what the fuck?
-                y  = * ( float * ) &i;
-                y  = y * ( threehalfs - ( x2 * y * y ) );    // 1st iteration
-                // y  = y * ( threehalfs - ( x2 * y * y ) ); // 2nd iteration, can be removed
-
-                return y;
-              }
-            </code>
-          </pre>
+          <div class="r-stack">
+            <pre data-id="1" class="fragment current-visible c wide smaller clean">
+              <code data-trim data-line-numbers>
+                float Q_rsqrt( float number ) {
+                  long i;
+                  float x2, y;
+                  const float threehalfs = 1.5F;
+  
+                  x2 = number * 0.5F;
+                  y  = number;
+                  i  = * ( long * ) &y;                        // evil floating point bit hacking
+                  i  = 0x5f3759df - ( i >> 1 );                // what the fuck?
+                  y  = * ( float * ) &i;
+                  y  = y * ( threehalfs - ( x2 * y * y ) );    // 1st iteration
+                  // y  = y * ( threehalfs - ( x2 * y * y ) ); // 2nd iteration, can be removed
+  
+                  return y;
+                }
+              </code>
+            </pre>
+            <pre data-id="1" class="fragment c wide smaller clean">
+              <code data-trim data-line-numbers="8,10">
+                float Q_rsqrt( float number ) {
+                  long i;
+                  float x2, y;
+                  const float threehalfs = 1.5F;
+  
+                  x2 = number * 0.5F;
+                  y  = number;
+                  i  = * ( long * ) &y;                        // evil floating point bit hacking
+                  i  = 0x5f3759df - ( i >> 1 );                // what the fuck?
+                  y  = * ( float * ) &i;
+                  y  = y * ( threehalfs - ( x2 * y * y ) );    // 1st iteration
+                  // y  = y * ( threehalfs - ( x2 * y * y ) ); // 2nd iteration, can be removed
+  
+                  return y;
+                }
+              </code>
+            </pre>
+          </div>
+          
           <aside class="notes">
             Le commentaire "evil floating point bit level hacking" ne nous aide pas trop sur ce coup là...
           </aside>
@@ -2424,17 +2509,10 @@
         </section>
 
         <section>
-          <div class="text-left" style="margin-left: 15%;">
-            <div>
-              <code class="normal">
-              i = <code class="value">01000000100101000...</code>
-              </code>
-            </div>
-            <div data-fragment-index="1" class="fragment">
-              <code class="normal">
-              i ≈ <code class="value">log2(y)</code>
-              </code>
-            </div>
+          <div data-fragment-index="1" class="fragment big">
+            <code class="normal">
+            i ≈ <code class="value">log2(y)</code>
+            </code>
           </div>
           <hr data-fragment-index="2" class="fragment" />
           <div class="r-stack medium">
@@ -2569,10 +2647,26 @@
           </div>
         </section>
 
+        <section data-auto-animate>
+          <h3>Comment il a été trouvé ?</h3>
+          <div class="ch">
+            <div class="item">
+              <img class="highlight-shadow" src="/8/trial-and-error.png" height="400px" />
+              <div data-id="2"><b>À taton ?</b></div>
+            </div>
+            <div class="item">
+              <img src="/8/wtf-girl.webp" />
+              <br />
+              <br />
+              <div data-id="1"><b>Par les maths ?</b></div>
+            </div>
+          </div>
+        </section>
+
         <!-- Exemple complet -->
         <section data-auto-animate>
-          <h3>Exemple complet</h3>
-          <hr/>
+          <div data-id="2"><b class="big">À taton ?</b></div>
+          <hr />
           <p class="fragment">
             <code class="normal">
               <code class="type">float</code> y = <code class="value">12.5;</code>
@@ -2685,6 +2779,7 @@
         </section>
 
         <section>
+          <h3>En résumé</h3>
           <div class="r-stack">
             <pre class="c clean big fragment preload current-visible">
               <code data-trim data-ln-start-from="8" data-line-numbers="3-4">
@@ -2888,11 +2983,12 @@
         <section data-auto-animate>
           <h3>Exemple avec la fonction</h3>
           <div data-id="1"><b class="big">\[\sqrt{x}\]</b></div>
-          <div data-id="2" class="fragment">Admettons qu'on cherche <b>$\sqrt{3}$</b></div>
+          <div data-id="2" class="fragment"><b>Admettons qu'on cherche $\sqrt{3}$</b></div>
         </section>
 
+        <!-- Première itération -->
         <section data-auto-animate>
-          <div data-id="2">Admettons qu'on cherche <b>$\sqrt{3}$</b></div>
+          <div data-id="2"><b>Admettons qu'on cherche $\sqrt{3}$</b></div>
           <div data-id="3" class="fragment">Prenons une 1ère estimation : <b class="bright">$y = 2$</b></div>
           <div class="r-stack medium">
             <div class="fragment current-visible instant">
@@ -2919,8 +3015,9 @@
           </div>
         </section>
 
+        <!-- Première itération -->
         <section data-auto-animate>
-          <div data-id="2">Admettons qu'on cherche <b>$\sqrt{3}$</b></div>
+          <div data-id="2"><b>Admettons qu'on cherche $\sqrt{3}$</b></div>
           <div data-id="3">Nouvelle estimation : <b class="bright">$y = 1,75$</b></div>
           <div class="r-stack medium">
             <div class="fragment current-visible instant">
@@ -2942,7 +3039,7 @@
         </section>
 
         <section data-auto-animate>
-          <div data-id="2">Admettons qu'on cherche <b>$\sqrt{3}$</b></div>
+          <div data-id="2"><b>Admettons qu'on cherche $\sqrt{3}$</b></div>
           <div data-id="3">Nouvelle estimation : <b class="bright">$y = 1,73214$</b></div>
           <div class="r-stack">
             <img class="fragment highlight-shadow" src="/9/sqrt-calculator.png" height="400px" />
@@ -3373,13 +3470,14 @@
           <img class="r-stretch" src="/10/pride-only-hurts.png" />
           <aside class="notes">
             - Pour finir, je vous laisse sur cette citation de Marsellus Wallace
-            "pride only hurts, it never helps"
             - Sachons rester humble, à l'image de tous ces gens dans cette enquête, qui malgré être des
-            monstres dans leur domaine ne prennent jamais le crédit, même lorsqu'il leur est du.
-            - Cet algo, bien qu'obsolète quasiment dès sa sortie, aura permis à une génération de joueurs
-            de profiter de Quake 3 sur leurs bécanes pourries.
+            monstres dans leur domaine, refusent poliment de s'attribuer seul les lauriers,
+            et ne s'enorgueillissent jamais de leurs travaux.
+            - Souvenons nous de cet algo, bien qu'obsolète dès sa sortie au regard de la nouvelle génération de CPU, 
+            aura permis à une génération de joueurs de profiter de Quake 3 sur leurs bécanes pourries.
+            (ordis du CDI)
             - Prenons en de la graine, restons connectés à nos racines (pas carrées)
-            et chargés de ces enseignements, embrassons le futur de la programmation.
+            et chargés de ces enseignements, embrassons le futur de notre métier.
           </aside>
         </section>
 
