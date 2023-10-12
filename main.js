@@ -64,7 +64,7 @@ deck.addEventListener('fragmenthidden', function (event) {
 
 /* Specific slides config */
 
-const SLIDE_INDEX_WITH_GAME = '7-15';
+const SLIDE_INDEX_WITH_GAME = '5-15';
 
 /**
  * Listen for the 'slideChanged' Reveal event, and dispatch events for specific slides

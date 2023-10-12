@@ -224,7 +224,7 @@ span.ieee-mantissa-range {
     position: absolute;
     font-size: smaller;
     top: 70px;
-    left: 320px;
+    left: 310px;
 }
 
 span.ieee-mantissa-range-2 {
@@ -232,6 +232,12 @@ span.ieee-mantissa-range-2 {
     font-size: smaller;
     top: 90px;
     left: 305px;
+}
+
+span.exponent-divided {
+    position: absolute;
+    top: 430px;
+    left: 130px;
 }
 
 span.binary-rep-inv {
@@ -296,6 +302,13 @@ div.newton-quote-2 {
     position: absolute;
     top: 250px;
     right: 40px;
+}
+
+img.abs-center-right {
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    transform: translate(0%, -50%);
 }
 
 img.abs-center {
