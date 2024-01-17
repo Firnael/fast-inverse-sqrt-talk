@@ -7,9 +7,11 @@
     --ieee-exponent-color: #C579DF;
     --ieee-mantissa-color: #5ecbf7;
     --vector-color: #C878E1;
-    --x-color: #66ABE1;
-    --y-color: #9CC281;
-    --z-color: #DCBD87;
+    --x-color: #FF4042;
+    --y-color: #42FF40;
+    --z-color: #328EEC;
+    --gold-color: #f6d569;
+    --code-func-color: #61AEEE;
 }
 
 /* Font Faces */
@@ -116,12 +118,12 @@ img {
 }
 
 .highlight-shadow {
-    filter: drop-shadow(.1rem .1rem .5rem #000000);
+    filter: drop-shadow(.1rem .1rem .5rem #000);
     box-shadow: none;
 }
 
 .highlight-gold {
-    filter: drop-shadow(.1rem .1rem .5rem #f6d569);
+    filter: drop-shadow(.1rem .1rem .5rem var(--gold-color));
     box-shadow: none;
 }
 
@@ -450,8 +452,8 @@ code.bright {
     color: var(--bright-color);
 }
 
-code.names {
-    color: #61AEEE;
+code.func {
+    color: var(--code-func-color);
 }
 
 code.normal {

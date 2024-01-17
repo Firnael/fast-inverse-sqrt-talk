@@ -4,6 +4,7 @@ import RevealHighlight from 'reveal.js/plugin/highlight/highlight';
 import RevealMath from 'reveal.js/plugin/math/math';
 import RevealPointer from './plugins/reveal-pointer/pointer.esm.js';
 import RevealDrawer from './plugins/reveal-drawer/drawer.esm.js';
+import RevealJoyCon from 'reveal.js-joycon-plugin';
 
 import 'reveal.js/dist/reveal.css';
 // https://revealjs.com/themes/
@@ -18,7 +19,7 @@ const deck = new Reveal();
 deck.initialize({
     hash: true,
     slideNumber: false,
-    plugins: [RevealNotes, RevealHighlight, RevealMath.KaTeX, RevealPointer, RevealDrawer(deck)],
+    plugins: [RevealNotes, RevealHighlight, RevealMath.KaTeX, RevealPointer, RevealDrawer(deck), RevealJoyCon],
     pointer: {
         key: 'q',
         color: 'red',
@@ -31,6 +32,9 @@ deck.initialize({
         toggleBoardKey: 't',
         colors: ['#C878E1', '#66ABE1', '#9CC281', '#DCBD87'],
         pathSize: 8
+    },
+    joycon: {
+        cooldown: 200
     }
 });
 

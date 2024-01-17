@@ -15,7 +15,7 @@ renderer.setSize(container.clientWidth, container.clientHeight);
 container.appendChild(renderer.domElement);
 
 // Create a the "spotlight" sprite
-const spriteTexture = new THREE.TextureLoader().load('/4/cube-light/spotlight.png');
+const spriteTexture = new THREE.TextureLoader().load('/4/spotlight.png');
 const spriteMaterial = new THREE.SpriteMaterial({ map: spriteTexture });
 const sprite = new THREE.Sprite(spriteMaterial);
 sprite.scale.set(1, 1, 1);
@@ -25,33 +25,25 @@ sprite.visible = false;
 
 // Create a cube geometry
 const geometry = new THREE.BoxGeometry(2, 2, 2);
-
-// Load the textures
-const textureLoader = new THREE.TextureLoader();
-const textureUrls = [
-    'alexo_white.png',
-    'erwann_white.png',
-    'fdu_white.png',
-    'greg_white.png',
-    'jeremie_white.png',
-    'lasouche_white.png'
-];
-const textures = textureUrls.map((url) => textureLoader.load(`/4/cube-light/${url}`));
-
-// Create an array of materials using the textures
-const materials = textures.map((texture) => {
-    return new THREE.MeshStandardMaterial({ map: texture });
-});
-
+// Create a material with a plain color
+const material = new THREE.MeshLambertMaterial({ color: 0x888888 }); // Grey color
 // Create a mesh using the geometry and material(s)
-const cube = new THREE.Mesh(geometry, materials);
+const cube = new THREE.Mesh(geometry, material);
+// Add the cube to the scene
 scene.add(cube);
+
 // const helper = new VertexNormalsHelper(cube, 1, 0xff0000);
 // scene.add(helper);
+
+// Create an ambient light
+const ambientLight = new THREE.AmbientLight(0xFFFFDD); // Yellowish color
+ambientLight.visible = false;
+scene.add(ambientLight);
 
 // Create a directional light
 const staticLight = new THREE.DirectionalLight(0xffffff, 3.0);
 staticLight.position.set(1, 1, 1);
+staticLight.visible = false;
 scene.add(staticLight);
 // const staticLightHelper = new THREE.DirectionalLightHelper(staticLight);
 // scene.add(staticLightHelper);
@@ -62,11 +54,19 @@ function animate() {
 }
 
 function rotate() {
-    sprite.visible = true;
     requestAnimationFrame(rotate);
     cube.rotation.x += 0.005;
     cube.rotation.y += 0.005;
     renderer.render(scene, camera);
+}
+
+function toggleAmbiantLight() {
+    ambientLight.visible = !ambientLight.visible;
+}
+
+function toggleDirectionalLight() {
+    staticLight.visible = !staticLight.visible;
+    sprite.visible = !sprite.visible;
 }
 
 document.addEventListener('keydown', (event) => {
@@ -75,6 +75,12 @@ document.addEventListener('keydown', (event) => {
         const id = requestAnimationFrame(animate);
         cancelAnimationFrame(id);
         rotate();
+    }
+    if (event.key === 'm') {
+        toggleAmbiantLight();
+    }
+    if (event.key === 'l') {
+        toggleDirectionalLight();
     }
 });
 

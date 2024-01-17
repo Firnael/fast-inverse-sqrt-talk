@@ -32,6 +32,8 @@ Ce talk est très fortement inspiré de [cette vidéo](https://www.youtube.com/w
 
 ## Documentation
 
+https://docs.google.com/presentation/d/e/2PACX-1vTGP--MIkfoDM4ef_8QUd5Ld41gMLhQiGkGc0glPovvFqjMZhBFNcpTobAHfjxWwbqANbxVJe3txvej/pub?start=false&loop=false&delayms=3000&slide=id.g120d8381d09_0_20
+
 - Wikipedia :
   - [Fast Inverse Square Root](https://en.wikipedia.org/wiki/Fast_inverse_square_root)
   - [Softdisk](https://fr.wikipedia.org/wiki/Softdisk)

@@ -16,24 +16,17 @@
       <section data-background-image="/1/splash.jpg" data-transition="fade" class="scrim grey">
         <h1 class="main-title r-fit-text">The (In)glorious<br />Function</h1>
         <aside class="notes">
-          Bonjour à tous, bienvenue à tous au MaxCamp 2023, pour ceux qui ne me connaissent pas
-          je m'appelle Audren Burlot, et je suis honoré de démarrer la journée avec ce talk
-          qui s'intitule "The Inglorious Function".
+          Bonjour à tous, bienvenue à tous, je m'appelle Audren Burlot, et je suis honoré d'être devant vous aujou'd'hui
+          pour vous présenter ce talk qui s'intitule "The Inglorious Function".
 
-          Aujourd'hui je vais vous raconter l'histoire d'une fonction.
+          Aujourd'hui je vais vous raconter l'histoire d'un bout de code.
+          Une fonction bien connue, dont vous avez certainement déjà entendu parler.
           Une fonction trouvée il y a 20 dans le code source d'un jeu sorti il y a 24 ans.
           Une fonction qui m'a cassé le cerveau.
         </aside>
       </section>
+
       <section data-background-image="/1/splash.jpg" class="blurred">
-
-        <section>
-          <img class="r-stretch" src="/1/quentin-tarantino.webp" />
-          <aside class="notes">
-            Voici une photo de Quentin Tarantino qui est outré par avance de cette introduction.
-          </aside>
-        </section>
-
         <section>
           <div class="cv">
             <div class="item ch">
@@ -61,25 +54,17 @@
             </div>
           </div>
           <aside class="notes">
-            Sans plus attendre, voici le menu de ce matin, dans le désordre et non-exhaustif :
-            dans ce talk nous allons donc parler :
+            Dans ce talk nous allons donc parler :
             - de Quake, mais pas celui aux olives, le jeu Quake 3 sorti en 1999 développé par id Software
             - de racine carré
             - de normalisation de vecteurs
             - de logarithme de base 2
             - de ce bon vieux Newton
             - et un peu de magie noire
-            Mais avant de vous parler de code, savez ce qu'il vous attend
+            Mais avant de vous parler de code, il faut qu'on revienne un peu en arrière, et qu'on voyage outre-Atlantique
           </aside>
         </section>
 
-        <section>
-          <video data-autoplay loop muted class="r-stretch" src="/1/ah-shit.webm" />
-          <aside class="notes">
-            Il faut qu'on revienne un peu en arrière.
-            Et qui dit revenir en arrière, dit : it's storytime
-          </aside>
-        </section>
       </section>
 
       <!-- 2. Storytime -->
@@ -424,7 +409,7 @@
         <section>
           <div class="r-stack">
             <div>
-              <img src="/10/id-tech-3.webp" height="500px" />
+              <img src="/2/id-tech-3.webp" height="500px" />
               <p><b>id Tech 3</b></p>
             </div>
             <img class="fragment" style="margin-left: 10%;" src="/2/boxart-007-auf.webp" height="600px" />
@@ -459,13 +444,6 @@
         </section>
 
         <section>
-          <video data-autoplay src="/2/ca-baigne.mp4" height="700px"></video>
-          <aside class="notes">
-            Et c'est dans ce code source que ce trouve le bout de code dont je vais vous parler aujourd'hui
-          </aside>
-        </section>
-
-        <section>
           <img class="r-stretch" src="/2/years-later.jpg" />
           <aside class="notes">
             Fast forward en 2021
@@ -495,18 +473,11 @@
           </aside>
         </section>
 
-        <section>
-          <video data-autoplay src="/2/ps1-boot.mkv"></video>
-          <aside class="notes">
-            C'est cadeau
-          </aside>
-        </section>
-
         <section data-auto-animate>
           <img class="fragment grow" src="/2/fsqrt-youtube.png" />
           <aside class="notes">
-            Puis je tombe sur ça : "Fast Inverse Square Root - A Quake III Algorithm"
-            - Je me dis, est-ce bien l'heure de regarder 20min de vidéo d'un gars qui parle d'un algorithme en C écrit
+            Puis, je fini par tomber sur ça : "Fast Inverse Square Root - A Quake III Algorithm"
+            Je me dis, est-ce bien l'heure de regarder 20 min de vidéo d'un gars qui parle d'un algorithme en C écrit
             il y a plus de 20 ans ? Et je clique.
           </aside>
         </section>
@@ -520,25 +491,41 @@
           </aside>
         </section>
 
+        <section data-auto-animate>
+          <div class="r-stack">
+            <img src="/2/quake-3-map.webp" />
+            <img class="fragment" src="/2/wojak-normal.webp" />
+            <img class="fragment" src="/2/wojak-bave.png" />
+            <img class="fragment" src="/2/wojak-stupid.jpeg" />
+            <img class="fragment" src="/2/wojak-no-head.jpeg" />
+            <img class="fragment" src="/2/wojak-blackhole.jpg" />
+          </div>
+          <aside class="notes">
+            La vidéo parle d'une méthode d'optimisation obscure du rendu 3D de Quake 3,
+            ça parle de calcul de réfraction de la lumière.
+            Progressivement mon cerveau de résorbe sur lui-même pour former un trou noir.
+          </aside>
+        </section>
+
         <section>
           <img src="/2/wojak-sleeping.jpg" />
           <aside class="notes">
-            Du coup je suis allé me coucher, et je me suis demandé, est-ce que je serais capable d'expliquer ce que j'ai
-            vu à quelqu'un d'autre ?
+            À la fin de la vidéo, j'éteinds mon PC, et je vais me coucher.
+            Je me suis demandé, est-ce que je serais capable d'expliquer ce que j'ai vu à quelqu'un d'autre ?
           </aside>
         </section>
 
         <section>
           <img src="/2/cat-newspaper.webp" />
           <aside class="notes">
-            Le lendemain matin je suis en train de lire le journal comme ça en buvant mon café et je me suis dit
-            "si je dis que je fais un talk dessus, ça va me forcer à comprendre tout ce qu'il se passe"
+            Le lendemain matin je suis en train de lire le journal comme ça en buvant mon café et je repense à cette vidéo.
+            Frustré je me dit "si je fais un talk dessus, ça va me forcer à comprendre tout ce qu'il se passe"
           </aside>
         </section>
 
       </section>
 
-      <!-- 4. Normaliser des vecteurs -->
+      <!-- 4. À l'intérieur du moteur -->
       <section data-background-image="/4/blender.jpeg" data-transition="fade" class="scrim lightgrey">
         <h2 class="highlight-gold">À l'intérieur du moteur</h2>
       </section>
@@ -554,64 +541,22 @@
         </section>
 
         <section data-auto-animate>
-          <img class="noshadow" src="/4/apple-2.png" />
+          <img class="noshadow" src="/4/apple-1.png" />
           <aside class="notes">
             Pour simplifier, les objects dans un monde en 3D ne sont qu'un ensemble de surface, qui doivent reflèter
             la lumière chacune à leur manière.
           </aside>
         </section>
 
-        <section data-auto-animate>
-          <img class="noshadow" src="/4/apple-2.png" height="300px" />
-          <img class="noshadow" src="/4/apple-1.png" />
-        </section>
-
-        <section data-auto-animate>
-          <div class="fragment ch">
-            <div class="item"><img data-id="1" class="noshadow" src="/4/tetes/alexo.png" /></div>
-            <div class="item"><img data-id="2" class="noshadow" src="/4/tetes/fdu.png" /></div>
-            <div class="item"><img data-id="3" class="noshadow" src="/4/tetes/jeremie.png" /></div>
-            <div class="item"><img data-id="4" class="noshadow" src="/4/tetes/greg.png" /></div>
-            <div class="item"><img data-id="5" class="noshadow" src="/4/tetes/erwann.png" /></div>
-            <div class="item"><img data-id="6" class="noshadow" src="/4/tetes/lasouche.png" /></div>
-          </div>
-          <aside class="notes">
-            Je vous propose d'illustrer ça avec un exemple.
-            Prenons cette belle brochette de vainqueurs.
-          </aside>
-        </section>
-        <section style="transform: scale(0.8);" data-transition="fade" data-auto-animate>
-          <div class="ch">
-            <div class="cv"><!-- 1st row -->
-              <div class="item"></div>
-              <div class="item"><img class="max-head" data-id="1" src="/4/cube-light/alexo_white.png" /></div>
-              <div class="item"></div>
-            </div>
-            <div class="cv"><!-- 2nd row -->
-              <div class="item"><img class="max-head" data-id="2" src="/4/cube-light/fdu_white.png" /></div>
-              <div class="item"><img class="max-head" data-id="3" src="/4/cube-light/jeremie_white.png" /></div>
-              <div class="item"><img class="max-head" data-id="4" src="/4/cube-light/greg_white.png" /></div>
-            </div>
-            <div class="cv"><!-- 3rd row -->
-              <div class="item"></div>
-              <div class="item"><img class="max-head" data-id="5" src="/4/cube-light/erwann_white.png" /></div>
-              <div class="item"></div>
-            </div>
-            <div class="cv"><!-- 4th row -->
-              <div class="item"></div>
-              <div class="item"><img class="max-head" data-id="6" src="/4/cube-light/lasouche_white.png" /></div>
-              <div class="item"></div>
-            </div>
-          </div>
-          <aside class="notes">
-            Admettons que je colle ces têtes ensemble pour en faire un magnifique cube
-          </aside>
-        </section>
-
         <section data-transition="fade">
           <div class="cube" id="three-animation"></div>
           <aside class="notes">
-            Et que je le place dans un monde en 3D.
+            Imaginons ce carré. 
+            Mais en fait c'est pas un carré c'est un cube. 
+            Il est tout noir, car dans ma scène, je n'ai aucune lumière.
+            Si j'allume la lumière dite "ambiante", le cube apparaitra de la même couleur sur chaque face.
+            Lorsqu'on vient appliquer une lumière dite "directionnelle" à ce cube, on s'aperçoit que 
+            chaque face apparait d'une couleur différentes en fonction de l'angle 
           </aside>
         </section>
 
@@ -846,7 +791,7 @@
             <video data-autoplay src="/4/pythagore-1.mp4"></video>
           </div>
           <aside class="notes">
-            Soit mon vecteur V en rose, il a une magnitude de M.
+            Soit mon vecteur V en rose, de magnitude (longueur) M.
             On peut le décomposer en 2 vecteurs, Vx et Vy, qui sont les composantes de V selon les axes X et Y.
             Comment je peux trouver V, si je connais Vx et Vy à votre avis ?
           </aside>
@@ -992,7 +937,7 @@
             </div>
             <div class="fragment fade-up">
               <code data-trim class="normal">
-                <code class="names">Q_rsqrt</code>(<span class="x">x</span>*<span class="x">x</span> + <span
+                <code class="func">Q_rsqrt</code>(<span class="x">x</span>*<span class="x">x</span> + <span
                 class="y">y</span>*<span class="y">y</span> + <span class="z">z</span>*<span class="z">z</span>);
               </code>
             </div>
@@ -1061,7 +1006,7 @@
   
                     x2 = number * 0.5F;
                     y  = number;
-                    i  = * ( long * ) &y;                        // evil floating point bit level hacking
+                    i  = * ( long * ) &y;                      // evil floating point bit level hacking
                     i  = 0x5f3759df - ( i >> 1 );                // what the fuck?
                     y  = * ( float * ) &i;
                     y  = y * ( threehalfs - ( x2 * y * y ) );    // 1st iteration
@@ -1952,7 +1897,6 @@
         <br />
         <br />
         <h2 class="highlight-gold">Filouteries logarithmiques</h2>
-        <!-- <img class="noshadow abs-center-bottom" src="/6/wojak-mask.png" height="300px" /> -->
       </section>
       <section data-background-image="/6/logarithms-book.jpeg" class="blurred">
 
@@ -2154,68 +2098,6 @@
         </section>
 
         <section>
-          <code class="bold normal medium" data-id="1">
-            i = ( <code class="type">long</code> ) y
-          </code>
-          <br />
-          <br />
-          <q class="fragment">
-            <span class="fragment">La <b class="emphas">valeur</b> de la variable <b class="type">float</b> <code
-                class="normal">y</code></span>
-            <br />
-            <span class="fragment">est <b class="emphas">castée</b> en tant que <b class="type">long</b></span>
-            <br />
-            <span class="fragment">et <b class="emphas">assignée</b> à la variable <b class="type">long</b> <code
-                class="normal">i</code></span>
-          </q>
-          <aside class="notes">
-            On va le déchiffrer ensemble.
-            Certains auront déjà compris qu'il s'agit d'un cast.
-            En C, si on veut cast un float en long, on peut faire ça
-          </aside>
-        </section>
-
-        <section>
-          <code class="bold normal medium">
-            i = <span data-fragment-index="5" class="fragment">*</span> <span data-fragment-index="3" class="fragment">( <code class="type">long</code>
-          * )</span> <span data-fragment-index="1" class="fragment">&y</span>
-          </code>
-          <br />
-          <br />
-          <ol>
-            <li data-fragment-index="2" class="fragment fade-in-then-semi-out">
-              On ne vas pas lire la <b class="emphas">valeur</b> de <code class="normal">y</code>
-              <br />mais son <b class="address">adresse</b> mémoire (c'est un pointeur)
-            </li>
-            <li data-fragment-index="4" class="fragment fade-in-then-semi-out">
-              On cast pour faire croire à C que :
-              <br />
-              "la valeur à <b class="address">l'adresse</b> mémoire de <code class="normal">y</code> est un <code
-                class="type">long</code>"
-            </li>
-            <li data-fragment-index="6" class="fragment fade-in-then-semi-out">
-              On lit la <b class="emphas">valeur</b> présente à cette <b class="address">adresse</b>, comme si c'était
-              un <code class="type">long</code>
-            </li>
-          </ol>
-          <aside class="notes">
-            Mais ici, ce n'est pas tout à fait ce qu'il se passe.
-            Si vous avez déjà fait du C ou du C++, vous êtes sûrement familiers avec le concept de pointeurs et
-            d'adresses.
-            On va lire la ligne de droite à gauche pour mieux comprendre :
-            - on récupère l'adresse mémoire de y : c'est une référence, un pointeur vers un float
-            - si on s'arrête là, C nous engueule avec un type mismatch !
-            - i est un long, pas un float *
-            - on dit à C : "tqt, je sais qu'à cette adresse, c'est un pointeur vers un long"
-            - si on s'arrête là, C nous engueule encore avec un type mismatch !
-            - i est un long, pas un long *
-            - on a besoin de cette dernière étoile pour déréférencer le pointeur (on récupère la valeur vers laquelle il
-            pointe)
-            - un pointeur déréférencé d'un long, est un long, on est bon !
-          </aside>
-        </section>
-
-        <section>
           <h3>C Symbol Table</h3>
           <div class="r-stack">
             <table data-fragment-index="1" class="fragment current-visible fade-up">
@@ -2247,6 +2129,64 @@
             </table>
           </div>
           <div data-fragment-index="1" class="fragment fade-left symbol-table-arrow">&lt;</div>
+        </section>
+
+        <section>
+          <code class="bold normal medium" data-id="1">
+            i = ( <code class="type">long</code> ) y
+          </code>
+          <br />
+          <br />
+          <q class="fragment">
+            <span class="fragment">La <b class="emphas">valeur</b> de la variable <b class="type">float</b> <code
+                class="normal">y</code></span>
+            <br />
+            <span class="fragment">est <b class="emphas">castée</b> en tant que <b class="type">long</b></span>
+            <br />
+            <span class="fragment">et <b class="emphas">assignée</b> à la variable <b class="type">long</b> <code
+                class="normal">i</code></span>
+          </q>
+          <aside class="notes">
+            On va le déchiffrer ensemble.
+            Certains auront déjà compris qu'il s'agit d'un cast.
+            En C, si on veut cast un float en long, on peut faire ça
+          </aside>
+        </section>
+
+        <section>
+          <code class="bold normal medium">
+            i = <span data-fragment-index="5" class="fragment">*</span> <span data-fragment-index="3" class="fragment">( <code class="type">long</code>
+          * )</span> <span data-fragment-index="1" class="fragment">&y</span>
+          </code>
+          <br />
+          <br />
+          <ol>
+            <li data-fragment-index="2" class="fragment fade-in-then-semi-out">
+              <b class="address">L'adresse</b> mémoire de <code class="normal">y</code> (c'est un pointeur)
+            </li>
+            <li data-fragment-index="4" class="fragment fade-in-then-semi-out">
+              est castée en tant qu'<b class="address">adresse</b> d'un <code class="type">long</code>
+            </li>
+            <li data-fragment-index="6" class="fragment fade-in-then-semi-out">
+              On lit la <b class="emphas">valeur</b> présente à cette <b class="address">adresse</b>, comme si c'était
+              un <code class="type">long</code> 
+            </li>
+          </ol>
+          <aside class="notes">
+            Mais ici, ce n'est pas tout à fait ce qu'il se passe.
+            Si vous avez déjà fait du C ou du C++, vous êtes sûrement familiers avec le concept de pointeurs et
+            d'adresses.
+            On va lire la ligne de droite à gauche pour mieux comprendre :
+            - on récupère l'adresse mémoire de y : c'est une référence, un pointeur vers un float
+            - si on s'arrête là, C nous engueule avec un type mismatch !
+            - i est un long, pas un float *
+            - on dit à C : "tqt, je sais qu'à cette adresse, c'est un pointeur vers un long"
+            - si on s'arrête là, C nous engueule encore avec un type mismatch !
+            - i est un long, pas un long *
+            - on a besoin de cette dernière étoile pour déréférencer le pointeur (on récupère la valeur vers laquelle il
+            pointe)
+            - un pointeur déréférencé d'un long, est un long, on est bon !
+          </aside>
         </section>
 
         <section>
@@ -2437,7 +2377,9 @@
                 <b>On cherche ça :</b><br />
               </div>
               <div class="item">
-                <code class="value">1/sqrt(y)</code>
+                <code class="normal">
+                  <code class="value">1</code>/<code class="func">sqrt</code>(y)
+                </code>
               </div>
             </div>
             <div class="ch fragment">
@@ -2446,7 +2388,7 @@
               </div>
               <div class="item">
                 <code class="normal">
-                  i ≈ <code class="value">log2(y)</code>
+                  i ≈ <code class="func">log2</code>(y)
                 </code>
               </div>
             </div>
@@ -2456,7 +2398,7 @@
               </div>
               <div class="item">
                 <code class="normal">
-                  i ≈ <code class="value">log2(1/sqrt(y))</code>
+                  i ≈ <code class="func">log2</code>(<code class="value">1</code>/<code class="func">sqrt</code>(y))
                 </code>
               </div>
             </div>
@@ -2466,7 +2408,7 @@
               </div>
               <div class="item">
                 <code class="normal">
-                  y = * (float*) &i;
+                  y = * (<code class="type">float</code>*) &i;
                 </code>
               </div>
             </div>
@@ -2476,7 +2418,7 @@
               </div>
               <div class="item">
                 <code class="normal">
-                  y ≈ <code class="value">1/sqrt(y)</code>
+                  y ≈ <code class="value">1</code>/<code class="func">sqrt</code>(y)
                 </code>
               </div>
             </div>
@@ -2885,12 +2827,12 @@
 
         <section>
           <img class="abs-center god-rays" src="/9/god-rays.png" />
-          <div>
-            <h2 class="highlight-gold">La méthode de Newton</h2>
+          <h2 class="highlight-gold">La méthode de Newton</h2>
+          <div class="fragment">
             <h5>(ou méthode de Newton-Raphson)</h5>
-            <h2 data-fragment-index="1" class="fragment grow">1669</h2>
-            <h4 data-fragment-index="1" class="fragment">publiée en 1711</h4>
-            <div data-fragment-index="2" class="fragment">
+            <h2 class="fragment grow">1669</h2>
+            <h4 class="fragment">publiée en 1711</h4>
+            <div class="fragment">
               <b class="muted">(version simplifiée par Joseph Raphson en 1690)</b>
             </div>
           </div>
@@ -2900,35 +2842,38 @@
           </aside>
         </section>
 
-        <section>
+        <section data-auto-animate>
+          <h3>Cette méthode c'est quoi ?</h3>
+          <blockquote class="fragment">
+            <q>
+              <span class="fragment">Une méthode <b>itérative</b> de recherche de zéro d'une fonction,</span>
+              <span class="fragment"> qui consiste à construire une suite de nombres réels par une <b>méthode géométrique</b>,</span>
+              <span class="fragment"> et à montrer que cette suite <b>converge vers le zéro</b> de la fonction</span>
+            </q>
+          </blockquote>
+        </section>
+
+        <section data-auto-animate>
           <h3>Cette méthode c'est quoi ?</h3>
           <div class="r-stack">
-            <blockquote class="fragment current-visible fade-in-then-out">
-              <q>Une méthode <b>itérative</b> de recherche de zéro d'une fonction, qui consiste à construire une suite
-                de nombres réels par une <b>méthode géométrique</b>, et à montrer que cette suite
-                <b>converge vers le zéro</b> de la fonction</q>
-            </blockquote>
             <div class="fragment current-visible big">
               \[f(x)\]
             </div>
             <div class="fragment big">
               \[f(x) = 0\]
             </div>
+            <div class="fragment">
+              <video data-autoplay loop data-src="/9/winona-confused-math.webm" height="500px"></video>
+            </div>
           </div>
           <aside class="notes">
             Pour faire simple : voilà.
-          </aside>
-        </section>
-
-        <section data-transition="fade">
-          <video data-autoplay loop data-src="/9/winona-confused-math.webm" height="500px"></video>
-          <aside class="notes">
             Ok c'est pas giga clair, mais on va voir un exemple.
           </aside>
         </section>
 
-        <section>
-          <video class="r-stretch" data-autoplay data-src="/9/newtons-method.mp4"></video>
+        <section data-auto-animate>
+          <video data-id="1" class="r-stretch" data-autoplay data-src="/9/newtons-method.mp4"></video>
           <aside class="notes">
             On part d'un point x1, on calcule la valeur de la fonction en ce point,
             et on trace la tangente à la courbe en ce point.
@@ -2937,25 +2882,31 @@
           </aside>
         </section>
 
-        <section>
-          <video class="r-stretch" data-autoplay data-src="/9/newtons-method-2.mp4"></video>
+        <section data-auto-animate>
+          <video data-id="1" class="r-stretch" data-autoplay data-src="/9/newtons-method-2.mp4"></video>
           <aside class="notes">
             On note f(x) la valeur de x sur la courbe, et f'(x) la valeur de la dérivée de f en x.
           </aside>
         </section>
 
-        <section>
-          <video class="r-stretch" data-autoplay data-src="/9/newtons-method-3.mp4"></video>
+        <section data-auto-animate>
+          <video data-id="1" class="r-stretch" data-autoplay data-src="/9/newtons-method-3.mp4"></video>
           <aside class="notes">
             Pour trouver la nouvelle estimation de x, plus proche de 0, on doit calculer le rapport entre f(x) et
             f'(x), soit f(x)/f'(x).
           </aside>
         </section>
 
-        <section>
-          <h3>Autrement dit :</h3>
-          <div class="big fragment">
-            \[x_{new} = x_n - \frac{f(x_n)}{f'(x_n)}\]
+        <section data-auto-animate>
+          <div data-id="2" class="big">
+            \[\textcolor{#C878E1}{\Delta_x} = \frac{f(x_n)}{f'(x_n)}\]
+          </div>
+        </section>
+
+        <section data-auto-animate>
+          <h3>Autrement dit</h3>
+          <div data-id="2" class="big">
+            \[x_{new} = \textcolor{#C878E1}{x_n} - \frac{f(x_n)}{f'(x_n)}\]
           </div>
           <aside class="notes">
             Autrement dit : la nouvelle valeur de x (ici x_new) est égale à l'ancienne valeur de x (ici x_n)
@@ -2982,7 +2933,7 @@
 
         <section data-auto-animate>
           <h3>Exemple avec la fonction</h3>
-          <div data-id="1"><b class="big">\[\sqrt{x}\]</b></div>
+          <div data-id="1"><b class="bigger">\[\sqrt{x}\]</b></div>
           <div data-id="2" class="fragment"><b>Admettons qu'on cherche $\sqrt{3}$</b></div>
         </section>
 
