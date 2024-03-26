@@ -386,6 +386,13 @@ img.god-rays {
     z-index: 0;
 }
 
+img.wojak-crying {
+    position: absolute;
+    right: 45px;
+    bottom: 40px;
+    transform: rotate3D(0, 1, 0.8, 35deg);
+}
+
 div.symbol-table-arrow {
     position: absolute;
     bottom: 75px;

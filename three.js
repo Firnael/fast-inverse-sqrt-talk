@@ -36,12 +36,12 @@ scene.add(cube);
 // scene.add(helper);
 
 // Create an ambient light
-const ambientLight = new THREE.AmbientLight(0xFFFFDD); // Yellowish color
+const ambientLight = new THREE.AmbientLight(0xFFFFDD, 0.5); // Yellowish color
 ambientLight.visible = false;
 scene.add(ambientLight);
 
 // Create a directional light
-const staticLight = new THREE.DirectionalLight(0xffffff, 3.0);
+const staticLight = new THREE.DirectionalLight(0xffffff, 5.0);
 staticLight.position.set(1, 1, 1);
 staticLight.visible = false;
 scene.add(staticLight);

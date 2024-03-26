@@ -617,7 +617,7 @@
         </section>
 
         <section>
-          <img class="highlight-shadow" src="/4/jerem-applati.png" height="400px" style="margin-top: 200px;" />
+          <img class="highlight-shadow" src="/4/cube.png" height="600px" style="margin-top: 200px;" />
           <aside class="notes">
             !!! BESOIN DU STYLET !!!
             Reprenons par exemple la face du cube qui est également la face de Jérémie.
@@ -643,6 +643,7 @@
         <section>
           <div class="ch">
             <div class="item">
+              <br/>
               <video data-autoplay loop muted src="/4/normalize.mp4"></video>
             </div>
             <div class="item fragment">
@@ -651,11 +652,9 @@
             </div>
           </div>
           <aside class="notes">
-            - Attention : un vecteur normal n'est pas forcément normalisé.
-            - Un vecteur normalisé est un vecteur (la longueur) dont la magnitude est de 1.
-            - Cela permet de séparer :
-            la **direction** (vers où pointe-t-il)
-            de la **magnitude** (sa longueur)
+            - Attention ! Un vecteur normal n'est pas forcément normalisé.
+            - Un vecteur normalisé est un vecteur dont la magnitude  (la longueur) est de 1.
+            - Cela permet de séparer : la **direction** (vers où pointe-t-il) de la **magnitude** (sa longueur)
           </aside>
         </section>
 
@@ -665,16 +664,17 @@
           <br />
           <div class="ch fragment">
             <div class="item">
-              <img class="highlight-shadow" src="/4/jerem-applati.png" />
+              <img class="highlight-shadow" src="/4/cube.png" height="400px" style="padding-top: 50px"/>
             </div>
             <div class="item">
-              <img class="highlight-shadow" src="/4/jerem-applati.png" />
+              <img class="highlight-shadow" src="/4/cube.png" height="400px" style="padding-top: 50px"/>
+              <img class="noshadow fragment wojak-crying" src="/4/wojak-crying.png" height="280px"/>
             </div>
           </div>
           <aside class="notes">
             !!! BESOIN DU STYLET !!!
-            Si je prend un vecteur d'une magnitude random, genre 4.9, mes calculs sont réalisés avec cette magnitude.
-            Ce n'est pas ce qu'on veut, on doit normaliser ce vecteur, c'est à dire le ramener à une magnitude de 1.
+            Si je prend un vecteur d'une longueur random, genre 4.9, mes calculs sont réalisés avec cette longueur.
+            Ce n'est pas ce qu'on veut, on doit normaliser ce vecteur, c'est à dire le ramener à une longueur de 1.
           </aside>
         </section>
 
@@ -711,7 +711,7 @@
             Mais si j'appuie simultanément sur haut et droite ? Je vais aller en haut à droite, à 400 pixels par
             secondes !
             Ca craint, ça veut dire que je vais plus vite en diagonale, ce qui est débile.
-            - Pour corriger ça, je vais avoir besoin de décorrélé la direction de la magnitude.
+            - Pour corriger ça, je vais avoir besoin de décorrélé la direction de la longueur.
             Pour ça, je vais normaliser mon vecteur de direction, et le multiplier par ma vitesse max.
             Si v(x,y) = (1,1) et que ma vitesse max est de 200, alors je vais à 200 pixels par secondes en haut à
             droite,
@@ -791,7 +791,7 @@
             <video data-autoplay src="/4/pythagore-1.mp4"></video>
           </div>
           <aside class="notes">
-            Soit mon vecteur V en rose, de magnitude (longueur) M.
+            Soit mon vecteur V en rose, de longueur M.
             On peut le décomposer en 2 vecteurs, Vx et Vy, qui sont les composantes de V selon les axes X et Y.
             Comment je peux trouver V, si je connais Vx et Vy à votre avis ?
           </aside>
@@ -860,18 +860,18 @@
           <h3>Ce qu'on cherche à faire :</h3>
           <p class="fragment">
             Soit <span class="vector">$V$</span>$($<span class="x">$x$</span>$,$<span class="y">$y$</span>$,$<span
-              class="z">$z$</span>$)$ un vecteur de magnitude <span class="vector">$M$</span>
+              class="z">$z$</span>$)$ un vecteur de longueur <span class="vector">$M$</span>
           </p>
           <p>
             <span class="fragment">
               <b>Normaliser</b> <span class="vector">$V$</span>, c'est trouver les composantes
               <br /><span class="x">$x_n$</span>, <span class="y">$y_n$</span> et <span class="z">$z_n$</span> du
-              vecteur <span class="vector">$V_n$</span> de magnitude
+              vecteur <span class="vector">$V_n$</span> de longueur
               <span class="vector">$M_n = 1$</span></span>
           </p>
           <aside class="notes">
             Ce qu'on cherche à calculer alors :
-            Soit V(x,y,z) un vecteur de magnitude M
+            Soit V(x,y,z) un vecteur de longueur M
             Pour normaliser le vecteur (M = 1), on cherche à calculer :
           </aside>
         </section>
@@ -1301,10 +1301,6 @@
         </section>
 
         <section>
-          <video class="r-stretch" data-autoplay src="/5/homer-cest-nul.webm"></video>
-        </section>
-
-        <section>
           <h4>Heureusement il y a ...</h4>
           <div class="r-stack">
             <img class="fragment current-visible instant" src="/5/findus.png" />
@@ -1319,7 +1315,7 @@
           </aside>
         </section>
 
-        <section>
+        <section data-transition="fade">
           <img class="highlight-shadow" src="/5/IEEE-logo.png" height="400px" />
           <p class="fragment"><strong class="small">Institute of Electrical and Electronics Engineers</strong></p>
           <aside class="notes">
@@ -1328,7 +1324,7 @@
           </aside>
         </section>
 
-        <section>
+        <section data-transition="fade">
           <h3>IEEE 754</h3>
           <h4><q>The IEEE Standard for<br /><span class="bright">Floating-Point Arithmetic</span></q></h4>
           <br />
@@ -1907,7 +1903,7 @@
           </aside>
         </section>
 
-        <section>
+        <section data-transition="fade">
           <div class="math">
             $y =$ <span class="ieee-mantissa">$(1 + \frac{M}{2^{23}})$</span> <span class="ieee-exponent">$\times
               2^{E-127}$</span>
@@ -1964,7 +1960,7 @@
           <video class="motion-canvas" data-id="1" data-autoplay data-src="/6/plus-mu.mp4"></video>
         </section>
 
-        <section>
+        <section data-transition="fade">
           <div class="text-left" style="margin-left: 15%;">
             <div class="math fragment preload fade-in-then-semi-out">
               $\log_2(y) = \log_2($<span class="ieee-mantissa">$1 + \frac{M}{2^{23}}$</span>$)$
@@ -1989,8 +1985,9 @@
               </div>
             </div>
           </div>
-          <div class="fragment">
-            <img src="/6/binary-rep.png" />
+          <div class="r-stack">
+            <img class="fragment" src="/6/i-see-math.gif" />
+            <img class="fragment" src="/6/binary-rep.png" />
           </div>
           <aside class="notes">
             On peut remplacer alors !
@@ -1998,7 +1995,7 @@
         </section>
 
         <section>
-          <h3>Et alors c'est incroyable !</h3>
+          <h3>Et ça, ça régale !</h3>
           <h4 class="fragment">Car cela signifie que :</h4>
           <br />
           <div class="fragment">
@@ -2019,27 +2016,20 @@
           </aside>
         </section>
 
-      </section>
-
-      <section data-background-image="/6/dark-matrix.jpeg" data-transition="fade" class="scrim">
         <section>
-          <h2>Maintenant, vous êtes prêts</h2>
-          <img src="/6/we-ready.gif" />
+          <h3>Maintenant, vous êtes équipés ✅</h3>
+          <img class="r-stretch" src="/6/sac-a-dos.jpg" />
         </section>
-        <!-- <section>
-          <video data-autoplay data-src="/6/going-dark.mov"></video>
-          <h3>Bravo Six, Going Dark</h3>
-        </section> -->
-        
+
       </section>
 
       <!-- 7. Le langage C en sueur -->
-      <section data-background-image="/7/splash.png" data-transition="fade" class="scrim">
+      <section data-background-color="#6106D1" data-background-image="/7/splash.png" data-transition="fade" class="scrim">
         <h3>Étape n°1</h3>
         <h2 class="highlight-gold">The Evil Bit Hack</h2>
         <div style="padding-bottom: 400px;"></div>
       </section>
-      <section data-background-image="/7/splash.png" class="blurred scrim darkgrey">
+      <section data-background-color="#6106D1" data-background-image="/7/splash.png" class="blurred scrim darkgrey">
         <section data-transition="fade">
           <div class="r-stack">
             <pre data-id="1" class="fragment current-visible c wide smaller clean">
@@ -2798,7 +2788,7 @@
 
               x2 = number * 0.5F;
               y  = number;
-              i  = * ( long * ) &y;                        // evil floating point bit level hacking
+              i  = * ( long * ) &y;                        // evil floating point bit hacking
               i  = 0x5f3759df - ( i >> 1 );                // what the fuck?
               y  = * ( float * ) &i;
               y  = y * ( threehalfs - ( x2 * y * y ) );    // 1st iteration
