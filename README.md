@@ -83,3 +83,7 @@ https://docs.google.com/presentation/d/e/2PACX-1vTGP--MIkfoDM4ef_8QUd5Ld41gMLhQi
 
 - FiraCode : https://github.com/tonsky/FiraCode
 - Monoid : https://larsenwork.com/monoid/
+
+### Breizhcamp 2024
+
+https://www.youtube.com/watch?v=f_N2BWhOHlk

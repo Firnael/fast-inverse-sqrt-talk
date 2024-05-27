@@ -417,6 +417,10 @@ img.m-b-0 {
     margin-bottom: 0px;
 }
 
+img.avatar {
+    border-radius: 50%;
+}
+
 /* Videos */
 
 video.motion-canvas {

@@ -14,7 +14,7 @@
 
       <!-- 1. Introdution -->
       <section data-background-image="/1/splash.jpg" data-transition="fade" class="scrim grey">
-        <h1 class="main-title r-fit-text">The (In)glorious<br />Function</h1>
+        <h1 class="main-title r-fit-text">Racines carrées,<br />bit-shifting<br />et paracétamol</h1>
         <aside class="notes">
           Bonjour à tous, bienvenue à tous, je m'appelle Audren Burlot, et je suis honoré d'être devant vous aujou'd'hui
           pour vous présenter ce talk qui s'intitule "The Inglorious Function".
@@ -61,7 +61,8 @@
             - de logarithme de base 2
             - de ce bon vieux Newton
             - et un peu de magie noire
-            Mais avant de vous parler de code, il faut qu'on revienne un peu en arrière, et qu'on voyage outre-Atlantique
+            Mais avant de vous parler de code, il faut qu'on revienne un peu en arrière, et qu'on voyage
+            outre-Atlantique
           </aside>
         </section>
 
@@ -277,8 +278,23 @@
         </section>
 
         <section>
-          <img src="/2/smb3-poc.jpeg" />
-          <p><b>Prototype de SMB3 sur PC - 1990</b></p>
+          <div class="r-stack">
+            <div class="fragment">
+              <img src="/2/smb3-poc.jpeg" height="500px" />
+              <p><b>Prototype de SMB3 sur PC - 1990</b></p>
+            </div>
+            <div class="r-stack fragment">
+              <div class="ch">
+                <div class="item">
+                  <img src="/2/vu-facebook.webp" height="400px" />
+                </div>
+                <div class="item fragment">
+                  <img src="/2/nintendo-nope.gif" height="400px" />
+                </div>
+
+              </div>
+            </div>
+          </div>
           <aside class="notes">
             Sachant qu'ils avaient potentiellement de l'or entre les mains, ils ont bricolé un prototype
             de Super Mario Bros 3 sur PC, pour montrer à Nintendo ce qu'ils étaient capables de faire.
@@ -351,7 +367,7 @@
 
         <section>
           <div class="r-stack">
-            <img class=" current-visible" src="/2/doom.avif" />
+            <img class="current-visible" src="/2/doom.avif" />
             <img class="fragment" src="/2/doom-1993.jpeg" />
           </div>
           <p><b>Doom - 1993</b></p>
@@ -360,7 +376,7 @@
           </aside>
         </section>
 
-        <section>
+        <section data-transition="fade">
           <img src="/2/doom-talk.jpeg" height="500px" />
           <p class="small muted">https://www.youtube.com/watch?v=sNapL2anR3E</p>
           <aside class="notes">
@@ -381,7 +397,23 @@
         </section>
 
         <section>
-          <img src="/2/quake1.jpeg" />
+          <div class="r-stack">
+            <img class="fragment" src="/2/john-and-john.jpeg" height="500px" />
+            <img class="fragment" src="/2/carmack-making-quake.jpeg" />
+            <img class="fragment" src="/2/romero-making-quake.jpeg" />
+          </div>
+          <aside class="notes">
+            Les choses se gâtent entre les 2 John qui jusque là s'entendaient comme cul et chemise.
+            L'un veut pousser la technique dans son paroxysme, et juste faire un jeu fun,
+            et l'autre veut se renouveler en game design et sortir du FPS.
+          </aside>
+        </section>
+
+        <section>
+          <div class="r-stack">
+            <img src="/2/quake1.jpeg" />
+            <img class="fragment" src="/2/quake-is-good.webp" height="600px" />
+          </div>
           <p><b>Quake - 1996</b></p>
           <aside class="notes">
             Après 18 mois de développement intense pour John Carmack,
@@ -389,7 +421,20 @@
             qui, en plus d’être un des premiers jeux entièrement en 3D,
             apportait un code réseau basé sur une architecture client serveur très souple.
             L'id Tech 2, ou "Quake Engine"
-            C'est notamment le jeu qui a popularisé le rocket jump , et démocratisé le online deathmatch
+            C'est notamment le jeu qui a popularisé le rocket jump, et démocratise le online deathmatch
+          </aside>
+        </section>
+
+        <section>
+          <div class="r-stack">
+            <img class="fragment" src="/2/romero-leaves-id.webp" />
+            <img class="fragment" src="/2/ion-storm-logo.jpeg" />
+            <img class="fragment" src="/2/daikatana.webp" />
+            <img class="fragment" src="/2/no-stonks.webp" />
+          </div>
+          <aside class="notes">
+            À la fin du développement de Quake, John Romero quitte id Software pour fonder Ion Storm,
+            et sortir Daikatana, qui est un échec commercial.
           </aside>
         </section>
 
@@ -414,8 +459,8 @@
             </div>
             <img class="fragment" style="margin-left: 10%;" src="/2/boxart-007-auf.webp" height="600px" />
             <img class="fragment" style="margin-left: 25%;" src="/2/boxart-moh.jpeg" height="600px" />
-            <img class="fragment" style="margin-left: 40%;" src="/2/boxart-sw-jo.jpeg" height="600px" />
-            <img class="fragment" style="margin-left: 55%;" src="/2/boxart-cod.webp" height="600px" />
+            <img class="fragment" style="margin-left: 40%;" src="/2/boxart-cod.webp" height="600px" />
+            <img class="fragment" style="margin-left: 55%;" src="/2/boxart-sw-jo.jpeg" height="600px" />
           </div>
           <aside class="notes">
             ...l'iD Tech 3 et son legacy sont légions, parmis ceux-ci quelques jeux que vous connaissez peut-être :
@@ -464,13 +509,17 @@
             <div class="fragment item"><img src="/2/mew-glitch-youtube.jpeg" /></div>
           </div>
           <div class="ch">
-            <div class="fragment item"><img src="/2/drunk-frodo-youtube.jpeg" /></div>
-            <div class="fragment item"><img src="/2/ps1-boot-youtube.jpeg" /></div>
+            <div class="fragment item"><img src="/2/make-a-game.png" /></div>
+            <div class="fragment item"><img src="/2/hello-there.png" /></div>
           </div>
           <aside class="notes">
-            Je scroll mes recommendations alors forcément, je regarde comme faire un butterchicken avec le Chef Michel,
-            etc.
+            Je scroll mes recommendations alors forcément, je regarde comment faire un butter-chicken
+            avec le Chef Michel, etc.
           </aside>
+        </section>
+
+        <section>
+          <video data-autoplay src="/2/hello-there.webm" />
         </section>
 
         <section data-auto-animate>
@@ -516,10 +565,42 @@
         </section>
 
         <section>
-          <img src="/2/cat-newspaper.webp" />
+          <div class="r-stack">
+            <img class="fragment" src="/2/wojak-work.jpeg" />
+            <img class="fragment" src="/2/wikipedia.png" />
+            <img class="fragment" src="/2/wojak-search.jpeg" />
+            
+          </div>
           <aside class="notes">
-            Le lendemain matin je suis en train de lire le journal comme ça en buvant mon café et je repense à cette vidéo.
+            Le lendemain matin je suis au travail éclaté, comme prévu, et je repense à cette vidéo.
             Frustré je me dit "si je fais un talk dessus, ça va me forcer à comprendre tout ce qu'il se passe"
+            ---
+            Sur ma pause du midi je commence à creuser un peu et je me rends compte que c'est un sujet
+            qui a été pas mal documenté, et que je ne suis pas le seul à m'être posé la question.
+            Y'a carrément une page Wikipedia sur le sujet.
+            ---
+            Alors déterminé je commence mes recherches sur le sujet, et je découvre un monde fascinant.
+            ---
+            Et après des heures et des heures de recherche et de travail acharné, je suis enfin prêt à vous présenter
+            ce que j'ai découvert, pour que vous aussi vous connaissiez l'illumination.
+          </aside>
+        </section>
+
+        <section>
+          <div class="ch">
+            <div class="item">
+              <img class="fragment" src="/2/wojak-sungaze.jpeg" height="370px" />
+            </div>
+            <div class="item">
+              <img class="fragment" src="/2/wojak-happy.webp" height="370px" />
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <img src="/2/big-brain-time.png" height="500px" />
+          <aside class="notes">
+            Alors attachez vos ceintures, parce qu'à partir de maintenant, c'est big brain time
           </aside>
         </section>
 
@@ -551,12 +632,12 @@
         <section data-transition="fade">
           <div class="cube" id="three-animation"></div>
           <aside class="notes">
-            Imaginons ce carré. 
-            Mais en fait c'est pas un carré c'est un cube. 
+            Imaginons ce carré.
+            Mais en fait c'est pas un carré c'est un cube.
             Il est tout noir, car dans ma scène, je n'ai aucune lumière.
             Si j'allume la lumière dite "ambiante", le cube apparaitra de la même couleur sur chaque face.
-            Lorsqu'on vient appliquer une lumière dite "directionnelle" à ce cube, on s'aperçoit que 
-            chaque face apparait d'une couleur différentes en fonction de l'angle 
+            Lorsqu'on vient appliquer une lumière dite "directionnelle" à ce cube, on s'aperçoit que
+            chaque face apparait d'une couleur différentes en fonction de l'angle
           </aside>
         </section>
 
@@ -641,40 +722,45 @@
         </section>
 
         <section>
-          <div class="ch">
-            <div class="item">
-              <br/>
-              <video data-autoplay loop muted src="/4/normalize.mp4"></video>
-            </div>
-            <div class="item fragment">
-              <p>Permet de différencier la <b class="emphas">direction</b> de la <b class="emphas">longueur</b></p>
-              <img class="highlight-shadow" src="/4/vector-mag-dir.svg" width="400px" />
-            </div>
-          </div>
-          <aside class="notes">
-            - Attention ! Un vecteur normal n'est pas forcément normalisé.
-            - Un vecteur normalisé est un vecteur dont la magnitude  (la longueur) est de 1.
-            - Cela permet de séparer : la **direction** (vers où pointe-t-il) de la **magnitude** (sa longueur)
-          </aside>
-        </section>
-
-        <section>
           <h4>Pourquoi c'est important ?</h4>
           <br />
           <br />
           <div class="ch fragment">
             <div class="item">
-              <img class="highlight-shadow" src="/4/cube.png" height="400px" style="padding-top: 50px"/>
+              <img class="highlight-shadow" src="/4/cube.png" height="400px" style="padding-top: 50px" />
             </div>
             <div class="item">
-              <img class="highlight-shadow" src="/4/cube.png" height="400px" style="padding-top: 50px"/>
-              <img class="noshadow fragment wojak-crying" src="/4/wojak-crying.png" height="280px"/>
+              <img class="highlight-shadow" src="/4/cube.png" height="400px" style="padding-top: 50px" />
+              <img class="noshadow fragment wojak-crying" src="/4/wojak-crying.png" height="280px" />
             </div>
           </div>
           <aside class="notes">
             !!! BESOIN DU STYLET !!!
             Si je prend un vecteur d'une longueur random, genre 4.9, mes calculs sont réalisés avec cette longueur.
             Ce n'est pas ce qu'on veut, on doit normaliser ce vecteur, c'est à dire le ramener à une longueur de 1.
+          </aside>
+        </section>
+
+        <section data-auto-animate>
+          <h4>Comment ça marche ?</h4>
+          <video data-autoplay loop muted src="/4/normalize.mp4" height="600px"></video>
+        </section>
+        <section data-auto-animate>
+          <h4>Comment ça marche ?</h4>
+          <div class="ch">
+            <div class="item">
+              <br />
+              <video data-autoplay loop muted src="/4/normalize.mp4"></video>
+            </div>
+            <div class="item">
+              <p>Permet de différencier la <b class="emphas">direction</b> de la <b class="emphas">longueur</b></p>
+              <img class="highlight-shadow" src="/4/vector-mag-dir.svg" width="400px" />
+            </div>
+          </div>
+          <aside class="notes">
+            - Attention ! Un vecteur normal n'est pas forcément normalisé.
+            - Un vecteur normalisé est un vecteur dont la magnitude (la longueur) est de 1.
+            - Cela permet de séparer : la **direction** (vers où pointe-t-il) de sa **longueur**
           </aside>
         </section>
 
@@ -715,7 +801,7 @@
             Pour ça, je vais normaliser mon vecteur de direction, et le multiplier par ma vitesse max.
             Si v(x,y) = (1,1) et que ma vitesse max est de 200, alors je vais à 200 pixels par secondes en haut à
             droite,
-            100pixels en haut, et 100 pixels à droite par seconde.
+            100 pixels en haut, et 100 pixels à droite, par seconde.
             Ainsi ma vitesse max ne dépend pas de la direction.
           </aside>
         </section>
@@ -759,15 +845,15 @@
               }
 
               direction.normalize();  // 👀
-              console.log(direction); // { x: 0.5, y: 0.5 }
+              console.log(direction); // { x: 0.71, y: 0.71 }
 
               var vitesse = {
                 x: direction.x * VITESSE_MAX;
                 y: direction.y * VITESSE_MAX;
               }
               
-              console.log(vitesse); // { x: 100, y: 100 }
-              console.log(vitesse.x + vitesse.y); // 200
+              console.log(vitesse); // { x: 142, y: 142 }
+              console.log(vitesse.x + vitesse.y); // 284
               </code>
             </pre>
           </div>
@@ -782,7 +868,11 @@
               direction.normalize();
             </code>
             </pre>
-          <h1>?</h1>
+          <h2>284 ?</h2>
+        </section>
+
+        <section>
+          MANQUE UN SLIDE (cercle trigonométrique)
         </section>
 
         <section>
@@ -2016,15 +2106,15 @@
           </aside>
         </section>
 
-        <section>
-          <h3>Maintenant, vous êtes équipés ✅</h3>
-          <img class="r-stretch" src="/6/sac-a-dos.jpg" />
-        </section>
+      </section>
 
+      <section>
+        <img class="r-stretch" src="/6/this-is-where-the-fun-begins.webp" />
       </section>
 
       <!-- 7. Le langage C en sueur -->
-      <section data-background-color="#6106D1" data-background-image="/7/splash.png" data-transition="fade" class="scrim">
+      <section data-background-color="#6106D1" data-background-image="/7/splash.png" data-transition="fade"
+        class="scrim">
         <h3>Étape n°1</h3>
         <h2 class="highlight-gold">The Evil Bit Hack</h2>
         <div style="padding-bottom: 400px;"></div>
@@ -2071,7 +2161,7 @@
               </code>
             </pre>
           </div>
-          
+
           <aside class="notes">
             Le commentaire "evil floating point bit level hacking" ne nous aide pas trop sur ce coup là...
           </aside>
@@ -2159,7 +2249,7 @@
             </li>
             <li data-fragment-index="6" class="fragment fade-in-then-semi-out">
               On lit la <b class="emphas">valeur</b> présente à cette <b class="address">adresse</b>, comme si c'était
-              un <code class="type">long</code> 
+              un <code class="type">long</code>
             </li>
           </ol>
           <aside class="notes">
@@ -2779,28 +2869,6 @@
       <section data-background-image="/9/newton-wallpaper.jpeg" class="blurred">
 
         <section>
-          <pre class="c wide smaller clean">
-          <code data-trim data-line-numbers="11-12">
-            float Q_rsqrt( float number ) {
-              long i;
-              float x2, y;
-              const float threehalfs = 1.5F;
-
-              x2 = number * 0.5F;
-              y  = number;
-              i  = * ( long * ) &y;                        // evil floating point bit hacking
-              i  = 0x5f3759df - ( i >> 1 );                // what the fuck?
-              y  = * ( float * ) &i;
-              y  = y * ( threehalfs - ( x2 * y * y ) );    // 1st iteration
-              // y  = y * ( threehalfs - ( x2 * y * y ) ); // 2nd iteration, can be removed
-
-              return y;
-            }
-          </code>
-        </pre>
-        </section>
-
-        <section>
           <img class="r-stretch" src="/9/isaac-newton.jpeg" />
           <div data-fragment-index="1" class="newton-quote-1 small fragment">
             <q class="bold">Invente la gravité,<br />mais n'attire personne</q><br />- un internaute
@@ -2817,30 +2885,50 @@
 
         <section>
           <img class="abs-center god-rays" src="/9/god-rays.png" />
-          <h2 class="highlight-gold">La méthode de Newton</h2>
-          <div class="fragment">
-            <h5>(ou méthode de Newton-Raphson)</h5>
-            <h2 class="fragment grow">1669</h2>
-            <h4 class="fragment">publiée en 1711</h4>
+          <h3 class="highlight-gold">La méthode de<br />Newton-Raphson</h3>
+          <div class="r-stack">
             <div class="fragment">
-              <b class="muted">(version simplifiée par Joseph Raphson en 1690)</b>
+              <h2 class="fragment grow">1669</h2>
+              <h4 class="fragment">publiée en 1711</h4>
+              <div class="fragment">
+                <b class="muted">(version simplifiée par Joseph Raphson en 1690,<br />publiée en 1711)</b>
+              </div>
             </div>
+            <img class="fragment" src="/9/newton-physics.webp" height="500px" />
+            <img class="fragment" src="/9/newton-maths.webp" height="500px" />
+            <img class="fragment" src="/9/newton-optics.jpeg" height="500px" />
+            <img class="fragment" src="/9/newton-astronomy.jpeg" height="500px" />
+            <img class="fragment" src="/9/newton-alchemy.jpeg" height="500px" />
+            <img class="fragment" src="/9/newton-chemistry.jpeg" height="500px" />
+            <img class="fragment" src="/9/newton-philosophy.jpeg" height="500px" />
+            <img class="fragment" src="/9/newton-theology.jpeg" height="500px" />
+            <img class="fragment" src="/9/joseph-raphson-book.jpeg" height="500px" />
           </div>
           <aside class="notes">
             Ce qui nous intéresse, c'est la méthode "dite" de Newton, publiée en 1669, ou Newton-Raphson
-            (un autre mathématicien anglais du 16ème siècle) qui en publia une version simplifiée en 1690
+            (un autre mathématicien anglais du 16ème siècle) qui en publia une version simplifiée en 1690.
+            ---
+            Newton, c'est un peu le mec qui a tout fait, en fait.
+            Il a inventé la gravité, mais aussi la méthode de Newton, et plein d'autres trucs.
+            Raphson, il a juste simplifié la méthode de Newton, mais c'est déjà pas mal.
           </aside>
         </section>
 
         <section data-auto-animate>
           <h3>Cette méthode c'est quoi ?</h3>
-          <blockquote class="fragment">
-            <q>
-              <span class="fragment">Une méthode <b>itérative</b> de recherche de zéro d'une fonction,</span>
-              <span class="fragment"> qui consiste à construire une suite de nombres réels par une <b>méthode géométrique</b>,</span>
-              <span class="fragment"> et à montrer que cette suite <b>converge vers le zéro</b> de la fonction</span>
-            </q>
-          </blockquote>
+          <div class="r-stack">
+            <blockquote class="fragment">
+              <q>
+                <span class="fragment">Méthode <b>itérative</b> de <b>recherche de zéro</b> d'une fonction</span>
+                <span class="fragment"> qui consiste à construire une suite de nombres réels par une <b>méthode
+                    géométrique</b></span>
+                <span class="fragment">, et à montrer que cette suite <b>converge vers le zéro</b> de la fonction</span>
+              </q>
+            </blockquote>
+            <div class="fragment">
+              <video data-autoplay loop data-src="/9/winona-confused-math.webm" height="500px"></video>
+            </div>
+          </div>
         </section>
 
         <section data-auto-animate>
@@ -2851,9 +2939,6 @@
             </div>
             <div class="fragment big">
               \[f(x) = 0\]
-            </div>
-            <div class="fragment">
-              <video data-autoplay loop data-src="/9/winona-confused-math.webm" height="500px"></video>
             </div>
           </div>
           <aside class="notes">
@@ -3160,11 +3245,11 @@
 
         <!-- le gain de temps -->
         <section>
-          <h3>À quel point c'est rapide ?</h3>
+          <h3>À quel point c'est <span class="bright">rapide</span> ?</h3>
           <div class="fragment">
-            <img src="/10/mr-wolf.jpeg" height="400px" />
-            <h3><span class="bright">3-4 fois</span> plus rapide que <code class="normal">1/sqrt(x)</code></h3>
-            <p class="small muted">à l'époque</p>
+            <img src="/10/lightspeed.webp" height="400px" />
+            <h4><span class="bright">3-4 fois</span> plus rapide que <code class="normal">1/sqrt(x)</code></h4>
+            <p class="small muted">(à l'époque)</p>
           </div>
           <aside class="notes">
             On estime qu'à l'époque cet algorithme était 3 à 4 fois plus rapide que la méthode classique.
@@ -3189,7 +3274,7 @@
         <section>
           <h3>Qui a écrit ce code ?</h3>
           <div class="r-stack">
-            <img src="/10/thinking-cat.jpeg" />
+            <img src="/10/thinking.jpeg" height="500px" />
             <img class="fragment" src="/10/john-carmack-2006.jpeg" height="500px" />
           </div>
           <aside class="notes">
@@ -3200,16 +3285,13 @@
         </section>
 
         <section>
-          <div class="r-stack">
-            <div>
-              <img class="round" src="/10/rys-sommefeldt.jpeg" width="100%" />
-              <p>
-                <b>Rys Somerfeldt</b>
-                <br />
-                <span class="muted">beyond3d.com</span>
-              </p>
-            </div>
-            <img class="fragment" src="/10/detectiv-stonks.png" />
+          <div>
+            <img class="round" src="/10/rys-sommefeldt.jpeg" height="350px" />
+            <p>
+              <b>Ryszard "Rys" Somerfeldt</b>
+              <br />
+              <span class="muted">beyond3d.com</span>
+            </p>
           </div>
           <aside class="notes">
             Cependant, grâce à une enquête de Rys Sommefeldt, éditeur sur le blog / forum Beyond3D à l'époque
@@ -3227,7 +3309,7 @@
             <div class="item fragment">
               <br />
               <blockquote class="large">
-                "Not me, and I don't think it is Michael.<br /><br /><b>Terje Matheson</b> perhaps?"
+                "<b>Not me</b>, and I don't think it is <b>Michael</b>.<br /><br /><b>Terje Mathisen</b> perhaps?"
               </blockquote>
             </div>
           </div>
@@ -3256,7 +3338,7 @@
             est un expert de l'optimisation du code assembleur.
             - Il est notamment à l'origine d'une citation que j'aime beaucoup
             (c'est bien une phrase de mec qui optimise tout ça)
-            - Depuis 2014 et encore aujourd'hui il est Chief Scientist chez Oculus VR.
+            - Depuis 2014 et encore aujourd'hui il est Chief Scientist Officer chez Oculus VR.
           </aside>
         </section>
 
@@ -3264,13 +3346,13 @@
           <div class="ch">
             <div class="item">
               <img src="/10/terje-mathisen.png" height="500px" />
-              <p><b>Terje Matheson</b></p>
+              <p><b>Terje Mathisen</b></p>
             </div>
             <div class="item fragment">
               <br />
               <br />
               <blockquote class="large">
-                "I wrote a very fast [...] invsqrt() 5+ years ago"
+                "I wrote a very fast [...] invsqrt() <b>5+ years ago</b>"
                 <br />
                 <br />
                 "The code <b>is not the same</b> as what I wrote"
@@ -3344,7 +3426,10 @@
         </section>
 
         <section>
-          <img src="/10/investigation.jpeg" height="600px" />
+          <div class="r-stack">
+            <img src="/10/investigation.jpeg" height="600px" />
+            <img class="fragment" src="/10/archive-incomplete.jpeg" height="600px" />
+          </div>
           <aside class="notes">
             La piste s'arrête là, est-ce qu'on saura un jour ?
           </aside>
@@ -3400,7 +3485,9 @@
         </section>
 
         <section>
-          <img class="r-stretch" src="/10/morale.jpeg" />
+          <div class="r-stack">
+            <img class="r-stretch" src="/10/visible-happiness.jpeg" height="500px"/>
+          </div>
           <aside class="notes">
             - Maintenant vous savez comment votre ordi stocke des float,
             - Vous savez à peu près comment fonctionne l'algorithme
@@ -3414,8 +3501,9 @@
             - Sachons rester humble, à l'image de tous ces gens dans cette enquête, qui malgré être des
             monstres dans leur domaine, refusent poliment de s'attribuer seul les lauriers,
             et ne s'enorgueillissent jamais de leurs travaux.
-            - Souvenons nous de cet algo, qui, bien qu'obsolète dès sa sortie au regard de la nouvelle génération de CPU, 
-            aura permis à une génération de joueurs de profiter de Quake 3 sur leurs bécanes pourries.
+            (Comme disait Gaël : ne soyez pas votre code)
+            - Souvenons nous de cet algo, qui, bien qu'obsolète dès sa sortie au regard de la nouvelle génération de
+            CPU, aura permis à une génération de joueurs de profiter de Quake 3 sur leurs bécanes pourries.
             (ordis du CDI)
             - Prenons en de la graine, restons connectés à nos racines (pas carrées)
             et chargés de ces enseignements, embrassons le futur de notre métier.
@@ -3425,6 +3513,27 @@
       </section>
 
       <!-- 11. Merci -->
+      <section data-transition="fade" class="scrim darkblue" data-background-image="/11/star-wars-wallpaper.jpeg">
+        <h3>Merci !</h3>
+        <div class="ch">
+          <div class="item">
+            <br/>
+            <img class="highlight noshadow m-t-0 m-b-0" src="/11/maxds-logo.png" height="150px" />
+            <img class="highlight noshadow m-t-0 m-b-0" src="/11/hellowork-logo.png" height="100px" />
+          </div>
+          <div class="item">
+            <img class="avatar" src="/11/moi-rond.png" height="300px" />
+            <br/>
+            <strong>Audren Burlot</strong>
+            <h6>github.com/Firnael</h6>
+          </div>
+          <div class="item">
+            <br/>
+            <img src="/11/qr-code.png" height="250px" />
+          </div>
+        </div>
+      </section>
+
       <section data-background-image="/1/cake-aux-olives.jpeg" data-transition="fade">
         <h1>Merci !</h1>
         <strong class="shadow">Distribution de paracétamol<br />à la pause</strong>
