@@ -7,9 +7,9 @@
     --ieee-exponent-color: #C579DF;
     --ieee-mantissa-color: #5ecbf7;
     --vector-color: #C878E1;
-    --x-color: #FF4042;
-    --y-color: #42FF40;
-    --z-color: #328EEC;
+    --x-color: #66ABE1;
+    --y-color: #9CC281;
+    --z-color: #DCBD87;
     --gold-color: #f6d569;
     --code-func-color: #61AEEE;
 }
@@ -135,6 +135,10 @@ h1.main-title {
 
 /* Typography */
 
+.taton {
+    font-size: 0.5em;
+}
+
 .smaller {
     font-size: 0.6em;
 }
@@ -238,7 +242,7 @@ span.ieee-mantissa-range-2 {
 
 span.exponent-divided {
     position: absolute;
-    top: 430px;
+    top: 410px;
     left: 130px;
 }
 
@@ -332,6 +336,12 @@ img.abs-center-bottom {
     bottom: -50px;
     left: 50%;
     transform: translate(-50%, 100%);
+}
+
+img.abs-right-bottom {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
 }
 
 img.newtons-tear {
@@ -468,7 +478,7 @@ code.func {
 }
 
 code.normal {
-    color: #A8ACB8;
+    color: #cacfdc;
 }
 
 code.type,

@@ -526,7 +526,8 @@
           <img class="fragment grow" src="/2/fsqrt-youtube.png" />
           <aside class="notes">
             Puis, je fini par tomber sur ça : "Fast Inverse Square Root - A Quake III Algorithm"
-            Je me dis, est-ce bien l'heure de regarder 20 min de vidéo d'un gars qui parle d'un algorithme en C écrit
+            Je me dis, j'aime bien Quake, j'aime bien les algorithmes.
+            Mais est-ce bien l'heure de regarder 20 min de vidéo d'un gars qui parle d'un algorithme en C écrit
             il y a plus de 20 ans ? Et je clique.
           </aside>
         </section>
@@ -569,7 +570,7 @@
             <img class="fragment" src="/2/wojak-work.jpeg" />
             <img class="fragment" src="/2/wikipedia.png" />
             <img class="fragment" src="/2/wojak-search.jpeg" />
-            
+
           </div>
           <aside class="notes">
             Le lendemain matin je suis au travail éclaté, comme prévu, et je repense à cette vidéo.
@@ -721,26 +722,6 @@
           </blockquote>
         </section>
 
-        <section>
-          <h4>Pourquoi c'est important ?</h4>
-          <br />
-          <br />
-          <div class="ch fragment">
-            <div class="item">
-              <img class="highlight-shadow" src="/4/cube.png" height="400px" style="padding-top: 50px" />
-            </div>
-            <div class="item">
-              <img class="highlight-shadow" src="/4/cube.png" height="400px" style="padding-top: 50px" />
-              <img class="noshadow fragment wojak-crying" src="/4/wojak-crying.png" height="280px" />
-            </div>
-          </div>
-          <aside class="notes">
-            !!! BESOIN DU STYLET !!!
-            Si je prend un vecteur d'une longueur random, genre 4.9, mes calculs sont réalisés avec cette longueur.
-            Ce n'est pas ce qu'on veut, on doit normaliser ce vecteur, c'est à dire le ramener à une longueur de 1.
-          </aside>
-        </section>
-
         <section data-auto-animate>
           <h4>Comment ça marche ?</h4>
           <video data-autoplay loop muted src="/4/normalize.mp4" height="600px"></video>
@@ -868,11 +849,6 @@
               direction.normalize();
             </code>
             </pre>
-          <h2>284 ?</h2>
-        </section>
-
-        <section>
-          MANQUE UN SLIDE (cercle trigonométrique)
         </section>
 
         <section>
@@ -910,6 +886,26 @@
           </div>
           <aside class="notes">
             Mais oui, grâce à Pythagore biensûr !
+          </aside>
+        </section>
+
+        <section>
+          <h4>Nous on est dans Quake 3</h4>
+          <br />
+          <br />
+          <div class="ch fragment">
+            <div class="item">
+              <img class="highlight-shadow" src="/4/cube.png" height="400px" style="padding-top: 50px" />
+            </div>
+            <div class="item fragment">
+              <img class="highlight-shadow" src="/4/cube.png" height="400px" style="padding-top: 50px" />
+              <img class="noshadow fragment wojak-crying" src="/4/wojak-crying.png" height="280px" />
+            </div>
+          </div>
+          <aside class="notes">
+            !!! BESOIN DU STYLET !!!
+            Si je prend un vecteur d'une longueur random, genre 4.9, mes calculs sont réalisés avec cette longueur.
+            Ce n'est pas ce qu'on veut, on doit normaliser ce vecteur, c'est à dire le ramener à une longueur de 1.
           </aside>
         </section>
 
@@ -1018,23 +1014,18 @@
           <div>
             \[\frac{1}{\sqrt{\textcolor{#66ABE1}{x^{2}} + \textcolor{#9CC281}{y^{2}} + \textcolor{#DCBD87}{z^{2}}}}\]
           </div>
-          <br />
-          <div class="r-stack">
-            <div class="fragment current-visible">
-              <code data-trim class="normal">
-                1/sqrt(<span class="x">x</span>*<span class="x">x</span> + <span class="y">y</span>*<span class="y">y</span> + <span class="z">z</span>*<span class="z">z</span>);
-              </code>
-            </div>
-            <div class="fragment fade-up">
-              <code data-trim class="normal">
-                <code class="func">Q_rsqrt</code>(<span class="x">x</span>*<span class="x">x</span> + <span
-                class="y">y</span>*<span class="y">y</span> + <span class="z">z</span>*<span class="z">z</span>);
-              </code>
-            </div>
-          </div>
           <aside class="notes">
             Etant donné le nombre de fois où on va avoir besoin de normaliser des vecteurs,
             c'est un calcul qui va être fait très souvent, il est crucial qu'il soit rapide.
+          </aside>
+        </section>
+
+        <section>
+          <img src="/3/cpu-cycles.png" />
+          <img class="abs-center-right fragment" src="/3/sweating.jpeg" width="350px" />
+          <aside class="notes">
+            Le soucis, c'est que calculer des divisions ça prend des plombes, et je vous parle pas des racines carrés.
+            C'est des opérations très couteuses en temps de calcul, qu'on va vouloir éviter à tout pris.
           </aside>
         </section>
 
@@ -1046,8 +1037,15 @@
       </section>
       <section data-background-image="/3/the-function.jpeg" class="blurred scrim darkblue">
         <section data-transition="fade">
-          <div class="big">
-            \[f(x) = \frac{1}{\sqrt{x}}\]
+          <div class="r-stack">
+            <div class="fragment big">
+              \[f(x) = \frac{1}{\sqrt{x}}\]
+            </div>
+            <!--
+            <div class="fragment current-visible">
+              \[\frac{1}{\sqrt{\textcolor{#66ABE1}{x^{2}} + \textcolor{#9CC281}{y^{2}} + \textcolor{#DCBD87}{z^{2}}}}\]
+            </div>
+             -->
           </div>
           <aside class="notes">
             Cette fonction, elle ne fait qu'une seule chose : elle calcule l'inverse de la racine carrée d'un nombre.
@@ -1071,15 +1069,6 @@
             En C on l'écrirait comme ceci.
             On aurait pas besoin de coder une fonction de calcul de racine carrée,
             on la chopperait dans une lib standard, comme math.h.
-          </aside>
-        </section>
-
-        <section>
-          <img src="/3/cpu-cycles.png" />
-          <img class="abs-center-right fragment" src="/3/sweating.jpeg" width="350px" />
-          <aside class="notes">
-            Le soucis, c'est que calculer des divisions ça prend des plombes, et je vous parle pas des racines carrés.
-            C'est des opérations très couteuses en temps de calcul, qu'on va vouloir éviter à tout pris.
           </aside>
         </section>
 
@@ -1393,11 +1382,8 @@
         <section>
           <h4>Heureusement il y a ...</h4>
           <div class="r-stack">
-            <img class="fragment current-visible instant" src="/5/findus.png" />
-            <div class="fragment instant">
-              <h3>La norme</h3>
-              <h1 class="highlight-gold">IEEE 754</h1>
-            </div>
+            <img class="fragment noshadow current-visible instant" src="/5/findus.png" />
+            <img class="fragment noshadow highlight instant" src="/5/norme-ieee.png" />
           </div>
           <aside class="notes">
             Heureusement il y'a Fiiiiiinnnnnduuuuu ... la norme IEEE 754
@@ -1555,7 +1541,7 @@
           <br />
           <div class="cv">
             <div class="item">
-              <span data-fragment-index="3" class="fragment bold ieee-exponent ieee-padded">exponent</span>
+              <span data-fragment-index="3" class="fragment bold ieee-exponent ieee-padded">exposant</span>
             </div>
             <div class="item">
               <div class="r-stack">
@@ -1582,7 +1568,7 @@
                 </div>
                 <div class="item"><!----></div>
                 <div data-fragment-index="4" class="item fragment">
-                  <span class="bold ieee-mantissa">mantissa</span>
+                  <span class="bold ieee-mantissa">mantisse</span>
                 </div>
               </div>
             </div>
@@ -2106,20 +2092,67 @@
           </aside>
         </section>
 
+        <section>
+          <img class="r-stretch" src="/6/bonne-surprise.webp" />
+        </section>
+
       </section>
 
-      <section>
-        <img class="r-stretch" src="/6/this-is-where-the-fun-begins.webp" />
+      <!-- X. Le plan d'attaque -->
+      <section data-background-image="/6/space.jpeg" data-transition="fade" class="scrim">
+        <section>
+          <h2>Bon...</h2>
+        </section>
+      </section>
+
+      <section data-background-image="/6/space.jpeg" class="blurred">
+        <section>
+          <img class="r-stretch" src="/6/you-are-sweating.gif" />
+        </section>
+
+        <section>
+          <h4>Un dernier truc important</h4>
+          <br />
+          <div class="r-stack">
+            <div class="big fragment current-visible">
+              <span>$y^{2} = y * y$</span>
+            </div>
+            <div class="big fragment current-visible">
+              <span>$y^{1/2} = \sqrt{y}$</span>
+            </div>
+            <div class="big fragment">
+              <span>$y^{-1/2} = \frac{1}{\sqrt{y}}$</span>
+            </div>
+          </div>
+          <div class="cv fragment">
+            <div class="item">
+              <span class="bold ieee-exponent ieee-padded">exposant</span>
+            </div>
+            <div class="item">
+              <code class="normal">0</code> <code class="ieee-exponent ieee-padded">00000000</code> <code
+                class="normal">00000000000000000000000</code>
+            </div>
+          </div>
+          <aside class="notes">
+            1/sqrt(y) = y^-1/2. C'est une propriété mathématique des puissances.
+            ça veut dire que si on arrive à manipuler l'exposant de notre nombre en le divisant par 2
+            et le rendant négatif, on aura la racine carrée inversée de notre nombre.
+          </aside>
+        </section>
+
+        <section>
+          <img class="r-stretch" src="/6/this-is-where-the-fun-begins.webp" />
+        </section>
+
       </section>
 
       <!-- 7. Le langage C en sueur -->
-      <section data-background-color="#6106D1" data-background-image="/7/splash.png" data-transition="fade"
-        class="scrim">
+      <section data-background-image="/7/splash.png" data-transition="fade" class="scrim">
         <h3>Étape n°1</h3>
         <h2 class="highlight-gold">The Evil Bit Hack</h2>
         <div style="padding-bottom: 400px;"></div>
       </section>
-      <section data-background-color="#6106D1" data-background-image="/7/splash.png" class="blurred scrim darkgrey">
+      <section data-background-image="/7/splash.png" class="blurred scrim darkgrey">
         <section data-transition="fade">
           <div class="r-stack">
             <pre data-id="1" class="fragment current-visible c wide smaller clean">
@@ -2343,6 +2376,132 @@
         </section>
 
         <section>
+          Quand on parlait des logarithmes tout à l'heure, <br />on a dit que :
+          <br />
+          <blockquote class="fragment">
+            <q>
+              Le log2 de d'un float
+              <br />est (à peu près) égal
+              <br />
+              à sa représentation binaire
+            </q>
+          </blockquote>
+        </section>
+
+        <section>
+          <div>
+            <p>Donc grâce à :</p>
+            <code data-trim>
+              i = * ( long * ) &y;
+            </code>
+          </div>
+          <div class="fragment">
+            <p>on a (à peut près) :</p>
+            <code data-trim>
+              i ≈ log2(y);
+            </code>
+          </div>
+          <aside class="notes">
+            On a donc réussi à récupérer la représentation binaire de notre float y, en la castant en long.
+            On a donc récupéré le log2 de notre float, en quelque sorte.
+          </aside>
+        </section>
+
+        <section data-auto-animate>
+          <pre data-id="1" class="c clean big fragment preload current-visible">
+            <code data-trim data-ln-start-from="8" data-line-numbers="1,3">
+                i  = * ( long * ) &y;
+                ...
+                y  = * ( float * ) &i;
+            </code>
+          </pre>
+          <aside class="notes">
+            On voit que la ligne 8 qu'on vient d'analyser et la ligne 10 juste après, c'est la même opération,
+            mais dans l'autre sens.
+            ça veut dire qu'entre les deux, il se passe quelque chose qui doit transformer i, la représentation binaire
+            de notre float y, en la représentation binaire de 1/sqrt(y).
+          </aside>
+        </section>
+
+        <section data-auto-animate>
+          <pre data-id="1" class="c clean big fragment preload current-visible">
+            <code data-trim data-ln-start-from="8" data-line-numbers="1,3">
+                i  = * ( long * ) &y;
+                ...
+                y  = * ( float * ) &i;
+            </code>
+          </pre>
+          <div class="text-left">
+            <div class="ch fragment">
+              <div class="item">
+                <b>On cherche ça :</b><br />
+              </div>
+              <div class="item">
+                <code class="normal">
+                  <code class="value">1</code>/<code class="func">sqrt</code>(y)
+                </code>
+              </div>
+            </div>
+            <div class="ch fragment">
+              <div class="item">
+                <b>grâce à l.8 :</b><br />
+              </div>
+              <div class="item">
+                <code class="normal">
+                  i  = * (<code class="type">long</code>*) &y;
+                </code>
+              </div>
+            </div>
+            <div class="ch fragment">
+              <div class="item">
+                <b>on a maintenant :</b><br />
+              </div>
+              <div class="item">
+                <code class="normal">
+                  i ≈ <code class="func">log2</code>(y)
+                </code>
+              </div>
+            </div>
+            <div class="ch fragment">
+              <div class="item">
+                <b>si on arrive à faire :</b><br />
+              </div>
+              <div class="item">
+                <code class="normal">
+                  i ≈ <code class="func">log2</code>(<code class="value">1</code>/<code class="func">sqrt</code>(y))
+                </code>
+              </div>
+            </div>
+            <div class="ch fragment">
+              <div class="item">
+                <b>alors avec l.10 :</b><br />
+              </div>
+              <div class="item">
+                <code class="normal">
+                  y = * (<code class="type">float</code>*) &i;
+                </code>
+              </div>
+            </div>
+            <div class="ch fragment">
+              <div class="item">
+                <b>on pourra obtenir :</b><br />
+              </div>
+              <div class="item">
+                <code class="normal">
+                  y ≈ <code class="value">1</code>/<code class="func">sqrt</code>(y)
+                </code>
+              </div>
+            </div>
+          </div>
+          <aside class="notes">
+            Rappelez vous : on a prouvé que la représentation binaire d'un float est son propre log, but scaled and
+            shifted.
+            L'opération inverse est vraie aussi : si on part d'un log, on peut retrouver la représentation binaire du
+            float, et donc la valeur du float en appliquant le scale de 2^-23 et le shift de 127.
+          </aside>
+        </section>
+
+        <section>
           <div class="r-stack">
             <pre class="c clean big fragment preload current-visible">
               <code data-trim data-ln-start-from="8" data-line-numbers="1,3">
@@ -2370,11 +2529,20 @@
       </section>
 
       <!-- 8. What the fuck -->
-      <section data-background-image="/8/wtf-jackie.jpeg" data-transition="fade" class="scrim lightgrey">
+      <section data-background-image="/8/yoda-cursed.jpeg" data-transition="fade" class="scrim lightgrey">
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
         <h3>Étape n°2</h3>
-        <h2 class="highlight-gold">What the f*ck</h2>
+        <h2 class="highlight-gold">What the f*ck ?</h2>
       </section>
-      <section data-background-image="/8/wtf-jackie.jpeg" class="blurred scrim grey">
+      <section data-background-image="/8/yoda-cursed.jpeg" class="blurred scrim grey">
         <section data-transition="fade">
           <pre data-id="1" class="c wide smaller clean">
             <code data-trim data-line-numbers="9">
@@ -2448,79 +2616,16 @@
           </aside>
         </section>
 
-        <section>
-          <h3>Qu'est-ce qu'on essaye de faire déjà ?</h3>
-          <br />
-          <div class="text-left">
-            <div class="ch fragment">
-              <div class="item">
-                <b>On cherche ça :</b><br />
-              </div>
-              <div class="item">
-                <code class="normal">
-                  <code class="value">1</code>/<code class="func">sqrt</code>(y)
-                </code>
-              </div>
-            </div>
-            <div class="ch fragment">
-              <div class="item">
-                <b>On a :</b><br />
-              </div>
-              <div class="item">
-                <code class="normal">
-                  i ≈ <code class="func">log2</code>(y)
-                </code>
-              </div>
-            </div>
-            <div class="ch fragment">
-              <div class="item">
-                <b>Si on arrive à faire :</b><br />
-              </div>
-              <div class="item">
-                <code class="normal">
-                  i ≈ <code class="func">log2</code>(<code class="value">1</code>/<code class="func">sqrt</code>(y))
-                </code>
-              </div>
-            </div>
-            <div class="ch fragment">
-              <div class="item">
-                <b>Alors avec :</b><br />
-              </div>
-              <div class="item">
-                <code class="normal">
-                  y = * (<code class="type">float</code>*) &i;
-                </code>
-              </div>
-            </div>
-            <div class="ch fragment">
-              <div class="item">
-                <b>On pourra obtenir :</b><br />
-              </div>
-              <div class="item">
-                <code class="normal">
-                  y ≈ <code class="value">1</code>/<code class="func">sqrt</code>(y)
-                </code>
-              </div>
-            </div>
-          </div>
-          <aside class="notes">
-            Rappelez vous : on a prouvé que la représentation binaire d'un float est son propre log, but scaled and
-            shifted.
-            L'opération inverse est vraie aussi : si on part d'un log, on peut retrouver la représentation binaire du
-            float, et donc la valeur du float en appliquant le scale de 2^-23 et le shift de 127.
-          </aside>
-        </section>
-
-        <section>
+        <section data-auto-animate>
           <div class="big">
-            <span>$\frac{1}{\sqrt{y}} = $</span> <span class="fragment">$y^{-1/2}$</span>
+            <span>$\frac{1}{\sqrt{y}} = y^{-1/2}$</span>
           </div>
           <hr class="fragment" />
           <div class="text-left" style="margin-left: 15%;">
             <span class="fragment medium math">$\log_2(\frac{1}{\sqrt{y}}) = $</span>
             <span class="fragment medium math">$\log_2(y^{-1/2})$</span>
             <div class="fragment medium math" style="margin-left: 270px;">$= -\frac{1}{2} \cdot \log_{2}(y)$</div>
-            <div class="fragment medium math" style="margin-left: 270px;">$= -\frac{\log_{2}(y)}{2}$</div>
+            <div data-id="1" class="fragment medium math" style="margin-left: 270px;">$= -\frac{\log_{2}(y)}{2}$</div>
           </div>
           <aside class="notes">
             log(1/sqrt(y)) = log(y^{-1/2}) = -1/2 * log(y)
@@ -2530,24 +2635,33 @@
           </aside>
         </section>
 
-        <section>
-          <div data-fragment-index="1" class="fragment big">
-            <code class="normal">
-            i ≈ <code class="value">log2(y)</code>
-            </code>
-          </div>
-          <hr data-fragment-index="2" class="fragment" />
-          <div class="r-stack medium">
-            <div data-fragment-index="2" class="fragment current-visible instant">$\log_2(\frac{1}{\sqrt{y}}) =
-              -\frac{\log_{2}(y)}{2}$</div>
-            <div data-fragment-index="3" class="fragment instant">$\log_2(\frac{1}{\sqrt{y}}) \approx -\frac{i}{2} $
+        <section data-auto-animate>
+          <div class="ch">
+            <div class="item">
+              <div data-id="1" class="math">
+                $\log_2(\frac{1}{\sqrt{y}}) = -\frac{\log_{2}(y)}{2}$
+              </div>
+              <div data-id="1" data-fragment-index="2" class="fragment math" style="margin-left: 100px;">
+                $\approx -\frac{i}{2} $
+              </div>
+            </div>
+            <div class="item">
+              <div data-fragment-index="1" class="fragment">
+                <code class="normal">
+                i ≈ <code class="value">log2(y)</code>
+                </code>
+              </div>
             </div>
           </div>
-          <hr data-fragment-index="4" class="fragment" />
-          <div data-fragment-index="4" class="fragment medium">
+          <hr data-fragment-index="3" class="fragment" />
+          <div data-fragment-index="3" class="fragment medium">
             <code class="normal">
-              log2(1/√y) ≈ - (i >> <code class="value">1</code>)
+                <code class="func">log2</code>(<code class="value">1</code>/<code class="func">sqrt</code>(y)) ≈ -(i >>
+            <code class="value">1</code>)
             </code>
+          </div>
+          <div data-fragment-index="4" class="fragment">
+            <img src="/8/rey-happy.jpeg" height="300px" />
           </div>
           <aside class="notes">
             On a dit que dans i, on avait stocké log2(y), sans le shift et le scale.
@@ -2584,20 +2698,258 @@
           <h3>Comment il a été trouvé ?</h3>
           <div class="ch">
             <div class="item fragment">
-              <img class="highlight-shadow" src="/8/trial-and-error.png" height="400px" />
-              <p><b>À taton ?</b></p>
+              <img class="highlight-shadow" src="/8/jar-jar-stupid.jpeg" height="340px" />
+              <div data-id="1"><b>À taton ?</b></div>
             </div>
             <div class="item fragment">
-              <img src="/8/wtf-girl.webp" />
+              <img src="/8/wtf-girl.webp" height="340px" />
               <br />
+              <div data-id="2"><b>Par les maths ?</b></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- À taton 1/x -->
+        <section data-auto-animate>
+          <div data-id="1"><b>À taton ?</b></div>
+          <div data-id="2">
+            <p>
+              <span class="fragment">On prend un cas simple : <b class="bright">$16$</b></span>
               <br />
-              <div data-id="1"><b>Par les maths ?</b></div>
+              <span class="fragment">
+                <span>$16 = 2^4$</span> <span class="fragment">donc <span>$\frac{1}{\sqrt{16}} = 2^{-2}$</span></span>
+              </span>
+            </p>
+            <p class="fragment">
+              On cherche à changer <b>l'exposant</b> de <span class="bright">$4$</span> à <span
+                class="bright">$-2$</span>
+            </p>
+          </div>
+          <aside class="notes">
+            Si on prend par exemple 16 et qu'on cherche sa racine carrée inversée (1/√16 = 2^-2)
+          </aside>
+        </section>
+
+        <!-- À taton 2/x -->
+        <section data-auto-animate>
+          <div data-id="1"><b>À taton ?</b></div>
+          <p data-id="2">
+            On cherche à changer <b>l'exposant</b> de <span class="bright">$4$</span> à <span class="bright">$-2$</span>
+          </p>
+          <div class="ch">
+            <div class="item">
+              <pre class="c fragment">
+                <code data-trim>
+                  // état initial (2^4)
+                  0 10000011 000...
+                </code>
+                131 - 127 = 4 ✅
+              </pre>
+              <pre class="c fragment">
+                <code data-trim>
+                  // bitshift de 1 à droite
+                  0 01000001 100... 
+                </code>
+                65 - 127 = -62 🚨
+              </pre>
+            </div>
+            <div class="item fragment">
+              <img src="/8/jar-jar-fear.jpeg" />
+            </div>
+          </div>
+          <aside class="notes">
+            // Etat initial, pour 16 (2^4)
+            0 | 10000011 | 00...
+            128 + 3 = 131
+            131 - 127 = 4
+            // Si on shift tout à droite de 1
+            0 | 01000001 | 10...
+            64 + 1 = 65
+            65 - 127 = -62 // ici on veut -2, donc ça va pas !
+          </aside>
+        </section>
+
+        <!-- À taton 3/x -->
+        <section data-auto-animate>
+          <div data-id="1"><b>À taton ?</b></div>
+          <br />
+          <div class="ch">
+            <div class="item">
+              <h5>Le plan</h5>
+              <ol class="small">
+                <li data-fragment-index="1" class="fragment">on prend notre nombre</li>
+                <li data-fragment-index="2" class="fragment">on le <code class="bright"> >> 23</code></li>
+                <li data-fragment-index="3" class="fragment">on retire le biais (<code class="bright">-127</code>)</li>
+                <li data-fragment-index="4" class="fragment">on le divise par 2 (<code class="bright">>> 1</code>)</li>
+                <li data-fragment-index="5" class="fragment">on prend l'opposé (<code class="bright">-1</code>)</li>
+                <li data-fragment-index="6" class="fragment">on rajoute le biais (<code class="bright">+127</code>)</li>
+                <li data-fragment-index="7" class="fragment">on le <code class="bright"> &#60;&#60; 23</code></li>
+              </ol>
+            </div>
+            <div class="item">
+              <div class="cv">
+                <div class="item">
+                  <h5>La représentation</h5>
+                  <div class="r-stack">
+                    <code data-fragment-index="1" class="value small fragment instant current-visible">
+                      <code class="value">0 10000011 0...</code>
+                      <br/>
+                      <code class="normal">$2^{4}$</code>
+                    </code>
+                    <code data-fragment-index="2" class="small fragment instant current-visible">
+                      <code class="value">...0 10000011</code>
+                      <br/>
+                      <code class="normal">131</code>
+                    </code>
+                    <code data-fragment-index="3" class="value small fragment instant current-visible">
+                      <code class="value">...0 00000100</code>
+                      <br/>
+                      <code class="normal">4</code>
+                    </code>
+                    <code data-fragment-index="4" class="value small fragment instant current-visible">
+                      <code class="value">...0 00000010</code>
+                      <br/>
+                      <code class="normal">2</code>
+                    </code>
+                    <code data-fragment-index="5" class="value small fragment instant current-visible">
+                      <code class="value">...1 11111110</code>
+                      <br/>
+                      <code class="normal">-2</code>
+                    </code>
+                    <code data-fragment-index="6" class="value small fragment instant current-visible">
+                      <code class="value">...0 01111101</code>
+                      <br/>
+                      <code class="normal">125</code>
+                    </code>
+                    <code data-fragment-index="7" class="value small fragment instant current-visible">
+                      <code class="value">0 01111101 0...</code>
+                      <br/>
+                      <code class="normal">$2^{-2}$</code>
+                    </code>
+                  </div>
+                </div>
+                <br />
+                <div class="item">
+                  <h5>L'équation</h5>
+                  <div class="r-stack">
+                    <div data-fragment-index="1" class="fragment current-visible">
+                      $i$
+                    </div>
+                    <div data-fragment-index="2" class="fragment instant current-visible">
+                      $\frac{i}{2^{23}}$
+                    </div>
+                    <div data-fragment-index="3" class="fragment instant current-visible">
+                      $\frac{i}{2^{23}} - 127$
+                    </div>
+                    <div data-fragment-index="4" class="fragment instant current-visible">
+                      $\frac{\frac{i}{2^{23}} - 127}{2}$
+                    </div>
+                    <div data-fragment-index="5" class="fragment instant current-visible">
+                      $\frac{\frac{i}{2^{23}} - 127}{2} * -1$
+                    </div>
+                    <div data-fragment-index="6" class="fragment instant current-visible">
+                      $\frac{\frac{i}{2^{23}} - 127}{2} * -1 + 127$
+                    </div>
+                    <div data-id="3" data-fragment-index="7" class="fragment instant small">
+                      $\left(\frac{\frac{i}{2^{23}} - 127}{2} * -1 + 127\right) \times 2^{23}$
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <aside class="notes">
+            On a un plan assez simple (mdr)
+          </aside>
+        </section>
+
+        <!-- À taton 4/x -->
+        <section data-auto-animate>
+          <div data-id="1"><b>À taton ?</b></div>
+          <br />
+          <div class="r-stack">
+            <div data-fragment-index="1" data-id="3" class="fragment current-visible">
+              $\left(\frac{\frac{i}{2^{23}} - 127}{2} * -1 + 127\right) \times 2^{23}$
+            </div>
+            <div data-fragment-index="2" class="fragment instant">
+              $\left(\frac{3 \times 127 \times 2^{23}}{2}\right) - \frac{i}{2}$
+            </div>
+          </div>
+          <div data-fragment-index="3" class="fragment">
+            $N - i >> 1$
+          </div>
+          <hr data-fragment-index="4" class="fragment"/>
+          <div data-fragment-index="4" class="fragment">
+            $N = 3 * 127 * 2^{23} / 2$
+            <br/>
+            $&nbsp;&nbsp;= 1.5 * 2^{23} * 127$
+            <br/>
+            $  = 1598029824$
+            <br/>
+            <div data-id="4" ><code class="value fragment">= 0x5f400000</code></div>
+            <img class="abs-center fragment" src="/8/jar-jar-shocked.jpeg" height="400px"/>
+          </div>
+          <aside class="notes">
+            // c'est parti du coup
+            i = ((( i >> 23 - 127) >> 1 ) * -1 + 127 ) vv 23 // nice
+            = (( i/2^23 - 127 ) / 2 * -1 + 127 ) * 2^23
+            = -i/2 + (3 * 127 * 2^23 / 2)
+            // ici on retrouve bien N - i >> 1, il reste à résoudre N :
+            N = 3 * 127 * 2^23 / 2
+            = 1.5 * 2^23 * 127
+            = 1598029824
+            = 0x5f400000
+          </aside>
+        </section>
+
+        <!-- À taton 5/x -->
+        <section data-auto-animate>
+          <div data-id="1"><b>À taton ?</b></div>
+          <br />
+          <div data-id="4" ><code class="value">0x5f400000</code></div>
+          <div class="fragment">
+            Mais pourquoi pas <code class="value">0x5f3759df</code> ?
+          </div>
+          <div class="fragment">
+            Parce qu'on a oublié <span class="bright">$μ$</span> biensûr !
+          </div>
+          <div class="fragment">
+            <hr>
+            $N = 3 * $ <span class="bright">$126.957$</span>$ * 2^{23} / 2$
+            <br/>
+            $&nbsp;&nbsp;= 1.5 * 2^{23} * 126.957$
+            <br/>
+            $= 1597463007$
+            <br/>
+            <code class="value fragment">= 0x5F3759DF</code>
+            <img class="abs-center fragment" src="/8/jar-jar-happy.jpeg" height="400px"/>
+          </div>
+          <aside class="notes">
+            On a quasiment retrouvé notre magic number, mais pourquoi 0x5f3759df ?
+            Souvenez vous, on a pas pris tout à fait 127 mais 127 - μ
+            On a donc 127 - 0.0430 = 126.957
+            On a donc 1.5 * 2^23 * 126.957 = 1597463007
+            On a donc 0x5F3759DF
+          </aside>
+        </section>
+
+        <section data-auto-animate>
+          <h3>Comment il a été trouvé ?</h3>
+          <div class="ch">
+            <div class="item">
+              <img class="highlight-shadow" src="/8/jar-jar-stupid.jpeg" height="340px" />
+              <div data-id="1"><b>À taton ?</b></div>
+            </div>
+            <div class="item">
+              <img src="/8/wtf-girl.webp" height="340px" />
+              <br />
+              <div data-id="2"><b>Par les maths ?</b></div>
             </div>
           </div>
         </section>
 
         <section data-auto-animate>
-          <div data-id="1">
+          <div data-id="2">
             <b class="big">Par les maths ?</b>
             <p class="muted">speedrun any%</p>
           </div>
@@ -2645,7 +2997,7 @@
               <br />
               <br />
               <code class="normal" style="margin-left: 150px;">
-                = <code class="value">1597463007</code> - log2(y)/2
+                = <code class="value">1597463007</code> - <code class="func">log2</code>(y)/2
               </code>
             </div>
             <div data-fragment-index="10" class="fragment instant small">
@@ -2669,26 +3021,9 @@
           </div>
         </section>
 
-        <section data-auto-animate>
-          <h3>Comment il a été trouvé ?</h3>
-          <div class="ch">
-            <div class="item">
-              <img class="highlight-shadow" src="/8/trial-and-error.png" height="400px" />
-              <div data-id="2"><b>À taton ?</b></div>
-            </div>
-            <div class="item">
-              <img src="/8/wtf-girl.webp" />
-              <br />
-              <br />
-              <div data-id="1"><b>Par les maths ?</b></div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Exemple complet -->
-        <section data-auto-animate>
-          <div data-id="2"><b class="big">À taton ?</b></div>
-          <hr />
+        <!-- Exemple complet 1/3 -->
+        <section>
+          <h3>Le pire c'est que ça marche</h3>
           <p class="fragment">
             <code class="normal">
               <code class="type">float</code> y = <code class="value">12.5;</code>
@@ -2701,7 +3036,7 @@
           </div>
           <p class="fragment">
             <code class="normal">
-              <code class="type">long</code> i = * (long *) &y;
+              <code class="type">long</code> i = * (<code class="type">long</code> *) &y;
             </code>
           </p>
           <div class="fragment">
@@ -2711,7 +3046,7 @@
           </div>
           <p class="fragment">
             <code class="normal">
-              i = i >> 1;
+              i = i >> <code class="value">1</code>;
             </code>
           </p>
           <div class="r-stack">
@@ -2732,10 +3067,11 @@
           </aside>
         </section>
 
+        <!-- Exemple complet 2/3 -->
         <section data-auto-animate>
           <p>
             <code class="normal">
-              i = i >> 1;
+              i = i >> <code class="value">1</code>;
             </code>
           </p>
           <div data-id="2">
@@ -2753,7 +3089,7 @@
           </div>
           <p class="fragment">
             <code class="normal">
-              <code class="value">0x5f3759df</code> - ( i >> 1 );
+              <code class="value">0x5f3759df</code> - ( i >> <code class="value">1</code> );
             </code>
           </p>
           <div class="fragment">
@@ -2763,7 +3099,7 @@
           </div>
           <p data-id="3" class="fragment">
             <code class="normal">
-              y = * (float *) &i;
+              y = * (<code class="type">float</code> *) &i;
             </code>
           </p>
           <div data-id="4" class="fragment">
@@ -2773,10 +3109,11 @@
           </div>
         </section>
 
+        <!-- Exemple complet 3/3 -->
         <section data-auto-animate>
           <p data-id="3">
             <code class="normal">
-              y = * (float *) &i;
+              y = * (<code class="type">float</code> *) &i;
             </code>
           </p>
           <div data-id="4">
@@ -2794,12 +3131,13 @@
             <pre class="c big">
               <code data-trim >
                 // Avec la lib math.h
-                y = 1/sqrt(12,5); // 0.28284271247
+                y = 1/sqrt(12.5); // 0.28284271247
               </code>
             </pre>
           </div>
         </section>
 
+        <!-- En résumé -->
         <section>
           <h3>En résumé</h3>
           <div class="r-stack">
@@ -3082,7 +3420,7 @@
               <div class="medium">\[\frac{1}{\sqrt{y}}\]</div>
             </div>
             <div class="item">
-              <img src="/9/not-bad.jpeg" />
+              <img src="/9/not-bad-han.jpeg" />
             </div>
           </div>
           <aside class="notes">
@@ -3238,9 +3576,10 @@
 
         <section>
           <h3>À quel point c'est précis ?</h3>
-          <h2 class="fragment"><code class="normal">Erreur relative maximum :</code>
-            <code class="bright">0,177%</code>
-          </h2>
+          <div class="fragment">
+            <img src="/10/so-precise.jpeg" height="300px" />
+            <h4><code>Erreur relative maximum :</code> <code class="bright big">0,177%</code></h4>
+          </div>
         </section>
 
         <!-- le gain de temps -->
@@ -3248,7 +3587,8 @@
           <h3>À quel point c'est <span class="bright">rapide</span> ?</h3>
           <div class="fragment">
             <img src="/10/lightspeed.webp" height="400px" />
-            <h4><span class="bright">3-4 fois</span> plus rapide que <code class="normal">1/sqrt(x)</code></h4>
+            <h4><span class="bright">3-4 fois</span> plus rapide que <code
+                class="normal"><code class="value">1</code>/<code class="func">sqrt</code>(x)</code></h4>
             <p class="small muted">(à l'époque)</p>
           </div>
           <aside class="notes">
@@ -3259,7 +3599,7 @@
         <section>
           <div class="r-stack">
             <img src="/10/intel-pentium-3.webp" height="500px" />
-            <img class="fragment" src="/10/fast-sonic.jpeg" height="500px" />
+            <!-- <img class="fragment" src="/10/fast-sonic.jpeg" height="500px" /> -->
           </div>
           <p><b>Intel Pentium-3 CPU/FPU<br />Février 1999</b></p>
           <aside class="notes">
@@ -3273,10 +3613,7 @@
         <!-- l'enquête Beyond3D -->
         <section>
           <h3>Qui a écrit ce code ?</h3>
-          <div class="r-stack">
-            <img src="/10/thinking.jpeg" height="500px" />
-            <img class="fragment" src="/10/john-carmack-2006.jpeg" height="500px" />
-          </div>
+          <img src="/10/thinking.jpeg" height="500px" />
           <aside class="notes">
             - Une question qui reste en suspens est : qui a écrit cet algo au final ?
             - On a longtemps attribué ce code à John Carmack, étant donné sa notoriété et son implication en tant que
@@ -3468,9 +3805,10 @@
             <b class="fragment highlight-gold">« The Father of Floating Point »</b>
           </p>
           <aside class="notes">
-            - mathématicien et informaticien canadien né en 1933 (il a 90 ans aujd),
+            - mathématicien et informaticien canadien né en 1933 (il a 91 ans aujd),
             - lauréat du prix Turing en 1989 pour ses travaux en analyse numérique.
             - Spécialiste des calculs en virgule flottante, il est le principal architecte de la norme IEEE 754.
+            - surnommé "The Father of Floating Points"
           </aside>
         </section>
 
@@ -3486,27 +3824,44 @@
 
         <section>
           <div class="r-stack">
-            <img class="r-stretch" src="/10/visible-happiness.jpeg" height="500px"/>
+            <img class="r-stretch" src="/10/visible-happiness.jpeg" height="500px" />
           </div>
           <aside class="notes">
             - Maintenant vous savez comment votre ordi stocke des float,
             - Vous savez à peu près comment fonctionne l'algorithme
+            - Souvenons nous de cet algo, qui, bien qu'obsolète dès sa sortie au regard de la nouvelle génération de
+            CPU, aura permis à une génération entière de joueurs de profiter de Quake 3 sur leurs bécanes pourries.
+            (ordis du CDI)
           </aside>
         </section>
 
         <section>
-          <img class="r-stretch" src="/10/pride-only-hurts.png" />
+          <img class="r-stretch" src="/10/anakin-pride.jpeg" />
           <aside class="notes">
-            - Pour finir, je vous laisse sur cette citation de Marsellus Wallace
+            - Pour finir, je vous laisse sur cette citation d'Anakin :
+            "Il faut parfois oublier son amour-propre, et obéir à son devoir"
             - Sachons rester humble, à l'image de tous ces gens dans cette enquête, qui malgré être des
             monstres dans leur domaine, refusent poliment de s'attribuer seul les lauriers,
             et ne s'enorgueillissent jamais de leurs travaux.
             (Comme disait Gaël : ne soyez pas votre code)
-            - Souvenons nous de cet algo, qui, bien qu'obsolète dès sa sortie au regard de la nouvelle génération de
-            CPU, aura permis à une génération de joueurs de profiter de Quake 3 sur leurs bécanes pourries.
-            (ordis du CDI)
             - Prenons en de la graine, restons connectés à nos racines (pas carrées)
             et chargés de ces enseignements, embrassons le futur de notre métier.
+          </aside>
+        </section>
+
+        <section>
+          <img src="/10/ego-logo.jpeg" class="round" height="250px" />
+          <br />
+          <img src="/10/ego-gol.jpeg" />
+          <aside class="notes">
+            En parlant d'ego je voudrais en profiter pour vous parler d'une chaîne youtube du même nom,
+            et je voulais finir sur une citation de sa dernière vidéo qui est sur le jeu de la vie,
+            que je ne saurais que trop vous conseiller de regarder.
+            "Pour faire cette conf, je regarde et je cherche à comprendre.
+            D'ailleurs je rappelle que je suis loin d'être un expert, je suis comme un enfant à la récré
+            qui veut montrer ce qu'il a trouvé à ses copains, et mes copains c'est vous,
+            donc ce talk c'est moi qui viens vers vous pour vous montrer les jolis cailloux que j'ai trouvé dans la
+            cour"
           </aside>
         </section>
 
@@ -3517,30 +3872,23 @@
         <h3>Merci !</h3>
         <div class="ch">
           <div class="item">
-            <br/>
+            <br />
             <img class="highlight noshadow m-t-0 m-b-0" src="/11/maxds-logo.png" height="150px" />
             <img class="highlight noshadow m-t-0 m-b-0" src="/11/hellowork-logo.png" height="100px" />
           </div>
           <div class="item">
             <img class="avatar" src="/11/moi-rond.png" height="300px" />
-            <br/>
+            <br />
             <strong>Audren Burlot</strong>
             <h6>github.com/Firnael</h6>
           </div>
           <div class="item">
-            <br/>
+            <br />
             <img src="/11/qr-code.png" height="250px" />
           </div>
         </div>
       </section>
 
-      <section data-background-image="/1/cake-aux-olives.jpeg" data-transition="fade">
-        <h1>Merci !</h1>
-        <strong class="shadow">Distribution de paracétamol<br />à la pause</strong>
-        <aside class="notes">
-          j'espère que ça vous a plu, merci de m'avoir écouté.
-        </aside>
-      </section>
     </div> <!-- /slides -->
   </div> <!-- /reveal -->
 
