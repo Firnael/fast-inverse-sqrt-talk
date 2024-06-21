@@ -70,7 +70,6 @@ function toggleDirectionalLight() {
 }
 
 document.addEventListener('keydown', (event) => {
-    console.log(event.key);
     if (event.key === 'r') {
         const id = requestAnimationFrame(animate);
         cancelAnimationFrame(id);

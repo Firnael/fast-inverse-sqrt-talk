@@ -11,6 +11,7 @@
     --y-color: #9CC281;
     --z-color: #DCBD87;
     --gold-color: #f6d569;
+    --blue-story-color: #61AEEE;
     --code-func-color: #61AEEE;
 }
 
@@ -124,6 +125,11 @@ img {
 
 .highlight-gold {
     filter: drop-shadow(.1rem .1rem .5rem var(--gold-color));
+    box-shadow: none;
+}
+
+.highlight-blue {
+    filter: drop-shadow(.1rem .1rem .5rem var(--blue-story-color));
     box-shadow: none;
 }
 
@@ -272,6 +278,10 @@ span.still-log {
     color: #33becd;
 }
 
+.direction {
+    color: #d76cff;
+}
+
 .address {
     color: rgb(72, 193, 129);
 }
@@ -297,6 +307,12 @@ span.still-log {
 }
 
 /* Custom position */
+
+div.mu-value {
+    position: absolute;
+    right: 230px;
+    top: 280px;
+}
 
 div.newton-quote-1 {
     position: absolute;
@@ -353,9 +369,9 @@ img.newtons-tear {
 
 img.c-logo-cashier {
     position: absolute;
-    height: 20%;
-    top: 115px;
-    right: 325px;
+    height: 30%;
+    top: 40px;
+    right: 180px;
 }
 
 img.harold {
@@ -529,6 +545,14 @@ pre.clean code {
 }
 
 /* Custom fragments */
+
+.fragment.blur {
+    filter: blur(5px);
+}
+
+.fragment.blur.visible {
+    filter: none;
+}
 
 .reveal .slides section .fragment.instant {
     transition: all 0s ease;

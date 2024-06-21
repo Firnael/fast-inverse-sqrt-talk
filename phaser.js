@@ -100,7 +100,6 @@ function create() {
 }
 
 function update() {
-    console.log('UPDATE');
     let directions = [];
 
     // compute velocity and base angle
