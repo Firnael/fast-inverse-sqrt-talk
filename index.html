@@ -13,8 +13,14 @@
     <div class="slides">
 
       <!-- 1. Introdution -->
-      <section data-background-image="/1/splash.jpg" data-transition="fade" class="scrim grey">
-        <h1 class="main-title r-fit-text">Racines carrées,<br />bit-shifting<br />et paracétamol</h1>
+      <section data-background-image="/1/splash.jpg" data-transition="fade" class="scrim darkblue">
+        <h2 class="r-fit-text">
+          <span class="main-title">Racines</span> <b class="main-title"
+            style="text-transform: none;">$\sqrt{carrées}$</b>,
+          <br /><span class="main-title">bit </span><code>>></code> <span class="main-title">shifting</span>
+          <br /><span class="main-title">et paracétamol</span>
+        </h2>
+        <img class="pill noshadow highlight-shadow" src="/1/pill.png">
         <aside class="notes">
           Bonjour à tous, bienvenue à tous, je m'appelle Audren Burlot, et je suis honoré d'être devant vous aujou'd'hui
           pour vous présenter ce talk qui s'intitule "The Inglorious Function".
@@ -77,9 +83,13 @@
         <section>
           <div class="r-stack">
             <img src="/2/shreveport.jpeg" />
-            <img class="fragment" src="/2/shreveport-map.jpg" />
+            <img data-fragment-index="2" class="fragment" src="/2/shreveport-map.jpg" />
           </div>
-          <p><b>Shreveport - Louisiane</b></p>
+          <p>
+            <b>Shreveport</b>
+            <br />
+            <b><span data-fragment-index="2" class="fragment">Louisiane 🇺🇸</span></b>
+          </p>
           <aside class="notes">
             Notre histoire commence au début des années 80, à Shreveport en Louisiane, USA...
           </aside>
@@ -198,13 +208,13 @@
           <div class="ch">
             <div class="item">
               <img class="highlight-shadow" src="/2/macintosh.png" height="400px" />
-              <p><b>Macintosh & IBM PC<br />1984</b></p>
+              <p><b>Macintosh & IBM PC AT<br />1984</b></p>
             </div>
             <div class="item"><img class="highlight-shadow" src="/2/ibm-pc.png" /></div>
           </div>
           <aside class="notes">
-            Ce qu'il faut savoir, c'est qu'à l'époque le hardware des PC (Apple II, IBM PC), s'il est adapté pour
-            executer des tâches dites de bureautique, et offre une plus grande variété de logiciel,
+            Ce qu'il faut savoir, c'est qu'à l'époque le hardware des PC (Apple II puis Macintosh, IBM PC),
+            s'il est adapté pour executer des tâches dites de bureautique, et offre une plus grande variété de logiciel,
             n'est vraiment pas adapté pour jouer à des jeux vidéos,
             contrairement à des machines comme l'Amiga ou le Commodore 64, ou l'Atari ST.
           </aside>
@@ -230,7 +240,7 @@
             </div>
           </div>
           <aside class="notes">
-            Dites vous qu'on est en 1990, et que Super Mario Bros est sorti en 1985 sur NES.
+            Dites vous qu'on est en 1988, et que Super Mario Bros est sorti en 1985 sur NES.
           </aside>
         </section>
 
@@ -367,19 +377,14 @@
 
         <section>
           <div class="r-stack">
-            <img class="current-visible" src="/2/doom.avif" />
-            <img class="fragment" src="/2/doom-1993.jpeg" />
+            <img data-fragment-index="1" class="fragment preload current-visible" src="/2/doom.avif" />
+            <img data-fragment-index="2" class="fragment current-visible" src="/2/doom-1993.jpeg" />
+            <img data-fragment-index="3" class="fragment" src="/2/doom-talk.jpeg" height="500px" />
           </div>
           <p><b>Doom - 1993</b></p>
+          <p data-fragment-index="3" class="fragment small muted">https://www.youtube.com/watch?v=sNapL2anR3E</p>
           <aside class="notes">
-            Doom, c'est 15 millions de téléchargements
-          </aside>
-        </section>
-
-        <section data-transition="fade">
-          <img src="/2/doom-talk.jpeg" height="500px" />
-          <p class="small muted">https://www.youtube.com/watch?v=sNapL2anR3E</p>
-          <aside class="notes">
+            Doom, c'est 15 millions de téléchargements.
             Dont Doom, qui est un monument du jeu vidéo et mérite un talk à part entière,
             d'ailleurs ça a été fait, cf. le talk de Xavier-Frédéric Moulet du Breizhcamp 2022.
           </aside>
@@ -535,7 +540,7 @@
         <section data-auto-animate>
           <img src="/2/fsqrt-youtube.png" />
           <br />
-          <video data-autoplay loop muted class="item" data-src="/2/monkey-brain.mp4" height="400px" />
+          <video data-autoplay data-src="/2/yoda-scream.mp4" height="400px" />
           <aside class="notes">
             Bon, il était un peu tard, dans ma tête c'était comme ça
           </aside>
@@ -598,16 +603,34 @@
           <img src="/4/minecraft-torch.jpeg" height="500px" />
           <p class="smaller muted">Minecraft - Mojang Studios</p>
           <aside class="notes">
-            Pour comprendre ce bout de code, il faut comprendre comment fonctionne un moteur de jeu,
+            Pour comprendre ce bout de code, il faut comprendre comment fonctionne le moteur de jeu de Quake 3
             et en particulier la gestion de la lumière.
           </aside>
         </section>
 
-        <section data-auto-animate>
-          <img class="noshadow" src="/4/apple-1.png" />
+        <section>
+          <b>Lumière statique : Lightmaps</b>
+          <div class="r-stack">
+            <img src="/4/lightmap-1.jpeg" height="500px" />
+            <img class="fragment" src="/4/lightmap-2.jpeg" height="500px" />
+            <img class="fragment" src="/4/lightmap-3.jpeg" height="500px" />
+          </div>
+          <p class="smaller muted">Source : https://fabiensanglard.net/quake3/renderer.php</p>
           <aside class="notes">
-            Pour simplifier, les objects dans un monde en 3D ne sont qu'un ensemble de surface, qui doivent reflèter
-            la lumière chacune à leur manière.
+            Quake utilise un système de lightmaps pour gérer la lumière statique.
+          </aside>
+        </section>
+
+        <section>
+          <b>Lumière dynamique : tout le reste</b>
+          <div>
+            TODO
+          </div>
+          <aside class="notes">
+            This applies to moving objects such as :
+            - players
+            - pickup items
+            - and 1st person weapon models
           </aside>
         </section>
 
@@ -620,6 +643,17 @@
             Si j'allume la lumière dite "ambiante", le cube apparaitra de la même couleur sur chaque face.
             Lorsqu'on vient appliquer une lumière dite "directionnelle" à ce cube, on s'aperçoit que
             chaque face apparait d'une couleur différentes en fonction de l'angle
+          </aside>
+        </section>
+
+        <section data-auto-animate>
+          <div class="r-stack">
+            <img class="noshadow fragment preload current-visible" src="/4/apple-1.png" />
+            <img style="margin-left: 230px; margin-top: 30px;" class="fragment noshadow" src="/4/apple-2.png"/>
+          </div>
+          <aside class="notes">
+            Pour simplifier, les objects dans un monde en 3D ne sont qu'un ensemble de surface, qui doivent reflèter
+            la lumière chacune à leur manière.
           </aside>
         </section>
 
@@ -981,7 +1015,8 @@
                   \textcolor{#9CC281}{y^{2}} + \textcolor{#DCBD87}{z^{2}}}}\]
                 </div>
                 <div data-id="1" style="display: none;">
-                  $\frac{1}{\sqrt{\textcolor{#66ABE1}{x^{2}} + \textcolor{#9CC281}{y^{2}} + \textcolor{#DCBD87}{z^{2}}}}$
+                  $\frac{1}{\sqrt{\textcolor{#66ABE1}{x^{2}} + \textcolor{#9CC281}{y^{2}} +
+                  \textcolor{#DCBD87}{z^{2}}}}$
                 </div>
               </div>
             </div>
@@ -1079,6 +1114,9 @@
             <div class="item fragment">
               <img class="abs right" src="/3/the-what.jpeg" />
             </div>
+            <div class="item fragment">
+              <p class="smaller muted">(j'ai rien changé, c'est le code et les commentaires d'origine)</p>
+            </div>
           </div>
           <aside class="notes">
             Mais dans le code source Quake, on ne retrouve pas cette fonction.
@@ -1107,7 +1145,22 @@
           </aside>
         </section>
 
-        <section>
+        <section data-auto-animate>
+          <img data-id="1" src="/4/dangerous-to-go-alone-original.webp" />
+        </section>
+        <section data-auto-animate>
+          <img data-id="1" src="/4/dangerous-to-go-alone.webp" />
+        </section>
+        <section data-auto-animate>
+          <img data-id="1" src="/4/dangerous-to-go-alone-bag.webp" />
+          <img class="bagpack bagpack-in-pic" style="visibility: hidden;" src="/bagpack.webp" />
+        </section>
+        <section data-auto-animate>
+          <img data-id="1" src="/4/dangerous-to-go-alone-empty.webp" />
+          <img class="bagpack" src="/bagpack.webp" />
+        </section>
+
+        <!-- <section>
           <div class="cv">
             <div class="item">
               <img class="m-b-0" src="/4/prerequis-1.png" />
@@ -1124,13 +1177,13 @@
             - et des petits rappels de maths concernant les logarithmes de base 2
             Ne vous inquiétez pas, ça va bien se passer :)
           </aside>
-        </section>
+        </section> -->
 
       </section>
 
       <!-- 5. La représentation binaire des nombres à virgules flottantes -->
       <section data-background-image="/5/splash.jpg" data-transition="fade" class="scrim darkblue">
-        <h3>Pré-requis n°1</h3>
+        <h3>Item n°1</h3>
         <br />
         <br />
         <br />
@@ -1341,7 +1394,7 @@
           <div class="ch">
             <div class="item fragment">
               <br />
-              Donc on créer un nouveau <code class="type bold">float128</code> ?
+              Donc on créé un <code class="type bold">float128</code> ?
             </div>
             <div class="item fragment">
               <img src="/5/ca-fait-beaucoup.gif" height="250px" />
@@ -1373,6 +1426,7 @@
 
         <section data-transition="fade">
           <img class="highlight-shadow" src="/5/IEEE-logo.png" height="400px" />
+          <p class="small muted">élabore des normes</p>
           <aside class="notes">
             De son nom complet, **l'Institute of Electrical and Electronics Engineers**,
             c'est une organisation internationale qui élabore des normes dans divers domaines, dont l'informatique.
@@ -1495,21 +1549,34 @@
         <section>
           <h4>On dit <code class="type">float</code> car la virgule "flotte" en fonction de l'exposant</h4>
           <div class="fragment">
-            Par exemple, si on prend le nombre <code class="value">12,5</code> :
+            Par exemple, si on prend le nombre <code class="value">16,5</code> :
           </div>
           <br />
           <div class="r-stack medium">
             <div class="fragment current-visible instant">
-              <code class="value">1100,1 x 2^0</code>
+              <code class="normal">
+                <code class="emphas">10000,1</code> x <code class="direction">2^0</code>
+              </code>
             </div>
             <div class="fragment current-visible instant">
-              <code class="value">110,01 x 2^1</code>
+              <code class="normal">
+                <code class="emphas">1000,01</code> x <code class="direction">2^1</code>
+              </code>
             </div>
             <div class="fragment current-visible instant">
-              <code class="value">11,001 x 2^2</code>
+              <code class="normal">
+                  <code class="emphas">100,001</code> x <code class="direction">2^2</code>
+              </code>
             </div>
             <div class="fragment current-visible instant">
-              <code class="value">1,1001 x 2^3</code>
+              <code class="normal">
+                  <code class="emphas">10,0001</code> x <code class="direction">2^3</code>
+              </code>
+            </div>
+            <div class="fragment current-visible instant">
+              <code class="normal">
+                  <code class="emphas">1,00001</code> x <code class="direction">2^4</code>
+              </code>
             </div>
           </div>
         </section>
@@ -1867,10 +1934,10 @@
         </section>
 
         <section data-auto-animate>
+          <h4 data-id="1">Cas nominal</h4>
           <div class="medium">
-            <h4>Cas nominal</h4>
             <div class="r-stack">
-              <div data-id="1" data-fragment-index="0" class="fragment current-visible preload instant">
+              <div data-id="2" data-fragment-index="0" class="fragment current-visible preload instant">
                 <span class="ieee-sign">$+ ou -$</span> <span class="ieee-mantissa">$(1 +\frac{M}{2^{23}})$</span>
                 <span class="ieee-exponent">$\times 2^{E-127}$</span>
               </div>
@@ -1902,14 +1969,16 @@
           </aside>
         </section>
 
-        <section>
+        <section data-auto-animate>
+          <h4 data-id="1">Dans notre cas</h4>
           <div class="medium">
-            <h4>Dans notre cas</h4>
-            $y = $<span class="ieee-mantissa">$(1 + \frac{M}{2^{23}})$</span> <span class="ieee-exponent">$\times
-              2^{E-127}$</span>
+            <div data-id="2">
+              $y = $<span class="ieee-mantissa">$(1 + \frac{M}{2^{23}})$</span> <span class="ieee-exponent">$\times
+                2^{E-127}$</span>
+            </div>
           </div>
           <br />
-          <div class="fragment">
+          <div data-id="1" class="fragment">
             <h5>Représentation binaire</h5>
             <div class="r-stack">
               <div class="fragment current-visible instant">
@@ -1938,13 +2007,24 @@
               </div>
             </div>
           </div>
+          <img class="fragment bagpack" src="/bagpack.webp" />
+          <img class="notes-1-before" src="/notes.png" />
+        </section>
+
+        <section data-auto-animate>
+          <h3 data-id="1">
+            Ça part dans le sac
+            <br />🙂
+          </h3>
+          <img class="bagpack" src="/bagpack.webp" />
+          <img class="notes-1-after" src="/notes.png" />
         </section>
 
       </section>
 
       <!-- 6. Log2, Log2(1+x) et autre filouteries -->
       <section data-background-image="/6/logarithms-book.jpeg" data-transition="fade" class="scrim grey">
-        <h3>Pré-requis n°2</h3>
+        <h3>Item n°2</h3>
         <br />
         <br />
         <h2 class="highlight-gold">Filouteries logarithmiques</h2>
@@ -1963,28 +2043,30 @@
             $y =$ <span class="ieee-mantissa">$(1 + \frac{M}{2^{23}})$</span> <span class="ieee-exponent">$\times
               2^{E-127}$</span>
           </div>
-          <hr class="fragment" />
+          <b data-fragment-index="1" class="fragment">On peut virer l'exposant avec <code class="func">log2</code></b>
+          <br />
+          <br />
           <div class="text-left">
-            <div class="math fragment fade-in-then-semi-out" style="margin-left: 140px;">
+            <div data-fragment-index="2" class="math fragment fade-in-then-semi-out" style="margin-left: 140px;">
               $\log_2(y) = \log_2($<span class="ieee-mantissa">$(1 + \frac{M}{2^{23}})$</span>
               <span class="ieee-exponent">$\times 2^{E-127}$</span>$)$
             </div>
-            <div class="math fragment fade-in-then-semi-out" style="margin-left: 300px;">
+            <div data-fragment-index="3" class="math fragment fade-in-then-semi-out" style="margin-left: 300px;">
               $= \log_2($<span class="ieee-mantissa">$1 + \frac{M}{2^{23}}$</span>$)$
               $+ \log_2($<span class="ieee-exponent">$2^{E-127}$</span>$)$
             </div>
             <div class="r-stack">
-              <div class="math fragment current-visible" style="margin-left: 300px;">
+              <div data-fragment-index="4" class="math fragment current-visible" style="margin-left: 300px;">
                 $= \log_2($<span class="ieee-mantissa">$1 + \frac{M}{2^{23}}$</span>$)$
                 $+$ <span class="ieee-exponent">$E-127$</span>
               </div>
-              <div class="math fragment" style="margin-left: 300px;">
+              <div data-fragment-index="5" class="math fragment" style="margin-left: 300px;">
                 $=$ <span class="still-log">$\log_2($<span class="ieee-mantissa">$1 + \frac{M}{2^{23}}$</span>$)$</span>
                 $+$ <span class="ieee-exponent">$E-127$</span>
               </div>
             </div>
           </div>
-          <img class="fragment wtf-cat" src="/6/wtf-cat.jpeg" />
+          <img data-fragment-index="5" class="fragment wtf-cat" src="/6/wtf-cat.jpeg" />
           <aside class="notes">
             Pourquoi on fait ça ? Mais parce qu'on peut virer l'exposant !
             Mais du coup maintenant on est bloqué avec un gros logarithme en plein milieu...
@@ -2015,24 +2097,24 @@
           <video class="motion-canvas" data-id="1" data-autoplay data-src="/6/plus-mu.mp4"></video>
         </section>
 
-        <section data-transition="fade">
-          <div class="text-left" style="margin-left: 15%;">
-            <div class="math fragment preload fade-in-then-semi-out">
+        <section data-transition="fade" data-auto-animate>
+          <div data-id="1" class="text-left" style="margin-left: 15%;">
+            <div data-fragment-index="1" class="math fragment preload fade-in-then-semi-out">
               $\log_2(y) = \log_2($<span class="ieee-mantissa">$1 + \frac{M}{2^{23}}$</span>$)$
               $+$ <span class="ieee-exponent">$E-127$</span>
             </div>
-            <div class="math math-pad-log fragment fade-in-then-semi-out">
+            <div data-fragment-index="2" class="math math-pad-log fragment fade-in-then-semi-out">
               $= $ <span class="ieee-mantissa">$\frac{M}{2^{23}}$</span>
               <span class="mu">$+ \mu$ </span>$+$ <span class="ieee-exponent">$E-127$</span>
             </div>
             <div class="r-stack math-pad-log-stack">
-              <div class="math fragment current-visible">
+              <div data-fragment-index="3" class="math fragment current-visible">
                 $= \frac{1}{2^{23}}$
                 $($<span class="binary-rep-inv"><span class="ieee-exponent">$E \times 2^{23}$</span>$ + $<span
                     class="ieee-mantissa">$M$</span></span>$)$
                 $- 127$ <span class="mu">$+ \mu$</span>
               </div>
-              <div class="math fragment instant">
+              <div data-fragment-index="4" class="math fragment instant">
                 $= \frac{1}{2^{23}}$
                 $($<span class="binary-rep"><span class="ieee-exponent">$E \times 2^{23}$</span>$ + $<span
                     class="ieee-mantissa">$M$</span></span>$)$
@@ -2040,29 +2122,71 @@
               </div>
             </div>
           </div>
-          <div class="r-stack">
-            <img class="fragment" src="/6/i-see-math.gif" />
-            <img class="fragment" src="/6/binary-rep.png" />
-          </div>
+          <img data-fragment-index="4" class="fragment" src="/6/i-see-math.gif" />
+          <img data-fragment-index="5" class="fragment bagpack" src="/bagpack.webp">
+          <img class="notes-2-before" src="/notes.png">
           <aside class="notes">
             On peut remplacer alors !
           </aside>
         </section>
 
-        <section>
+        <section data-auto-animate>
+          <div data-id="1" class="text-left" style="margin-left: 15%;">
+            <div class="math semi-trans">
+              $\log_2(y) = \log_2($<span class="ieee-mantissa">$1 + \frac{M}{2^{23}}$</span>$)$
+              $+$ <span class="ieee-exponent">$E-127$</span>
+            </div>
+            <div class="math math-pad-log semi-trans">
+              $= $ <span class="ieee-mantissa">$\frac{M}{2^{23}}$</span>
+              <span class="mu">$+ \mu$ </span>$+$ <span class="ieee-exponent">$E-127$</span>
+            </div>
+            <div class="r-stack math-pad-log-stack">
+              <div class="math">
+                $= \frac{1}{2^{23}}$
+                $($<span class="binary-rep-inv"><span class="ieee-exponent">$E \times 2^{23}$</span>$ + $<span
+                    class="ieee-mantissa">$M$</span></span>$)$
+                $- 127$ <span class="mu">$+ \mu$</span>
+              </div>
+              <div class="math">
+                $= \frac{1}{2^{23}}$
+                $($<span class="binary-rep"><span class="ieee-exponent">$E \times 2^{23}$</span>$ + $<span
+                    class="ieee-mantissa">$M$</span></span>$)$
+                $- 127$ <span class="mu">$+ \mu$</span>
+              </div>
+            </div>
+          </div>
+          <br />
+          <div class="r-stack">
+            <img src="/6/i-see-math.gif" />
+            <img src="/6/binary-rep.png" />
+          </div>
+          <img class="bagpack" src="/bagpack.webp">
+          <img class="notes-rep-bin-after" src="/notes.png">
+          <aside class="notes">
+            On peut remplacer alors !
+          </aside>
+        </section>
+
+        <section data-auto-animate>
           <h3>Et ça, ça régale !</h3>
           <h4 class="fragment">Car cela signifie que :</h4>
-          <br />
-          <div class="fragment">
-            <div class="medium">
-              $\log_2(y) \approx$ <span class="ieee-exponent">$E \times 2^{23}$</span>$ + $<span
-                class="ieee-mantissa">$M$</span>
+          <div class="r-stack">
+            <div class="fragment">
+              <div class="medium">
+                $\log_2(y) \approx$ <span class="ieee-exponent">$E \times 2^{23}$</span>$ + $<span
+                  class="ieee-mantissa">$M$</span>
+              </div>
+              <b class="fragment medium highlight-gold">sa propre représentation binaire !</b>
+              <br />
+              <br />
+              <div class="fragment muted">(scale de $1/2^{23}$ et shifté de $-127 + \mu$<br />mais tranquille)</div>
             </div>
-            <b class="fragment medium highlight-gold">sa propre représentation binaire !</b>
-            <br />
-            <br />
-            <div class="fragment muted">(scale de $1/2^{23}$ et shifté de $-127 + \mu$<br />mais tranquille)</div>
+            <div class="fragment">
+              <img class="r-stretch" src="/6/bonne-surprise.webp" height="400px" />
+            </div>
           </div>
+          <img class="fragment bagpack" src="/bagpack.webp" />
+          <img class="notes-1-before" src="notes.png" />
           <aside class="notes">
             Résumons ce qu'on a fait :
             - on a pris le log de base 2 de notre expression (notre float normalisé IEEE 754)
@@ -2071,8 +2195,18 @@
           </aside>
         </section>
 
-        <section>
-          <img class="r-stretch" src="/6/bonne-surprise.webp" />
+        <section data-auto-animate>
+          <h3>Et ça, ça régale !</h3>
+          <h4>et ça part dans le sac !</h4>
+          <h3>😄</h3>
+          <img class="bagpack" src="/bagpack.webp" />
+          <img class="notes-1-after" src="notes.png" />
+          <aside class="notes">
+            Résumons ce qu'on a fait :
+            - on a pris le log de base 2 de notre expression (notre float normalisé IEEE 754)
+            - dans ce log, on a retrouvé la représentation binaire de notre float
+            -> celà signifie que : la représentation binaire de notre float est (presque) égale à son log2
+          </aside>
         </section>
 
       </section>
@@ -2089,21 +2223,21 @@
           <img class="r-stretch" src="/6/you-are-sweating.gif" />
         </section>
 
-        <section>
+        <section data-auto-animate>
           <h4>Un dernier truc important</h4>
           <br />
           <div class="r-stack">
             <div class="big fragment current-visible">
               <span>$y^{2} = y * y$</span>
             </div>
-            <div class="big fragment current-visible">
+            <div class="big fragment instant current-visible">
               <span>$y^{1/2} = \sqrt{y}$</span>
             </div>
-            <div class="big fragment">
-              <span>$y^{-1/2} = \frac{1}{\sqrt{y}}$</span>
+            <div data-id="1" class="big instant fragment">
+              <span class="highlight-gold">$y^{-1/2}$&nbsp;</span><span>$ = \frac{1}{\sqrt{y}}$</span>
             </div>
           </div>
-          <div class="cv fragment">
+          <div data-id="2" class="cv fragment">
             <div class="item">
               <span class="bold ieee-exponent ieee-padded">exposant</span>
             </div>
@@ -2112,10 +2246,31 @@
                 class="normal">00000000000000000000000</code>
             </div>
           </div>
+          <div class="fragment">
+            <img class="bagpack" src="/bagpack.webp" />
+            <img class="bagpack bagpack-hover" src="/on-hover.png" />
+          </div>
+          <img class="notes-1-before" src="/notes.png" />
           <aside class="notes">
             1/sqrt(y) = y^-1/2. C'est une propriété mathématique des puissances.
             ça veut dire que si on arrive à manipuler l'exposant de notre nombre en le divisant par 2
             et le rendant négatif, on aura la racine carrée inversée de notre nombre.
+          </aside>
+        </section>
+
+        <section data-auto-animate>
+          <h4>Un dernier truc important</h4>
+          <h3>
+            Il reste un peu de place
+            <br />🥵
+          </h3>
+          <div>
+            <img class="bagpack" src="/bagpack.webp" />
+            <img class="bagpack bagpack-hover" src="/on-hover.png" />
+          </div>
+          <img class="notes-1-after" src="/notes.png" />
+          <aside class="notes">
+            Hop ça, ça part dans le sac à dos
           </aside>
         </section>
 
@@ -2180,53 +2335,23 @@
         </section>
 
         <section data-auto-animate>
-          <code class="bold normal medium" data-id="1">
+          <div data-id="1">
+            <code class="bold normal medium">
             i = * ( <code class="type">long</code> * ) &y
-          </code>
+            </code>
+          </div>
           <img class="fragment" src="/7/cringe-kid.webp" height="400px" />
           <aside class="notes">
             Si vous avez déjà fait du C ou du C++, vous êtes sûrement familiers avec le concept de pointeur.
           </aside>
         </section>
 
-        <section>
-          <h3>C Symbol Table</h3>
-          <div class="r-stack">
-            <table data-fragment-index="1" class="fragment current-visible fade-up">
-              <tr>
-                <th>Symbol</th>
-                <th>Address</th>
-                <th>Type</th>
-              </tr>
-              <tr>
-                <td><code class="normal">i</code></td>
-                <td><code class="address">0xBF6CC739</code></td>
-                <td><code class="type">int</code></td>
-              </tr>
-              <tr>
-                <td><code class="normal">x2</code></td>
-                <td><code class="address">0xEA3FC4F7</code></td>
-                <td><code class="type">float</code></td>
-              </tr>
-              <tr>
-                <td><code class="bold normal">y</code></td>
-                <td><code class="bold address">0x0B00B135</code></td>
-                <td><code class="bold type">float</code></td>
-              </tr>
-              <tr>
-                <td><code class="normal">threehalfs</code></td>
-                <td><code class="address">0x5EE7F9A1</code></td>
-                <td><code class="type">float</code></td>
-              </tr>
-            </table>
-          </div>
-          <div data-fragment-index="1" class="fragment fade-left symbol-table-arrow">&lt;</div>
-        </section>
-
-        <section>
-          <code class="bold normal medium" data-id="1">
+        <section data-auto-animate>
+          <div data-id="1">
+            <code class="bold normal medium">
             i = ( <code class="type">long</code> ) y
-          </code>
+            </code>
+          </div>
           <br />
           <br />
           <q class="fragment">
@@ -2282,35 +2407,76 @@
         </section>
 
         <section>
-          <h3>On résume :</h3>
-          <div>
-            <code class="bold normal medium">
-              i = * ( <code class="type">long</code> * ) &y
-            </code>
+          <h3>C Symbol Table</h3>
+          <div class="r-stack">
+            <table data-fragment-index="1" class="fragment current-visible fade-up">
+              <tr>
+                <th>Symbol</th>
+                <th>Address</th>
+                <th>Type</th>
+              </tr>
+              <tr>
+                <td><code class="normal">i</code></td>
+                <td><code class="address">0xBF6CC739</code></td>
+                <td><code class="type">int</code></td>
+              </tr>
+              <tr>
+                <td><code class="normal">x2</code></td>
+                <td><code class="address">0xEA3FC4F7</code></td>
+                <td><code class="type">float</code></td>
+              </tr>
+              <tr>
+                <td><code class="bold normal">y</code></td>
+                <td><code class="bold address">0x0B00B135</code></td>
+                <td><code class="bold type">float</code></td>
+              </tr>
+              <tr>
+                <td><code class="normal">threehalfs</code></td>
+                <td><code class="address">0x5EE7F9A1</code></td>
+                <td><code class="type">float</code></td>
+              </tr>
+            </table>
           </div>
-          <br />
-          <table class="fragment small">
-            <tr>
-              <th>Symbole</th>
-              <th>Type</th>
-              <th>Valeur</th>
-              <th>Bits</th>
-            </tr>
-            <tr class="fragment">
-              <td><code class="normal">y</code></td>
-              <td><code class="type">float</code></td>
-              <td><code>4,36</code></td>
-              <td><code
-                  class="small"><span class="ieee-sign">0</span><span class="ieee-exponent">10000001</span><span class="ieee-mantissa">00101000...</span></code>
-              </td>
-            </tr>
-            <tr class="fragment">
-              <td><code class="normal">i</code></td>
-              <td><code class="type">long</code></td>
-              <td><code>1083441152</code></td>
-              <td><code class="small value">01000000100101000...</code></td>
-            </tr>
-          </table>
+          <div data-fragment-index="1" class="fragment fade-left symbol-table-arrow">&lt;</div>
+        </section>
+
+        <section>
+          <h3>On résume :</h3>
+          <div class="r-stack">
+            <div class="fragment">
+              <div>
+                <code class="bold normal medium">
+                  i = * ( <code class="type">long</code> * ) &y
+                </code>
+              </div>
+              <br />
+              <table class="fragment small">
+                <tr>
+                  <th>Symbole</th>
+                  <th>Type</th>
+                  <th>Valeur</th>
+                  <th>Bits</th>
+                </tr>
+                <tr class="fragment">
+                  <td><code class="normal">y</code></td>
+                  <td><code class="type">float</code></td>
+                  <td><code>4,36</code></td>
+                  <td><code
+                      class="small"><span class="ieee-sign">0</span><span class="ieee-exponent">10000001</span><span class="ieee-mantissa">00101000...</span></code>
+                  </td>
+                </tr>
+                <tr class="fragment">
+                  <td><code class="normal">i</code></td>
+                  <td><code class="type">long</code></td>
+                  <td><code>1083441152</code></td>
+                  <td><code class="small value">01000000100101000...</code></td>
+                </tr>
+              </table>
+            </div>
+            <div class="fragment">
+              <img class="noshadow" src="/7/pranked.png" height="500px" />
+            </div>
+          </div>
           <aside class="notes">
             Donc maintenant, que fait C lorqu'on lui demande la valeur de y ?
             Il va lire les bits de `y` comme si c'était un long et les assigner à `i` !
@@ -2348,35 +2514,40 @@
               <img src="/7/caissier.jpeg" height="600px" />
               <img class="fragment highlight-shadow c-logo-cashier" src="/7/c-logo.png" />
             </div>
-            <div class="fragment">
-              <img class="noshadow" src="/7/pranked.png" height="600px" />
-            </div>
           </div>
         </section>
 
-        <section>
+        <section data-auto-animate>
           <h4>Souvenez-vous 💭</h4>
-          <blockquote class="fragment">
+          <img class="notes-2-before" src="/notes.png" />
+          <img class="bagpack fragment" src="/bagpack.webp" />
+        </section>
+
+        <section data-auto-animate>
+          <h4>Souvenez-vous 💭</h4>
+          <blockquote>
             <q>
               Le <b>logarithme</b> d'un float
-              <br/>est en quelque sorte
-              <br/><span class="highlight-gold">sa propre représentation binaire</span>
+              <br />est en quelque sorte
+              <br /><span class="highlight-gold">sa propre représentation binaire</span>
             </q>
           </blockquote>
           <div class="fragment">
             <b>Donc grâce à :</b>
-            <br/>
+            <br />
             <code data-trim class="normal">
               i = * ( <code class="type">long</code> * ) &y;
             </code>
           </div>
           <div class="fragment">
             <b>On a maintenant :</b>
-            <br/>
+            <br />
             <code data-trim class="normal">
               i ≈ <code class="func">log2</code>(y);
             </code>
           </div>
+          <img class="notes-2-after" src="/notes.png" />
+          <img class="bagpack" src="/bagpack.webp" />
           <aside class="notes">
             On a donc réussi à récupérer la représentation binaire de notre float y, en la castant en long.
             On a donc récupéré le log2 de notre float, en quelque sorte.
@@ -2499,15 +2670,37 @@
         </section>
 
         <section data-auto-animate>
-          <div class="big">
-            <span>$\frac{1}{\sqrt{y}} = y^{-1/2}$</span>
+          <h4>Souvenez-vous 💭</h4>
+          <img class="notes-2-before" src="/notes.png" />
+          <img class="bagpack" src="/bagpack.webp" />
+        </section>
+
+        <section data-auto-animate>
+          <h4>Souvenez-vous 💭</h4>
+          <div data-id="1" class="big">
+            <blockquote>
+              $\frac{1}{\sqrt{y}} = y^{-1/2}$
+            </blockquote>
           </div>
-          <hr class="fragment" />
+          <img class="notes-2-after" src="/notes.png" />
+          <img class="bagpack" src="/bagpack.webp" />
+        </section>
+
+        <section data-auto-animate>
+          <div data-id="1" class="big">
+            <blockquote>
+              $\frac{1}{\sqrt{y}} = y^{-1/2}$
+            </blockquote>
+          </div>
+          <img class="notes-2-after" src="/notes.png" />
           <div class="text-left" style="margin-left: 15%;">
-            <span class="fragment medium math">$\log_2(\frac{1}{\sqrt{y}}) = $</span>
-            <span class="fragment medium math">$\log_2(y^{-1/2})$</span>
-            <div class="fragment medium math" style="margin-left: 270px;">$= -\frac{1}{2} \cdot \log_{2}(y)$</div>
-            <div data-id="1" class="fragment medium math" style="margin-left: 270px;">$= -\frac{\log_{2}(y)}{2}$</div>
+            <span class="fragment medium math">$\log_2(\frac{1}{\sqrt{y}})$</span>
+            <span class="fragment medium math fade-in-then-semi-out" style="margin-left: 10px;">$=
+              \log_2(y^{-1/2})$</span>
+            <div class="fragment medium math fade-in-then-semi-out" style="margin-left: 270px;">$= -\frac{1}{2} \cdot
+              \log_{2}(y)$</div>
+            <div data-id="1" class="fragment medium math fade-in-then-semi-out" style="margin-left: 270px;">$=
+              -\frac{\log_{2}(y)}{2}$</div>
           </div>
           <aside class="notes">
             log(1/sqrt(y)) = log(y^{-1/2}) = -1/2 * log(y)
@@ -2519,7 +2712,8 @@
 
         <section data-auto-animate>
           <div data-id="1" class="medium">
-            $\log_2(\frac{1}{\sqrt{y}}) = -\frac{\log_{2}(y)}{2}$ <span data-fragment-index="2" class="fragment highlight-gold">$\approx -\frac{i}{2} $</span>
+            $\log_2(\frac{1}{\sqrt{y}}) = -\frac{\log_{2}(y)}{2}$ <span data-fragment-index="2"
+              class="fragment highlight-gold">$\approx -\frac{i}{2} $</span>
           </div>
           <div data-fragment-index="1" class="fragment fade-in-then-semi-out">
             <p><b class="muted">Rappel :</b> <code> i ≈ <code class="func">log</code>(y)</code></p>
@@ -2529,11 +2723,11 @@
             <p data-fragment-index="3" class="fragment medium">
               <code class="normal">
                 <span data-fragment-index="4" class="fragment">
-                  <code class="func">log</code>(1/<code class="func">sqrt</code>(y))
-                </span>
-                <span data-fragment-index="5" class="fragment">
-                  ≈ -(i >> <code class="value">1</code>)
-                </span>
+                  <code class="func">log</code>(<code class="value">1</code>/<code class="func">sqrt</code>(y))
+              </span>
+              <span data-fragment-index="5" class="fragment">
+                ≈ -(i >> <code class="value">1</code>)
+              </span>
               </code>
             </p>
           </div>
@@ -2579,22 +2773,23 @@
               <div data-id="1"><b>À taton ?</b></div>
             </div>
             <div class="item fragment">
-              <img src="/8/wtf-girl.webp" height="340px" />
+              <img src="/8/cringe-leia.jpeg" height="340px" />
               <br />
               <div data-id="2"><b>Par les maths ?</b></div>
             </div>
           </div>
         </section>
 
-        <!-- À taton 1/x -->
+        <!-- À taton 1/5 -->
         <section data-auto-animate>
           <div data-id="1"><b>À taton ?</b></div>
           <div data-id="2">
             <p>
-              <span class="fragment">On prend un cas simple : <b class="bright">$16$</b></span>
+              <span class="fragment">On reprend notre cas: <b class="bright">$16.5$</b></span>
               <br />
               <span class="fragment">
-                <span>$16 = 2^4$</span> <span class="fragment">donc <span>$\frac{1}{\sqrt{16}} = 2^{-2}$</span></span>
+                <span>$16 = 2^4$</span> <span class="fragment">donc <span>$\frac{1}{\sqrt{16.5}} \thickapprox
+                    2^{-2}$</span></span>
               </span>
             </p>
             <p class="fragment">
@@ -2607,7 +2802,7 @@
           </aside>
         </section>
 
-        <!-- À taton 2/x -->
+        <!-- À taton 2/5 -->
         <section data-auto-animate>
           <div data-id="1"><b>À taton ?</b></div>
           <p data-id="2">
@@ -2634,6 +2829,12 @@
               <img src="/8/jar-jar-fear.jpeg" />
             </div>
           </div>
+          <div class="item fragment">
+            <p>
+              Solution : <b class="bright">isoler</b> l'exposant<br />
+              pour lui appliquer les bonnes opérations
+            </p>
+          </div>
           <aside class="notes">
             // Etat initial, pour 16 (2^4)
             0 | 10000011 | 00...
@@ -2646,7 +2847,7 @@
           </aside>
         </section>
 
-        <!-- À taton 3/x -->
+        <!-- À taton 3/5 -->
         <section data-auto-animate>
           <div data-id="1"><b>À taton ?</b></div>
           <br />
@@ -2655,12 +2856,18 @@
               <h5>Le plan</h5>
               <ol class="small">
                 <li data-fragment-index="1" class="fragment fade-in-then-semi-out">on prend notre nombre</li>
-                <li data-fragment-index="2" class="fragment fade-in-then-semi-out">on le <code class="bright"> >> 23</code></li>
-                <li data-fragment-index="3" class="fragment fade-in-then-semi-out">on retire le biais (<code class="bright">-127</code>)</li>
-                <li data-fragment-index="4" class="fragment fade-in-then-semi-out">on le divise par 2 (<code class="bright">>> 1</code>)</li>
-                <li data-fragment-index="5" class="fragment fade-in-then-semi-out">on prend l'opposé (<code class="bright">-1</code>)</li>
-                <li data-fragment-index="6" class="fragment fade-in-then-semi-out">on rajoute le biais (<code class="bright">+127</code>)</li>
-                <li data-fragment-index="7" class="fragment fade-in-then-semi-out">on le <code class="bright"> &#60;&#60; 23</code></li>
+                <li data-fragment-index="2" class="fragment fade-in-then-semi-out">on le <code
+                    class="bright"> >> 23</code></li>
+                <li data-fragment-index="3" class="fragment fade-in-then-semi-out">on retire le biais (<code
+                    class="bright">-127</code>)</li>
+                <li data-fragment-index="4" class="fragment fade-in-then-semi-out">on le divise par 2 (<code
+                    class="bright">>> 1</code>)</li>
+                <li data-fragment-index="5" class="fragment fade-in-then-semi-out">on prend l'opposé (<code
+                    class="bright">-1</code>)</li>
+                <li data-fragment-index="6" class="fragment fade-in-then-semi-out">on rajoute le biais (<code
+                    class="bright">+127</code>)</li>
+                <li data-fragment-index="7" class="fragment fade-in-then-semi-out">on le <code
+                    class="bright"> &#60;&#60; 23</code></li>
               </ol>
             </div>
             <div class="item">
@@ -2670,38 +2877,38 @@
                   <div class="r-stack">
                     <code data-fragment-index="1" class="value small fragment instant current-visible">
                       <code class="value">0 10000011 0...</code>
-                      <br/>
-                      <code class="normal">$2^{4}$</code>
+                    <br />
+                    <code class="normal">$2^{4}$</code>
                     </code>
                     <code data-fragment-index="2" class="small fragment instant current-visible">
                       <code class="value">...0 10000011</code>
-                      <br/>
-                      <code class="normal">131</code>
+                    <br />
+                    <code class="normal">131</code>
                     </code>
                     <code data-fragment-index="3" class="value small fragment instant current-visible">
                       <code class="value">...0 00000100</code>
-                      <br/>
-                      <code class="normal">4</code>
+                    <br />
+                    <code class="normal">4</code>
                     </code>
                     <code data-fragment-index="4" class="value small fragment instant current-visible">
                       <code class="value">...0 00000010</code>
-                      <br/>
-                      <code class="normal">2</code>
+                    <br />
+                    <code class="normal">2</code>
                     </code>
                     <code data-fragment-index="5" class="value small fragment instant current-visible">
                       <code class="value">...1 11111110</code>
-                      <br/>
-                      <code class="normal">-2</code>
+                    <br />
+                    <code class="normal">-2</code>
                     </code>
                     <code data-fragment-index="6" class="value small fragment instant current-visible">
                       <code class="value">...0 01111101</code>
-                      <br/>
-                      <code class="normal">125</code>
+                    <br />
+                    <code class="normal">125</code>
                     </code>
                     <code data-fragment-index="7" class="value small fragment instant current-visible">
                       <code class="value">0 01111101 0...</code>
-                      <br/>
-                      <code class="normal">$2^{-2}$</code>
+                    <br />
+                    <code class="normal">$2^{-2}$</code>
                     </code>
                   </div>
                 </div>
@@ -2740,7 +2947,7 @@
           </aside>
         </section>
 
-        <!-- À taton 4/x -->
+        <!-- À taton 4/5 -->
         <section data-auto-animate>
           <div data-id="1"><b>À taton ?</b></div>
           <br />
@@ -2751,21 +2958,25 @@
             <div data-fragment-index="2" class="fragment instant">
               $\left(\frac{3 \times 127 \times 2^{23}}{2}\right) - \frac{i}{2}$
             </div>
+            <div data-fragment-index="3" class="fragment instant">
+              $\textcolor{#E0DB74}{\left(\frac{3 \times 127 \times 2^{23}}{2}\right)} \textcolor{#FC9A9F}{- \frac{i}{2}}$
+            </div>
           </div>
           <div data-fragment-index="3" class="fragment">
-            $N - i >> 1$
+            $\textcolor{#E0DB74}{N} \textcolor{#FC9A9F}{- i >> 1}$
           </div>
-          <hr data-fragment-index="4" class="fragment"/>
+          <hr data-fragment-index="4" class="fragment" />
           <div data-fragment-index="4" class="fragment">
             <span data-fragment-index="5" class="fragment">$N$</span>
             <span data-fragment-index="5" class="fragment fade-in-then-semi-out">$ = 3 * 127 * 2^{23} / 2$</span>
-            <br/>
-            <span data-fragment-index="6" class="fragment fade-in-then-semi-out">$&nbsp;&nbsp;= 1.5 * 2^{23} * 127$</span>
-            <br/>
-            <span data-fragment-index="7" class="fragment fade-in-then-semi-out">$  = 1598029824$</span>
-            <br/>
-            <div data-id="4" ><code class="value fragment">= 0x5f400000</code></div>
-            <img class="abs-center fragment" src="/8/jar-jar-shocked.jpeg" height="400px"/>
+            <br />
+            <span data-fragment-index="6" class="fragment fade-in-then-semi-out">$&nbsp;&nbsp;= 1.5 * 2^{23} *
+              127$</span>
+            <br />
+            <span data-fragment-index="7" class="fragment fade-in-then-semi-out">$ = 1598029824$</span>
+            <br />
+            <div data-id="4"><code class="value fragment">= 0x5f400000</code></div>
+            <img class="abs-center fragment" src="/8/jar-jar-shocked.jpeg" height="400px" />
           </div>
           <aside class="notes">
             // c'est parti du coup
@@ -2780,11 +2991,11 @@
           </aside>
         </section>
 
-        <!-- À taton 5/x -->
+        <!-- À taton 5/5 -->
         <section data-auto-animate>
           <div data-id="1"><b>À taton ?</b></div>
           <br />
-          <div data-id="4" ><code class="value">0x5f400000</code></div>
+          <div data-id="4"><code class="value">0x5f400000</code></div>
           <div class="fragment">
             Mais pourquoi pas <code class="value">0x5f3759df</code> ?
           </div>
@@ -2794,11 +3005,14 @@
           </div>
           <div class="fragment">
             <hr>
-            <div><span>$N $</span><span class="fragment fade-in-then-semi-out">$= 3 * $ <span class="z">$126.957$</span>$ * 2^{23} / 2$</span></div>
-            <div style="margin-left: 60px;" class="fragment fade-in-then-semi-out">$= 1.5 * 2^{23} * $<span class="z">$126.957$</span></div>
+            <div><span>$N $</span><span class="fragment fade-in-then-semi-out">$= 3 * $ <span
+                  class="z">$126.957$</span>$ * 2^{23} / 2$</span></div>
+            <div style="margin-left: 60px;" class="fragment fade-in-then-semi-out">$= 1.5 * 2^{23} * $<span
+                class="z">$126.957$</span></div>
             <div style="margin-right: 50px;" class="fragment fade-in-then-semi-out">$= 1597463007$</div>
-            <div style="margin-right: 50px;"><code class="fragment">= <code class="value"> 0x5F3759DF</code></code></div>
-            <img class="abs-center fragment" src="/8/jar-jar-happy.jpeg" height="400px"/>
+            <div style="margin-right: 50px;"><code class="fragment">= <code class="value"> 0x5F3759DF</code></code>
+            </div>
+            <img class="abs-center fragment" src="/8/jar-jar-happy.jpeg" height="400px" />
           </div>
           <aside class="notes">
             On a quasiment retrouvé notre magic number, mais pourquoi 0x5f3759df ?
@@ -2817,7 +3031,7 @@
               <div data-id="1"><b>À taton ?</b></div>
             </div>
             <div class="item">
-              <img src="/8/wtf-girl.webp" height="340px" />
+              <img src="/8/cringe-leia.jpeg" height="340px" />
               <br />
               <div data-id="2"><b>Par les maths ?</b></div>
             </div>
@@ -2903,13 +3117,13 @@
           <h3>Le pire c'est que ça marche</h3>
           <p class="fragment">
             <code class="normal">
-              <code class="type">float</code> y = <code class="value">12.5;</code>
+              <code class="type">float</code> y = <code class="value">16.5;</code>
             </code>
           </p>
           <div class="fragment fade-up">
             <code class="normal">0</code>
-            <code><span class="ieee-exponent">10000010</span></code>
-            <code><span class="ieee-mantissa">10010000000000000000000</span></code>
+            <code><span class="ieee-exponent">10000011</span></code>
+            <code><span class="ieee-mantissa">00001000000000000000000</span></code>
           </div>
           <p class="fragment">
             <code class="normal">
@@ -2918,10 +3132,10 @@
           </p>
           <div class="fragment fade-up">
             <code class="normal">0</code>
-            <code class="value">10000010</code>
-            <code class="value">10010000000000000000000</code>
+            <code class="value">10000011</code>
+            <code class="value">00001000000000000000000</code>
           </div>
-          <p class="fragment">
+          <p data-id="1" class="fragment">
             <code class="normal">
               i = i >> <code class="value">1</code>;
             </code>
@@ -2930,12 +3144,12 @@
             <div class="fragment current-visible fade-up">
               <code class="normal">0</code>
               <code class="value">01000001</code>
-              <code class="value">01001000000000000000000</code>
+              <code class="value">10000100000000000000000</code>
             </div>
             <div data-id="2" class="fragment instant">
               <code class="normal">0</code>
               <code class="ieee-exponent">01000001</code>
-              <code class="value">01001000000000000000000</code>
+              <code class="value">10000100000000000000000</code>
               <span class="ieee-exponent exponent-divided"><b>E -> E/2</b></span>
             </div>
           </div>
@@ -2945,8 +3159,8 @@
         </section>
 
         <!-- Exemple complet 2/3 -->
-        <section data-auto-animate>
-          <p>
+        <section data-transition="fade">
+          <p data-id="1">
             <code class="normal">
               i = i >> <code class="value">1</code>;
             </code>
@@ -2954,7 +3168,7 @@
           <div data-id="2">
             <code class="normal">0</code>
             <code class="value">01000001</code>
-            <code class="value">01001000000000000000000</code>
+            <code class="value">10000100000000000000000</code>
           </div>
           <p class="fragment">
             <b class="emphas">Le magic number</b> : <code class="value">0x5f3759df</code>
@@ -2971,8 +3185,8 @@
           </p>
           <div class="fragment fade-up">
             <code class="normal">0</code>
-            <code class="value">01111101</code>
-            <code class="value">00100110101100111011111</code>
+            <code class="value">01111100</code>
+            <code class="value">11101010101100111011111</code>
           </div>
           <p data-id="3" class="fragment">
             <code class="normal">
@@ -2981,8 +3195,8 @@
           </p>
           <div data-id="4" class="fragment fade-up">
             <code class="normal">0</code>
-            <code><span class="ieee-exponent">01111101</span></code>
-            <code><span class="ieee-mantissa">00100110101100111011111</span></code>
+            <code><span class="ieee-exponent">01111100</span></code>
+            <code><span class="ieee-mantissa">11101010101100111011111</span></code>
           </div>
         </section>
 
@@ -2995,20 +3209,20 @@
           </p>
           <div data-id="4">
             <code class="normal">0</code>
-            <code><span class="ieee-exponent">01111101</span></code>
-            <code><span class="ieee-mantissa">00100110101100111011111</span></code>
+            <code><span class="ieee-exponent">01111100</span></code>
+            <code><span class="ieee-mantissa">11101010101100111011111</span></code>
           </div>
           <hr />
           <div class="fragment">
             <code class="normal">
-              y = <code class="value">0.287795037031</code>
+              y = <code class="value">0.23960064</code>
             </code>
           </div>
           <div class="fragment">
             <pre class="c big">
               <code data-trim >
                 // Avec la lib math.h
-                float y = 1/sqrt(12.5); // 0.28284271247
+                float y = 1/sqrt(16.5); // 0,24618298
               </code>
             </pre>
           </div>
@@ -3057,7 +3271,7 @@
 
                 y = * ( float * ) &i;
 
-                // c'est pour ça qu'on une 3ème étape...
+                // c'est pour ça qu'on a une 3ème étape...
                 y = y * ( threehalfs - ( x2 * y * y ) );
             </code>
             </pre>
@@ -3086,14 +3300,18 @@
         <section>
           <img class="r-stretch" src="/9/isaac-newton.jpeg" />
           <div data-fragment-index="1" class="newton-quote-1 small fragment">
-            <q class="bold">Invente la gravité,<br />mais n'attire personne</q><br />- un internaute
+            <q class="bold">
+              Invente la gravité,<br />
+              <span data-fragment-index="2" class="fragment">mais n'attire personne</span>
+            </q>
+            <br /><span data-fragment-index="3" class="fragment">- un internaute</span>
           </div>
-          <div data-fragment-index="2" class="newton-quote-2 small fragment">
+          <div data-fragment-index="4" class="newton-quote-2 small fragment">
             <q class="bold">C'est trop</q><br />- Isaac Newton
           </div>
-          <img data-fragment-index="2" class="highlight-shadow newtons-tear fragment" src="/9/tear.png" />
+          <img data-fragment-index="4" class="highlight-shadow newtons-tear fragment" src="/9/tear.png" />
           <aside class="notes">
-            Isaac Newton, le fameux mathématicien anglais qui invite la gravité,
+            Donc on parle bien d'Isaac Newton, l'illustre scientifique anglais qui invente la gravité,
             mais malheureusement n'attire personne et mourra sans avoir connu l'amour.
           </aside>
         </section>
@@ -3106,7 +3324,7 @@
               <h2 class="fragment grow">1669</h2>
               <h4 class="fragment">publiée en 1711</h4>
               <div class="fragment">
-                <b class="muted">(version simplifiée par Joseph Raphson en 1690,<br />publiée en 1711)</b>
+                <b class="muted">(version simplifiée par Joseph Raphson en 1690)</b>
               </div>
             </div>
             <img class="fragment" src="/9/newton-physics.webp" height="500px" />
@@ -3124,7 +3342,8 @@
             (un autre mathématicien anglais du 16ème siècle) qui en publia une version simplifiée en 1690.
             ---
             Newton, c'est un peu le mec qui a tout fait, en fait.
-            Il a inventé la gravité, mais aussi la méthode de Newton, et plein d'autres trucs.
+            Il a eu des travaux remarquables en physique, en maths, en optique, en astronomie, en alchimie, en chimie,
+            en philosophie, en théologie
             Raphson, il a juste simplifié la méthode de Newton, mais c'est déjà pas mal.
           </aside>
         </section>
@@ -3194,7 +3413,7 @@
         </section>
 
         <section data-auto-animate>
-          <h3>Autrement dit</h3>
+          <h3>Méthode de<br /> Newton-Raphson</h3>
           <div data-id="2" class="big">
             \[x_{new} = \textcolor{#C878E1}{x_n} - \frac{f(x_n)}{f'(x_n)}\]
           </div>
@@ -3224,12 +3443,12 @@
         <section data-auto-animate>
           <h3>Exemple avec la fonction</h3>
           <div data-id="1"><b class="bigger">\[\sqrt{x}\]</b></div>
-          <div data-id="2" class="fragment"><b>Admettons qu'on cherche $\sqrt{3}$</b></div>
+          <div data-id="2" class="fragment"><b>Combien ça fait $\sqrt{3}$ ?</b></div>
         </section>
 
         <!-- Première itération -->
         <section data-auto-animate>
-          <div data-id="2"><b>Admettons qu'on cherche $\sqrt{3}$</b></div>
+          <div data-id="2"><b>Combien ça fait $\sqrt{3}$ ?</b></div>
           <div data-id="3" class="fragment">Prenons une 1ère estimation : <b class="bright">$y = 2$</b></div>
           <div class="r-stack medium">
             <div class="fragment current-visible instant">
@@ -3258,7 +3477,7 @@
 
         <!-- Première itération -->
         <section data-auto-animate>
-          <div data-id="2"><b>Admettons qu'on cherche $\sqrt{3}$</b></div>
+          <div data-id="2"><b>Combien ça fait $\sqrt{3}$ ?</b></div>
           <div data-id="3">Nouvelle estimation : <b class="bright">$y = 1,75$</b></div>
           <div class="r-stack medium">
             <div class="fragment current-visible instant">
@@ -3280,7 +3499,7 @@
         </section>
 
         <section data-auto-animate>
-          <div data-id="2"><b>Admettons qu'on cherche $\sqrt{3}$</b></div>
+          <div data-id="2"><b>Combien ça fait $\sqrt{3}$ ?</b></div>
           <div data-id="3">Nouvelle estimation : <b class="bright">$y = 1,73214$</b></div>
           <div class="r-stack">
             <img class="fragment highlight-shadow" src="/9/sqrt-calculator.png" height="400px" />
@@ -3296,7 +3515,7 @@
               <br />
               <div class="medium">\[\frac{1}{\sqrt{y}}\]</div>
             </div>
-            <div class="item">
+            <div class="item fragment">
               <img src="/9/not-bad-han.jpeg" />
             </div>
           </div>
@@ -3307,7 +3526,7 @@
         </section>
 
         <section data-auto-animate>
-          <div><b class="regular">On applique la méthode, mais avec $\frac{1}{\sqrt{x}}$</b></div>
+          <div><b class="regular">On applique la méthode pour $\frac{1}{\sqrt{x}}$</b></div>
           <div class="r-stack medium">
             <div class="fragment preload current-visible instant">
               \[y_n = y - \frac{f(y)}{f'(y)}\]
@@ -3338,7 +3557,7 @@
             <pre data-id="1" class="c small">
               <code data-trim>
                 const float threehalfs = 1.5F;
-                x2 = number * 0.5F;
+                float x2 = number * 0.5F;
                 ...
                 y  = y * ( threehalfs - ( x2 * y * y ) );    // 1st iteration
               </code>
@@ -3352,6 +3571,29 @@
             - On simplifie les signes
             - on met y en facteur
             - est-ce que ça vous rappelle un truc ?
+          </aside>
+        </section>
+
+        <section data-auto-animate>
+          <p class="fragment">
+            <b>Avant : </b><code class="normal">y = <code class="value">0.23960064</code></code>
+          </p>
+          <pre data-id="1" class="c wide smaller">
+            <code data-trim data-line-numbers data-ln-start-from="12">
+                y  = y * ( threehalfs - ( x2 * y * y ) );    // 1st iteration
+            </code>
+          </pre>
+          <p class="fragment">
+            <b>Après : </b><code class="normal">y = <code class="value">0,24592129</code></code>
+          </p>
+          <p class="fragment" style="padding-right: 192px;">
+            <b>À la calculatrice : </b><code class="normal">y = <code class="value">0,24618298</code></code>
+          </p>
+          <div class="fragment">
+            <img src="/9/pretty-close.gif" height="350px" />
+          </div>
+          <aside class="notes">
+            CONTROL + SHIFT + TAB
           </aside>
         </section>
 
@@ -3397,7 +3639,10 @@
               </pre>
             </div>
             <div class="fragment">
-              <img src="/9/isaac-face.jpeg" />
+              <div class="ch">
+                <div class="item"><img src="/9/yoda-smile.jpeg" /></div>
+                <div class="item"><img src="/9/isaac-smile-left.jpeg" /></div>
+              </div>
             </div>
           </div>
         </section>
@@ -3464,7 +3709,7 @@
           <h3>À quel point c'est <span class="bright">rapide</span> ?</h3>
           <div class="fragment">
             <img src="/10/lightspeed.webp" height="400px" />
-            <h4><span class="bright">3-4 fois</span> plus rapide que <code
+            <h4><span class="bright medium">3-4 fois</span> plus rapide que <code
                 class="normal"><code class="value">1</code>/<code class="func">sqrt</code>(x)</code></h4>
             <p class="small muted">(à l'époque)</p>
           </div>
@@ -3519,6 +3764,7 @@
           <div class="ch">
             <div class="item">
               <img src="/10/john-carmack-conf.jpeg" />
+              <p><b>John Carmack</b></p>
             </div>
             <div class="item fragment">
               <br />
@@ -3652,16 +3898,15 @@
         <section>
           <div class="ch">
             <div class="item r-stack">
-              <img class="highlight-shadow" src="/10/silhouette-question-mark.png" height="500px" />
+              <img class="highlight-shadow fragment current-visible" src="/10/silhouette-question-mark.png"
+                height="500px" />
               <div class="fragment">
-                <br />
-                <img src="/10/greg-walsh.gif" height="500px" />
+                <img src="/10/greg-walsh.gif" height="450px" />
                 <p><b>Greg Walsh</b></p>
               </div>
             </div>
             <div class="item fragment">
-              <br />
-              <img src="/10/cleve-moler.webp" />
+              <img src="/10/cleve-moler.webp" height="450px" />
               <p><b>Cleve Moler</b></p>
             </div>
           </div>
@@ -3700,31 +3945,6 @@
         </section>
 
         <section>
-          <div class="r-stack">
-            <div class="ch">
-              <div class="item">
-                <img class="fragment" src="/2/wojak-sungaze.jpeg" height="370px" />
-              </div>
-              <div class="item">
-                <img class="fragment" src="/2/wojak-happy.webp" height="370px" />
-              </div>
-            </div>
-            <img class="r-stretch fragment" src="/10/visible-happiness.jpeg" height="500px" />
-            <aside class="notes">
-              Et après des heures et des heures de recherche et de travail acharné, je suis enfin prêt à vous présenter
-              ce que j'ai découvert, pour que vous aussi vous connaissiez l'illumination.
-            </aside>
-          </div>
-          <aside class="notes">
-            - Maintenant vous savez comment votre ordi stocke des float,
-            - Vous savez à peu près comment fonctionne l'algorithme
-            - Souvenons nous de cet algo, qui, bien qu'obsolète dès sa sortie au regard de la nouvelle génération de
-            CPU, aura permis à une génération entière de joueurs de profiter de Quake 3 sur leurs bécanes pourries.
-            (ordis du CDI)
-          </aside>
-        </section>
-
-        <section>
           <img class="r-stretch" src="/10/anakin-pride.jpeg" />
           <aside class="notes">
             - Pour finir, je vous laisse sur cette citation d'Anakin :
@@ -3739,6 +3959,31 @@
         </section>
 
         <section>
+          <div class="r-stack">
+            <div class="ch">
+              <div class="item">
+                <img class="fragment" src="/2/wojak-sungaze.jpeg" height="370px" />
+              </div>
+              <div class="item">
+                <img class="fragment" src="/2/wojak-happy.webp" height="370px" />
+              </div>
+            </div>
+            <!-- <img class="r-stretch fragment" src="/10/visible-happiness.jpeg" height="500px" /> -->
+            <aside class="notes">
+              Et après des heures et des heures de recherche et de travail acharné, je suis enfin prêt à vous présenter
+              ce que j'ai découvert, pour que vous aussi vous connaissiez l'illumination.
+            </aside>
+          </div>
+          <aside class="notes">
+            - Maintenant vous savez comment votre ordi stocke des float,
+            - Vous savez à peu près comment fonctionne l'algorithme
+            - Souvenons nous de cet algo, qui, bien qu'obsolète dès sa sortie au regard de la nouvelle génération de
+            CPU, aura permis à une génération entière de joueurs de profiter de Quake 3 sur leurs bécanes pourries.
+            (ordis du CDI)
+          </aside>
+        </section>
+
+        <!-- <section>
           <img src="/10/ego-logo.jpeg" class="round" height="250px" />
           <br />
           <img src="/10/ego-gol.jpeg" />
@@ -3752,7 +3997,7 @@
             donc ce talk c'est moi qui viens vers vous pour vous montrer les jolis cailloux que j'ai trouvé dans la
             cour"
           </aside>
-        </section>
+        </section> -->
 
       </section>
 
@@ -3772,8 +4017,7 @@
             <h6>github.com/Firnael</h6>
           </div>
           <div class="item">
-            <br />
-            <img src="/11/qr-code.png" height="250px" />
+            <img style="padding-left: 50px;" class="noshadow" src="/11/qr-code.svg" height="350px" />
           </div>
         </div>
       </section>
