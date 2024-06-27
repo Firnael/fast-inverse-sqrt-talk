@@ -609,7 +609,7 @@
         </section>
 
         <section>
-          <b>Lumière statique : Lightmaps</b>
+          <b>Lumière <span class="bright">statique</span> : lightmaps</b>
           <div class="r-stack">
             <img src="/4/lightmap-1.jpeg" height="500px" />
             <img class="fragment" src="/4/lightmap-2.jpeg" height="500px" />
@@ -622,9 +622,21 @@
         </section>
 
         <section>
-          <b>Lumière dynamique : tout le reste</b>
+          <b>Lumières <span class="bright">dynamiques</span> : tout le reste</b>
           <div>
-            TODO
+            <div class="cv">
+              <div class="item">
+                <div class="ch">
+                  <video class="item" data-autoplay loop muted src="/4/quake-armor.webm" height="200px"></video>
+                  <video class="item" data-autoplay loop muted src="/4/quake-ammo.webm" height="200px"></video>
+                  <video class="item" data-autoplay loop muted src="/4/quake-life.webm" height="200px"></video>
+                </div>
+              </div>
+              <div class="item">
+                <img src="/4/quake-launcher.gif" height="300px" />
+                <img src="/4/quake-players.jpeg" height="300px" />
+              </div>
+            </div>
           </div>
           <aside class="notes">
             This applies to moving objects such as :
@@ -1090,7 +1102,7 @@
         <section data-transition="fade">
           <br />
           <div class="cv">
-            <div class="item fragment">
+            <div data-fragment-index="1" class="item fragment">
               <pre class="c wide smaller clean">
                 <code data-trim>
                   float Q_rsqrt( float number ) {
@@ -1111,10 +1123,10 @@
                 </code>
               </pre>
             </div>
-            <div class="item fragment">
+            <div data-fragment-index="3" class="item fragment">
               <img class="abs right" src="/3/the-what.jpeg" />
             </div>
-            <div class="item fragment">
+            <div data-fragment-index="2" class="item fragment">
               <p class="smaller muted">(j'ai rien changé, c'est le code et les commentaires d'origine)</p>
             </div>
           </div>
@@ -1426,7 +1438,6 @@
 
         <section data-transition="fade">
           <img class="highlight-shadow" src="/5/IEEE-logo.png" height="400px" />
-          <p class="small muted">élabore des normes</p>
           <aside class="notes">
             De son nom complet, **l'Institute of Electrical and Electronics Engineers**,
             c'est une organisation internationale qui élabore des normes dans divers domaines, dont l'informatique.
@@ -1438,7 +1449,7 @@
           <h4><q>The IEEE Standard for<br /><span class="bright">Floating-Point Arithmetic</span></q></h4>
           <br />
           <p class="fragment">
-            Fondée sur deux notions :
+            <h4>Fondée sur deux notions :</h4>
           <ol>
             <li class="fragment"><strong data-id="1">la notation scientifique 🧑‍🔬</strong></li>
             <li class="fragment"><strong>le système binaire 0️⃣1️⃣</strong></li>
@@ -1514,13 +1525,13 @@
         <section>
           <h4>Application de la notation scientifique <br /><span class="bright">en base 2</span> :</h4>
           <div class="ch">
-            <div class="item fragment">
-              $3$ en binaire <code class="value">11</code>&nbsp;:
+            <div class="item medium fragment">
+              $3$&nbsp; ➡️ &nbsp;<code class="value">11</code>
               <br />
               <span class="ieee-mantissa">$1,1$</span><span class="ieee-exponent">$\times 2^1$</span>
             </div>
-            <div class="item fragment">
-              $0,75$ en binaire <code class="value">0,11</code>&nbsp;:
+            <div class="item medium fragment">
+              $0,75$&nbsp; ➡️ &nbsp;<code class="value">0,11</code>
               <br />
               <span class="ieee-mantissa">$1.1$</span><span class="ieee-exponent">$\times 2^{-1}$</span>
             </div>
@@ -1623,9 +1634,9 @@
         </section>
 
         <!-- Explications détaillées de la normalisation -->
-        <section>
+        <section data-transition="fade">
           <div class="r-stack">
-            <div data-fragment-index="1" class="fragment current-visible instant">
+            <div data-fragment-index="1" class="fragment preload current-visible instant">
               <code class="ieee-sign">&nbsp;Sign bit&nbsp;</code>
             </div>
             <div data-fragment-index="4" class="fragment current-visible instant">
@@ -1871,7 +1882,7 @@
           </div>
           <br />
           <div class="r-stack">
-            <div data-fragment-index="1" class="fragment current-visible instant">
+            <div data-fragment-index="1" class="fragment preload current-visible instant">
               <span
                 class="ieee-mantissa ieee-mantissa-range-2 bold"><code>[1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2[</code></span>
               <code><span class="ieee-sign">0</span></code> <code><span class="ieee-exponent">10000100</span></code>
@@ -2039,7 +2050,7 @@
         </section>
 
         <section data-transition="fade">
-          <div class="math">
+          <div class="math medium">
             $y =$ <span class="ieee-mantissa">$(1 + \frac{M}{2^{23}})$</span> <span class="ieee-exponent">$\times
               2^{E-127}$</span>
           </div>
@@ -2289,7 +2300,7 @@
       <section data-background-image="/7/splash.png" class="blurred scrim darkgrey">
         <section data-transition="fade">
           <div class="r-stack">
-            <pre data-id="1" class="fragment current-visible c wide smaller clean">
+            <pre data-id="1" class="fragment preload current-visible c wide smaller clean">
               <code data-trim data-line-numbers>
                 float Q_rsqrt( float number ) {
                   long i;
@@ -2855,7 +2866,7 @@
             <div class="item">
               <h5>Le plan</h5>
               <ol class="small">
-                <li data-fragment-index="1" class="fragment fade-in-then-semi-out">on prend notre nombre</li>
+                <li data-fragment-index="1" class="fragment fade-in-then-semi-out">on prend notre <b class="bright">nombre</b></li>
                 <li data-fragment-index="2" class="fragment fade-in-then-semi-out">on le <code
                     class="bright"> >> 23</code></li>
                 <li data-fragment-index="3" class="fragment fade-in-then-semi-out">on retire le biais (<code
@@ -2916,26 +2927,26 @@
                 <div class="item">
                   <h5>L'équation</h5>
                   <div class="r-stack">
-                    <div data-fragment-index="1" class="fragment current-visible">
+                    <div data-fragment-index="1" class="fragment current-visible bright">
                       $i$
                     </div>
                     <div data-fragment-index="2" class="fragment instant current-visible">
-                      $\frac{i}{2^{23}}$
+                      $\frac{i}{\textcolor{#FFEC3E}{2^{23}}}$
                     </div>
                     <div data-fragment-index="3" class="fragment instant current-visible">
-                      $\frac{i}{2^{23}} - 127$
+                      $\frac{i}{2^{23}} \textcolor{#FFEC3E}{- 127}$
                     </div>
                     <div data-fragment-index="4" class="fragment instant current-visible">
-                      $\frac{\frac{i}{2^{23}} - 127}{2}$
+                      $\frac{\frac{i}{2^{23}} - 127}{\textcolor{#FFEC3E}{2}}$
                     </div>
                     <div data-fragment-index="5" class="fragment instant current-visible">
-                      $\frac{\frac{i}{2^{23}} - 127}{2} * -1$
+                      $\frac{\frac{i}{2^{23}} - 127}{2} \textcolor{#FFEC3E}{\times -1}$
                     </div>
                     <div data-fragment-index="6" class="fragment instant current-visible">
-                      $\frac{\frac{i}{2^{23}} - 127}{2} * -1 + 127$
+                      $\frac{\frac{i}{2^{23}} - 127}{2} \times -1 \textcolor{#FFEC3E}{+ 127}$
                     </div>
                     <div data-id="3" data-fragment-index="7" class="fragment instant small">
-                      $\left(\frac{\frac{i}{2^{23}} - 127}{2} * -1 + 127\right) \times 2^{23}$
+                      $\left(\frac{\frac{i}{2^{23}} - 127}{2} \times -1 + 127\right) \textcolor{#FFEC3E}{\times 2^{23}}$
                     </div>
                   </div>
                 </div>
@@ -2965,7 +2976,7 @@
           <div data-fragment-index="3" class="fragment">
             $\textcolor{#E0DB74}{N} \textcolor{#FC9A9F}{- i >> 1}$
           </div>
-          <hr data-fragment-index="4" class="fragment" />
+          <b data-fragment-index="4" class="fragment">il ne reste plus qu'à résoudre !</b>
           <div data-fragment-index="4" class="fragment">
             <span data-fragment-index="5" class="fragment">$N$</span>
             <span data-fragment-index="5" class="fragment fade-in-then-semi-out">$ = 3 * 127 * 2^{23} / 2$</span>
@@ -3012,7 +3023,7 @@
             <div style="margin-right: 50px;" class="fragment fade-in-then-semi-out">$= 1597463007$</div>
             <div style="margin-right: 50px;"><code class="fragment">= <code class="value"> 0x5F3759DF</code></code>
             </div>
-            <img class="abs-center fragment" src="/8/jar-jar-happy.jpeg" height="400px" />
+            <img data-id="jarjar" class="abs-center fragment" src="/8/jar-jar-happy.jpeg" height="400px" />
           </div>
           <aside class="notes">
             On a quasiment retrouvé notre magic number, mais pourquoi 0x5f3759df ?
@@ -3027,7 +3038,7 @@
           <h3>Comment il a été trouvé ?</h3>
           <div class="ch">
             <div class="item">
-              <img class="highlight-shadow" src="/8/jar-jar-stupid.jpeg" height="340px" />
+              <img data-id="jarjar" class="highlight-shadow" src="/8/jar-jar-stupid.jpeg" height="340px" />
               <div data-id="1"><b>À taton ?</b></div>
             </div>
             <div class="item">
