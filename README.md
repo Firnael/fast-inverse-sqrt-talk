@@ -8,21 +8,14 @@ Ce talk est très fortement inspiré de [cette vidéo](https://www.youtube.com/w
 
 1. Introduction
 2. It's story time !
-3. La fonction 1/sqrt(x)
-4. Normaliser des vecteurs
+3. À l'intérieur du moteur
+4. La fonction 1/sqrt(x)
 5. La reprsentation binaire des nombres flottants
 6. Filouteries logarithmiques
-7. Le langage C en sueur
+7. The Evil Bit hack ou "Le langage C en sueur"
 8. What the f*ck
 9. Ce bon vieux Newton
 10. Conclusion
-
-### RAF
-
-- pourquoi on veut pas faire de division / racine carré -> opération sur les floating point numbers, CPU vs FPU
-- terminer le magic number
-  - math fait, reste l'explication avec les bits
-- terminer l'itération de Newton
 
 ## Démarrer la prez en local
 
@@ -31,8 +24,6 @@ Ce talk est très fortement inspiré de [cette vidéo](https://www.youtube.com/w
 - visiter http://localhost:3000
 
 ## Documentation
-
-https://docs.google.com/presentation/d/e/2PACX-1vTGP--MIkfoDM4ef_8QUd5Ld41gMLhQiGkGc0glPovvFqjMZhBFNcpTobAHfjxWwbqANbxVJe3txvej/pub?start=false&loop=false&delayms=3000&slide=id.g120d8381d09_0_20
 
 - Wikipedia :
   - [Fast Inverse Square Root](https://en.wikipedia.org/wiki/Fast_inverse_square_root)
@@ -46,6 +37,7 @@ https://docs.google.com/presentation/d/e/2PACX-1vTGP--MIkfoDM4ef_8QUd5Ld41gMLhQi
   - [Gamer's Edge](https://www.mobygames.com/company/355/gamers-edge/)
 - Quake 3 :
   - https://fabiensanglard.net/quake3/renderer.php
+- Lumière dans les JVs : [Présentation de CdS 2023 de Thomas GUIBERT](https://docs.google.com/presentation/d/e/2PACX-1vTGP--MIkfoDM4ef_8QUd5Ld41gMLhQiGkGc0glPovvFqjMZhBFNcpTobAHfjxWwbqANbxVJe3txvej/pub?start=false&loop=false&delayms=3000&slide=id.g120d8381d09_0_20)
 - The "Who wrote the code" investigation at Beyond3D.com :
   - [Part 1](https://www.beyond3d.com/content/articles/8)
   - [Part 2](https://www.beyond3d.com/content/articles/15)
@@ -83,7 +75,3 @@ https://docs.google.com/presentation/d/e/2PACX-1vTGP--MIkfoDM4ef_8QUd5Ld41gMLhQi
 
 - FiraCode : https://github.com/tonsky/FiraCode
 - Monoid : https://larsenwork.com/monoid/
-
-### Breizhcamp 2024
-
-https://www.youtube.com/watch?v=f_N2BWhOHlk

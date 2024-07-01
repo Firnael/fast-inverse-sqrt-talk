@@ -22,9 +22,6 @@
         </h2>
         <img class="pill noshadow highlight-shadow" src="/1/pill.png">
         <aside class="notes">
-          Bonjour à tous, bienvenue à tous, je m'appelle Audren Burlot, et je suis honoré d'être devant vous aujou'd'hui
-          pour vous présenter ce talk qui s'intitule "The Inglorious Function".
-
           Aujourd'hui je vais vous raconter l'histoire d'un bout de code.
           Une fonction bien connue, dont vous avez certainement déjà entendu parler.
           Une fonction trouvée il y a 20 dans le code source d'un jeu sorti il y a 24 ans.
@@ -633,16 +630,16 @@
                 </div>
               </div>
               <div class="item">
-                <img src="/4/quake-launcher.gif" height="300px" />
+                <video data-autoplay loop muted src="/4/quake-launcher.webm" height="300px" />
                 <img src="/4/quake-players.jpeg" height="300px" />
               </div>
             </div>
           </div>
           <aside class="notes">
-            This applies to moving objects such as :
-            - players
-            - pickup items
-            - and 1st person weapon models
+            La lumière est calculée de manière dynamique sur les objets mobiles :
+            - les joueurs
+            - les "pickup items" (la vie, l'armure, les minutions)
+            - les modèles d'arme à la 1ère personne
           </aside>
         </section>
 
@@ -729,9 +726,8 @@
           <img class="highlight-shadow" src="/4/cube.png" height="600px" style="margin-top: 200px;" />
           <aside class="notes">
             !!! BESOIN DU STYLET !!!
-            Reprenons par exemple la face du cube qui est également la face de Jérémie.
-            Ici, Jérémie qui est un plan, un bon plan même si j'ose le dire
-            Un vecteur "normal" à Jérémie, est un vecteur perpendiculaire au plan.
+            Reprenons par exemple une face du cube, qui sera notre plan.
+            Un vecteur "normal" à cette face est un vecteur perpendiculaire au plan.
           </aside>
         </section>
 
@@ -1172,25 +1168,6 @@
           <img class="bagpack" src="/bagpack.webp" />
         </section>
 
-        <!-- <section>
-          <div class="cv">
-            <div class="item">
-              <img class="m-b-0" src="/4/prerequis-1.png" />
-            </div>
-            <div class="item fragment">
-              <img class="m-t-0" src="/4/prerequis-2.png" />
-            </div>
-          </div>
-          <aside class="notes">
-            Maintenant qu'on a vu à quoi sert cette fonction, on va pouvoir s'intéresser à son implémentation.
-            Pour ça, on va d'abord s'armer de 3 prérequis :
-            - à quoi sert cette fonction, et pourquoi elle a été écrite
-            - la représentation binaire des nombres décimaux, dits "à virgule flottante"
-            - et des petits rappels de maths concernant les logarithmes de base 2
-            Ne vous inquiétez pas, ça va bien se passer :)
-          </aside>
-        </section> -->
-
       </section>
 
       <!-- 5. La représentation binaire des nombres à virgules flottantes -->
@@ -1432,7 +1409,6 @@
           </div>
           <aside class="notes">
             Heureusement il y'a Fiiiiiinnnnnduuuuu ... la norme IEEE 754
-            C'est ce que se sont dit des gens pour ça que des gens plutôt malins, des gens de l'IEEE
           </aside>
         </section>
 
@@ -1516,8 +1492,7 @@
             $= 170$
           </div>
           <aside class="notes">
-            En binaire, on passe d'une « colonne » à une autre en multipliant ou en divisant par une puissance de 2.
-            Exemple avec 170.
+            Exemple avec 170 : on peut le décomposer en une somme de puissances de 2.
           </aside>
         </section>
 
