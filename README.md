@@ -35,6 +35,7 @@ Ce talk est très fortement inspiré de [cette vidéo](https://www.youtube.com/w
 - Softdisk & Gamer's Edge Games :
   - [SoftDisk Publishing](https://www.mobygames.com/company/353/softdisk-publishing/)
   - [Gamer's Edge](https://www.mobygames.com/company/355/gamers-edge/)
+  - [Adaptive Tile Refresh](https://fabiensanglard.net/ega/)
 - Quake 3 :
   - https://fabiensanglard.net/quake3/renderer.php
 - Lumière dans les JVs : [Présentation de CdS 2023 de Thomas GUIBERT](https://docs.google.com/presentation/d/e/2PACX-1vTGP--MIkfoDM4ef_8QUd5Ld41gMLhQiGkGc0glPovvFqjMZhBFNcpTobAHfjxWwbqANbxVJe3txvej/pub?start=false&loop=false&delayms=3000&slide=id.g120d8381d09_0_20)
@@ -57,7 +58,7 @@ Ce talk est très fortement inspiré de [cette vidéo](https://www.youtube.com/w
   - https://betterexplained.com/articles/understanding-quakes-fast-inverse-square-root/
   - https://web.archive.org/web/20130817074759/http://blog.quenta.org/2012/09/0x5f3759df.html
   - https://www.slideshare.net/maksym_zavershynskyi/fast-inverse-square-root
-  - http://www.lomont.org/papers/2003/InvSqrt.pdf
+  - Dérivation d'une meilleure constante par Chris Lomont http://www.lomont.org/papers/2003/InvSqrt.pdf
 
 ## Ressources
 

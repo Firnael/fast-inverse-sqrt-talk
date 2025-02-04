@@ -248,12 +248,14 @@
               <br />
               <img src="/2/carmack-coding.jpeg" />
             </div>
-            <div class="item fragment">
-              <img src="/2/dangerous-dave-in-copyright.webp" height="600px" />
+            <div class="item r-stack">
+              <img class="fragment" src="/2/adaptive-tile-refresh.jpg" height="450px" />
+              <img class="fragment" src="/2/dangerous-dave-in-copyright.webp" height="600px" />
             </div>
           </div>
           <aside class="notes">
             Sauf qu'un jour y'a Carmack qui se pointe et qui montre à Romero un prototype de Dangerous Dave,
+            La technique employée s'appelle "L'Adaptive Tile Refresh"
             qu'il nomme pour rigoler "Dangerous Dave in Copyright Infringement".
           </aside>
         </section>
@@ -267,7 +269,6 @@
           <aside class="notes">
             C'est un side-scroller parfaitement jouable sur PC, qui vole les sprites de SMB3.
             Romero est choqué, il comprend qu'ils ont entre les mains une technologie qui sera leur ticket de sortie.
-            La technique employée s'appelle "L'Adaptive Tile Refresh"
           </aside>
         </section>
 
@@ -454,6 +455,14 @@
         </section>
 
         <section>
+          <img src="/2/lan-party.webp" />
+          <p class="small muted">Oui le gars est bien scotché au plafond</p>
+          <aside class="notes">
+            Le jeu qui a popularisé le rocket jumping, le bunny hopping, et biensûr, les LAN parties.
+          </aside>
+        </section>
+
+        <section>
           <div class="r-stack">
             <div>
               <img src="/2/id-tech-3.webp" height="500px" />
@@ -532,9 +541,10 @@
 
         <section>
           <video data-autoplay src="/2/cat-huh-2.mp4" />
+          <aside class="notes">
+            C'est terrible, je suis fasciné, je comprends rien
+          </aside>
         </section>
-
-        
 
         <section data-auto-animate>
           <div class="r-stack">
@@ -551,8 +561,7 @@
         <section>
           <img src="/2/wojak-sleeping.jpg" />
           <aside class="notes">
-            À la fin de la vidéo, j'éteinds mon PC, et je vais me coucher.
-            Je me suis demandé, est-ce que je serais capable d'expliquer ce que j'ai vu à quelqu'un d'autre ?
+            À la fin de la vidéo, j'éteinds mon PC, et je vais me coucher, en serrant les poings.
           </aside>
         </section>
 
@@ -716,7 +725,22 @@
         </section>
 
         <section>
-          <img class="highlight-shadow" src="/4/cube.png" height="600px" style="margin-top: 200px;" />
+          <div class="r-stack">
+            <img class="highlight-shadow fragment preload" src="/4/cube.png" height="600px" style="margin-top: 200px;" />
+            <span class="fragment instant">
+              <img class="noshadow blue-arrow" src="/4/blue-arrow.png" />
+              <audio data-autoplay src="/4/pop.mp3"></audio>
+            </span>
+            <span class="fragment instant">
+              <img class="noshadow green-arrow" src="/4/green-arrow.png" />
+              <audio data-autoplay src="/4/pop.mp3"></audio>
+            </span>
+            <span class="fragment instant">
+              <img class="noshadow purple-arrow" src="/4/purple-arrow.png" />
+              <audio data-autoplay src="/4/pop.mp3"></audio>
+            </span>
+          </div>
+          
           <aside class="notes">
             !!! BESOIN DU STYLET !!!
             Reprenons par exemple une face du cube, qui sera notre plan.
@@ -3708,6 +3732,15 @@
           </aside>
         </section>
 
+        <section>
+          <img src="/10/benchmark.jpg" height="550px" />
+          <p class="muted">L'instruction hardware détruit la concu</p>
+          <aside class="notes">
+            Bon l'algo se fait tuer par l'arrivée des instructions SSE
+            https://www.quick-bench.com/q/trwX6nGtZz_L8YG_8qHyxFhPCE0
+          </aside>
+        </section>
+
         <!-- l'enquête Beyond3D -->
         <section>
           <h3>Qui a écrit ce code ?</h3>
@@ -3921,20 +3954,6 @@
         </section>
 
         <section>
-          <img class="r-stretch" src="/10/pride-only-hurts.png" />
-          <aside class="notes">
-            - Pour finir, je vous laisse sur cette citation d'Anakin :
-            "Il faut parfois oublier son amour-propre, et obéir à son devoir"
-            - Sachons rester humble, à l'image de tous ces gens dans cette enquête, qui malgré être des
-            monstres dans leur domaine, refusent poliment de s'attribuer seul les lauriers,
-            et ne s'enorgueillissent jamais de leurs travaux.
-            (Comme disait Gaël : ne soyez pas votre code)
-            - Prenons en de la graine, restons connectés à nos racines (pas carrées)
-            et chargés de ces enseignements, embrassons le futur de notre métier.
-          </aside>
-        </section>
-
-        <section>
           <div class="r-stack">
             <div class="ch">
               <div class="item">
@@ -3944,10 +3963,9 @@
                 <img class="fragment" src="/2/wojak-happy.webp" height="370px" />
               </div>
             </div>
-            <!-- <img class="r-stretch fragment" src="/10/visible-happiness.jpeg" height="500px" /> -->
             <aside class="notes">
-              Et après des heures et des heures de recherche et de travail acharné, je suis enfin prêt à vous présenter
-              ce que j'ai découvert, pour que vous aussi vous connaissiez l'illumination.
+              Maintenant vous êtes comme ça (peut-être), comme je l'ai été la première fois que j'ai
+              enfin compris tout ce bordel, baigné dans la glorieuse lumière de la connaissance.
             </aside>
           </div>
           <aside class="notes">
@@ -3956,6 +3974,27 @@
             - Souvenons nous de cet algo, qui, bien qu'obsolète dès sa sortie au regard de la nouvelle génération de
             CPU, aura permis à une génération entière de joueurs de profiter de Quake 3 sur leurs bécanes pourries.
             (ordis du CDI)
+          </aside>
+        </section>
+
+        <section>
+          <img data-fragment-index="3" class="fragment round" src="/10/john-carmack-oculus.jpeg" height="300px"/>
+          <blockquote>
+            <q>
+              <span data-fragment-index="1" class="fragment">Coding was never the source of value, and people shouldn’t get overly attached to it.</span>
+              <br/>
+              <span data-fragment-index="2" class="fragment"><b>Problem solving is the core skill.</b></span>
+            </q>
+            <p data-fragment-index="3" class="fragment">— John Carmack</p>
+          </blockquote>
+          <aside class="notes">
+            - https://x.com/id_aa_carmack/status/1762110222321975442
+            - Sachons rester humble, à l'image de tous ces gens dans cette enquête, qui malgré être des
+            monstres dans leur domaine, refusent poliment de s'attribuer seul les lauriers,
+            et ne s'enorgueillissent jamais de leurs travaux.
+            (Comme disait Gaël : ne soyez pas votre code)
+            - Prenons en de la graine, restons connectés à nos racines (pas carrées)
+            et chargés de ces enseignements, embrassons le futur de notre métier.
           </aside>
         </section>
 
@@ -3993,7 +4032,7 @@
             <h6>github.com/Firnael</h6>
           </div>
           <div class="item">
-            <img style="padding-left: 50px;" class="noshadow" src="/11/qr-code-software-crafters.png" height="350px" />
+            <img style="padding-left: 50px;" class="noshadow" src="/11/qr-code-tt.png" height="350px" />
           </div>
         </div>
       </section>

@@ -308,6 +308,28 @@ span.still-log {
 
 /* Custom position */
 
+.purple-arrow {
+    width: 90px;
+    height: auto;
+    position: absolute;
+    top: 70px;
+    left: 440px;
+}
+.blue-arrow {
+    width: 200px;
+    height: auto;
+    position: absolute;
+    top: 274px;
+    left: 330px;
+}
+.green-arrow {
+    width: 250px;
+    height: auto;
+    position: absolute;
+    top: 262px;
+    left: 472px;
+}
+
 /* -- bagpack stuff */
 
 .bagpack {
@@ -380,9 +402,9 @@ span.still-log {
 
 img.pill {
     position: absolute;
-    height: 70px;
-    top: 196px;
-    right: 160px;
+    height: 90px;
+    top: 260px;
+    right: 68px;
 }
 
 div.mu-value {

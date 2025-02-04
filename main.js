@@ -72,8 +72,7 @@ const SLIDE_INDEX_WITH_GAME = '5-12';
 
 /**
  * Listen for the 'slideChanged' Reveal event, and dispatch events for specific slides
- * - slideChanged is fired when the slide is '1-1' (car mini-game slide)
- * - ...
+ * - slideChanged is fired when the slide is '5-12' (car mini-game slide)
  */
 const slideChangedEvent = new Event('slideChanged');
 deck.addEventListener('slidechanged', (event) => {
